@@ -1,0 +1,13 @@
+# robots.txt para Last Z Wiki
+# Este archivo le dice a los motores de búsqueda qué pueden rastrear
+
+User-agent: *
+Allow: /
+
+# Sitemap principal
+Sitemap: https://lastzwiki.com/sitemap.xml
+
+# Reglas opcionales (descomenta si necesitas)
+# Disallow: /admin/
+# Disallow: /temp/
+# Disallow: /test/

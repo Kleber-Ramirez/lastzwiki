@@ -1,0 +1,631 @@
+/* =========================================
+   EVENTOS.CSS - OPTIMIZADO CON RESPONSIVE
+   ========================================= */
+
+/* ===== RESET Y BASE ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  font-family: Inter, Arial, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== PORTADA ===== */
+.portada-eventos img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* ===== BOTONES DE NAVEGACIÓN ===== */
+.botones-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #161b22;
+  padding: 15px;
+  flex-wrap: wrap;
+}
+
+.botones-img button {
+  background-color: #ff4747;
+  border: 2px solid transparent;
+  padding: 10px 18px;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.botones-img button:hover {
+  background-color: #ff6b6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 71, 71, 0.4);
+}
+
+.botones-img button.activo {
+  background-color: var(--acento);
+  border-color: #fff;
+  box-shadow: 0 0 15px rgba(196, 30, 58, 0.6);
+}
+
+/* ===== SECCIONES ===== */
+.seccion-eventos,
+.seccion-eventos-populares {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+}
+
+.seccion-eventos-populares {
+  background: linear-gradient(135deg, #1a0a0a 0%, #0e0e0e 100%);
+  border-top: 3px solid var(--acento);
+  padding-top: 1rem;
+  border-bottom: 3px solid var(--acento);
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--acento);
+  margin: -4.2rem 0 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.subtitulo-seccion {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 2rem 0;
+  font-size: 1rem;
+}
+
+/* ===== CONTENIDO DE EVENTOS ===== */
+.contenido-eventos {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 20px;
+  background-color: #1c2128;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.contenido-eventos.activo {
+  display: flex;
+  opacity: 1;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== CARRUSEL ===== */
+.carrusel {
+  position: relative;
+  width: 45%;
+  max-width: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.imagenes {
+  position: relative;
+  width: 100%;
+}
+
+.carrusel .imagenes img {
+  width: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.carrusel .imagenes img.activo {
+  display: block;
+}
+
+.btn-carrusel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-carrusel:hover {
+  background: rgba(255, 71, 71, 0.8);
+  border-color: #fff;
+}
+
+.btn-carrusel.prev {
+  left: 10px;
+}
+
+.btn-carrusel.next {
+  right: 10px;
+}
+
+/* ===== TEXTO DEL EVENTO ===== */
+.texto-evento {
+  width: 45%;
+  max-width: 600px;
+}
+
+.texto-evento h2 {
+  color: #ff4747;
+  font-size: 1.8rem;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.texto-evento h3 {
+  color: #ff4747;
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.texto-evento p {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.texto-evento b {
+  color: var(--texto);
+  font-weight: 600;
+}
+
+/* Badge temporal */
+.badge-temporal {
+  display: inline-block;
+  background: rgba(238, 227, 229, 0.2);
+  color: var(--acento);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border: 1px solid var(--acento);
+}
+
+/* ===== VIDEO REFERENCIA ===== */
+.video-referencia {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.video-enlace {
+  width: 200px;
+  height: 120px;
+  background-color: #d32f2f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+}
+
+.video-enlace:hover {
+  background-color: #f44336;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(211, 47, 47, 0.6);
+}
+
+.icono-youtube {
+  width: 60px;
+  height: 40px;
+  background: white;
+  clip-path: polygon(25% 20%, 25% 80%, 80% 50%);
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS LANDSCAPE
+   ========================================= */
+@media (max-width: 1024px) {
+  .contenido-eventos {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .carrusel {
+    width: 48%;
+    max-width: 350px;
+  }
+
+  .texto-evento {
+    width: 48%;
+    max-width: 550px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - TABLETS PORTRAIT
+   ========================================= */
+@media (max-width: 768px) {
+  /* Header */
+  .site-header {
+    padding: 1rem;
+  }
+
+  .site-header .brand h1 {
+    font-size: 1.2rem;
+  }
+
+  .main-nav ul {
+    gap: 0.8rem;
+  }
+
+  /* Portada */
+  .portada-eventos img {
+    max-height: 300px;
+  }
+
+  /* Botones navegación */
+  .botones-img {
+    padding: 12px 10px;
+    gap: 8px;
+  }
+
+  .botones-img button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  /* Títulos */
+  .titulo-seccion {
+    font-size: 1.6rem;
+    margin: -3rem 0 0.5rem 0;
+  }
+
+  .subtitulo-seccion {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  /* Secciones */
+  .seccion-eventos,
+  .seccion-eventos-populares {
+    margin: 2.5rem 0;
+    padding: 1.5rem 0.8rem;
+  }
+
+  /* Layout: Vertical */
+  .contenido-eventos {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 10px;
+  }
+
+  .carrusel {
+    width: 85%;
+    max-width: 450px;
+  }
+
+  .texto-evento {
+    width: 90%;
+    max-width: 600px;
+  }
+
+  .texto-evento h2 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .texto-evento h3 {
+    font-size: 1.2rem;
+  }
+
+  /* Carrusel: Botones más grandes */
+  .btn-carrusel {
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    font-size: 22px;
+  }
+
+  .btn-carrusel.prev {
+    left: 8px;
+  }
+
+  .btn-carrusel.next {
+    right: 8px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MÓVILES
+   ========================================= */
+@media (max-width: 480px) {
+  /* Header compacto */
+  .site-header {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .site-header .brand h1 {
+    font-size: 1rem;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+
+  /* Portada */
+  .portada-eventos img {
+    max-height: 200px;
+  }
+
+  /* Botones: Stack vertical */
+  .botones-img {
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .botones-img button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+    font-size: 0.95rem;
+    min-height: 44px;
+  }
+
+  /* Títulos */
+  .titulo-seccion {
+    font-size: 1.3rem;
+    margin: -2rem 0 0.5rem 0;
+    padding: 0 1rem;
+  }
+
+  .subtitulo-seccion {
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  /* Secciones */
+  .seccion-eventos,
+  .seccion-eventos-populares {
+    margin: 2rem 0;
+    padding: 1.5rem 0.5rem;
+  }
+
+  /* Contenido: Full width */
+  .contenido-eventos {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  /* Carrusel: Full width */
+  .carrusel {
+    width: 95%;
+    max-width: 100%;
+  }
+
+  .carrusel .imagenes img {
+    max-height: 250px;
+    object-fit: contain;
+  }
+
+  /* Botones carrusel: Touch-friendly */
+  .btn-carrusel {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 71, 71, 0.8);
+  }
+
+  .btn-carrusel.prev {
+    left: 5px;
+  }
+
+  .btn-carrusel.next {
+    right: 5px;
+  }
+
+  /* Texto: Full width */
+  .texto-evento {
+    width: 95%;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .texto-evento h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .texto-evento h3 {
+    font-size: 1rem;
+    margin-top: 1.2rem;
+  }
+
+  .texto-evento p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  /* Badge */
+  .badge-temporal {
+    font-size: 0.85rem;
+    display: block;
+    text-align: center;
+  }
+
+  /* Video */
+  .video-referencia {
+    margin-top: 15px;
+  }
+
+  .video-enlace {
+    width: 180px;
+    height: 100px;
+  }
+
+  .icono-youtube {
+    width: 50px;
+    height: 35px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MÓVILES PEQUEÑOS
+   ========================================= */
+@media (max-width: 360px) {
+  .site-header .brand h1 {
+    font-size: 0.9rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+
+  .titulo-seccion {
+    font-size: 1.1rem;
+  }
+
+  .subtitulo-seccion {
+    font-size: 0.85rem;
+  }
+
+  .botones-img button {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+
+  .carrusel {
+    width: 98%;
+  }
+
+  .carrusel .imagenes img {
+    max-height: 200px;
+  }
+
+  .btn-carrusel {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .texto-evento {
+    width: 98%;
+    padding: 0 5px;
+  }
+
+  .texto-evento h2 {
+    font-size: 1.1rem;
+  }
+
+  .texto-evento h3 {
+    font-size: 0.95rem;
+  }
+
+  .texto-evento p {
+    font-size: 0.85rem;
+  }
+
+  .video-enlace {
+    width: 160px;
+    height: 90px;
+  }
+
+  .icono-youtube {
+    width: 45px;
+    height: 30px;
+  }
+}
+
+/* =========================================
+   UTILIDADES
+   ========================================= */
+
+/* Botones touch-friendly */
+@media (max-width: 768px) {
+  button,
+  .btn-carrusel,
+  .botones-img button {
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transiciones suaves */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* No aplicar transiciones a animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

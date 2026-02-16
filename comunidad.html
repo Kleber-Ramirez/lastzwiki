@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ==========================================
+       SEO OPTIMIZADO - COMUNIDAD
+       ========================================== -->
+  
+  <!-- SEO Básico -->
+  <title>Comunidad - Last Z Wiki | Únete a la Comunidad Global</title>
+  <meta name="description" content="Únete a la comunidad global de Last Z Survival Shooter. Más de 10 millones de jugadores, 700+ estados activos. Discord, Facebook y recursos oficiales. Próximamente: ranking de estados y foro.">
+  <meta name="keywords" content="comunidad Last Z, Discord Last Z, Facebook Last Z, descargar Last Z, estados activos, ranking estados, foro Last Z, jugadores Last Z">
+  <meta name="author" content="Hypnos - Last Z Wiki">
+  <meta name="language" content="Spanish">
+  
+  <!-- Open Graph / Facebook / Discord -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lastzwiki.com/comunidad.html">
+  <meta property="og:title" content="Comunidad - Last Z Wiki">
+  <meta property="og:description" content="Únete a más de 10 millones de jugadores de Last Z Survival Shooter. Discord oficial, estadísticas y recursos.">
+  <meta property="og:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
+  <meta property="og:site_name" content="Last Z Wiki">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lastzwiki.com/comunidad.html">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- Tema de color -->
+  <meta name="theme-color" content="#c41e3a">
+  
+  <!-- ==========================================
+       FIN SEO - CSS
+       ========================================== -->
+  
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="responsive.css">
+  
+  <!-- Font Awesome para iconos profesionales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    /* Estilos para página Comunidad */
+    .community-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    .community-hero {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--secundario) 0%, var(--fondo) 100%);
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      border: 2px solid var(--acento);
+    }
+    
+    .community-hero h1 {
+      font-size: 2.5rem;
+      color: var(--acento);
+      margin: 0 0 1rem 0;
+    }
+    
+    .community-hero .tagline {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    /* Estadísticas */
+    .stats-section {
+      background: var(--card-bg);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .stats-section h2 {
+      text-align: center;
+      color: var(--acento);
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .stat-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: var(--secundario);
+      border-radius: 10px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .stat-card:hover {
+      border-color: var(--acento);
+      transform: translateY(-5px);
+      background: rgba(196, 30, 58, 0.1);
+    }
+    
+    .stat-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--acento);
+      margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    
+    /* Enlaces Oficiales */
+    .official-links {
+      background: var(--card-bg);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      margin-bottom: 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .official-links h2 {
+      text-align: center;
+      color: var(--acento);
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+    }
+    
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.5rem;
+      background: var(--secundario);
+      border-radius: 10px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: var(--texto);
+    }
+    
+    .link-card:hover {
+      border-color: var(--acento);
+      transform: translateX(5px);
+      background: rgba(196, 30, 58, 0.1);
+    }
+    
+    .link-icon {
+      font-size: 2.5rem;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+    }
+    
+    /* Colores específicos de marca para iconos */
+    .link-card:hover .fa-discord {
+      color: #5865F2;
+    }
+    
+    .link-card:hover .fa-facebook {
+      color: #1877F2;
+    }
+    
+    .link-card:hover .fa-google-play {
+      color: #34A853;
+    }
+    
+    .link-card:hover .fa-app-store-ios {
+      color: #0D96F6;
+    }
+    
+    .link-card:hover .fa-windows {
+      color: #0078D4;
+    }
+    
+    .link-card:hover .fa-globe {
+      color: var(--acento);
+    }
+    
+    /* Animación de iconos */
+    .link-card:hover .link-icon {
+      transform: scale(1.1);
+    }
+    
+    .stat-icon i,
+    .feature-icon i {
+      color: var(--acento);
+    }
+    
+    .stat-card:hover .stat-icon i {
+      transform: scale(1.15);
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+    
+    .link-info h3 {
+      color: var(--acento);
+      margin: 0 0 0.3rem 0;
+      font-size: 1.1rem;
+    }
+    
+    .link-info p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.9rem;
+    }
+    
+    /* Próximamente */
+    .coming-soon {
+      background: var(--card-bg);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .coming-soon h2 {
+      text-align: center;
+      color: var(--acento);
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+    
+    .coming-soon-intro {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .feature-card {
+      padding: 2rem 1.5rem;
+      background: var(--secundario);
+      border-radius: 10px;
+      border-left: 4px solid var(--acento);
+      transition: all 0.3s ease;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-3px);
+      background: rgba(196, 30, 58, 0.1);
+    }
+    
+    .feature-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    
+    .feature-icon {
+      font-size: 2rem;
+    }
+    
+    .feature-card h3 {
+      color: var(--acento);
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    
+    .feature-card p {
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    .feature-badge {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.3rem 0.8rem;
+      background: rgba(196, 30, 58, 0.2);
+      border: 1px solid var(--acento);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: var(--acento);
+      font-weight: 600;
+    }
+    
+    /* Call to Action */
+    .cta-section {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, var(--secundario) 100%);
+      border-radius: 12px;
+      border: 2px solid var(--acento);
+    }
+    
+    .cta-section h3 {
+      color: var(--acento);
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .cta-section p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: var(--acento);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+    
+    .cta-button:hover {
+      background: #a01828;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .community-container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .community-hero {
+        padding: 2rem 1.5rem;
+      }
+      
+      .community-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .stats-grid,
+      .links-grid,
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stat-card,
+      .link-card,
+      .feature-card {
+        padding: 1.5rem 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .community-hero h1 {
+        font-size: 1.7rem;
+      }
+      
+      .community-hero .tagline {
+        font-size: 1rem;
+      }
+      
+      .stat-number {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
+      <h1>Last Z Wiki</h1>
+    </div>
+    <button class="hamburger" aria-label="Menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="edificios.html">Edificios</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="alianzas.html">Alianzas</a></li>
+        <li><a href="heroes.html">Héroes</a></li>
+        <li><a class="active" href="comunidad.html">Comunidad</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="community-container">
+    
+    <!-- Hero -->
+    <section class="community-hero">
+      <h1><i class="fas fa-users"></i> Comunidad Last Z</h1>
+      <p class="tagline">Únete a millones de sobrevivientes en todo el mundo. Descubre recursos oficiales, estadísticas del juego y próximas funcionalidades de la comunidad.</p>
+    </section>
+
+    <!-- Estadísticas del Juego -->
+    <section class="stats-section">
+      <h2><i class="fas fa-chart-bar"></i> Last Z en Números</h2>
+      <p style="text-align: center; color: var(--muted); margin-bottom: 1rem;">Estadísticas oficiales del juego a nivel global</p>
+      
+      <div class="stats-grid">
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fab fa-google-play"></i></div>
+          <div class="stat-number">10M+</div>
+          <div class="stat-label">Descargas en Google Play</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-star"></i></div>
+          <div class="stat-number">4.8★</div>
+          <div class="stat-label">Calificación en ambas plataformas</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-globe-americas"></i></div>
+          <div class="stat-number">700+</div>
+          <div class="stat-label">Estados Activos</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-comments"></i></div>
+          <div class="stat-number">657K</div>
+          <div class="stat-label">Reseñas (Play Store)</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fab fa-apple"></i></div>
+          <div class="stat-number">1.3K</div>
+          <div class="stat-label">Calificaciones (App Store)</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-mobile-alt"></i></div>
+          <div class="stat-number">3</div>
+          <div class="stat-label">Plataformas (Android, iOS, Windows)</div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Enlaces Oficiales -->
+    <section class="official-links">
+      <h2><i class="fas fa-link"></i> Recursos Oficiales de Last Z</h2>
+      <p style="text-align: center; color: var(--muted); margin-bottom: 1rem;">Conecta con la comunidad oficial y descarga el juego</p>
+      
+      <div class="links-grid">
+        
+        <a href="https://last-z.com/#/es-US/home" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon"><i class="fas fa-globe"></i></div>
+          <div class="link-info">
+            <h3>Sitio Web Oficial</h3>
+            <p>Noticias, actualizaciones y eventos</p>
+          </div>
+        </a>
+        
+        <a href="https://discord.gg/last-z" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon"><i class="fab fa-discord"></i></div>
+          <div class="link-info">
+            <h3>Discord Oficial</h3>
+            <p>Únete al servidor de la comunidad</p>
+          </div>
+        </a>
+        
+        <a href="https://www.facebook.com/LastZSurvivalShooter" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon"><i class="fab fa-facebook"></i></div>
+          <div class="link-info">
+            <h3>Facebook Oficial</h3>
+            <p>Síguenos para novedades y eventos</p>
+          </div>
+        </a>
+        
+        <a href="https://play.google.com/store/apps/details?id=com.readygo.barrel.gp" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon"><i class="fab fa-google-play"></i></div>
+          <div class="link-info">
+            <h3>Google Play Store</h3>
+            <p>Descarga para Android</p>
+          </div>
+        </a>
+        
+        <a href="https://apps.apple.com/pe/app/last-z-survival-shooter/id6503272652" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon"><i class="fab fa-app-store-ios"></i></div>
+          <div class="link-info">
+            <h3>App Store</h3>
+            <p>Descarga para iOS</p>
+          </div>
+        </a>
+        
+        <a href="https://last-z.com/#/es-US/home" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon"><i class="fab fa-windows"></i></div>
+          <div class="link-info">
+            <h3>Windows PC</h3>
+            <p>Descarga para computadora</p>
+          </div>
+        </a>
+        
+      </div>
+    </section>
+
+    <!-- Próximamente -->
+    <section class="coming-soon">
+      <h2><i class="fas fa-tools"></i> Próximamente en Last Z Wiki</h2>
+      <p class="coming-soon-intro">Estamos trabajando en nuevas funcionalidades para que la comunidad hispanohablante tenga las mejores herramientas</p>
+      
+      <div class="features-grid">
+        
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon"><i class="fas fa-trophy"></i></div>
+            <h3>Ranking de Estados</h3>
+          </div>
+          <p>Descubre los estados más poderosos, alianzas top y jugadores destacados de cada servidor. Estadísticas actualizadas semanalmente.</p>
+          <span class="feature-badge">EN DESARROLLO</span>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon"><i class="fas fa-comments"></i></div>
+            <h3>Foro de Discusión</h3>
+          </div>
+          <p>Espacio dedicado para compartir estrategias, hacer preguntas y conectar con otros jugadores de habla hispana.</p>
+          <span class="feature-badge">PRÓXIMAMENTE</span>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Estadísticas Detalladas</h3>
+          </div>
+          <p>Consulta el desempeño de alianzas top, progresión de jugadores y análisis de meta de cada temporada.</p>
+          <span class="feature-badge">EN DESARROLLO</span>
+        </div>
+        
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+            <h3>Guías Colaborativas</h3>
+          </div>
+          <p>Sistema de guías creadas por la comunidad. Comparte tu conocimiento y ayuda a otros jugadores a mejorar.</p>
+          <span class="feature-badge">PRÓXIMAMENTE</span>
+        </div>
+        
+      </div>
+
+      <!-- Call to Action -->
+      <div class="cta-section">
+        <h3><i class="fas fa-lightbulb"></i> ¿Tienes Sugerencias?</h3>
+        <p>Ayúdanos a construir la mejor wiki en español para Last Z Survival Shooter</p>
+        <a href="contacto.html" class="cta-button"><i class="fas fa-envelope"></i> Enviar Sugerencias</a>
+      </div>
+      
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-links">
+        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+        <span class="separator">•</span>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <span class="separator">•</span>
+        <a href="terminos.html">Términos y Condiciones</a>
+        <span class="separator">•</span>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Aviso Importante</strong></p>
+        <p>Last Z Wiki es un sitio web <strong>no oficial</strong> creado por fans para la comunidad de Last Z Survival Shooter.</p>
+        <p>No estamos afiliados, asociados, autorizados, respaldados por, ni oficialmente conectados con los desarrolladores del juego.</p>
+        <p>Todas las marcas comerciales, logos e imágenes del juego son propiedad de sus respectivos dueños.</p>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Creado con ❤️ para la comunidad.</p>
+        <p class="footer-meta">Última actualización: Febrero 2026</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>

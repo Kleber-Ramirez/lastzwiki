@@ -1,0 +1,270 @@
+/* global.css */
+
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+  --fondo: #0e0e0e;
+  --primario: #8a0303;
+  --secundario: #262626;
+  --texto: #ffffff;
+  --acento: #c41e3a;
+  --muted: #999;
+}
+
+/* ===== BODY BASE ===== */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+}
+
+/* ===== HEADER (DESKTOP) ===== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  background: var(--secundario);
+  border-bottom: 3px solid var(--primario);
+}
+
+/* ===== LOGO Y BRAND ===== */
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 2rem;
+}
+
+.site-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.site-header .brand h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--acento);
+  letter-spacing: 1px;
+}
+
+/* ===== NAV (DESKTOP) ===== */
+.main-nav ul {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.main-nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: var(--acento);
+}
+
+.main-nav a.active {
+  color: var(--acento);
+  text-decoration: underline;
+}
+
+/* Bloquear scroll solo cuando el menú está abierto */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* =========================================
+   RESPONSIVE - LOGO
+   ========================================= */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .site-logo {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .site-header .brand h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .site-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .site-header .brand h1 {
+    font-size: 1rem;
+  }
+  
+  .site-header .brand {
+    gap: 8px;
+  }
+}
+/* =========================================
+   FOOTER - VERSIÓN COMPACTA
+   ========================================= */
+
+.site-footer {
+  background: linear-gradient(180deg, var(--fondo) 0%, var(--secundario) 100%);
+  border-top: 3px solid var(--primario);
+  margin-top: 0.1rem;
+  padding: 1rem 1.5rem 1.5rem; /* ← Reducido de 3rem */
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Links principales */
+.footer-links {
+  margin-bottom: 1.2rem; /* ← Reducido de 2rem */
+  font-size: 0.9rem;     /* ← Más pequeño */
+}
+
+.footer-links a {
+  color: var(--acento);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.4rem 0.6rem; /* ← Menos padding */
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
+}
+
+.footer-links .separator {
+  color: var(--muted);
+  margin: 0 0.3rem;
+  opacity: 0.5;
+}
+
+/* Disclaimer - MÁS COMPACTO */
+.footer-disclaimer {
+  margin: 1.2rem auto; /* ← Reducido de 2rem */
+  padding: 1rem;       /* ← Reducido de 1.5rem */
+  max-width: 700px;    /* ← Más estrecho */
+  background: rgba(196, 30, 58, 0.08); /* ← Más sutil */
+  border: 1px solid rgba(196, 30, 58, 0.2);
+  border-radius: 6px;
+}
+
+.footer-disclaimer p {
+  color: var(--muted);
+  font-size: 0.85rem; /* ← Más pequeño */
+  margin: 0.3rem 0;   /* ← Menos espacio */
+  line-height: 1.5;   /* ← Más compacto */
+}
+
+.footer-disclaimer strong {
+  color: var(--texto);
+  font-size: 0.9rem;
+}
+
+/* Copyright */
+.footer-copyright {
+  margin-top: 0.9rem;   /* ← Reducido de rem */
+  padding-top: 0.8rem;    /* ← Reducido de 1.5rem */
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright p {
+  color: var(--muted);
+  font-size: 0.85rem;  /* ← Más pequeño */
+  margin: 0.3rem 0;    /* ← Menos espacio */
+}
+
+.footer-meta {
+  font-size: 0.75rem !important; /* ← Más pequeño */
+  opacity: 0.6;
+}
+
+
+/* ========================================= 
+   RESPONSIVE - FOOTER
+   ========================================= */
+
+/* Tablet - Mantener compacto */
+@media (max-width: 1024px) {
+  .site-footer {
+    padding: 1.8rem 1.5rem 1.3rem;
+  }
+}
+
+/* Mobile - Aquí SÍ puede expandirse */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem 1.5rem;
+    margin-top: 2.5rem;
+  }
+  
+  /* Links en columna */
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-bottom: 1.3rem;
+  }
+  
+  .footer-links .separator {
+    display: none;
+  }
+  
+  .footer-links a {
+    display: block;
+    padding: 0.8rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+  }
+  
+  /* Disclaimer */
+  .footer-disclaimer {
+    padding: 0.9rem;
+    margin: 1.2rem 0;
+  }
+  
+  .footer-disclaimer p {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 1.5rem 0.8rem 1.2rem;
+  }
+  
+  .footer-links a {
+    padding: 0.75rem;
+    font-size: 0.88rem;
+  }
+  
+  .footer-disclaimer {
+    padding: 0.8rem;
+  }
+  
+  .footer-disclaimer p {
+    font-size: 0.78rem;
+  }
+  
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
