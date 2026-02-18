@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicons -->
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+<link rel="manifest" href="/site.webmanifest" />
+</head>  
+
+  <!-- ==========================================
+       SEO OPTIMIZADO - GUÍA PRINCIPIANTES
+       ========================================== -->
+  
+  <!-- SEO Básico -->
+  <title>Guía para Principiantes - Last Z Wiki | Cómo Empezar y Tips Esenciales 2026</title>
+  <meta name="description" content="Manual completo para principiantes de Last Z Survival Shooter. Aprende cómo empezar, qué edificios mejorar primero, estrategias early game y errores comunes a evitar. Guía paso a paso desde el día 1.">
+  <meta name="keywords" content="Last Z principiantes, cómo empezar Last Z, guía novatos Last Z, tips principiantes, Last Z tutorial español, primeros pasos Last Z, qué hacer primer día, mejores edificios principiantes, errores comunes Last Z, estrategia early game, Last Z beginner guide spanish, cómo jugar Last Z, guía completa principiantes, Sophia Last Z, Preparación Total, Versus Alianza">
+  <meta name="author" content="Hypnos - Last Z Wiki">
+  <meta name="language" content="Spanish">
+  
+  <!-- Open Graph / Facebook / Discord -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lastzwiki.com/guia-principiantes.html">
+  <meta property="og:title" content="Guía para Principiantes - Last Z Wiki">
+  <meta property="og:description" content="Manual completo para empezar en Last Z. Tips esenciales, errores a evitar y estrategias para nuevos jugadores.">
+  <meta property="og:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
+  <meta property="og:site_name" content="Last Z Wiki">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guía para Principiantes - Last Z">
+  <meta name="twitter:description" content="Todo lo que necesitas saber para empezar en Last Z Survival Shooter">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lastzwiki.com/guia-principiantes.html">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- Tema de color -->
+  <meta name="theme-color" content="#c41e3a">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Guía para Principiantes de Last Z Survival Shooter",
+    "description": "Manual completo para nuevos jugadores de Last Z",
+    "url": "https://lastzwiki.com/guia-principiantes.html",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "Hypnos"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Last Z Wiki"
+    }
+  }
+  </script>
+  
+  <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="responsive.css">
+  
+  <style>
+    .guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    .guide-hero {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--secundario) 0%, var(--fondo) 100%);
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      border: 2px solid var(--acento);
+    }
+    
+    .guide-hero h1 {
+      font-size: 2.5rem;
+      color: var(--acento);
+      margin: 0 0 1rem 0;
+    }
+    
+    .guide-hero .subtitle {
+      font-size: 1.2rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .section-block {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .section-block h2 {
+      color: var(--acento);
+      margin-top: 0;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .section-block h3 {
+      color: var(--acento);
+      font-size: 1.3rem;
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .tip-box {
+      background: rgba(196, 30, 58, 0.1);
+      border-left: 4px solid var(--acento);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .tip-box h4 {
+      color: var(--acento);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .warning-box {
+      background: rgba(255, 165, 0, 0.1);
+      border-left: 4px solid #ffa500;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .warning-box h4 {
+      color: #ffa500;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .success-box {
+      background: rgba(76, 175, 80, 0.1);
+      border-left: 4px solid #4caf50;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    
+    .success-box h4 {
+      color: #4caf50;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      border-left: 3px solid var(--acento);
+      margin: 2rem 0;
+    }
+    
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    
+    .timeline-item:before {
+      content: "";
+      position: absolute;
+      left: -2.4rem;
+      top: 0;
+      width: 1rem;
+      height: 1rem;
+      background: var(--acento);
+      border-radius: 50%;
+      border: 3px solid var(--fondo);
+    }
+    
+    .timeline-item h3 {
+      margin-top: 0;
+    }
+    
+    .priority-list {
+      counter-reset: priority;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .priority-list li {
+      padding: 1rem;
+      padding-left: 3rem;
+      position: relative;
+      margin-bottom: 0.8rem;
+      background: var(--secundario);
+      border-radius: 8px;
+      counter-increment: priority;
+    }
+    
+    .priority-list li:before {
+      content: counter(priority);
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--acento);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .hero-card {
+      background: var(--secundario);
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero-card h4 {
+      color: var(--acento);
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+    
+    .hero-rank {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.85rem;
+      margin-left: 0.5rem;
+    }
+    
+    .rank-s {
+      background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+      color: #000;
+    }
+    
+    .rank-a {
+      background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+      color: #000;
+    }
+    
+    .rank-b {
+      background: linear-gradient(135deg, #cd7f32 0%, #b87333 100%);
+      color: #fff;
+    }
+    
+    .event-schedule {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    
+    .event-day {
+      background: var(--secundario);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+    
+    .event-day h4 {
+      color: var(--acento);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .checklist li {
+      padding: 0.8rem 0;
+      padding-left: 2rem;
+      position: relative;
+    }
+    
+    .checklist li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--acento);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .guide-container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .guide-hero {
+        padding: 2rem 1.5rem;
+      }
+      
+      .guide-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .section-block {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
+      <h1>Last Z Wiki</h1>
+    </div>
+    <button class="hamburger" aria-label="Menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="edificios.html">Edificios</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="heroes.html">Héroes</a></li>
+        <li><a href="alianzas.html">Alianzas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido Principal -->
+  <main class="guide-container">
+    
+    <!-- Hero -->
+    <section class="guide-hero">
+      <h1>📚 Manual del Principiante</h1>
+      <p class="subtitle">Guía completa para empezar con el pie derecho en Last Z Survival Shooter. Estrategias probadas, timing perfecto y errores a evitar.</p>
+    </section>
+
+    <!-- Primeros Pasos -->
+    <section class="section-block">
+      <h2>🎮 Tutorial Inicial (Primeras Horas)</h2>
+      
+      <h3>¿Qué esperar al empezar?</h3>
+      <p>Al iniciar Last Z, el juego te guiará a través de un tutorial básico donde aprenderás las mecánicas fundamentales:</p>
+      
+      <ul class="checklist">
+        <li><strong>Construcción de edificios básicos</strong> - Aprenderás a construir y mejorar</li>
+        <li><strong>Tareas de Crecimiento</strong> - Misiones que te dan recursos y recompensas</li>
+        <li><strong>Combate contra zombies</strong> - Desliza izquierda/derecha para mover héroes en batalla</li>
+        <li><strong>Gestión de recursos</strong> - Comida, Madera, Moneda Z, Electricidad</li>
+      </ul>
+
+      <h3>Tus Primeros Héroes</h3>
+      <p>Al comenzar el juego, recibes automáticamente dos héroes:</p>
+      
+      <div class="hero-card">
+        <h4>Angelina <span class="hero-rank rank-b">RANGO B</span></h4>
+        <p><strong>Calidad:</strong> Héroe básico de inicio</p>
+        <p><strong>Uso recomendado:</strong> Completar misiones iniciales y combate contra zombies en las primeras etapas. No es un héroe de alto nivel, pero es funcional para empezar.</p>
+      </div>
+      
+      <div class="hero-card">
+        <h4>William <span class="hero-rank rank-b">RANGO B</span></h4>
+        <p><strong>Calidad:</strong> Héroe básico de inicio</p>
+        <p><strong>Uso recomendado:</strong> Similar a Angelina, útil para las primeras etapas pero no es una inversión a largo plazo. Úsalo temporalmente mientras consigues héroes mejores.</p>
+      </div>
+
+      <div class="warning-box">
+        <h4>⚠️ Importante - No inviertas mucho en estos héroes</h4>
+        <p>Angelina y William son héroes <strong>rango B</strong> (la calidad más baja). El juego tiene héroes <strong>rango A y S</strong> que son mucho mejores. <strong>No gastes recursos valiosos mejorando a Angelina o William</strong> - solo úsalos para completar el tutorial y las primeras etapas.</p>
+      </div>
+
+      <h3>Sistema de Etapas</h3>
+      <p>El juego tiene un sistema de <strong>etapas</strong> que desbloqueas al avanzar en el mapa matando zombies. Algunas etapas clave:</p>
+      
+      <ul>
+        <li><strong>Etapa 5:</strong> Aparece oferta especial de <strong>Sophia por $1</strong> (¡COMPRAR!)</li>
+        <li><strong>Etapa 7:</strong> Desbloqueas el <strong>Club</strong> (reclutamiento de héroes)</li>
+        <li><strong>Etapa 14:</strong> Recibes a <strong>Katrina</strong> gratis (héroe rango A)</li>
+      </ul>
+    </section>
+
+    <!-- Oferta de Sophia -->
+    <section class="section-block">
+      <h2>💎 Oferta Imperdible: Sophia por $1 (Etapa 45)</h2>
+      
+      <div class="success-box">
+        <h4>✅ MEJOR INVERSIÓN DEL JUEGO</h4>
+        <p>Al llegar a la <strong>Etapa 5</strong>, te aparecerá una oferta especial para comprar a <strong>Sophia por $1</strong>. Esta es <strong>LA MEJOR COMPRA que puedes hacer</strong> en todo el juego si vas a gastar dinero.</p>
+      </div>
+
+      <div class="hero-card">
+        <h4>Sophia <span class="hero-rank rank-s">RANGO S ⭐</span></h4>
+        <p><strong>Costo:</strong> $1 USD (oferta especial única)</p>
+        <p><strong>Habilidad Especial:</strong> Bonificación de Construcción</p>
+        
+        <p><strong>Beneficios de su habilidad:</strong></p>
+        <ul>
+          <li>Tiempo de construcción gratuito: +90 minutos base</li>
+          <li>Velocidad de construcción: +33% base</li>
+          <li>⭐ +15 min construcción gratuita</li>
+          <li>⭐⭐ +10% velocidad construcción</li>
+          <li>⭐⭐⭐ +60 min construcción gratuita</li>
+          <li>⭐⭐⭐⭐ -5% consumo de recursos</li>
+          <li>⭐⭐⭐⭐⭐ -10% consumo de recursos</li>
+        </ul>
+        
+        <p><strong>Recompensas del paquete:</strong></p>
+        <ul>
+          <li>Sophia (héroe S) + habilidad de construcción</li>
+          <li>Personalización de perfil</li>
+          <li>100 Diamantes</li>
+          <li>Recursos básicos</li>
+          <li>Día 2: 5 fragmentos S de Sophia</li>
+          <li>Día 3: 5 fragmentos S de Sophia + Caja de Armadura B</li>
+        </ul>
+        
+        <p><strong>Por qué es esencial:</strong> Sophia acelera TODAS tus construcciones, ahorrándote días (literalmente) de tiempo de espera. Además, es un héroe rango S que normalmente cuesta mucho más conseguir.</p>
+      </div>
+
+      <div class="tip-box">
+        <h4>💡 Dato importante sobre VIP</h4>
+        <p>Si llegas a <strong>VIP nivel 5</strong>, puedes obtener a Sophia GRATIS. realizando misiones de Laura, Sin embargo, esto es muy difícil de conseguir sin gastar, por lo que la oferta de $1 es extremadamente buena.</p>
+      </div>
+    </section>
+
+    <!-- Segundo Constructor -->
+    <section class="section-block">
+      <h2>🏗️ Segunda Mejor Inversión: Segundo Constructor ($2)</h2>
+      
+      <p>Después de Sophia, la siguiente compra más valiosa es el <strong>Segundo Constructor</strong> por aproximadamente <strong>$2 USD</strong>.</p>
+      
+      <div class="success-box">
+        <h4>✅ Beneficio del Segundo Constructor</h4>
+        <p><strong>Puedes construir/mejorar 2 edificios simultáneamente</strong> en lugar de solo uno. Esto <strong>duplica tu velocidad de progresión</strong> en el juego.</p>
+        
+        <p><strong>Se desbloquea:</strong> A partir de Sede nivel 5</p>
+        
+        <p><strong>Por qué vale la pena:</strong></p>
+        <ul>
+          <li>Ahorras DÍAS de tiempo de juego</li>
+          <li>Puedes mejorar edificios de recursos mientras subes la Sede</li>
+          <li>Progresas el doble de rápido que jugadores sin él</li>
+          <li>Es una inversión única (lo tienes para siempre)</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>💰 Resumen de Inversión Recomendada</h4>
+        <p><strong>Total: $3 USD</strong></p>
+        <ul>
+          <li>$1 - Sophia (héroe S + construcción)</li>
+          <li>$2 - Segundo Constructor (progresión 2x)</li>
+        </ul>
+        <p>Con solo $3, obtienes ventajas MASIVAS que normalmente costarían $50+ en otros juegos similares.</p>
+      </div>
+    </section>
+
+    <!-- Edificios y Progresión -->
+    <section class="section-block">
+      <h2>🏰 Edificios Clave y Orden de Prioridad</h2>
+      
+      <h3>Edificio Principal: Sede</h3>
+      <p>La <strong>Sede Principal</strong> (también llamada simplemente "Sede") es el edificio más importante del juego. <strong>El nivel de tu Sede determina qué nivel pueden alcanzar todos los demás edificios.</strong></p>
+      
+      <div class="tip-box">
+        <h4>💡 Regla de Oro</h4>
+        <p><strong>Siempre prioriza subir la Sede al máximo nivel posible.</strong> Todos los demás edificios están limitados por el nivel de tu Sede.</p>
+      </div>
+
+      <h3>Edificios de Producción de Recursos</h3>
+      <p>Estos edificios generan recursos automáticamente:</p>
+      
+      <ul>
+        <li><strong>Finca:</strong> Produce Comida (recurso MÁS importante - las tropas lo consumen)</li>
+        <li><strong>Aserradero:</strong> Produce Madera (esencial para construcción)</li>
+        <li><strong>Residencia:</strong> Produce Moneda Z (también de eventos/misiones)</li>
+        <li><strong>Generador:</strong> Produce Electricidad (menos crítico - suele sobrar)</li>
+      </ul>
+
+      <h3>Edificios Militares</h3>
+      <p>Para reclutar y gestionar tropas:</p>
+      
+      <div class="hero-card">
+        <h4>Campos de Reclutamiento</h4>
+        <ul>
+          <li><strong>Campo de Tiro:</strong> Recluta soldados tipo francotirador</li>
+          <li><strong>Campo de Motorista:</strong> Recluta unidades motorizadas</li>
+          <li><strong>Campo de Asaltantes:</strong> Recluta unidades de asalto</li>
+        </ul>
+        <p><strong>Importante:</strong> Mientras más alto el nivel del campo, mejor calidad de tropas puedes reclutar.</p>
+      </div>
+
+      <div class="hero-card">
+        <h4>Centro Militar</h4>
+        <p><strong>Función:</strong> Gestiona tus tropas y determina la capacidad máxima de soldados que puedes tener.</p>
+        <p>El nivel del Centro Militar = capacidad total de tropas. Mejóralo constantemente.</p>
+      </div>
+
+      <h3>Otros Edificios Importantes</h3>
+      <ul>
+        <li><strong>Centro de Alianza:</strong> Se desbloquea en Sede nivel 5. Te permite unirte a alianzas, recibir ayuda en construcciones/investigaciones, y refuerzos si te atacan.</li>
+        <li><strong>Laboratorio:</strong> Se desbloquea en Sede nivel 7. Aquí investigas tecnologías que dan buffs permanentes.</li>
+        <li><strong>Club:</strong> Se desbloquea en Etapa 7. Reclutamiento de héroes nuevos con tickets.</li>
+        <li><strong>Hospital:</strong> Cura tropas heridas (cuesta recursos pero evita perderlas)</li>
+      </ul>
+
+      <div class="warning-box">
+        <h4>⚠️ Sobre el Almacén</h4>
+        <p><strong>No priorices mejorar el Almacén</strong> a menos que sea requisito para subir la Sede. Razón: aunque protege recursos de saqueos, si te atacan igual tendrás tropas heridas en el Hospital que cuestan recursos curar. Es mejor <strong>gastar tus recursos en mejoras productivas</strong> que acumularlos.</p>
+      </div>
+
+      <h3>Orden de Prioridades Recomendado</h3>
+      <ol class="priority-list">
+        <li><strong>Sede Principal</strong> - Siempre al máximo posible</li>
+        <li><strong>Campos de Tropas</strong> - Para tener ejército fuerte</li>
+        <li><strong>Centro Militar</strong> - Aumenta capacidad de tropas</li>
+        <li><strong>Finca y Aserradero</strong> - Producción de recursos críticos</li>
+        <li><strong>Laboratorio</strong> - Tecnologías dan ventaja permanente</li>
+        <li><strong>Centro de Alianza</strong> - Ayuda y refuerzos</li>
+        <li><strong>Edificios requeridos</strong> - Los que pida la Sede para subir</li>
+      </ol>
+    </section>
+
+    <!-- Formaciones y Combate -->
+    <section class="section-block">
+      <h2>⚔️ Sistema de Formaciones y Combate</h2>
+      
+      <h3>¿Qué son las Formaciones?</h3>
+      <p>Las formaciones son tus <strong>equipos de combate</strong>. Cada formación puede tener:</p>
+      <ul>
+        <li><strong>5 héroes</strong> (líderes que dan habilidades especiales)</li>
+        <li><strong>Tropas</strong> (soldados que pelean bajo el mando de los héroes)</li>
+      </ul>
+
+      <h3>Desbloqueo Progresivo</h3>
+      <p>Las formaciones se desbloquean conforme subes de nivel:</p>
+      <ul>
+        <li><strong>Formación 1:</strong> Disponible desde el inicio</li>
+        <li><strong>Formación 2:</strong> Se desbloquea en niveles medios</li>
+        <li><strong>Formación 3:</strong> Se desbloquea aproximadamente en nivel 14 de Sede</li>
+      </ul>
+
+      <div class="tip-box">
+        <h4>💡 Estrategia de Formaciones</h4>
+        <p><strong>Formación 1:</strong> Tu equipo más fuerte. Úsala para combate PvP y zombies difíciles.</p>
+        <p><strong>Formación 2 y 3:</strong> Equipos secundarios para farmeo de recursos, misiones más fáciles, o como refuerzo.</p>
+        <p><strong>Invierte principalmente en héroes de Formación 1</strong> - no disperses recursos mejorando 15 héroes a la vez.</p>
+      </div>
+    </section>
+
+    <!-- Héroes -->
+    <section class="section-block">
+      <h2>🦸 Guía de Héroes para Principiantes</h2>
+      
+      <h3>Sistema de Rangos</h3>
+      <p>Los héroes se clasifican en 3 rangos de calidad:</p>
+      <ul>
+        <li><span class="hero-rank rank-s">RANGO S</span> - Mejores héroes del juego (muy difíciles de conseguir)</li>
+        <li><span class="hero-rank rank-a">RANGO A</span> - Buenos héroes (accesibles y viables)</li>
+        <li><span class="hero-rank rank-b">RANGO B</span> - Héroes básicos (solo para inicio)</li>
+      </ul>
+
+      <h3>Héroes que Obtienes Gratis</h3>
+      
+      <div class="hero-card">
+        <h4>Katrina <span class="hero-rank rank-a">RANGO A</span></h4>
+        <p><strong>Cómo conseguirla:</strong> Gratis al llegar a Etapa 14</p>
+        <p><strong>Calidad:</strong> Buena héroe para principiantes</p>
+        <p><strong>Versión S:</strong> Más adelante puedes desbloquear su versión S matando zombies en misiones especiales</p>
+        <p><strong>Recomendación:</strong> Vale la pena invertir en ella - es un héroe sólido que te servirá a largo plazo</p>
+      </div>
+
+      <div class="hero-card">
+        <h4>Fiona <span class="hero-rank rank-a">RANGO A</span></h4>
+        <p><strong>Cómo conseguirla:</strong> Reclutamiento en el Club (Etapa 7+) con tickets</p>
+        <p><strong>Calidad:</strong> Excelente para principiantes</p>
+        <p><strong>Recomendación:</strong> Si la consigues, es una gran opción para tu Formación 1. Invierte en ella.</p>
+      </div>
+
+      <h3>Club - Reclutamiento de Héroes</h3>
+      <p>Al llegar a <strong>Etapa 7</strong>, desbloqueas el <strong>Club</strong> donde puedes reclutar héroes usando tickets especiales.</p>
+      
+      <div class="tip-box">
+        <h4>💡 Uso Inteligente de Tickets</h4>
+        <p><strong>Guarda los tickets de reclutamiento</strong> que obtienes en las primeras etapas. Cuando desbloquees el Club, úsalos todos de una vez para tener oportunidad de conseguir héroes buenos.</p>
+        <p><strong>Prioridad de inversión de EXP:</strong></p>
+        <ol>
+          <li>Héroes rango S (si tienes alguno)</li>
+          <li>Héroes rango A (Katrina, Fiona, etc.)</li>
+          <li>NO gastes EXP en héroes rango B</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Alianzas -->
+    <section class="section-block">
+      <h2>🤝 Alianzas - Por Qué Son Cruciales</h2>
+      
+      <p>A partir de <strong>Sede nivel 5</strong>, puedes construir el <strong>Centro de Alianza</strong> y unirte a una alianza.</p>
+
+      <div class="success-box">
+        <h4>✅ Únete a una Alianza FUERTE lo antes posible</h4>
+        <p>Una de las decisiones más importantes en Last Z es <strong>elegir una buena alianza</strong>. No te quedes en alianzas débiles o inactivas - busca alianzas top en tu servidor.</p>
+      </div>
+
+      <h3>Beneficios de Estar en Alianza</h3>
+      <ul>
+        <li><strong>Ayuda en Construcción/Investigación:</strong> Miembros pueden ayudarte a reducir tiempos de espera</li>
+        <li><strong>Refuerzos:</strong> Si alguien te ataca, tu alianza puede defenderte</li>
+        <li><strong>Tecnologías de Alianza:</strong> Buffs permanentes compartidos (se investigan en el Laboratorio)</li>
+        <li><strong>Eventos de Alianza:</strong> Recompensas grupales mucho mejores que solo</li>
+        <li><strong>Donaciones:</strong> Intercambio de recursos con otros miembros</li>
+        <li><strong>Versus de Alianza:</strong> Evento semanal con grandes recompensas (ver sección dedicada abajo)</li>
+      </ul>
+
+      <h3>Cómo Elegir una Buena Alianza</h3>
+      <ul class="checklist">
+        <li>Mínimo 20-30 miembros ACTIVOS diariamente</li>
+        <li>Nivel alto de tecnologías de alianza</li>
+        <li>Participación activa en eventos</li>
+        <li>Comunicación en chat (Discord recomendado)</li>
+        <li>Territorios controlados en el mapa</li>
+      </ul>
+
+      <div class="warning-box">
+        <h4>⚠️ Error Común</h4>
+        <p><strong>No te quedes en alianzas débiles por lealtad.</strong> Si tu alianza no es activa o no participa en eventos, busca una mejor. Cambiar de alianza es normal y necesario para progresar.</p>
+      </div>
+    </section>
+
+    <!-- Eventos -->
+    <section class="section-block">
+      <h2>🎯 Eventos Clave: Preparación Total</h2>
+      
+      <p><strong>Preparación Total</strong> es uno de los eventos más importantes del juego. Funciona en <strong>ciclos de 4 horas</strong> con diferentes fases.</p>
+
+      <h3>¿Cómo Funciona?</h3>
+      <p>Cada 4 horas, el evento cambia de fase. En cada fase, ciertas acciones dan <strong>puntos multiplicados</strong>:</p>
+
+      <div class="event-schedule">
+        <div class="event-day">
+          <h4>🦸 Fase Héroes</h4>
+          <p>Gasta EXP de héroes</p>
+          <p>Mejora habilidades</p>
+          <p>Sube de nivel héroes</p>
+        </div>
+        
+        <div class="event-day">
+          <h4>🧟 Fase Zombies</h4>
+          <p>Mata zombies en mapa</p>
+          <p>Completa reuniones</p>
+          <p>Limpia etapas</p>
+        </div>
+        
+        <div class="event-day">
+          <h4>🏗️ Fase Construcción</h4>
+          <p>Mejora edificios</p>
+          <p>Usa aceleradores</p>
+          <p>Completa construcciones</p>
+        </div>
+        
+        <div class="event-day">
+          <h4>⚔️ Fase Tropas</h4>
+          <p>Recluta soldados</p>
+          <p>Entrena ejército</p>
+          <p>Mejora campos</p>
+        </div>
+        
+        <div class="event-day">
+          <h4>🔬 Fase Investigación</h4>
+          <p>Investiga tecnologías</p>
+          <p>Usa aceleradores</p>
+          <p>Completa estudios</p>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <h4>💡 Estrategia para Preparación Total</h4>
+        <p><strong>NO hagas todo inmediatamente</strong> - espera la fase correcta:</p>
+        <ul>
+          <li><strong>Acumula EXP de héroes</strong> → Gástala en Fase Héroes</li>
+          <li><strong>Guarda aceleradores de construcción</strong> → Úsalos en Fase Construcción</li>
+          <li><strong>Planea investigaciones</strong> → Inícialas en Fase Investigación</li>
+          <li><strong>Recluta tropas en masa</strong> → Fase Tropas</li>
+        </ul>
+        <p>Así <strong>multiplicas tus puntos</strong> y obtienes mejores recompensas del evento.</p>
+      </div>
+
+      <div class="tip-box">
+        <h4>⏰ Optimización de Timing</h4>
+        <p><strong>Antes de desconectarte por la noche:</strong></p>
+        <ul>
+          <li>Inicia construcciones/investigaciones largas (6-8 horas)</li>
+          <li>Activa buffs de producción de recursos</li>
+          <li>Deja tropas recolectando en el mapa</li>
+          <li>Si hay Fase Construcción activa, usa aceleradores antes de dormir</li>
+        </ul>
+        <p>Aprovecha las horas que NO estás jugando para progreso pasivo.</p>
+      </div>
+    </section>
+
+    <!-- Versus de Alianza -->
+    <section class="section-block">
+      <h2>🏆 Versus de Alianza (Evento Semanal)</h2>
+      
+      <p>Después de <strong>14 días</strong> jugando, cada lunes comienza el <strong>Versus de Alianza</strong>, un evento competitivo de una semana completa.</p>
+
+      <h3>Calendario Semanal</h3>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Lunes: Vehículos 🚗</h3>
+          <p><strong>Objetivo:</strong> Mejorar vehículos usando planos y llaves</p>
+          <p><strong>Puntos extras:</strong> Cada mejora de vehículo suma puntos para tu alianza</p>
+          <p><strong>Tip:</strong> Guarda planos y llaves la semana anterior para usarlos este día</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Martes: Refugiados 🏕️</h3>
+          <p><strong>Objetivo:</strong> Construir refugios y reclutar refugiados</p>
+          <p><strong>Puntos extras:</strong> Construcción y reclutamiento de refugiados</p>
+          <p><strong>Tip:</strong> Los refugiados "Mayordomo" y "Diplomático" son los más valiosos</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Miércoles: Investigación 🔬</h3>
+          <p><strong>Objetivo:</strong> Investigar tecnologías en el Laboratorio</p>
+          <p><strong>Puntos extras:</strong> Iniciar y completar investigaciones</p>
+          <p><strong>Tip:</strong> Guarda investigaciones pendientes para este día</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Jueves: Héroes 🦸</h3>
+          <p><strong>Objetivo:</strong> Mejorar héroes, habilidades y armaduras</p>
+          <p><strong>Puntos extras:</strong> Subir nivel, mejorar habilidades, equipar armaduras</p>
+          <p><strong>Tip:</strong> Combina con Preparación Total si hay Fase Héroes</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Viernes: Tropas ⚔️</h3>
+          <p><strong>Objetivo:</strong> Reclutar soldados en masa</p>
+          <p><strong>Puntos extras:</strong> Cantidad de tropas entrenadas</p>
+          <p><strong>Tip:</strong> Ahorra recursos toda la semana para reclutar mucho este día</p>
+        </div>
+
+        <div class="timeline-item">
+          <h3>Sábado: Combate 💥</h3>
+          <p><strong>Objetivo:</strong> Matar soldados enemigos</p>
+          <p><strong>Puntos extras:</strong> Atacar alianza rival = más puntos</p>
+          <p><strong>Tip:</strong> Este día hay guerra total - coordínate con tu alianza</p>
+        </div>
+      </div>
+
+      <div class="success-box">
+        <h4>✅ Estrategia de Gestión de Recursos</h4>
+        <p><strong>Planifica con anticipación:</strong></p>
+        <ul>
+          <li>Guarda recursos días antes del Versus</li>
+          <li>No gastes todo en lunes - distribuye a lo largo de la semana</li>
+          <li>Si puedes hacer que Versus coincida con Preparación Total = doble beneficio</li>
+          <li>Comunícate con tu alianza sobre estrategia semanal</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Meta de 8M de Poder -->
+    <section class="section-block">
+      <h2>💪 Meta Importante: 8 Millones de Poder</h2>
+      
+      <p>Una de las primeras metas importantes es llegar a <strong>8 millones de poder general</strong>.</p>
+
+      <div class="success-box">
+        <h4>🏆 Recompensa: Skin de Fortaleza de Combate</h4>
+        <p>Al alcanzar 8M de poder, recibes una <strong>skin premium para tu Sede</strong> con excelentes buffs:</p>
+        <ul>
+          <li>ATQ de Tropa +8.0%</li>
+          <li>Buff EXP de Héroes +10.0%</li>
+          <li>Bonus Monedas Z +10.0%</li>
+        </ul>
+      </div>
+
+      <h3>¿Cómo Aumentar Poder Rápidamente?</h3>
+      <ol class="priority-list">
+        <li><strong>Reclutar tropas</strong> - Lo que más poder da (miles por reclutamiento)</li>
+        <li><strong>Mejorar edificios</strong> - Cada nivel suma bastante poder</li>
+        <li><strong>Subir nivel de héroes</strong> - Invierte EXP en tus mejores héroes</li>
+        <li><strong>Investigar tecnologías</strong> - Poder permanente</li>
+        <li><strong>Completar misiones</strong> - Dan recursos para todo lo anterior</li>
+      </ol>
+
+      <div class="tip-box">
+        <h4>💡 Enfoque Eficiente</h4>
+        <p>Para llegar a 8M rápido:</p>
+        <ul>
+          <li>Mejora tus <strong>Campos de Tropas</strong> para reclutar soldados de mayor nivel</li>
+          <li>Sube el <strong>Centro Militar</strong> para tener más capacidad</li>
+          <li>Recluta constantemente - las tropas son poder masivo</li>
+          <li>No desperdicies recursos en edificios decorativos</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Errores Comunes -->
+    <section class="section-block">
+      <h2>🚫 Errores Comunes a Evitar</h2>
+      
+      <div class="warning-box">
+        <h4>❌ Los Errores Más Grandes de Principiantes</h4>
+        
+        <p><strong>1. Atacar sedes más fuertes que tú</strong></p>
+        <p>Reconoce SIEMPRE antes de atacar. Si la sede tiene más poder que tú, <strong>perderás tropas sin ganar nada</strong>. Ataca solo sedes más débiles para saquear recursos eficientemente.</p>
+        
+        <p><strong>2. Quedarse en alianzas débiles mucho tiempo</strong></p>
+        <p>La lealtad está bien, pero si tu alianza no es activa, <strong>te está frenando</strong>. Busca alianzas top para crecer más rápido.</p>
+        
+        <p><strong>3. Frustrarse porque otros gastan dinero</strong></p>
+        <p>Habrá jugadores P2W (pay to win) más fuertes. <strong>No te compares</strong> - enfócate en tu propio progreso. El juego es totalmente jugable sin gastar (o gastando poco).</p>
+        
+        <p><strong>4. Gastar diamantes en cosas equivocadas</strong></p>
+        <p><strong>NO gastes diamantes en:</strong></p>
+        <ul>
+          <li>Aceleradores de tiempo (usa los gratuitos de eventos)</li>
+          <li>Recursos básicos (farmea en mapa)</li>
+          <li>Cofres aleatorios (mala inversión)</li>
+        </ul>
+        <p><strong>SÍ gasta diamantes en:</strong></p>
+        <ul>
+          <li>Nivel VIP (mejores buffs del juego)</li>
+          <li>Segundo constructor (si no lo compraste con $)</li>
+          <li>Eventos con recompensas garantizadas</li>
+        </ul>
+        
+        <p><strong>5. Invertir en héroes rango B</strong></p>
+        <p>No malgastes recursos mejorando a Angelina, William u otros héroes B. <strong>Espera conseguir héroes A o S</strong> antes de invertir fuerte.</p>
+        
+        <p><strong>6. No usar aceleradores gratuitos</strong></p>
+        <p>Los aceleradores de eventos DEBEN usarse, especialmente en Preparación Total. <strong>No los acumules indefinidamente</strong> - úsalos estratégicamente.</p>
+        
+        <p><strong>7. Mejorar el Almacén demasiado</strong></p>
+        <p>A menos que sea requisito para subir Sede, <strong>no priorices el Almacén</strong>. Es mejor gastar recursos en mejoras productivas.</p>
+        
+        <p><strong>8. No participar en eventos</strong></p>
+        <p>Los eventos como Preparación Total y Versus de Alianza dan <strong>recompensas enormes</strong>. Participar activamente = progresar 2-3x más rápido.</p>
+      </div>
+    </section>
+
+    <!-- Tips de Optimización -->
+    <section class="section-block">
+      <h2>⚡ Tips de Optimización y Timing</h2>
+      
+      <h3>Maximiza Tu Tiempo (Incluso Cuando No Juegas)</h3>
+      
+      <div class="tip-box">
+        <h4>🌙 Antes de Dormir (Rutina Nocturna)</h4>
+        <ul>
+          <li><strong>Inicia construcciones largas</strong> (6-8 horas) para que terminen mientras duermes</li>
+          <li><strong>Activa buffs de producción</strong> de recursos (+25% o +50%) - maximiza mientras estás offline</li>
+          <li><strong>Envía formaciones a recolectar</strong> en tiles de recursos de 6-8 horas</li>
+          <li><strong>Inicia investigaciones</strong> que tomen toda la noche</li>
+          <li><strong>Recluta tropas</strong> en masa si tienes recursos</li>
+          <li>Si hay evento activo, <strong>planea qué hacer al despertar</strong></li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>☀️ Al Despertar (Rutina Matutina)</h4>
+        <ul>
+          <li>Recolecta producción de recursos de todos los edificios</li>
+          <li>Revisa tropas que regresaron de farmear - envía de nuevo</li>
+          <li>Completa misiones diarias para recompensas</li>
+          <li>Revisa eventos activos (Preparación Total, Versus Alianza)</li>
+          <li>Ayuda a miembros de alianza en construcciones</li>
+        </ul>
+      </div>
+
+      <h3>Gestión de Recursos Inteligente</h3>
+      
+      <div class="tip-box">
+        <h4>💰 Cuándo Gastar vs Cuándo Guardar</h4>
+        
+        <p><strong>GASTA recursos cuando:</strong></p>
+        <ul>
+          <li>Hay fase/evento que multiplica puntos (Preparación Total)</li>
+          <li>Es día específico de Versus Alianza</li>
+          <li>Necesitas completar requisitos para subir Sede</li>
+          <li>Tienes escudo activo y estás cerca del límite de almacenamiento</li>
+        </ul>
+        
+        <p><strong>GUARDA recursos cuando:</strong></p>
+        <ul>
+          <li>Se acerca Versus Alianza (especialmente viernes de tropas)</li>
+          <li>Quieres hacer una mejora grande de Sede</li>
+          <li>Hay evento próximo con recompensas de gasto</li>
+          <li>No tienes escudo y acumulas demasiado (te atacarán)</li>
+        </ul>
+      </div>
+
+      <h3>PvP y Saqueo</h3>
+      
+      <div class="tip-box">
+        <h4>⚔️ Estrategia de Ataque</h4>
+        <p><strong>Cuándo empezar a atacar:</strong> Día 3-4, o cuando llegues a Sede nivel 10+</p>
+        
+        <p><strong>Proceso correcto:</strong></p>
+        <ol>
+          <li><strong>Reconocimiento:</strong> SIEMPRE reconoce primero (no cuesta nada)</li>
+          <li><strong>Verifica recursos:</strong> Asegúrate que tenga buena Comida y/o Madera</li>
+          <li><strong>Verifica poder:</strong> Solo ataca sedes MÁS DÉBILES que tú</li>
+          <li><strong>Ataca:</strong> Envía tu Formación 1 (la más fuerte)</li>
+          <li><strong>Regreso:</strong> Activa "Regreso automático" para que tropas vuelvan solas</li>
+        </ol>
+        
+        <p><strong>Recursos que puedes saquear:</strong></p>
+        <ul>
+          <li>✅ Comida (recurso principal a farmear)</li>
+          <li>✅ Madera (también muy útil)</li>
+          <li>❌ Moneda Z (requiere licencia especial - ignorar al inicio)</li>
+          <li>⚡ Electricidad (suele sobrar, no priorices)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Progresión Realista -->
+    <section class="section-block">
+      <h2>📊 Timeline de Progresión (Qué Esperar)</h2>
+      
+      <h3>Primera Semana</h3>
+      <ul class="checklist">
+        <li><strong>Meta:</strong> Llegar a Sede nivel 15</li>
+        <li>Desbloquear Club (Etapa 7) y reclutar primeros héroes buenos</li>
+        <li>Conseguir a Katrina (Etapa 14)</li>
+        <li>Unirte a alianza activa (Sede nivel 5+)</li>
+        <li>Si llegas a Etapa 45, comprar Sophia por $1</li>
+        <li>Comprar 2do constructor si vas a invertir</li>
+      </ul>
+
+      <h3>Semanas 2-3</h3>
+      <ul class="checklist">
+        <li>Trabajar hacia 8M de poder (skin de Fortaleza)</li>
+        <li>Participar en primer Versus de Alianza (después de día 14)</li>
+        <li>Mejorar Campos de Tropas para soldados de mayor nivel</li>
+        <li>Comenzar a farmear sedes más débiles para recursos</li>
+      </ul>
+
+      <h3>Primer Mes</h3>
+      <ul class="checklist">
+        <li>Sede nivel 18-20 (depende de actividad y $)</li>
+        <li>Formación 1 sólida con héroes A/S</li>
+        <li>Participación activa en todos los eventos</li>
+        <li>Contribución importante en tu alianza</li>
+      </ul>
+
+      <div class="tip-box">
+        <h4>⏰ Tiempo Real de Juego</h4>
+        <p><strong>Jugando 2-3 horas diarias + rutinas nocturnas:</strong></p>
+        <ul>
+          <li>Sede 15: Primera semana ✅</li>
+          <li>8M poder: 2-3 semanas</li>
+          <li>Sede 20: 3-4 semanas</li>
+        </ul>
+        <p>Con Sophia + 2do Constructor, estos tiempos se reducen ~30%.</p>
+      </div>
+    </section>
+
+    <!-- Consejo Final -->
+    <section class="section-block">
+      <h2>💎 El Consejo Más Importante</h2>
+      
+      <div class="success-box">
+        <h4>🏆 Si solo pudieras seguir UN consejo...</h4>
+        <p><strong>Únete a una alianza top lo antes posible e invierte en VIP.</strong></p>
+        
+        <p>Razones:</p>
+        <ul>
+          <li>Una buena alianza te hace progresar <strong>2-3x más rápido</strong></li>
+          <li>VIP da buffs permanentes que se acumulan para siempre</li>
+          <li>Participar en eventos de alianza da recursos masivos</li>
+          <li>Apoyo de veteranos te enseña estrategias avanzadas</li>
+          <li>Diversión: jugar solo es aburrido, con alianza activa es épico</li>
+        </ul>
+      </div>
+
+      <div class="tip-box">
+        <h4>💭 Filosofía de Juego a Largo Plazo</h4>
+        <p>Last Z es un <strong>maratón, no un sprint</strong>:</p>
+        <ul>
+          <li>No te frustres por jugadores P2W más fuertes</li>
+          <li>Progresa a tu ritmo - el juego es disfrutable F2P</li>
+          <li>Invierte en mejoras permanentes (VIP, tecnologías)</li>
+          <li>Participa en eventos - ahí está el verdadero progreso</li>
+          <li>Comunidad > Poder individual - alianza fuerte = éxito</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Enlaces Relacionados -->
+    <section class="section-block">
+      <h2>📚 Guías Relacionadas</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+        <a href="edificios.html" style="display: block; padding: 1.5rem; background: var(--secundario); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s;">
+          <h4 style="color: var(--acento); margin: 0 0 0.5rem 0;">🏰 Guía de Edificios</h4>
+          <p style="color: var(--muted); margin: 0; font-size: 0.9rem;">Orden óptimo de mejoras y prioridades</p>
+        </a>
+        
+        <a href="heroes.html" style="display: block; padding: 1.5rem; background: var(--secundario); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s;">
+          <h4 style="color: var(--acento); margin: 0 0 0.5rem 0;">⚔️ Guía de Héroes</h4>
+          <p style="color: var(--muted); margin: 0; font-size: 0.9rem;">Tier list y builds recomendados</p>
+        </a>
+        
+        <a href="recursos.html" style="display: block; padding: 1.5rem; background: var(--secundario); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s;">
+          <h4 style="color: var(--acento); margin: 0 0 0.5rem 0;">💰 Guía de Recursos</h4>
+          <p style="color: var(--muted); margin: 0; font-size: 0.9rem;">Farming eficiente y gestión económica</p>
+        </a>
+        
+        <a href="eventos.html" style="display: block; padding: 1.5rem; background: var(--secundario); border-radius: 8px; text-decoration: none; border: 2px solid transparent; transition: all 0.3s;">
+          <h4 style="color: var(--acento); margin: 0 0 0.5rem 0;">🎯 Guía de Eventos</h4>
+          <p style="color: var(--muted); margin: 0; font-size: 0.9rem;">Calendario y estrategias para eventos</p>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-links">
+        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+        <span class="separator">•</span>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <span class="separator">•</span>
+        <a href="terminos.html">Términos y Condiciones</a>
+        <span class="separator">•</span>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Aviso Importante</strong></p>
+        <p>Last Z Wiki es un sitio web <strong>no oficial</strong> creado por fans para la comunidad de Last Z Survival Shooter.</p>
+        <p>No estamos afiliados, asociados, autorizados, respaldados por, ni oficialmente conectados con los desarrolladores del juego.</p>
+        <p>Todas las marcas comerciales, logos e imágenes del juego son propiedad de sus respectivos dueños.</p>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Creado con ❤️ para la comunidad.</p>
+        <p class="footer-meta">Última actualización: Febrero 2026</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>
