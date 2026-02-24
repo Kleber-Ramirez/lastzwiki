@@ -294,24 +294,20 @@ function applyFilters() {
     
     let shouldShow = false;
     
-    // LÓGICA PARA EDIFICIOS DE TEMPORADA (s1, s2, s3, s4)
+    // LÓGICA PARA EDIFICIOS DE TEMPORADA (s2, s3, s4, s5)
     if (cardSeason && cardSeason !== 'general') {
-      if (currentSeason === 'all') {
-        // ALL muestra todos los edificios de temporada
-        shouldShow = true;
-      } else {
-        // Filtro específico (s1, s2, s3, s4)
-        shouldShow = cardSeason === currentSeason;
-      }
+      // Solo mostrar si se seleccionó temporada específica (NO en "all")
+      shouldShow = (currentSeason !== 'all' && cardSeason === currentSeason);
     } 
-    // LÓGICA PARA EDIFICIOS GENERALES (data-season="general")
+    // LÓGICA PARA EDIFICIOS GENERALES
     else if (cardSeason === 'general') {
-      if (currentCategory === 'all') {
-        // "Todos" muestra todos los edificios generales
-        shouldShow = true;
-      } else {
-        // Filtro por categoría específica (recursos, tropas, etc.)
-        shouldShow = cardCategory === currentCategory;
+      // Solo mostrar si NO hay temporada activa (o está en "all")
+      if (currentSeason === 'all') {
+        if (currentCategory === 'all') {
+          shouldShow = true;
+        } else {
+          shouldShow = cardCategory === currentCategory;
+        }
       }
     }
     

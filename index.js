@@ -616,7 +616,7 @@ tip10: `
 
 tip11: `
   <h2>⚔️ Regreso Automático de Tropas</h2>
-  <img src="img-tip-regreso-1.jpg" alt="Opciones de ataque">
+  <img src="img-tip-regreso-1.png" alt="Opciones de ataque">
   
   <h3>❌ Problema Común</h3>
   <p>Muchos jugadores atacan objetivos <b>(sedes, etc.)</b> y después de ganar, sus tropas <b>se quedan en el objetivo</b>. Esto significa que tienes que:</p>
@@ -648,7 +648,7 @@ tip11: `
   
   <p><b>Paso 5:</b> <b>Asegúrate de que esté marcado</b> (con un ✓ check verde).</p>
 
-  <img src="img-tip-regreso-2.jpg" alt="Regreso automático activado">
+  <img src="img-tip-regreso-2.png" alt="Regreso automático activado">
   
   <p><b>Paso 6:</b> Dale <b>"Marchar"</b> para enviar tu ataque.</p>
 

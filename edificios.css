@@ -4603,3 +4603,208 @@ img {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ============================================
+   ESTILOS PARA EDIFICIOS DE TEMPORADA S3
+   Agregar al final de edificios.css
+   ============================================ */
+
+/* Badge de temporada en las cards */
+.season-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #c41e3a 0%, #8a0303 100%);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+}
+
+.season-badge.s3 {
+  background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
+  box-shadow: 0 2px 8px rgba(79, 195, 247, 0.3);
+}
+
+.season-badge.priority {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* Badge grande en los modales */
+.season-badge-large {
+  display: inline-block;
+  background: linear-gradient(135deg, #4FC3F7 0%, #0288D1 100%);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(79, 195, 247, 0.4);
+}
+
+.season-badge-large.priority {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: #000;
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.5);
+}
+
+/* Sección de info de temporada en modales */
+.season-info {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+  border-left: 4px solid #4FC3F7;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.season-info.s3 {
+  border-left-color: #4FC3F7;
+}
+
+.season-info p {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+/* Prioridad de edificio */
+.building-priority {
+  background: rgba(196, 30, 58, 0.1);
+  border-left: 4px solid #c41e3a;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-priority.critical {
+  background: rgba(255, 215, 0, 0.1);
+  border-left-color: #FFD700;
+}
+
+.building-priority h4 {
+  color: #c41e3a;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.building-priority.critical h4 {
+  color: #FFD700;
+}
+
+/* Estrategia */
+.building-strategy {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-strategy h4 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.building-strategy ul {
+  margin-left: 1.5rem;
+  line-height: 1.8;
+}
+
+.building-strategy li {
+  margin: 0.5rem 0;
+}
+
+/* Recursos */
+.building-resources {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-resources h4 {
+  color: #4FC3F7;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.building-resources p {
+  margin: 0.5rem 0;
+}
+
+/* Mecánicas */
+.building-mechanics {
+  background: #1a1a1a;
+  border-left: 4px solid #4FC3F7;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-mechanics h4 {
+  color: #4FC3F7;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+/* Beneficios */
+.building-benefits {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-benefits h4 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.building-benefits p {
+  margin: 0.5rem 0;
+}
+
+/* Tips */
+.building-tip {
+  background: rgba(79, 195, 247, 0.1);
+  border-left: 4px solid #4FC3F7;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-tip h4 {
+  color: #4FC3F7;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+/* Comparación */
+.building-comparison {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.building-comparison h4 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.building-comparison p {
+  margin: 0.5rem 0;
+}
+

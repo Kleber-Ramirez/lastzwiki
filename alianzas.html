@@ -5,26 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Favicons -->
- <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" /> 
- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
- <link rel="shortcut icon" href="/favicon.ico" />
- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
- <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
- <link rel="manifest" href="/site.webmanifest" />
-  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+  <link rel="manifest" href="/site.webmanifest" />
 
-  <!-- ==========================================
-       SEO OPTIMIZADO - ALIANZAS
-       ========================================== -->
-  
   <!-- SEO Básico -->
   <title>Alianzas - Last Z Wiki | Guía Completa de Gestión y Estrategia 2026</title>
   <meta name="description" content="Guía completa de alianzas en Last Z Survival Shooter: cómo crear y gestionar tu alianza, tecnologías, donaciones, guerra de alianzas, roles y estrategias para dominar el mapa. Todo lo que necesitas saber para construir una alianza poderosa.">
   <meta name="keywords" content="alianzas Last Z, guía alianzas Last Z, crear alianza Last Z, gestión alianzas, tecnologías alianza Last Z, guerra de alianzas, donaciones alianza, roles alianza Last Z, R4 R5 Last Z, estrategia alianzas, buffs alianza, ayuda alianza, territorio alianza, alianza top Last Z, mejores alianzas, cómo unirse alianza, alliance guide Last Z, alliance management, alliance war, mejores tecnologías alianza, liderazgo alianza Last Z">
   <meta name="author" content="Hypnos - Last Z Wiki">
   <meta name="language" content="Spanish">
-  
-  <!-- Open Graph / Facebook / Discord -->
+
+  <!-- Open Graph -->
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://lastzwiki.com/alianzas.html">
   <meta property="og:title" content="Alianzas - Last Z Wiki | Guía de Gestión y Estrategia">
@@ -32,25 +27,25 @@
   <meta property="og:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
   <meta property="og:site_name" content="Last Z Wiki">
   <meta property="og:locale" content="es_ES">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://lastzwiki.com/alianzas.html">
   <meta name="twitter:title" content="Alianzas - Last Z Wiki">
   <meta name="twitter:description" content="Guía completa de alianzas en Last Z Survival Shooter">
   <meta name="twitter:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
-  
-  <!-- Canonical URL -->
+
+  <!-- Canonical -->
   <link rel="canonical" href="https://lastzwiki.com/alianzas.html">
-  
+
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
-  
+
   <!-- Tema de color -->
   <meta name="theme-color" content="#c41e3a">
-  
-  <!-- Schema.org para Google -->
+
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -69,11 +64,7 @@
     }
   }
   </script>
-  
-  <!-- ==========================================
-       FIN SEO - CSS ORIGINAL
-       ========================================== -->
-    <!-- CSS en orden correcto -->
+
   <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="alianzas.css">
@@ -85,81 +76,210 @@
       <img src="lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
       <h1>Last Z Wiki</h1>
     </div>
-
     <button class="hamburger" aria-label="Menú de navegación">
       <span></span>
       <span></span>
       <span></span>
     </button>
-  
-  <nav class="main-nav">
-    <ul>
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="edificios.html">Edificios</a></li>
-      <li><a href="eventos.html">Eventos</a></li>
-      <li><a class="active" href="alianzas.html">Alianzas</a></li>
-      <li><a href="heroes.html">Heroes</a></li>
-      <li><a href="comunidad.html">Comunidad</a></li>
-    </ul>
-  </nav>
-</header>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="edificios.html">Edificios</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a class="active" href="alianzas.html">Alianzas</a></li>
+        <li><a href="heroes.html">Heroes</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main class="alianzas-container">
+  <main class="alianzas-container">
 
-  <!-- SUB MENÚ (ALIANZA / MIEMBROS / GESTIÓN) -->
-  <section class="alianza-tabs">
-    <button class="tab active" data-tab="alianza">Alianza</button>
-    <button class="tab" data-tab="miembros">Miembros</button>
-    <button class="tab" data-tab="gestion">Gestión</button>
-  </section>
+    <!-- TABS PRINCIPALES -->
+    <section class="alianza-tabs">
+      <button class="tab active" data-tab="alianza">Alianza</button>
+      <button class="tab" data-tab="miembros">Miembros</button>
+      <button class="tab" data-tab="gestion">Gestión</button>
+    </section>
 
-  <!-- CONTENIDO DINÁMICO -->
-  <section id="contenido"></section>
+    <!-- ===================== TAB: ALIANZA ===================== -->
+    <section id="tab-alianza" class="tab-content">
 
-</main>
+      <div class="menu-grid">
+        <button class="menu-btn" data-panel="inteligencia">📘 Inteligencia</button>
+        <button class="menu-btn" data-panel="ayuda">🤝 Ayuda</button>
+        <button class="menu-btn" data-panel="tecnologia">🔬 Tecnología</button>
+        <button class="menu-btn" data-panel="regalos">🎁 Regalos</button>
+        <button class="menu-btn" data-panel="tienda">🛒 Tienda</button>
+        <button class="menu-btn" data-panel="edificio">🏛 Edificio</button>
+        <button class="menu-btn" data-panel="ranking">🏆 Ranking</button>
+        <button class="menu-btn" data-panel="registro">📜 Registro</button>
+        <button class="menu-btn" data-panel="habilidad">🚀 Habilidad</button>
+      </div>
 
-<!-- ========================================= 
-     FOOTER - Añadir en TODAS las páginas
-     ========================================= -->
+      <div class="info-panel panel-placeholder" id="placeholder-alianza">
+        <p>Selecciona una opción para ver su explicación.</p>
+      </div>
 
-<footer class="site-footer">
-  <div class="footer-container">
-    
-    <!-- Links principales -->
-    <div class="footer-links">
-      <a href="sobre-nosotros.html">Sobre Nosotros</a>
-      <span class="separator">•</span>
-      <a href="privacidad.html">Política de Privacidad</a>
-      <span class="separator">•</span>
-      <a href="terminos.html">Términos y Condiciones</a>
-      <span class="separator">•</span>
-      <a href="contacto.html">Contacto</a>
+      <article class="info-panel panel-item hidden" id="inteligencia">
+        <h3>Inteligencia de Alianza</h3>
+        <p>Información de ataques y reuniones de la alianza. Visualiza reuniones activas de aliados, identifica quién ha atacado recientemente a la alianza y marca automáticamente la ubicación del atacante en el mapa para coordinar contraataques.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="ayuda">
+        <h3>Ayuda de Alianza</h3>
+        <p>Visualiza qué miembros de tu alianza necesitan ayuda actualmente y ofréceles asistencia con un click para reducir sus tiempos de construcción, investigación o curación.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="tecnologia">
+        <h3>Tecnología de Alianza</h3>
+        <p>Visualiza todas las tecnologías completadas y en desarrollo de tu alianza. Dona recursos a las tecnologías activas para acelerarlas y obtener puntos de contribución canjeables en la Tienda de Alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="regalos">
+        <h3>Regalos de Alianza</h3>
+        <p>Recompensas por actividad y eventos de la alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="tienda">
+        <h3>Tienda de Alianza</h3>
+        <p>Compra objetos con monedas de alianza obtenidas por contribución.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="edificio">
+        <h3>Edificio de Alianza</h3>
+        <p>Centro principal de la alianza y sus operaciones.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="ranking">
+        <h3>Ranking</h3>
+        <p>Clasificación de alianzas en el servidor.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="registro">
+        <h3>Registro</h3>
+        <p>Historial de acciones realizadas dentro de la alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="habilidad">
+        <h3>Habilidad de Alianza</h3>
+        <p>Habilidades especiales activables por los líderes de la alianza.</p>
+      </article>
+
+    </section>
+
+    <!-- ===================== TAB: MIEMBROS ===================== -->
+    <section id="tab-miembros" class="tab-content hidden">
+
+      <div class="menu-grid">
+        <button class="menu-btn" data-panel="lista-miembros">👥 Miembros</button>
+        <button class="menu-btn" data-panel="rangos">🎖 Rangos</button>
+        <button class="menu-btn" data-panel="actividad">📊 Actividad</button>
+        <button class="menu-btn" data-panel="promociones">⬆⬇ Promociones</button>
+      </div>
+
+      <div class="info-panel panel-placeholder" id="placeholder-miembros">
+        <p>Consulta cómo funciona la sección de miembros.</p>
+      </div>
+
+      <article class="info-panel panel-item hidden" id="lista-miembros">
+        <h3>Lista de Miembros</h3>
+        <p>Muestra todos los integrantes de la alianza y su rango actual.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="rangos">
+        <h3>Rangos</h3>
+        <p>Sistema de jerarquía R5 a R1 dentro de la alianza, con distintos permisos y responsabilidades por nivel.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="actividad">
+        <h3>Actividad</h3>
+        <p>Consulta la última conexión y el nivel de participación de cada miembro.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="promociones">
+        <h3>Promociones</h3>
+        <p>Gestión de ascensos y degradaciones de rango dentro de la alianza.</p>
+      </article>
+
+    </section>
+
+    <!-- ===================== TAB: GESTIÓN ===================== -->
+    <section id="tab-gestion" class="tab-content hidden">
+
+      <div class="menu-grid">
+        <button class="menu-btn" data-panel="configuracion">⚙️ Configuración</button>
+        <button class="menu-btn" data-panel="solicitantes">➕ Solicitantes</button>
+        <button class="menu-btn" data-panel="correo">✉️ Correo</button>
+        <button class="menu-btn" data-panel="beneficios">🎁 Beneficios</button>
+        <button class="menu-btn" data-panel="anuncios">📢 Anuncios</button>
+        <button class="menu-btn" data-panel="salir">🚪 Salir</button>
+      </div>
+
+      <div class="info-panel panel-placeholder" id="placeholder-gestion">
+        <p>Opciones administrativas y de control.</p>
+      </div>
+
+      <article class="info-panel panel-item hidden" id="configuracion">
+        <h3>Configuración</h3>
+        <p>Ajustes generales de la alianza: nombre, descripción, requisitos de ingreso y más.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="solicitantes">
+        <h3>Solicitantes</h3>
+        <p>Gestión de nuevas solicitudes de ingreso: acepta o rechaza jugadores que quieren unirse a la alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="correo">
+        <h3>Correo de Alianza</h3>
+        <p>Sistema de mensajes internos entre miembros y líderes de la alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="beneficios">
+        <h3>Administrar Beneficios</h3>
+        <p>Reparto y gestión de recompensas entre los miembros de la alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="anuncios">
+        <h3>Anuncios</h3>
+        <p>Publicación de comunicados importantes visibles para todos los miembros de la alianza.</p>
+      </article>
+
+      <article class="info-panel panel-item hidden" id="salir">
+        <h3>Salir de la Alianza</h3>
+        <p>Opción para abandonar la alianza actual. El R5 debe transferir el liderazgo antes de poder salir.</p>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+        <span class="separator">•</span>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <span class="separator">•</span>
+        <a href="terminos.html">Términos y Condiciones</a>
+        <span class="separator">•</span>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Aviso Importante</strong></p>
+        <p>Last Z Wiki es un sitio web <strong>no oficial</strong> creado por fans para la comunidad de Last Z Survival Shooter.</p>
+        <p>No estamos afiliados, asociados, autorizados, respaldados por, ni oficialmente conectados con los desarrolladores del juego.</p>
+        <p>Todas las marcas comerciales, logos e imágenes del juego son propiedad de sus respectivos dueños.</p>
+      </div>
+      <div class="footer-social"></div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Creado con ❤️ para la comunidad.</p>
+        <p class="footer-meta">Última actualización: Febrero 2026</p>
+      </div>
     </div>
-    
-    <!-- Disclaimer legal -->
-    <div class="footer-disclaimer">
-      <p><strong>⚠️ Aviso Importante</strong></p>
-      <p>Last Z Wiki es un sitio web <strong>no oficial</strong> creado por fans para la comunidad de Last Z Survival Shooter.</p>
-      <p>No estamos afiliados, asociados, autorizados, respaldados por, ni oficialmente conectados con los desarrolladores del juego.</p>
-      <p>Todas las marcas comerciales, logos e imágenes del juego son propiedad de sus respectivos dueños.</p>
-    </div>
-    
-    <!-- Redes sociales (opcional, puedes añadir después) -->
-    <div class="footer-social">
-      <!-- <a href="#" aria-label="Discord">Discord</a> -->
-      <!-- <a href="#" aria-label="YouTube">YouTube</a> -->
-    </div>
-    
-    <!-- Copyright -->
-    <div class="footer-copyright">
-      <p>&copy; 2026 Last Z Wiki. Creado con ❤️ para la comunidad.</p>
-      <p class="footer-meta">Última actualización: Febrero 2026</p>
-    </div>
-    
-  </div>
-</footer>
+  </footer>
 
-<script src="alianzas.js"></script>
-<script src="menu.js"></script>
+  <script src="alianzas.js"></script>
+  <script src="menu.js"></script>
 </body>
 </html>

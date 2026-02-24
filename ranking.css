@@ -1,0 +1,204 @@
+/* =============================================
+   RANKING - Estilos
+   ============================================= */
+
+.ranking-container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* HEADER */
+.ranking-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.ranking-header h2 {
+  color: var(--acento);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.ranking-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* TABS PRINCIPALES */
+.ranking-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ranking-tabs button {
+  flex: 1;
+  padding: 1rem;
+  background: var(--secundario);
+  color: var(--texto);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.ranking-tabs button.active {
+  background: var(--primario);
+}
+
+/* SUB-FILTRO JUGADORES */
+.subfiltro {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.subfiltro-btn {
+  padding: 0.6rem 1.4rem;
+  background: var(--card-bg);
+  color: var(--texto);
+  border: 1px solid var(--secundario);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.subfiltro-btn:hover {
+  background: var(--primario);
+}
+
+.subfiltro-btn.active {
+  background: var(--acento);
+  border-color: var(--acento);
+}
+
+/* BARRA DE HERRAMIENTAS */
+.ranking-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.ultima-actualizacion {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.btn-reportar {
+  background: var(--acento);
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+.btn-reportar:hover {
+  opacity: 0.85;
+}
+
+/* FILTROS DE RANGO */
+.filtro-servidores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filtro-servidores button {
+  padding: 0.4rem 0.9rem;
+  background: var(--card-bg);
+  color: var(--texto);
+  border: 1px solid var(--secundario);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.3s;
+}
+
+.filtro-servidores button:hover {
+  background: var(--primario);
+}
+
+.filtro-servidores button.active {
+  background: var(--acento);
+  border-color: var(--acento);
+}
+
+/* TABLA */
+.ranking-table-wrapper {
+  overflow-x: auto;
+}
+
+.ranking-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.ranking-table thead {
+  background: var(--primario);
+}
+
+.ranking-table th {
+  padding: 0.9rem 1rem;
+  text-align: left;
+  color: var(--texto);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ranking-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid var(--secundario);
+  color: var(--texto);
+  white-space: nowrap;
+}
+
+.ranking-table tbody tr:hover {
+  background: var(--card-bg);
+}
+
+/* TOP 3 */
+.ranking-table tbody tr:nth-child(1) .pos { color: #FFD700; font-weight: bold; font-size: 1.1rem; }
+.ranking-table tbody tr:nth-child(2) .pos { color: #C0C0C0; font-weight: bold; }
+.ranking-table tbody tr:nth-child(3) .pos { color: #CD7F32; font-weight: bold; }
+
+.pos {
+  font-weight: bold;
+  text-align: center;
+}
+
+.estrellas-col {
+  letter-spacing: 2px;
+}
+
+/* SIN DATOS */
+.sin-datos {
+  text-align: center;
+  padding: 2rem;
+  color: var(--muted);
+  background: var(--card-bg);
+  border-left: 4px solid var(--acento);
+  margin-top: 1rem;
+}
+
+/* UTILIDADES */
+.hidden {
+  display: none;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  animation: fade 0.3s ease;
+}

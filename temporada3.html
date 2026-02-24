@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- SEO -->
+  <title>Temporada 3 Last Z | Guía Completa Monstruos de Nieve 2026</title>
+  <meta name="description" content="Guía completa de la Temporada 3 de Last Z: incursiones de nieve, edificios exclusivos, sala de especialización, ranking de puntos y recompensas. Todo lo que necesitas saber.">
+  <meta name="keywords" content="Last Z temporada 3, Last Z season 3, monstruos nieve, incursiones Last Z, yeti Last Z, boomers nieve, sala especialización">
+  <meta name="author" content="Hypnos - Last Z Wiki">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Temporada 3 Last Z | Guía Completa">
+  <meta property="og:description" content="Guía completa de la Temporada 3 con monstruos de nieve, incursiones, edificios exclusivos y recompensas.">
+  <meta property="og:image" content="https://lastzwiki.com/img-temporada3.png">
+  <meta property="og:url" content="https://lastzwiki.com/temporada-3.html">
+  
+  <!-- Canonical -->
+  <link rel="canonical" href="https://lastzwiki.com/temporada-3.html">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="global.css">
+  <style>
+    /* Estilos específicos Temporada 3 */
+    .s3-header {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+      border: 2px solid #c41e3a;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(196, 30, 58, 0.4);
+    }
+
+    .s3-header h1 {
+      color: #c41e3a;
+      text-shadow: 0 0 20px rgba(196, 30, 58, 0.8);
+      margin-bottom: 0.5rem;
+    }
+
+    .s3-duration {
+      color: #4FC3F7;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+
+    .s3-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+      border: 1px solid #333;
+      border-left: 4px solid #c41e3a;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .s3-section h2 {
+      color: #c41e3a;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .s3-section h3 {
+      color: #fff;
+      margin-top: 1.5rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.3rem;
+    }
+
+    .building-card {
+      background: #1a1a1a;
+      border: 1px solid #4a4a4a;
+      border-left: 3px solid #8a0303;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      transition: all 0.3s;
+    }
+
+    .building-card:hover {
+      border-left-color: #c41e3a;
+      box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+    }
+
+    .building-card h4 {
+      color: #c41e3a;
+      margin-bottom: 0.5rem;
+    }
+
+    .priority-badge {
+      display: inline-block;
+      background: #c41e3a;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+
+    .spec-type {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+      border: 2px solid #8a0303;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .spec-type h3 {
+      color: #c41e3a;
+      margin-bottom: 1rem;
+    }
+
+    .ability {
+      background: #0e0e0e;
+      border-left: 3px solid #8a0303;
+      padding: 1rem;
+      margin: 0.8rem 0;
+      border-radius: 4px;
+    }
+
+    .ability strong {
+      color: #c41e3a;
+    }
+
+    .raid-boss {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+      border: 2px solid #8a0303;
+      border-left: 4px solid #c41e3a;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .raid-boss h4 {
+      color: #c41e3a;
+      margin-bottom: 0.8rem;
+    }
+
+    .tip-box {
+      background: rgba(196, 30, 58, 0.1);
+      border-left: 4px solid #c41e3a;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 4px;
+    }
+
+    .tip-box strong {
+      color: #c41e3a;
+    }
+
+    .reward-category {
+      background: #1a1a1a;
+      border: 1px solid #4a4a4a;
+      border-left: 3px solid #8a0303;
+      border-radius: 8px;
+      padding: 1rem;
+      margin: 1rem 0;
+      transition: all 0.3s;
+    }
+
+    .reward-category:hover {
+      border-left-color: #c41e3a;
+      box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+    }
+
+    .reward-category h4 {
+      color: #c41e3a;
+      margin-bottom: 0.5rem;
+    }
+
+    .reward-rank {
+      color: #4FC3F7;
+      font-weight: bold;
+    }
+
+    .pass-card {
+      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+      border: 2px solid #FFD700;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .pass-card h4 {
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+
+    .pass-price {
+      color: #c41e3a;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      line-height: 1.8;
+    }
+
+    li {
+      margin: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
+      <h1>Last Z Wiki</h1>
+    </div>
+
+    <button class="hamburger" aria-label="Menú de navegación">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="main-nav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="edificios.html">Edificios</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="alianzas.html">Alianzas</a></li>
+        <li><a href="heroes.html">Héroes</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Header Temporada 3 -->
+    <div class="s3-header">
+      <h1>❄️ TEMPORADA 3: MONSTRUOS DE NIEVE</h1>
+      <p>La tundra helada ha llegado a Last Z. Enfrenta zombis congelados, monstruos de nieve y domina el frío eterno.</p>
+      <p class="s3-duration">⏱️ Duración: ~70 días | 🗺️ Mapa: Temática Nieve</p>
+    </div>
+
+    <!-- Introducción -->
+    <section class="s3-section">
+      <h2>📋 Introducción</h2>
+      <p>La Temporada 3 mantiene una estructura similar a la Temporada 2, pero se enfoca mucho más en las <strong>incursiones contra jefes de nieve</strong>. El mapa se transforma en un páramo helado donde nuevos enemigos y desafíos te esperan.</p>
+      
+      <h3>🎯 Características Principales:</h3>
+      <ul>
+        <li>Nuevos enemigos: Zombis de Nieve (Boomers), Leopardo de las Nieves, Yeti Errante</li>
+        <li>Edificios exclusivos de temporada con recursos únicos</li>
+        <li>Sistema de especialización mejorado (Apoyo vs Combate)</li>
+        <li>Eventos de rescate en tormentas de nieve</li>
+        <li>Ranking de alianzas con 7 categorías de recompensas</li>
+      </ul>
+
+      <h3>💰 Pases Recomendados:</h3>
+      <div class="pass-card">
+        <h4>🏆 Pase de Temporada</h4>
+        <p class="pass-price">$25 USD</p>
+        <p>Beneficios durante los 70 días completos. Versión mejorada disponible por $25+ con recompensas adicionales.</p>
+      </div>
+
+      <div class="pass-card">
+        <h4>📅 Pase Semanal</h4>
+        <p class="pass-price">$10 USD</p>
+        <p>Beneficios semanales. Si lo compras 4 veces durante la temporada, obtienes bonificaciones permanentes.</p>
+      </div>
+    </section>
+
+    <!-- Edificios Exclusivos -->
+    <section class="s3-section">
+      <h2>🏗️ Edificios Exclusivos de Temporada 3</h2>
+      <p>Estos edificios solo están disponibles durante la Temporada 3 y utilizan recursos especiales de temporada.</p>
+
+      <div class="building-card">
+        <h4>🧬 Laboratorio Biológico <span class="priority-badge">PRIORIDAD #1</span></h4>
+        <p><strong>Función:</strong> Aumenta tu resistencia a virus, permitiéndote atacar Boomers (Zombis de Nieve) de nivel superior.</p>
+        <p><strong>Recompensa:</strong> Los Boomers otorgan <strong>Núcleos de Hielo</strong>, necesarios para mejorar TODOS los edificios de temporada.</p>
+        <p><strong>Estrategia:</strong> Este es el edificio MÁS IMPORTANTE. Mejóralo sin dudar. Si te faltan pocos lotos, espera; si te faltan muchos, mejora primero el Centro de Control.</p>
+      </div>
+
+      <div class="building-card">
+        <h4>🌸 Centro de Control de Temperatura <span class="priority-badge">PRIORIDAD #2</span></h4>
+        <p><strong>Función:</strong> Produce Flores de Loto, el recurso principal para mejorar edificios de temporada.</p>
+        <p><strong>Estrategia:</strong> Si tienes Núcleos de Hielo suficientes, mejóralo para aumentar la producción de lotos.</p>
+      </div>
+
+      <div class="building-card">
+        <h4>⚔️ Depósito Militar Glacial</h4>
+        <p><strong>Función:</strong> Aumenta el <strong>ATAQUE (ATK)</strong> de tus tropas.</p>
+        <p><strong>Cuándo mejorar:</strong> Después de tener Lab Biológico y Centro de Control a buen nivel.</p>
+      </div>
+
+      <div class="building-card">
+        <h4>🛡️ Fortaleza Glacial</h4>
+        <p><strong>Función:</strong> Aumenta la <strong>DEFENSA</strong> de tus tropas.</p>
+        <p><strong>Cuándo mejorar:</strong> Junto con Depósito Militar para balancear ofensiva/defensiva.</p>
+      </div>
+
+      <div class="building-card">
+        <h4>💥 Comando Militar</h4>
+        <p><strong>Función:</strong> Aumenta el <strong>DAÑO</strong> de tus tropas.</p>
+        <p><strong>Cuándo mejorar:</strong> Para jugadores enfocados en combate y guerra.</p>
+      </div>
+
+      <div class="tip-box">
+        <strong>⚠️ IMPORTANTE:</strong> Según información externa, se otorgarán recompensas individuales basadas en la cantidad de recursos de temporada almacenados al final.
+      </div>
+
+      <h3>📊 Recursos Clave de Temporada:</h3>
+      <ul>
+        <li><strong>🌸 Flores de Loto:</strong> Se producen en el Centro de Control de Temperatura. Necesarias para mejorar el Laboratorio Biológico y otros edificios.</li>
+        <li><strong>❄️ Núcleos de Hielo:</strong> Se obtienen al eliminar Boomers. Son CRÍTICOS porque se necesitan para mejorar TODOS los edificios de temporada.</li>
+      </ul>
+
+      <h3>🎯 Estrategia de Mejora (Primeras 4 Semanas):</h3>
+      <ol>
+        <li><strong>Laboratorio Biológico</strong> - Máxima prioridad. Mejóralo constantemente.</li>
+        <li><strong>Centro de Control de Temperatura</strong> - Segunda prioridad si tienes Núcleos de sobra.</li>
+        <li>Una vez con buena producción de Lotos y Núcleos, mejora los <strong>edificios de poder</strong> (Depósito, Fortaleza, Comando).</li>
+      </ol>
+    </section>
+
+    <!-- Sala de Especialización -->
+    <section class="s3-section">
+      <h2>🎓 Sala de Especialización</h2>
+      <p>Este edificio es compartido entre Temporada 2 y Temporada 3. Aquí eliges tu camino de especialización según tu nivel y estilo de juego.</p>
+
+      <h3>🔀 Sistema de Elección:</h3>
+      <ul>
+        <li><strong>Nivel &lt;30:</strong> Serás <strong>APOYO</strong> por defecto (no hay elección).</li>
+        <li><strong>Nivel 30+:</strong> Puedes elegir entre <strong>APOYO</strong> o <strong>COMBATE</strong>.</li>
+      </ul>
+
+      <!-- APOYO -->
+      <div class="spec-type">
+        <h3>🤝 Especialización: APOYO</h3>
+        <p><strong>Recomendado para:</strong> Todos los jugadores de la alianza. Aumenta enormemente tu progreso individual y ayuda al equipo.</p>
+
+        <div class="ability">
+          <strong>🛡️ Escudo de Amistad</strong>
+          <p>Protege a un compañero de equipo que esté a punto de ser atacado por el enemigo.</p>
+          <p><strong>Cooldown:</strong> 1 vez cada 3 días.</p>
+          <p><strong>Estrategia:</strong> Úsalo rápida e inteligentemente. Guárdalo para los días de guerra y protege a miembros clave.</p>
+        </div>
+
+        <div class="ability">
+          <strong>💎 Maestro del Tesoro</strong>
+          <p>Invoca un cofre que otorga recursos al ser atacado. También aumenta tu capacidad de carga en un 30%.</p>
+          <p><strong>Límite:</strong> Solo puedes atacarlo 2 veces al día.</p>
+          <p><strong>Estrategia:</strong> Atácalo dos veces usando tu primera tropa para maximizar recursos.</p>
+        </div>
+
+        <div class="ability">
+          <strong>🏗️ Construcción Cooperativa</strong>
+          <p>Reduce el tiempo de construcción de un compañero de equipo.</p>
+          <p><strong>Cooldown:</strong> 1 vez al día.</p>
+          <p><strong>Estrategia:</strong> Úsala sabiamente en los días de construcción para ayudar a miembros que estén mejorando edificios importantes.</p>
+        </div>
+
+        <div class="ability">
+          <strong>🔬 Investigación Cooperativa</strong>
+          <p>Reduce el tiempo de investigación de un compañero de equipo.</p>
+          <p><strong>Cooldown:</strong> 1 vez al día.</p>
+          <p><strong>Estrategia:</strong> Similar a Construcción Cooperativa. Úsala en los días de investigación para acelerar el progreso del equipo.</p>
+        </div>
+      </div>
+
+      <!-- COMBATE -->
+      <div class="spec-type">
+        <h3>⚔️ Especialización: COMBATE</h3>
+        <p><strong>Recomendado para:</strong> Solo jugadores de nivel 30+ con poder de héroe superior a <strong>48 millones</strong>. Aumenta enormemente tu poder de batalla.</p>
+
+        <div class="ability">
+          <strong>🪖 Reclutamiento Urgente</strong>
+          <p>Recluta instantáneamente 150 soldados.</p>
+          <p><strong>Cooldown:</strong> 1 vez al día.</p>
+          <p><strong>Estrategia:</strong> Se recomienda usarlo cuando coincida con el evento "Preparación Total" para maximizar beneficios.</p>
+        </div>
+
+        <div class="ability">
+          <strong>🎭 Disfraz</strong>
+          <p>El enemigo no obtendrá información al explorarte durante 1 hora.</p>
+          <p><strong>Duración:</strong> 1 hora.</p>
+          <p><strong>Estrategia:</strong> Muy útil si no quieres que sepan cuántos recursos tienes o tu poder real antes de un ataque.</p>
+        </div>
+
+        <div class="ability">
+          <strong>⚡ Ataque Rápido</strong>
+          <p>Permite que tu ataque de concentración parta más rápido.</p>
+          <p><strong>Límite:</strong> Hasta 5 veces por semana.</p>
+          <p><strong>Reinicio:</strong> El día de mejora de vehículos.</p>
+          <p><strong>Estrategia:</strong> Extremadamente útil para los días de guerra. Úsalo para atacar objetivos clave antes que el enemigo.</p>
+        </div>
+
+        <div class="ability">
+          <strong>🔄 Retorno Inmediato</strong>
+          <p>Hace que tus tropas regresen a la base inmediatamente.</p>
+          <p><strong>Límite:</strong> 2 veces al día.</p>
+          <p><strong>Estrategia:</strong> Úsalo para permitirte usar un teletransporte aleatorio y escapar, o para reposicionar tropas rápidamente y contraatacar.</p>
+        </div>
+      </div>
+
+      <h3>📚 Cómo Obtener Libros de Experiencia (Ranking):</h3>
+      <p>Los Libros de Experiencia se necesitan para mejorar habilidades de especialización. Aquí están en orden de mayor a menor cantidad:</p>
+      <ol>
+        <li><strong>🏆 Comprar Pase de Especialización ($20):</strong> La forma más rápida y efectiva.</li>
+        <li><strong>🏗️ Mejorar edificios de temporada:</strong> Cada mejora otorga libros.</li>
+        <li><strong>🏙️ Atacar ciudades:</strong> Ocupar y defender ciudades da recompensas constantes.</li>
+        <li><strong>❄️ Matar Boomers:</strong> Las incursiones diarias suman puntos.</li>
+        <li><strong>⚔️ Atacar cuartel general enemigo:</strong> Durante guerra de alianzas.</li>
+      </ol>
+    </section>
+
+    <!-- Incursiones -->
+    <section class="s3-section">
+      <h2>🎯 Sistema de Incursiones</h2>
+      <p>Las incursiones son el foco principal de la Temporada 3. Solo puedes obtener <strong>15 recompensas por día</strong> del total de todas las incursiones, así que es crucial priorizar correctamente.</p>
+
+      <div class="raid-boss">
+        <h4>❄️ BOOMERS (Zombis de Nieve) - PRIORIDAD #1</h4>
+        <p><strong>Recompensa:</strong> Núcleos de Hielo (el doble que leopardo).</p>
+        <p><strong>Límite diario:</strong> 15 recompensas.</p>
+        <p><strong>Estrategia:</strong> Después del reinicio del servidor, comienza atacando 15 de estos. Son la mejor fuente de Núcleos de Hielo.</p>
+        <p><strong>Requisito:</strong> Mejora tu Laboratorio Biológico para poder atacar niveles superiores.</p>
+      </div>
+
+      <div class="raid-boss">
+        <h4>🐆 LEOPARDO DE LAS NIEVES</h4>
+        <p><strong>Recompensa:</strong> Recursos y gloria, pero menor que Boomers.</p>
+        <p><strong>Estrategia:</strong> Solo atácalo para obtener la recompensa de la <strong>primera eliminación</strong> después de haber usado tus 15 recompensas en Boomers.</p>
+      </div>
+
+      <div class="raid-boss">
+        <h4>🦍 YETI (Monstruo de Nieve Errante) - AVANZADO</h4>
+        <p><strong>Nivel:</strong> Se encuentra desde nivel 100 hasta 350 en el mapa.</p>
+        <p><strong>Límite diario:</strong> Solo puedes obtener 2 recompensas por día.</p>
+        <p><strong>Condición:</strong> Solo se otorgan recompensas si participas en la <strong>incursión final</strong> (último golpe).</p>
+        <p><strong>Dificultad:</strong> Muchas tropas irán al hospital. Se recomienda atacar solo si tu alianza tiene el poder suficiente.</p>
+        <p><strong>Niveles recomendados:</strong> Para alianzas de poder medio, atacar Yetis de nivel 120-180.</p>
+        <p><strong>Recompensas:</strong> Buenas, pero las de los Boomers son suficientes para la mayoría.</p>
+      </div>
+
+      <div class="tip-box">
+        <strong>💡 TIP CRÍTICO:</strong> Si el Yeti se acerca para atacarte a ti o a un compañero de equipo, inicia una incursión y <strong>cancélala inmediatamente</strong>. Esto hará que el Yeti tome otra ruta y evitarás daños.
+      </div>
+
+      <h3>📊 Resumen de Prioridades:</h3>
+      <ol>
+        <li>15x Boomers (Zombis de Nieve) - Cada día después del reinicio</li>
+        <li>1x Leopardo - Solo primera eliminación si te sobra tiempo</li>
+        <li>Yeti - Solo si tu alianza es fuerte y coordina</li>
+      </ol>
+    </section>
+
+    <!-- Eventos -->
+    <section class="s3-section">
+      <h2>🌨️ Eventos Especiales</h2>
+
+      <h3>❄️ Rescate de Tormenta de Nieve</h3>
+      <p><strong>Duración:</strong> Días 1-3 de Alianza vs Alianza.</p>
+      <p><strong>Mecánica:</strong> Aparecen olas de frío en diferentes ubicaciones del mapa, donde se forman esculturas de hielo grandes y pequeñas con animales dentro.</p>
+      <p><strong>Límite diario:</strong> Solo puedes reclamar 10 recompensas por día durante el evento.</p>
+
+      <h4>🎯 Estrategia:</h4>
+      <ul>
+        <li><strong>Busca solo esculturas GRANDES:</strong> Las pequeñas no valen la pena.</li>
+        <li><strong>Comparte ubicaciones:</strong> Cuando encuentres una escultura grande, compártela en el chat de alianza.</li>
+        <li><strong>Explora rápido:</strong> Esto hará que la escultura se rompa más rápido y libere al animal.</li>
+      </ul>
+
+      <h4>🎁 Recompensas al Romper Esculturas:</h4>
+      <div class="ability">
+        <strong>🦣 MAMMOTH (Mamut):</strong>
+        <p>Otorga 2 fragmentos para un <strong>arma exclusiva</strong> de temporada.</p>
+      </div>
+
+      <div class="ability">
+        <strong>🦌 CIERVO:</strong>
+        <p>Otorga <strong>300 insignias</strong>.</p>
+      </div>
+
+      <p><strong>Decisión:</strong> Elige el animal que más te beneficie según tus necesidades (arma vs insignias). Recuerda compartir la ubicación en el chat para que tu alianza también pueda beneficiarse.</p>
+
+      <h3>⚔️ Guerra de Gloria</h3>
+      <p>Este evento es <strong>clave</strong> para el ranking de temporada. Durante la batalla final contra la alianza enemiga, el ganador puede <strong>arrebatar puntos de temporada</strong> al perdedor.</p>
+      <p><strong>Importancia:</strong> Define la posición final en el ranking y las recompensas que recibirás al final de la temporada.</p>
+    </section>
+
+    <!-- Ranking y Recompensas -->
+    <section class="s3-section">
+      <h2>🏆 Ranking de Puntos de Temporada</h2>
+
+      <h3>📊 Sistema de Puntos:</h3>
+      <p><strong>Fórmula:</strong></p>
+      <p class="tip-box"><strong>Puntos de Temporada de Alianza</strong> = Valor de Gloria Personal (todos los miembros) + Puntos de Temporada de Ciudades</p>
+
+      <h4>Cómo Ganar Puntos:</h4>
+      <ul>
+        <li><strong>Gloria Personal:</strong> Se obtiene con la <strong>primera eliminación</strong> de un Leopardo de las Nieves o Zombi de la Tundra.</li>
+        <li><strong>Ciudades:</strong> 
+          <ul>
+            <li>Ocupar una ciudad aumenta directamente los puntos de temporada.</li>
+            <li>Generas puntos con el tiempo mientras la ocupas.</li>
+            <li>Los puntos acumulados con el tiempo <strong>NO se pierden</strong> al abandonar la ciudad.</li>
+          </ul>
+        </li>
+        <li><strong>Guerra de Gloria:</strong> Ganar la batalla final permite arrebatar puntos al enemigo.</li>
+      </ul>
+
+      <h3>🎁 Categorías de Recompensas</h3>
+      <p>Al final de la temporada, las recompensas se distribuyen según el ranking final de tu alianza. Hay 7 categorías:</p>
+
+      <div class="reward-category">
+        <h4>1. 👑 Legión Suprema</h4>
+        <p class="reward-rank">Posición: #1 en el ranking</p>
+        <p>Las mejores recompensas de la temporada, distribuidas según jerarquía interna de alianza.</p>
+        <p><em>(Ver imagen de recompensas - Foto 1)</em></p>
+      </div>
+
+      <div class="reward-category">
+        <h4>2. 🌅 Ejército del Alba</h4>
+        <p class="reward-rank">Posiciones: #2 y #3</p>
+        <p>Recompensas premium para las alianzas subcampeonas.</p>
+        <p><em>(Ver imagen de recompensas - Foto 2)</em></p>
+      </div>
+
+      <div class="reward-category">
+        <h4>3. ⭐ Pionero Glorioso</h4>
+        <p class="reward-rank">Posiciones: #4 y #5</p>
+        <p>Recompensas excelentes para top 5.</p>
+        <p><em>(Ver imagen de recompensas - Foto 3)</em></p>
+      </div>
+
+      <div class="reward-category">
+        <h4>4. 🛡️ Juramento de Protección</h4>
+        <p class="reward-rank">Posiciones: #6 al #10</p>
+        <p>Recompensas muy buenas para top 10.</p>
+        <p><em>(Ver imagen de recompensas - Foto 4)</em></p>
+      </div>
+
+      <div class="reward-category">
+        <h4>5. 🚀 Alianza Expedicionaria</h4>
+        <p class="reward-rank">Posiciones: #11 al #20</p>
+        <p>Recompensas sólidas para alianzas competitivas.</p>
+        <p><em>(Ver imagen de recompensas - Foto 5)</em></p>
+      </div>
+
+      <div class="reward-category">
+        <h4>6. 🏔️ Legión del Páramo</h4>
+        <p class="reward-rank">Posiciones: #21 al #50</p>
+        <p>Recompensas decentes para alianzas en desarrollo.</p>
+        <p><em>(Ver imagen de recompensas - Foto 6)</em></p>
+      </div>
+
+      <div class="reward-category">
+        <h4>7. 🗿 Guardián del Páramo</h4>
+        <p class="reward-rank">Posiciones: #51 al #999</p>
+        <p>Recompensas básicas de participación.</p>
+        <p><em>(Ver imagen de recompensas - Foto 7)</em></p>
+      </div>
+    </section>
+
+    <!-- Tips Finales -->
+    <section class="s3-section">
+      <h2>💡 Tips Generales para Maximizar Progreso</h2>
+      <ul>
+        <li>✅ Prioriza siempre Laboratorio Biológico → Centro de Control → Edificios de Poder</li>
+        <li>✅ Usa tus 15 recompensas diarias en Boomers para maximizar Núcleos de Hielo</li>
+        <li>✅ Coordina con tu alianza para compartir ubicaciones de esculturas grandes</li>
+        <li>✅ Guarda habilidades clave (Escudo de Amistad, Ataque Rápido) para días de guerra</li>
+        <li>✅ Ocupa y defiende ciudades constantemente para acumular puntos pasivos</li>
+        <li>✅ Participa activamente en Guerra de Gloria - define tu recompensa final</li>
+        <li>✅ Si vas a invertir, los pases son la mejor relación costo/beneficio</li>
+      </ul>
+      <p class="s3-duration">Crts.Michel-(SHk)</p>
+    </section>
+  </main>
+
+<!-- ========================================= 
+     FOOTER - Añadir en TODAS las páginas
+     ========================================= -->
+
+<footer class="site-footer">
+  <div class="footer-container">
+    
+    <!-- Links principales -->
+    <div class="footer-links">
+      <a href="sobre-nosotros.html">Sobre Nosotros</a>
+      <span class="separator">•</span>
+      <a href="privacidad.html">Política de Privacidad</a>
+      <span class="separator">•</span>
+      <a href="terminos.html">Términos y Condiciones</a>
+      <span class="separator">•</span>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    
+    <!-- Disclaimer legal -->
+    <div class="footer-disclaimer">
+      <p><strong>⚠️ Aviso Importante</strong></p>
+      <p>Last Z Wiki es un sitio web <strong>no oficial</strong> creado por fans para la comunidad de Last Z Survival Shooter.</p>
+      <p>No estamos afiliados, asociados, autorizados, respaldados por, ni oficialmente conectados con los desarrolladores del juego.</p>
+      <p>Todas las marcas comerciales, logos e imágenes del juego son propiedad de sus respectivos dueños.</p>
+    </div>
+    
+    <!-- Redes sociales (opcional, puedes añadir después) -->
+    <div class="footer-social">
+      <!-- <a href="#" aria-label="Discord">Discord</a> -->
+      <!-- <a href="#" aria-label="YouTube">YouTube</a> -->
+    </div>
+    
+    <!-- Copyright -->
+    <div class="footer-copyright">
+      <p>&copy; 2026 Last Z Wiki. Creado con ❤️ para la comunidad.</p>
+      <p class="footer-meta">Última actualización: Febrero 2026</p>
+    </div>
+    
+  </div>
+</footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>
