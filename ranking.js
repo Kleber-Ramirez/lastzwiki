@@ -58,9 +58,24 @@ function numServidor(s) {
 
 function parsearCSV(csv) {
   const lineas = csv.trim().split("\n").slice(1);
-  return lineas
-    .map(l => l.split(",").map(c => c.trim().replace(/^"|"$/g, "")))
-    .filter(c => c.length > 1 && c[0] !== "");
+  return lineas.map(linea => {
+    const cols = [];
+    let actual = "";
+    let dentroComillas = false;
+    for (let i = 0; i < linea.length; i++) {
+      const c = linea[i];
+      if (c === '"') {
+        dentroComillas = !dentroComillas;
+      } else if (c === "," && !dentroComillas) {
+        cols.push(actual.trim());
+        actual = "";
+      } else {
+        actual += c;
+      }
+    }
+    cols.push(actual.trim());
+    return cols;
+  }).filter(c => c.length > 1 && c[0] !== "");
 }
 
 function estrellas(n) {
