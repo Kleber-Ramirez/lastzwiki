@@ -342,7 +342,7 @@ tip7: `
   <p><b>Cuándo comprarla:</b> Lo antes posible. Su utilidad comienza desde nivel 1.</p>
 
   <h3>🔨 Compra #2: Segundo Constructor ($2 USD)</h3>
-  
+  <img src="img-tip-compras-1.jpg" alt="Sophia">
   <p><b>¿Por qué es esencial?</b></p>
   <ul>
     <li>Cuesta aproximadamente <b>$2 dólares</b>.</li>
