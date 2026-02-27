@@ -4,24 +4,49 @@
 
 const carrusel = document.querySelector('.carrusel-container');
 let items = document.querySelectorAll('.carrusel-item');
-const visibleItems = 3;
 let index = 0;
+let autoPlay;
 
-// Clonamos los primeros elementos para que el carrusel sea infinito
-for (let i = 0; i < visibleItems; i++) {
-  const clone = items[i].cloneNode(true);
-  carrusel.appendChild(clone);
+function getVisibleItems() {
+  if (window.innerWidth <= 480) return 1;
+  if (window.innerWidth <= 768) return 2;
+  return 3;
 }
 
-items = document.querySelectorAll('.carrusel-item');
+function setupCarrusel() {
+  // Limpiar clones anteriores
+  document.querySelectorAll('.carrusel-item.clone').forEach(c => c.remove());
+  
+  items = document.querySelectorAll('.carrusel-item');
+  const visibleItems = getVisibleItems();
+  
+  // Clonar los primeros items para loop infinito
+  for (let i = 0; i < visibleItems; i++) {
+    const clone = items[i].cloneNode(true);
+    clone.classList.add('clone');
+    carrusel.appendChild(clone);
+  }
+
+  // Resetear posición
+  index = 0;
+  carrusel.style.transition = "none";
+  carrusel.style.transform = `translateX(0)`;
+
+  // Actualizar flex de cada item
+  document.querySelectorAll('.carrusel-item').forEach(item => {
+    item.style.flex = `0 0 ${100 / visibleItems}%`;
+  });
+}
 
 function moveCarrusel() {
+  const visibleItems = getVisibleItems();
+  const totalItems = document.querySelectorAll('.carrusel-item').length;
+  
   index++;
   carrusel.style.transition = "transform 0.5s ease";
   carrusel.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
 
-  // Reinicio cuando llega al final
-  if (index >= items.length - visibleItems) {
+  if (index >= totalItems - visibleItems) {
     setTimeout(() => {
       carrusel.style.transition = "none";
       index = 0;
@@ -30,8 +55,19 @@ function moveCarrusel() {
   }
 }
 
-// Movimiento automático cada 2 segundos
-setInterval(moveCarrusel, 2000);
+function startAutoPlay() {
+  clearInterval(autoPlay);
+  autoPlay = setInterval(moveCarrusel, 2000);
+}
+
+// Reiniciar al cambiar tamaño de pantalla
+window.addEventListener('resize', () => {
+  setupCarrusel();
+  startAutoPlay();
+});
+
+setupCarrusel();
+startAutoPlay();
 
 // ===========================
 // CARRUSELES INTERNOS DE TIPS
