@@ -1567,7 +1567,7 @@
 <!-- 🏭 CENTRO DE PRODUCCIÓN -->
 <article class="card" data-category="recursos" data-season="general">
   <div class="media">
-    <img src="img-centro-produccion.webp" alt="Centro de Producción" />
+    <img src="img-centro-produccion.jpg" alt="Centro de Producción" />
   </div>
   <div class="card-body">
     <h3>Centro de Producción</h3>
@@ -2458,7 +2458,7 @@
 <!-- 🏥 HOSPITAL -->
 <article class="card" data-category="tropas" data-season="general">
   <div class="media">
-    <img src="img-hospital.webp" alt="Hospital" />
+    <img src="img-hospital2.webp" alt="Hospital" />
   </div>
   <div class="card-body">
     <h3>Hospital</h3>
@@ -2985,7 +2985,7 @@
 
 </template>
 
-<!-- 🔹Radar-->
+<!-- 🔹 Radar -->
 <article class="card" data-category="misiones" data-season="general">
   <div class="media">
     <img src="img-radar2.webp" alt="Radar" />
@@ -3004,238 +3004,62 @@
   </div>
 </article>
 <template id="tabla-radar">
-  <p>El Radar aumenta la velocidad de reconocimiento y 
-    desbloquea información crucial sobre tus objetivos.</p>
-  <div class="tabla-niveles" style="display:flex; gap:20px;">
-    <!-- Tabla 1: niveles 1-15 -->
-    <table border="1">
+  <p>El Radar aumenta la velocidad de reconocimiento y desbloquea información crucial sobre tus objetivos.</p>
+  <div class="tabla-niveles">
+    <table>
       <thead>
         <tr>
-          <th><abbr title="Nivel de Edificio">Nivel</abbr></th>
-          <th>Requisitos</th>
-          <th><abbr title="Velocidad de reconocimiento aumentada">Vel.Reconoc</abbr></th>
-          <th><abbr title="Efecto de exploración desbloqueado">Efecto desbloqueado</abbr></th>
+          <th>Niv.</th>
+          <th>🪵🥫 Madera y Comida</th>
+          <th>💰 Moneda Z</th>
+          <th><abbr title="Velocidad de reconocimiento aumentada">Vel. Reconoc.</abbr></th>
+          <th><abbr title="Efecto de exploración desbloqueado al alcanzar este nivel">Efecto desbloqueado</abbr></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Gratis</td>
-          <td>+1%</td>
-          <td>
-            <span class="info-text" title="Total de fuerza de las tropas de defensa del objetivo">
-              Total fuerza tropas defensa
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>500 madera, 300 oro</td>
-          <td>+2%</td>
-          <td>
-            <span class="info-text" title="Detalles de los recursos saqueables del objetivo">
-              Detalles recursos saqueables
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>700 madera, 400 oro</td>
-          <td>+3%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>900 madera, 500 oro</td>
-          <td>+4%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>5</td>
-          <td>1.1k madera, 600 oro</td>
-          <td>+5%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>6</td>
-          <td>1.3k madera, 800 oro</td>
-          <td>+6%</td>
-          <td>
-            <span class="info-text" title="Información de héroes de las tropas de defensa y resumen de la clasificación de tipos de unidades">
-              Info héroes tropas defensa
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>1.5k madera, 1k oro</td>
-          <td>+7%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>8</td>
-          <td>1.7k madera, 1.2k oro</td>
-          <td>+8%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>9</td>
-          <td>1.9k madera, 1.4k oro</td>
-          <td>+9%</td>
-          <td>
-            <span class="info-text" title="Información de héroes de las tropas de refuerzo y resumen de clasificación de unidades">
-              Info héroes tropas refuerzo
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>10</td>
-          <td>2.1k madera, 1.6k oro</td>
-          <td>+10%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>11</td>
-          <td>2.3k madera, 1.8k oro</td>
-          <td>+11%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>12</td>
-          <td>2.5k madera, 2k oro</td>
-          <td>+12%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>13</td>
-          <td>2.7k madera, 2.2k oro</td>
-          <td>+13%</td>
-          <td>
-            <span class="info-text" title="Detalle de la fuerza de las tropas de defensa">
-              Detalle fuerza tropas defensa
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>14</td>
-          <td>2.9k madera, 2.4k oro</td>
-          <td>+14%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>15</td>
-          <td>3.1k madera, 2.6k oro</td>
-          <td>+15%</td>
-          <td>—</td>
-        </tr>
+        <tr><td>1</td><td>---</td><td>---</td><td>+1%</td><td><span title="Total de fuerza de las tropas de defensa del objetivo">Total fuerza tropas defensa</span></td></tr>
+        <tr><td>2</td><td>1.6k</td><td>---</td><td>+2%</td><td><span title="Detalles de los recursos saqueables del objetivo">Detalles recursos saqueables</span></td></tr>
+        <tr><td>3</td><td>2.5k</td><td>---</td><td>+3%</td><td>---</td></tr>
+        <tr><td>4</td><td>3.8k</td><td>---</td><td>+4%</td><td>---</td></tr>
+        <tr><td>5</td><td>7.6k</td><td>---</td><td>+5%</td><td>---</td></tr>
+        <tr><td>6</td><td>22.8k</td><td>9.1k</td><td>+6%</td><td><span title="Información de héroes de las tropas de defensa y resumen de la clasificación de tipos de unidades">Info héroes tropas defensa</span></td></tr>
+        <tr><td>7</td><td>45.7k</td><td>18.3k</td><td>+7%</td><td>---</td></tr>
+        <tr><td>8</td><td>73.1k</td><td>29.3k</td><td>+8%</td><td>---</td></tr>
+        <tr><td>9</td><td>117k</td><td>46.8k</td><td>+9%</td><td><span title="Información de héroes de las tropas de refuerzo y resumen de clasificación de unidades">Info héroes tropas refuerzo</span></td></tr>
+        <tr><td>10</td><td>140.4k</td><td>56.2k</td><td>+10%</td><td>---</td></tr>
+        <tr><td>11</td><td>---</td><td>---</td><td>+11%</td><td>---</td></tr>
+        <tr><td>12</td><td>---</td><td>---</td><td>+12%</td><td>---</td></tr>
+        <tr><td>13</td><td>---</td><td>---</td><td>+13%</td><td><span title="Detalle de la fuerza de las tropas de defensa">Detalle fuerza tropas defensa</span></td></tr>
+        <tr><td>14</td><td>---</td><td>---</td><td>+14%</td><td>---</td></tr>
+        <tr><td>15</td><td>---</td><td>---</td><td>+15%</td><td>---</td></tr>
       </tbody>
     </table>
-
-    <!-- Tabla 2: niveles 16-30 -->
-    <table border="1">
+    <table>
       <thead>
         <tr>
-          <th><abbr title="Nivel de Edificio">Nivel</abbr></th>
-          <th>Requisitos</th>
-          <th><abbr title="Velocidad de reconocimiento aumentada">Vel.Reconoc</abbr></th>
-          <th><abbr title="Efecto de exploración desbloqueado">Efecto desbloqueado</abbr></th>
+          <th>Niv.</th>
+          <th>🪵🥫 Madera y Comida</th>
+          <th>💰 Moneda Z</th>
+          <th><abbr title="Velocidad de reconocimiento aumentada">Vel. Reconoc.</abbr></th>
+          <th><abbr title="Efecto de exploración desbloqueado al alcanzar este nivel">Efecto desbloqueado</abbr></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>16</td>
-          <td>3.3k madera, 2.8k oro</td>
-          <td>+16%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>17</td>
-          <td>3.5k madera, 3k oro</td>
-          <td>+17%</td>
-          <td>
-            <span class="info-text" title="Detalles de las tropas de refuerzo presentes en el objetivo">
-              Detalles tropas refuerzo
-            </span>
-          </td>
-        </tr>
-        <tr>
-          <td>18</td>
-          <td>3.7k madera, 3.2k oro</td>
-          <td>+18%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>19</td>
-          <td>3.9k madera, 3.4k oro</td>
-          <td>+19%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>20</td>
-          <td>4.1k madera, 3.6k oro</td>
-          <td>+20%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>21</td>
-          <td>4.3k madera, 3.8k oro</td>
-          <td>+21%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>22</td>
-          <td>4.5k madera, 4k oro</td>
-          <td>+22%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>23</td>
-          <td>4.7k madera, 4.2k oro</td>
-          <td>+23%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>24</td>
-          <td>4.9k madera, 4.4k oro</td>
-          <td>+24%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>25</td>
-          <td>5.1k madera, 4.6k oro</td>
-          <td>+25%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>26</td>
-          <td>5.3k madera, 4.8k oro</td>
-          <td>+26%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>27</td>
-          <td>5.5k madera, 5k oro</td>
-          <td>+27%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>28</td>
-          <td>5.7k madera, 5.2k oro</td>
-          <td>+28%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>29</td>
-          <td>5.9k madera, 5.4k oro</td>
-          <td>+29%</td>
-          <td>—</td>
-        </tr>
-        <tr>
-          <td>30</td>
-          <td>6k madera, 5.5k oro</td>
-          <td>+30%</td>
-          <td>—</td>
-        </tr>
+        <tr><td>16</td><td>---</td><td>---</td><td>+16%</td><td>---</td></tr>
+        <tr><td>17</td><td>---</td><td>---</td><td>+17%</td><td><span title="Detalles de las tropas de refuerzo presentes en el objetivo">Detalles tropas refuerzo</span></td></tr>
+        <tr><td>18</td><td>---</td><td>---</td><td>+18%</td><td>---</td></tr>
+        <tr><td>19</td><td>---</td><td>---</td><td>+19%</td><td>---</td></tr>
+        <tr><td>20</td><td>---</td><td>---</td><td>+20%</td><td>---</td></tr>
+        <tr><td>21</td><td>---</td><td>---</td><td>+21%</td><td>---</td></tr>
+        <tr><td>22</td><td>---</td><td>---</td><td>+22%</td><td>---</td></tr>
+        <tr><td>23</td><td>---</td><td>---</td><td>+23%</td><td>---</td></tr>
+        <tr><td>24</td><td>---</td><td>---</td><td>+24%</td><td>---</td></tr>
+        <tr><td>25</td><td>---</td><td>---</td><td>+25%</td><td>---</td></tr>
+        <tr><td>26</td><td>---</td><td>---</td><td>+26%</td><td>---</td></tr>
+        <tr><td>27</td><td>---</td><td>---</td><td>+27%</td><td>---</td></tr>
+        <tr><td>28</td><td>---</td><td>---</td><td>+28%</td><td>---</td></tr>
+        <tr><td>29</td><td>---</td><td>---</td><td>+29%</td><td>---</td></tr>
+        <tr><td>30</td><td>---</td><td>---</td><td>+30%</td><td>---</td></tr>
       </tbody>
     </table>
   </div>
@@ -3402,7 +3226,6 @@
   </div>
 </template>
 
-
 <!-- Centro de Alianza -->
 <article class="card" data-category="otros" data-season="general">
   <div class="media">
@@ -3483,7 +3306,6 @@
   </div>
 </template>
 
-
 <!-- Almacén -->
 <article class="card" data-category="otros" data-season="general">
   <div class="media">
@@ -3562,11 +3384,10 @@
   </div>
 </template>
 
-
 <!-- Villa -->
 <article class="card" data-category="otros" data-season="general">
   <div class="media">
-    <img src="img-villa.webp" alt="Villa" />
+    <img src="img-villa2.webp" alt="Villa" />
   </div>
   <div class="card-body">
     <h3>Villa</h3>
@@ -3642,7 +3463,6 @@
     </table>
   </div>
 </template>
-
 
 <!-- Librería -->
 <article class="card" data-category="otros" data-season="general">
