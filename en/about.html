@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicons -->
+ <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+ <link rel="shortcut icon" href="/favicon.ico" />
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+ <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+ <link rel="manifest" href="/site.webmanifest" />
+  <!-- ==========================================
+       SEO OPTIMIZED - ABOUT US
+       ========================================== -->
+  
+  <!-- SEO Básico -->
+  <title>About Us - Last Z Wiki | Who We Are</title>
+  <meta name="description" content="Meet the team behind Last Z Wiki. Project created by Hypnos, an experienced player, to help the global Last Z Survival community with guides, strategies and resources.">
+  <meta name="keywords" content="about Last Z Wiki, Last Z Wiki team, Hypnos, Last Z Wiki contact, Last Z Wiki history, who we are">
+  <meta name="author" content="Hypnos - Last Z Wiki">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook / Discord -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lastzwiki.com/en/about.html">
+  <meta property="og:title" content="About Us - Last Z Wiki">
+  <meta property="og:description" content="Project created by players for Last Z Survival players worldwide.">
+  <meta property="og:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
+  <meta property="og:site_name" content="Last Z Wiki">
+  
+  <!-- Open Graph locale -->
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://lastzwiki.com/en/about.html">
+  <meta name="twitter:title" content="About Us - Last Z Wiki">
+  <meta name="twitter:description" content="Project created by players for Last Z Survival players worldwide.">
+  <meta name="twitter:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lastzwiki.com/en/about.html">
+  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/about.html" />
+  <link rel="alternate" hreflang="es" href="https://lastzwiki.com/sobre-nosotros.html" />
+  <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/about.html" />
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  
+  <!-- Tema de color -->
+  <meta name="theme-color" content="#c41e3a">
+
+  <!-- Schema.org AboutPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Us - Last Z Wiki",
+    "description": "Meet the team behind Last Z Wiki. Project created by Hypnos to help the global Last Z Survival community.",
+    "url": "https://lastzwiki.com/en/about.html",
+    "inLanguage": "en",
+    "author": {
+      "@type": "Person",
+      "name": "Hypnos"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Last Z Wiki",
+      "url": "https://lastzwiki.com"
+    }
+  }
+  </script>
+  
+  <!-- ==========================================
+       END SEO - CSS
+       ========================================== -->
+  
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../responsive.css">
+  
+  <style>
+    /* Styles for About Us page */
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    .about-hero {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: linear-gradient(135deg, var(--secundario) 0%, var(--fondo) 100%);
+      border-radius: 12px;
+      margin-bottom: 3rem;
+      border: 2px solid var(--acento);
+    }
+    
+    .about-hero h1 {
+      font-size: 2.5rem;
+      color: var(--acento);
+      margin: 0 0 1rem 0;
+    }
+    
+    .about-hero .tagline {
+      font-size: 1.2rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+    
+    .about-section {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .about-section h2 {
+      color: var(--acento);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      border-bottom: 2px solid var(--acento);
+      padding-bottom: 0.5rem;
+    }
+    
+    .about-section h3 {
+      color: var(--acento);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
+    
+    .about-section p {
+      line-height: 1.8;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    
+    .about-section ul {
+      margin: 1rem 0 1rem 2rem;
+      color: var(--muted);
+    }
+    
+    .about-section li {
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+    
+    .highlight-box {
+      background: rgba(196, 30, 58, 0.1);
+      border-left: 4px solid var(--acento);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    
+    .highlight-box strong {
+      color: var(--acento);
+      font-size: 1.1rem;
+    }
+    
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    
+    .value-card {
+      background: var(--secundario);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+    }
+    
+    .value-card:hover {
+      border-color: var(--acento);
+      transform: translateY(-3px);
+    }
+    
+    .value-card h4 {
+      color: var(--acento);
+      margin-bottom: 0.8rem;
+      font-size: 1.1rem;
+    }
+    
+    .value-card p {
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+      margin: 1.5rem 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--acento);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    
+    .timeline-item::before {
+      content: '●';
+      position: absolute;
+      left: -2.3rem;
+      color: var(--acento);
+      font-size: 1.5rem;
+    }
+    
+    .timeline-item strong {
+      color: var(--acento);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    
+    .contact-section {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .contact-methods {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+    
+    .contact-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1.5rem;
+      background: var(--secundario);
+      border-radius: 10px;
+      min-width: 150px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: var(--texto);
+    }
+    
+    .contact-item:hover {
+      transform: translateY(-5px);
+      background: rgba(196, 30, 58, 0.2);
+      border: 2px solid var(--acento);
+    }
+    
+    .contact-icon {
+      font-size: 2.5rem;
+    }
+    
+    .contact-label {
+      font-weight: 600;
+      color: var(--acento);
+    }
+    
+    .contact-value {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    
+    .founder-badge {
+      display: inline-block;
+      background: rgba(196, 30, 58, 0.2);
+      border: 1px solid var(--acento);
+      padding: 0.8rem 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+    
+    .founder-badge strong {
+      color: var(--acento);
+      font-size: 1.1rem;
+    }
+    
+    .founder-details {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .about-hero {
+        padding: 2rem 1.5rem;
+      }
+      
+      .about-hero h1 {
+        font-size: 2rem;
+      }
+      
+      .about-section {
+        padding: 1.5rem 1rem;
+      }
+      
+      .about-section h2 {
+        font-size: 1.5rem;
+      }
+      
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .contact-methods {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .timeline {
+        padding-left: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="../lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
+      <h1>Last Z Wiki</h1>
+    </div>
+    <button class="hamburger" aria-label="Navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="buildings.html">Buildings</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="alliances.html">Alliances</a></li>
+        <li><a href="heroes.html">Heroes</a></li>
+        <li><a href="community.html">Community</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="about-container">
+    
+    <!-- Hero -->
+    <section class="about-hero">
+      <h1>👋 About Last Z Wiki</h1>
+      <p class="tagline">"From a personal project to a tool for the whole community"</p>
+    </section>
+
+    <!-- Nuestra Misión -->
+    <section class="about-section">
+      <h2>🎯 Our Mission</h2>
+      <p>Last Z Wiki was created to fill a gap in the Last Z Survival Shooter community: <strong>clear, up-to-date and easy-to-use information</strong>.</p>
+      
+      <div class="highlight-box">
+        <strong>Our goal:</strong> To make Last Z Wiki the go-to reference resource for new and veteran players, providing interactive guides, updated strategies and a platform where the community can learn and grow together.
+      </div>
+    </section>
+
+    <!-- Origen del Proyecto -->
+    <section class="about-section">
+      <h2>📖 Project Origins</h2>
+      
+      <p>Founded by <strong>Hypnos</strong>, a web developer and veteran Last Z player, this wiki grew from a real need observed in <strong>Alliance SHK</strong>.</p>
+      
+      <p>After 8 months of experience across multiple servers, including a period as <strong>R5 (alliance leader)</strong>, it became clear that the community needed a centralized, well-designed resource.</p>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>September 2025</strong>
+          <p>Development begins. A small project to help alliance SHK with their recurring questions.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>October - January 2026</strong>
+          <p>The project grows. From a personal hobby to a complete wiki with professional design and interactive content.</p>
+        </div>
+        <div class="timeline-item">
+          <strong>February 2026</strong>
+          <p>Official public launch of Last Z Wiki for the entire global community.</p>
+        </div>
+      </div>
+      
+      <p><em>What started as a tool for my alliance became a passion: helping the entire Last Z community.</em></p>
+    </section>
+
+    <!-- Propuesta de Valor -->
+    <section class="about-section">
+      <h2>✨ Why Is Last Z Wiki Different?</h2>
+      
+      <div class="values-grid">
+        <div class="value-card">
+          <h4>🎨 Professional Interface</h4>
+          <p>Developed by a web development professional, prioritizing modern UI/UX and intuitive navigation.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>⚡ Interactive Content</h4>
+          <p>Dynamic, visual guides — not boring static documents. Information that adapts to your needs.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>🎮 Real Experience</h4>
+          <p>Content created by an active player with hands-on experience in alliance leadership and multiple servers.</p>
+        </div>
+        
+        <div class="value-card">
+          <h4>🤝 Community First</h4>
+          <p>Designed with both new players who need basic guides and veterans looking for advanced strategies in mind.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visión de Futuro -->
+    <section class="about-section">
+      <h2>🚀 Future Vision</h2>
+      
+      <h3>Short-Term Goals</h3>
+      <ul>
+        <li>✅ Become the go-to wiki for English-speaking players</li>
+        <li>📺 Expand content with tutorial videos</li>
+        <li>🧮 Implement interactive tools (calculators, simulators)</li>
+        <li>💬 Launch community section for player interaction</li>
+      </ul>
+
+      <h3>Long-Term Goals</h3>
+      <ul>
+        <li>🌍 Universal reach (multi-language expansion)</li>
+        <li>🏆 Integrated community platform with forums and chat</li>
+        <li>📊 Advanced resources for strategic analysis and planning</li>
+        <li>🎯 Become the worldwide reference for Last Z</li>
+      </ul>
+    </section>
+
+    <!-- Compromiso con la Comunidad -->
+    <section class="about-section">
+      <h2>💪 Commitment to the Community</h2>
+      
+      <p>Last Z Wiki is a <strong>living, constantly evolving project</strong>, thanks to community feedback.</p>
+      
+      <div class="highlight-box">
+        <p><strong>We welcome and appreciate:</strong></p>
+        <ul style="margin-left: 1.5rem;">
+          <li>✅ Corrections to outdated information</li>
+          <li>✅ Constructive feedback on design or content</li>
+          <li>✅ Suggestions for new guides or sections</li>
+          <li>✅ Community contributions</li>
+        </ul>
+      </div>
+      
+      <p>The game constantly evolves with updates, events and balance changes. <strong>Our wiki evolves with it</strong>.</p>
+    </section>
+
+    <!-- Transparencia -->
+    <section class="about-section">
+      <h2>⚠️ Transparency &amp; Disclaimer</h2>
+      
+      <p><strong>Important Information:</strong></p>
+      
+      <ul>
+        <li>🚫 <strong>We are not official</strong> - Last Z Wiki is an independent fan-made project with no affiliation to the game developers.</li>
+        <li>📝 <strong>Content subject to errors</strong> - Despite our efforts to maintain accurate information, errors may exist. The game changes frequently with updates.</li>
+        <li>🎮 <strong>Intellectual property</strong> - All game images, names and trademarks belong to their respective owners. Used under fair use for educational purposes.</li>
+        <li>🤝 <strong>Community above all</strong> - Your feedback makes us better. Report errors or suggest improvements.</li>
+      </ul>
+    </section>
+
+    <!-- Quién Está Detrás -->
+    <section class="about-section">
+      <h2>👤 Who Is Behind Last Z Wiki</h2>
+      
+      <div class="founder-badge">
+        <strong>Founder: Hypnos</strong>
+        <div class="founder-details">
+          💻 Web Developer &amp; UI/UX Designer<br>
+          🎮 Veteran Last Z Player (8+ months)<br>
+          🏆 Former Alliance R5 | Active SHK Member<br>
+          🌍 Experience Across Multiple Servers
+        </div>
+      </div>
+      
+      <p style="margin-top: 1.5rem;">As a professional web developer and passionate gamer, I combine technical expertise with deep game knowledge to create the best possible experience for the community.</p>
+    </section>
+
+    <!-- Contacto -->
+    <section class="about-section contact-section">
+      <h2>📬 Contact</h2>
+      
+      <p>Have questions, suggestions or want to collaborate?</p>
+      
+      <div class="contact-methods">
+        
+        <!-- Email -->
+        <a href="/cdn-cgi/l/email-protection#abc4c9c7ced8d8c2c5ccc49998ebccc6cac2c785c8c4c6" class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value"><span class="__cf_email__" data-cfemail="5a3538363f292933343d3568691a3d373b333674393537">[email&#160;protected]</span></div>
+        </a>
+        
+        <!-- Instagram -->
+        <a href="https://instagram.com/kleber23_" target="_blank" rel="noopener noreferrer" class="contact-item">
+          <div class="contact-icon">📸</div>
+          <div class="contact-label">Instagram</div>
+          <div class="contact-value">@kleber23_</div>
+        </a>
+        
+        <!-- Formulario -->
+        <a href="contact.html" class="contact-item">
+          <div class="contact-icon">📝</div>
+          <div class="contact-label">Contact Form</div>
+          <div class="contact-value">Send a message</div>
+        </a>
+        
+      </div>
+      
+      <p style="margin-top: 2rem; color: var(--muted); font-size: 0.9rem;">
+        <strong>Response time:</strong> 24-48 hours<br>
+        All inquiries are welcome 🙌
+      </p>
+    </section>
+
+  </main>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-links">
+        <a href="about.html">About Us</a>
+        <span class="separator">•</span>
+        <a href="privacy.html">Privacy Policy</a>
+        <span class="separator">•</span>
+        <a href="terms.html">Terms &amp; Conditions</a>
+        <span class="separator">•</span>
+        <a href="contact.html">Contact</a>
+      </div>
+      
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Important Notice</strong></p>
+        <p>Last Z Wiki is an <strong>unofficial</strong> website created by fans for the Last Z Survival Shooter community.</p>
+        <p>We are not affiliated, associated, authorized, endorsed by, or officially connected with the game developers.</p>
+        <p>All trademarks, logos, and game images are property of their respective owners.</p>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Created with ❤️ for the community.</p>
+        <p class="footer-meta">Desarrollo iniciado: Septiemb
