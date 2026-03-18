@@ -276,6 +276,17 @@ function filterSedeNivel(range) {
     }
   });
 }
+// Función para abrir modal de Sede directamente en un tab específico
+function openSedeModalDirectTab(tabName) {
+  // Primero abre el modal
+  openSedeModal();
+  
+  // Espera un momento para que el modal se renderice
+  setTimeout(() => {
+    // Luego abre el tab específico
+    openSedeTab(tabName);
+  }, 100);
+}
 
 // ===========================
 // FILTROS DE EDIFICIOS (Separados: Generales vs Temporadas)

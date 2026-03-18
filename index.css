@@ -91,6 +91,123 @@ section h2 {
   border-bottom: 2px solid var(--primario);
   padding-bottom: 0.5rem;
 }
+  /* ====== GRID DE TEASERS ====== */
+  .teasers-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  /* ====== TEASER LABORATORIO ====== */
+  .lab-teaser {
+    background: linear-gradient(135deg, #111 0%, #1a0a0e 60%, #111 100%);
+    border: 1px solid rgba(196, 30, 58, 0.3);
+    border-radius: 10px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s;
+    margin: 0; /* el grid maneja el espaciado */
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .lab-teaser::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(196,30,58,0.1) 0%, transparent 70%);
+    pointer-events: none;
+  }
+ 
+  .lab-teaser:hover {
+    border-color: rgba(196, 30, 58, 0.6);
+    transform: translateY(-2px);
+  }
+ 
+  .lab-teaser-icon {
+    font-size: 2.5rem;
+    flex-shrink: 0;
+    line-height: 1;
+  }
+ 
+  .lab-teaser-body {
+    flex: 1;
+    min-width: 0;
+  }
+ 
+  .lab-teaser-label {
+    display: inline-block;
+    background: rgba(196, 30, 58, 0.15);
+    border: 1px solid rgba(196, 30, 58, 0.3);
+    color: #c41e3a;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    margin-bottom: 0.5rem;
+  }
+ 
+  .lab-teaser h3 {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+  }
+ 
+  .lab-teaser p {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0;
+    line-height: 1.5;
+  }
+ 
+  .lab-teaser-stats {
+    display: flex;
+    gap: 1.25rem;
+    flex-shrink: 0;
+  }
+ 
+  .lab-teaser-stat {
+    text-align: center;
+  }
+ 
+  .lab-teaser-stat strong {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #c41e3a;
+    line-height: 1;
+  }
+ 
+  .lab-teaser-stat span {
+    font-size: 0.65rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+ 
+  .lab-teaser-arrow {
+    color: #c41e3a;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+ 
+  @media (max-width: 600px) {
+    .teasers-grid { grid-template-columns: 1fr; }
+    .lab-teaser-stats { display: none; }
+    .lab-teaser-icon { font-size: 2rem; }
+  }
+
 
 /* ===== SECCIÓN DE TIPS ===== */
 .tips-home {

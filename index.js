@@ -239,18 +239,47 @@ tip3: `
   <p><b>No olvides:</b> Al terminar, vuelve las armaduras a tu 1ª formación para que esté lista para combates normales, eventos y PvP.</p>
 `,
 
-  tip4: `
-    <h2>🎉 Maximizar Eventos</h2>
-    <img src="img-tip-eventos-1.jpg" alt="Eventos">
-    <p>En eventos como <b>Preparación Total</b>, NO gastes todos tus recursos el primer día.</p>
-    <h3>Estrategia correcta:</h3>
-    <ul>
-      <li>Identifica qué temas dan <b>más puntos</b>.</li>
-      <li>Guarda aceleradores para esos días.</li>
-      <li>En el último día, gasta todo lo guardado.</li>
-    </ul>
-    <p><b>Ejemplo:</b> Si "Entrenar Tropas" da 50 pts y "Mejorar Edificios" da 20 pts, enfócate en tropas.</p>
-  `,
+tip4: `
+  <h2>🎮 Crear Cuentas Secundarias (Farms)</h2>
+  <img src="img-tip-farm-1.jpg" alt="Cuenta Farm">
+  
+  <h3>¿Qué son las Cuentas Farm?</h3>
+  <p>Personajes adicionales que usas para <b>generar recursos extra</b> y enviarlos a tu cuenta principal mediante comercio o donaciones de alianza.</p>
+
+  <h3>📱 Método 1: Dual Space (Recomendado)</h3>
+  <p><b>Paso a paso:</b></p>
+  <ol>
+    <li>Descarga la app <b>Dual Space</b> (Android/iOS)</li>
+    <li>Instala una segunda copia del juego dentro de Dual Space</li>
+    <li>Completa el tutorial inicial</li>
+    <li>Ve a <b>Perfil → Cuenta → Gestión de Personaje</b></li>
+    <li>Click en <b>"Crear Nuevo Personaje"</b></li>
+    <li>Selecciona tu <b>zona de guerra/servidor actual</b></li>
+  </ol>
+  <img src="img-tip-farm-2.jpg" alt="Dual Space">
+
+  <h3>🚀 Método 2: Teletransporte Gratuito</h3>
+  <p><b>Aprovecha eventos con TP gratis (sábados):</b></p>
+  <ol>
+    <li>En <b>Guerra de Servidores</b> o <b>Versus de Alianza</b>, teletranspórtate a otra zona</li>
+    <li>Ve a <b>Perfil → Cuenta → Gestión de Personaje</b></li>
+    <li>Click en <b>"Crear Nuevo Personaje"</b></li>
+    <li>Selecciona tu <b>servidor original</b></li>
+  </ol>
+  <p><b>Ventaja:</b> No necesitas apps externas, usas el TP gratuito del evento.</p>
+
+  <h3>💡 Consejos para Farms Eficientes</h3>
+  <ul>
+    <li><b>Únete a tu propia alianza</b> para facilitar donaciones</li>
+    <li><b>Enfoca en producción:</b> mejora granjas, aserraderos y minas primero</li>
+    <li><b>No desarrolles militarmente</b> (solo recursos)</li>
+    <li><b>Usa escudos baratos</b> para proteger de ataques</li>
+    <li><b>Mantén poder bajo</b> para evitar ser objetivo</li>
+  </ul>
+
+  <h3>⚠️ Importante</h3>
+  <p>Verifica las reglas del juego sobre multi-cuentas. <b>Evita usar farms para manipular rankings</b> o violar términos de servicio.</p>
+`,
 
 tip5: `
   <h2>💰 Optimizar Cajas de Recursos</h2>
@@ -345,19 +374,103 @@ tip5: `
   <p><b>Recuerda:</b> La paciencia en este juego se recompensa. ¡Guarda esas cajas doradas! 💎</p>
 `,
 
-  tip6: `
-    <h2>🛡️ Buffs de Alianza</h2>
-    <img src="img-tip-alianza-1.jpg" alt="Alianza">
-    <p>Los buffs de alianza son <b>permanentes</b> y benefician a todos.</p>
-    <h3>Tecnologías prioritarias:</h3>
-    <ul>
-      <li><b>Velocidad de Construcción</b> → Ahorra días de espera</li>
-      <li><b>Velocidad de Investigación</b> → Fundamental</li>
-      <li><b>Capacidad de Ayuda</b> → Más ayudas = más rápido</li>
-      <li><b>ATQ/DEF de Tropas</b> → Para PvP</li>
-    </ul>
-    <p><b>Consejo:</b> Dona diariamente a tu alianza. Los buffs acumulativos hacen <b>enorme diferencia</b>.</p>
-  `,
+tip6: `
+  <h2>🏛️ Cargos Oficiales del Servidor: Buffs Gratis para Todo Jugador</h2>
+
+  <h3>📍 ¿Cómo Llegar al Gobierno de tu Servidor?</h3>
+  <p>Sigue estos pasos para acceder a la interfaz de gobierno:</p>
+  <ol>
+    <li>Haz clic en <b>tu perfil</b> (tu foto o nombre en pantalla).</li>
+    <li>Debajo del nombre de tu alianza verás tu <b>Zona de Batalla</b> — haz clic en ese número.</li>
+    <li>Esto te lleva directamente a la <b>interfaz de gobierno del servidor</b>.</li>
+    <li>Busca el cargo que te interese según el buff que necesites.</li>
+    <li>Si está disponible o tiene cola libre, presiona <b>"Solicitar"</b>. ¡Listo!</li>
+  </ol>
+
+  <h3>⚠️ Requisitos para Solicitar</h3>
+  <ul>
+    <li>Tu <b>Sede debe ser nivel 26 o superior</b> (varía según el Presidente actual).</li>
+    <li>Solo puedes ocupar <b>un cargo a la vez</b>.</li>
+    <li>El Presidente define <b>qué cargos están disponibles</b> para solicitar y sus requisitos.</li>
+  </ul>
+
+  <h3>⏱️ ¿Cuánto Dura el Cargo?</h3>
+  <ul>
+    <li>Al solicitar, recibes el cargo por <b>mínimo 10 minutos</b>.</li>
+    <li>Si <b>nadie más lo solicita</b>, lo conservas indefinidamente.</li>
+    <li>Si hay fila de espera, al cumplirse tu tiempo pasa al siguiente.</li>
+    <li>El Presidente puede <b>retirarte el cargo</b> en cualquier momento.</li>
+    <li>Hay una <b>cola de hasta 50 solicitudes</b> por cargo.</li>
+  </ul>
+
+  <h3>👑 Jerarquía y Buffs de Cada Cargo</h3>
+  <p>Elige el cargo según tu estilo de juego:</p>
+
+  <p><b>👑 Presidente</b><br>
+  • ATQ de Tropa <b>+15%</b><br>
+  • DEF de Tropa <b>+15%</b><br>
+  • Vida de Tropa <b>+5%</b><br>
+  → <i>Solo lo designa la alianza que conquista la capital. No es solicitble.</i></p>
+
+  <p><b>👸 Primera Dama</b><br>
+  • Producción de Recursos <b>+10%</b><br>
+  • Vel. de Recolección <b>+20%</b><br>
+  → <i>Ideal para farmers y jugadores enfocados en economía.</i></p>
+
+  <p><b>🤝 Vicepresidente</b><br>
+  • Vel. de Construcción <b>+5%</b><br>
+  • Vel. de Investigación <b>+5%</b><br>
+  → <i>Bueno si estás activo mejorando edificios e investigaciones. Además puede enviar correos a todo el servidor.</i></p>
+
+  <p><b>⚔️ Comandante General de la Guerra</b><br>
+  • ATQ de Tropa <b>+10%</b><br>
+  • DEF de Tropa <b>+10%</b><br>
+  → <i>Perfecto para jugadores enfocados en combate general.</i></p>
+
+  <p><b>🎖️ General Supremo</b><br>
+  • ATQ de Tropa <b>+10%</b><br>
+  • ATQ de Tropa en Asedio <b>+10%</b><br>
+  → <i>Ideal si participas en ataques a edificios o eventos de asedio.</i></p>
+
+  <p><b>🏗️ Ministro de Construcción</b><br>
+  • Vel. de Construcción <b>+15%</b><br>
+  • Tiempo gratuito para construir <b>+3,600 segundos</b><br>
+  → <i>Excelente para cuando estás subiendo edificios de nivel.</i></p>
+
+  <p><b>🌾 Ministro de Agricultura</b><br>
+  • Vel. de Recolección <b>+35%</b><br>
+  • Producción de Recursos <b>+20%</b><br>
+  → <i>El mejor cargo para farmers. Máximo beneficio de recursos.</i></p>
+
+  <p><b>🔬 Ministro de Investigación</b><br>
+  • Vel. de Investigación <b>+15%</b><br>
+  • Reducir tiempo de investigación <b>+3,600 segundos</b><br>
+  → <i>Perfecto para cuando estás activo investigando en el Laboratorio.</i></p>
+
+  <p><b>🛡️ Ministro de Defensa</b><br>
+  • ATQ de Tropa en Defensas de Asedio <b>+10%</b><br>
+  • DEF de Tropa en Defensas de Asedio <b>+10%</b><br>
+  → <i>Útil para defender tu base durante eventos de guerra.</i></p>
+
+  <h3>🎯 ¿Cuál Cargo Pedir Según tu Situación?</h3>
+  <ul>
+    <li>¿Subiendo edificios? → <b>Ministro de Construcción</b></li>
+    <li>¿Investigando en el Lab? → <b>Ministro de Investigación</b></li>
+    <li>¿Recolectando recursos? → <b>Ministro de Agricultura</b></li>
+    <li>¿En guerra o evento de combate? → <b>Comandante General o General Supremo</b></li>
+    <li>¿Defendiendo tu base? → <b>Ministro de Defensa</b></li>
+  </ul>
+
+  <h3>💡 Consejos Clave</h3>
+  <ul>
+    <li>Solicita el cargo <b>justo antes</b> de construir, investigar o atacar para aprovechar el buff.</li>
+    <li>Si el cargo está ocupado, <b>entra en la cola</b> — tienes hasta 50 lugares disponibles.</li>
+    <li>Los cargos son <b>gratuitos</b> — no cuestan recursos ni gemas. ¡Úsalos siempre!</li>
+    <li>Si eres F2P, el <b>Ministro de Agricultura</b> es el más valioso a largo plazo.</li>
+    <li>Algunos presidentes ponen <b>requisitos altos</b> — si no cumples, espera al siguiente gobierno.</li>
+  </ul>
+`,
+
 tip7: `
   <h2>💵 Mejores Compras para Principiantes</h2>
   <img src="img-tip-compras-1.jpg" alt="Sophia">

@@ -56,92 +56,153 @@ body{
 }
 
 /* ========================================= */
-/* CARD ESPECIAL DE SEDE CENTRAL */
+/* CARD DE SEDE CON SEO INTEGRADO            */
 /* ========================================= */
 
-.sede-special-card {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  border: 2px solid var(--acento);
-  border-radius: 15px;
-  padding: 2rem;
-  margin: 2rem 0;
-  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
-  position: relative;
-  overflow: hidden;
+.sede-card-seo {
+  margin: 2rem auto;
+  max-width: 1200px;
+  padding: 0;
 }
 
-.sede-special-card::before {
-  content: '🏛️';
-  position: absolute;
-  top: -30px;
-  right: -30px;
-  font-size: 150px;
-  opacity: 0.1;
+.sede-content-wrapper {
+  background: linear-gradient(135deg, rgba(196, 30, 58, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+  border: 2px solid rgba(196, 30, 58, 0.4);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
 }
 
-.sede-card-content {
+/* Fila icono + título */
+.sede-header-row {
   display: flex;
-  gap: 2rem;
   align-items: center;
-  position: relative;
-  z-index: 1;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
 }
 
-.sede-icon {
-  font-size: 80px;
-  line-height: 1;
+.sede-header-row .sede-icon-large {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 10px rgba(196, 30, 58, 0.3));
 }
 
-.sede-info {
-  flex: 1;
-}
-
-.sede-info h3 {
-  font-size: 2rem;
+.sede-title-seo {
   color: var(--acento);
-  margin: 0 0 0.5rem 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 1.4rem;
+  margin: 0 0 0.2rem 0;
+  font-weight: 700;
 }
 
 .sede-subtitle {
-  color: #bbb;
-  font-size: 1.1rem;
-  margin: 0 0 1rem 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin: 0;
 }
 
-.sede-features {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
+/* Highlights en fila horizontal */
+.sede-highlights-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 0.85rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 1px solid rgba(196, 30, 58, 0.2);
 }
 
-.sede-features li {
-  color: #ddd;
-  font-size: 1rem;
-  padding: 0.3rem 0;
+.sede-highlights-row span {
+  font-size: 0.82rem;
+  color: #aaa;
 }
 
-.sede-buttons {
-  margin-top: 1.5rem;
+.sede-highlights-row strong {
+  color: var(--acento);
 }
 
-.btn-sede-modal {
+/* Botones */
+.sede-buttons-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-sede-primary,
+.btn-sede-secondary {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  min-width: 180px;
+}
+
+.btn-sede-primary {
   background: var(--acento);
   color: #fff;
-  border: none;
-  padding: 0.8rem 2rem;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s;
-  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(196, 30, 58, 0.3);
 }
 
-.btn-sede-modal:hover {
-  background: #ff8555;
+.btn-sede-primary:hover {
+  background: #d32f3f;
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+  box-shadow: 0 6px 20px rgba(196, 30, 58, 0.5);
+}
+
+.btn-sede-secondary {
+  background: rgba(196, 30, 58, 0.15);
+  color: var(--texto);
+  border: 2px solid rgba(196, 30, 58, 0.4);
+}
+
+.btn-sede-secondary:hover {
+  background: rgba(196, 30, 58, 0.25);
+  border-color: var(--acento);
+  transform: translateY(-2px);
+}
+
+/* ========================================= */
+/* RESPONSIVE                                */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  .sede-content-wrapper {
+    padding: 1.25rem;
+  }
+
+  .sede-title-seo {
+    font-size: 1.1rem;
+  }
+
+  .sede-highlights-row span {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+
+  .sede-buttons-group {
+    flex-direction: column;
+  }
+
+  .btn-sede-primary,
+  .btn-sede-secondary {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sede-header-row {
+    align-items: flex-start;
+  }
+
+  .sede-header-row .sede-icon-large {
+    font-size: 2rem;
+  }
+
+  .sede-title-seo {
+    font-size: 1rem;
+  }
 }
 
 /* ========================================= */

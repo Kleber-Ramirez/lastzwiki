@@ -40,25 +40,28 @@ img {
 
 /* ===== BOTONES DE NAVEGACIÓN ===== */
 .botones-img {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
   gap: 10px;
   background-color: #161b22;
   padding: 15px;
-  flex-wrap: wrap;
+  max-width: 1800px; /* Ancho máximo contenido */
+  margin: 0 auto; /* Centrado */
 }
 
 .botones-img button {
   background-color: #ff4747;
   border: 2px solid transparent;
-  padding: 10px 18px;
+  padding: 10px 16px; /* Un poco más compacto */
   color: #fff;
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Texto ligeramente más pequeño */
+  white-space: nowrap; /* Evita que el texto se parta */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .botones-img button:hover {
@@ -311,15 +314,16 @@ img {
   }
 
   /* Botones navegación */
-  .botones-img {
-    padding: 12px 10px;
-    gap: 8px;
-  }
+.botones-img {
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablets */
+  padding: 12px 10px;
+  gap: 10px;
+}
 
-  .botones-img button {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
+.botones-img button {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+}
 
   /* Títulos */
   .titulo-seccion {
@@ -413,19 +417,19 @@ img {
   }
 
   /* Botones: Stack vertical */
-  .botones-img {
-    flex-direction: column;
-    padding: 10px;
-    gap: 8px;
-  }
+.botones-img {
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas en mobile */
+  padding: 12px 8px;
+  gap: 8px;
+}
 
-  .botones-img button {
-    width: 100%;
-    max-width: 300px;
-    padding: 12px 20px;
-    font-size: 0.95rem;
-    min-height: 44px;
-  }
+.botones-img button {
+  padding: 10px 8px;
+  font-size: 0.85rem;
+  min-height: 44px; /* Touch-friendly */
+  white-space: normal; /* Permite que texto largo se parta en mobile */
+  line-height: 1.2;
+}
 
   /* Títulos */
   .titulo-seccion {
@@ -547,10 +551,11 @@ img {
     font-size: 0.85rem;
   }
 
-  .botones-img button {
-    font-size: 0.9rem;
-    padding: 10px 15px;
-  }
+.botones-img button {
+  font-size: 0.8rem;
+  padding: 8px 6px;
+  line-height: 1.2;
+}
 
   .carrusel {
     width: 98%;

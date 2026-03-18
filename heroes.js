@@ -178,7 +178,7 @@ const heroesData = {
   },
 
   lysia: {
-    imgHabilidad: "img-heroe-lysia2.webp",
+    imgHabilidad: "img-heroe-lysia.webp",
     imgEstrellas: "img-heroe-lysia-estrellas.webp",
     habilidades: {
       1: {
