@@ -1,0 +1,88 @@
+/* =============================================
+   APOCALYPSE BAR — Hora Apocalipsis + Rosa Semanal
+   Usado en: index.html (ES y EN)
+   ============================================= */
+
+.apocalypse-bar {
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(196, 30, 58, 0.3);
+  padding: 0.45rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+  flex-wrap: wrap;
+}
+
+.apocalypse-bar .apoc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #888;
+}
+
+.apocalypse-bar .apoc-label {
+  color: #aaa;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+/* Hora apocalipsis y cuenta regresiva */
+.apocalypse-bar .apoc-value {
+  color: #c41e3a;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.03em;
+}
+
+/* Separador | */
+.apocalypse-bar .apoc-divider {
+  color: #444;
+  font-size: 0.7rem;
+}
+
+/* Rosa semanal — contenedor */
+.apocalypse-bar .rosa-value {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #aaa;
+}
+
+/* Número de rosas — dorado resaltado */
+.apocalypse-bar .rosa-num {
+  color: #f5c842;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Buff activo — rojo de la wiki */
+.apocalypse-bar .rosa-buff-text {
+  color: #c41e3a;
+  font-weight: 700;
+}
+
+/* Duración del buff — gris sutil */
+.apocalypse-bar .rosa-duration {
+  color: #666;
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 600px) {
+  .apocalypse-bar {
+    gap: 0.8rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    justify-content: space-around;
+  }
+
+  .apoc-divider {
+    display: none;
+  }
+}

@@ -92,8 +92,8 @@
   <link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="apocalypse.css">
 </head>
-<body>
 
   <header class="site-header">
     <div class="brand">
@@ -118,6 +118,30 @@
       </ul>
     </nav>
   </header>
+
+  <!-- Barra Hora Apocalipsis + Rosa Semanal -->
+  <div class="apocalypse-bar">
+    <div class="apoc-item">
+      <span class="apoc-label">🕐 Hora Apocalipsis</span>
+      <span class="apoc-value" id="apoc-time">--:--</span>
+    </div>
+    <span class="apoc-divider">|</span>
+    <div class="apoc-item">
+      <span class="apoc-label">⏱️ Reset en</span>
+      <span class="apoc-value" id="apoc-countdown">--:--:--</span>
+    </div>
+    <span class="apoc-divider">|</span>
+    <div class="apoc-item">
+      <span class="apoc-label">🌹 Rosa Semanal</span>
+      <span class="rosa-value">
+        <span class="rosa-num" id="rosa-num">3</span>
+        <span> rosas → </span>
+        <span class="rosa-buff-text" id="rosa-buff">Aceleración de Recolección +30%</span>
+        <span class="rosa-duration"> (<span id="rosa-duration">24h</span>)</span>
+      </span>
+    </div>
+  </div>
+
   <main>
    <section class="carrusel" aria-label="Secciones destacadas">
       <div class="carrusel-container">
@@ -128,15 +152,15 @@
           </a>
         </article>
         <article class="carrusel-item">
-          <a href="alianzas.html" style="text-decoration: none; color: inherit;">
-            <img src="img-s2.jpg" alt="Alianzas">
-            <p>Consejos de alianzas</p>
+          <a href="temporada-2.html" style="text-decoration: none; color: inherit;">
+            <img src="img-s2.jpg" alt="Temporada 2 - Last Z">
+            <p>Temporada - 2</p>
           </a>
         </article>
         <article class="carrusel-item">
           <a href="temporada-3.html" style="text-decoration: none; color: inherit;">
-            <img src="img-s3.jpg" alt="Edificios">
-            <p>Mejora tus edificios</p>
+            <img src="img-s3.jpg" alt="Temporada 3 - Last Z">
+            <p>Temporada - 3</p>
           </a>
         </article>
         <article class="carrusel-item">
@@ -152,9 +176,9 @@
          </a>
         </article>
         <article class="carrusel-item">
-          <a href="heroes.html" style="text-decoration: none; color: inherit;">
-            <img src="img-héroes2.png" alt="Héroes">
-            <p>Guía de héroes</p>
+          <a href="tienda.html" style="text-decoration: none; color: inherit;">
+            <img src="img-store.jpg" alt="Tienda Last Z - Gift Codes">
+            <p>Guía de Tienda - codigos</p>
           </a>
         </article>
       </div>
@@ -432,6 +456,45 @@
 </footer>
   <script src="index.js"></script>
   <script src="menu.js"></script>
+  <script>
+    // =============================================
+    // RELOJ HORA APOCALIPSIS
+    // Reset diario a las 21:00 hora Lima (UTC-5)
+    // = 00:00 hora apocalipsis (UTC-2)
+    // =============================================
 
+    // ⬇️ EDITAR CADA LUNES — Rosa Semanal
+    const rosaCantidad = 3;
+    const rosaBuff = "Aceleración de Recolección +30%";
+    const rosaDuracion = "24h";
+    // ⬆️ Solo cambia estos 3 valores cada semana
+
+    document.getElementById('rosa-num').textContent = rosaCantidad;
+    document.getElementById('rosa-buff').textContent = rosaBuff;
+    document.getElementById('rosa-duration').textContent = rosaDuracion;
+
+    function updateApocClock() {
+      const now = new Date();
+      const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
+      const apocOffset = -2 * 60 * 60000;
+      const apocNow = new Date(utcMs + apocOffset);
+
+      const h = String(apocNow.getHours()).padStart(2, '0');
+      const m = String(apocNow.getMinutes()).padStart(2, '0');
+      document.getElementById('apoc-time').textContent = h + ':' + m;
+
+      const nextReset = new Date(apocNow);
+      nextReset.setHours(24, 0, 0, 0);
+      const diff = nextReset - apocNow;
+
+      const rh = String(Math.floor(diff / 3600000)).padStart(2, '0');
+      const rm = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      const rs = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      document.getElementById('apoc-countdown').textContent = rh + ':' + rm + ':' + rs;
+    }
+
+    updateApocClock();
+    setInterval(updateApocClock, 1000);
+  </script>
 </body>
 </html>

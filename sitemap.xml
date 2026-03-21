@@ -2,34 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- ==========================================
-       PÁGINA PRINCIPAL / HOME
-       ========================================== -->
-
+  <!-- PÁGINA PRINCIPAL / HOME -->
   <url>
     <loc>https://lastzwiki.com/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/"/>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/"/>
-    <lastmod>2026-03-16</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- ==========================================
-       GUÍAS / GUIDES
-       ========================================== -->
-
+  <!-- GUÍAS / GUIDES -->
   <url>
     <loc>https://lastzwiki.com/guia-principiantes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/guia-principiantes.html"/>
@@ -39,7 +32,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/beginner-guide.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/guia-principiantes.html"/>
@@ -50,36 +42,65 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       LABORATORIO / LABORATORY
-       ========================================== -->
-
+  <!-- LABORATORIO / LABORATORY -->
   <url>
     <loc>https://lastzwiki.com/laboratorio.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/laboratorio.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/laboratorio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/laboratory.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/laboratory.html"/>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/en/laboratory.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/laboratorio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/laboratory.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/laboratory.html"/>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       TALLER / WORKSHOP
-       ========================================== -->
-
+  <!-- TALLER / WORKSHOP -->
   <url>
     <loc>https://lastzwiki.com/taller.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/taller.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/taller.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/workshop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/workshop.html"/>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/en/workshop.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/taller.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/workshop.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/workshop.html"/>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       TEMPORADAS / SEASONS
-       ========================================== -->
-
+  <!-- TEMPORADAS / SEASONS -->
+  <url>
+    <loc>https://lastzwiki.com/temporada-2.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-2.html"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/en/season-2.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-2.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-2.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-2.html"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <url>
     <loc>https://lastzwiki.com/temporada-3.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-3.html"/>
@@ -89,7 +110,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/season-3.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-3.html"/>
@@ -100,19 +120,27 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- TIENDA / STORE -->
   <url>
-    <loc>https://lastzwiki.com/temporada-2.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-2.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/temporada-2.html"/>
-    <lastmod>2026-02-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://lastzwiki.com/tienda.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/tienda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/store.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/store.html"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/en/store.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/tienda.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/store.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/store.html"/>
+    <lastmod>2026-03-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       EDIFICIOS / BUILDINGS
-       ========================================== -->
-
+  <!-- EDIFICIOS / BUILDINGS -->
   <url>
     <loc>https://lastzwiki.com/edificios.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/edificios.html"/>
@@ -122,7 +150,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/buildings.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/edificios.html"/>
@@ -133,10 +160,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       HÉROES / HEROES
-       ========================================== -->
-
+  <!-- HÉROES / HEROES -->
   <url>
     <loc>https://lastzwiki.com/heroes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/heroes.html"/>
@@ -146,7 +170,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/heroes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/heroes.html"/>
@@ -157,34 +180,27 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       EVENTOS / EVENTS
-       ========================================== -->
-
+  <!-- EVENTOS / EVENTS -->
   <url>
     <loc>https://lastzwiki.com/eventos.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/eventos.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/events.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/events.html"/>
-    <lastmod>2026-02-23</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/events.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/eventos.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/events.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/events.html"/>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- ==========================================
-       ALIANZAS / ALLIANCES
-       ========================================== -->
-
+  <!-- ALIANZAS / ALLIANCES -->
   <url>
     <loc>https://lastzwiki.com/alianzas.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/alianzas.html"/>
@@ -194,7 +210,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/alliances.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/alianzas.html"/>
@@ -205,10 +220,7 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- ==========================================
-       RANKING
-       ========================================== -->
-
+  <!-- RANKING -->
   <url>
     <loc>https://lastzwiki.com/ranking.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/ranking.html"/>
@@ -218,7 +230,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/ranking.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/ranking.html"/>
@@ -229,10 +240,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- ==========================================
-       TIER LIST
-       ========================================== -->
-
+  <!-- TIER LIST -->
   <url>
     <loc>https://lastzwiki.com/tierlist-edificios.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/tierlist-edificios.html"/>
@@ -242,7 +250,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/building-tierlist.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/tierlist-edificios.html"/>
@@ -253,10 +260,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ==========================================
-       COMUNIDAD / COMMUNITY
-       ========================================== -->
-
+  <!-- COMUNIDAD / COMMUNITY -->
   <url>
     <loc>https://lastzwiki.com/comunidad.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/comunidad.html"/>
@@ -266,7 +270,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/community.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/comunidad.html"/>
@@ -277,10 +280,7 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- ==========================================
-       PÁGINAS INSTITUCIONALES / ABOUT
-       ========================================== -->
-
+  <!-- PÁGINAS INSTITUCIONALES / ABOUT -->
   <url>
     <loc>https://lastzwiki.com/sobre-nosotros.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/sobre-nosotros.html"/>
@@ -290,7 +290,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/about.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/sobre-nosotros.html"/>
@@ -300,7 +299,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/contacto.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/contacto.html"/>
@@ -310,7 +308,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/contacto.html"/>
@@ -321,10 +318,7 @@
     <priority>0.6</priority>
   </url>
 
-  <!-- ==========================================
-       PÁGINAS LEGALES / LEGAL
-       ========================================== -->
-
+  <!-- PÁGINAS LEGALES / LEGAL -->
   <url>
     <loc>https://lastzwiki.com/privacidad.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/privacidad.html"/>
@@ -334,7 +328,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/privacy.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/privacidad.html"/>
@@ -344,7 +337,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/terminos.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/terminos.html"/>
@@ -354,7 +346,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
-
   <url>
     <loc>https://lastzwiki.com/en/terms.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/terminos.html"/>
