@@ -80,17 +80,13 @@
   <link rel="stylesheet" href="../edificios.css" />
 </head>
 <body>
-  <!-- Header (consistente con inicio) -->
   <header class="site-header">
     <div class="brand">
       <img src="../lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
       <h1>Last Z Wiki</h1>
     </div>
-
     <button class="hamburger" aria-label="Navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
     <nav class="main-nav">
       <ul>
@@ -103,7 +99,7 @@
       </ul>
     </nav>
   </header>
-
+ 
   <main class="page-wrap">
     <section class="intro">
       <h2>Buildings in Last Z</h2>
@@ -111,86 +107,77 @@
         Explore each building's functions, its role in your base, and how to prioritize them. Use the filters to browse by category.
       </p>
     </section>
-
+ 
 <!-- ========================================= -->
-<!-- CARD ESPECIAL DE SEDE (en página Edificios) -->
+<!-- FIX 1: SEDE CARD — nueva estructura       -->
 <!-- ========================================= -->
-
-<!-- Agregar ANTES de tus cards de edificios normales -->
-
-<div class="sede-special-card">
-  <div class="sede-card-content">
-    <div class="sede-icon">🏛️</div>
-    <div class="sede-info">
-      <h3>HEADQUARTERS</h3>
-      <p class="sede-subtitle">The heart of your base</p>
-      <ul class="sede-features">
-        <li>📊 Levels: 1-35+ (Scalable)</li>
-        <li>🎨 Skins: 9 available with unique buffs</li>
-        <li>⚡ Complex requirements per level</li>
-      </ul>
-      <div class="sede-buttons">
-        <button class="btn-sede-modal" onclick="openSedeModal()">
-          🔍 View Full Guide
-        </button>
+ 
+<section id="requisitos-sede" class="sede-card-seo">
+  <div class="sede-content-wrapper">
+ 
+    <div class="sede-header-row">
+      <div class="sede-icon-large">🏛️</div>
+      <div>
+        <h2 class="sede-title-seo">Headquarters Requirements by Level in Last Z</h2>
+        <p class="sede-subtitle">The heart of your base · Levels 1–35 · 9 Skins with buffs</p>
       </div>
     </div>
+ 
+    <div class="sede-highlights-row">
+      <span>📊 <strong>Lv.10:</strong> Lab 10 · 2.14M res.</span>
+      <span>📈 <strong>Lv.20:</strong> Lab 19 · 68.9M res.</span>
+      <span>🚀 <strong>Lv.30:</strong> Lab 29 · 1.4B res.</span>
+      <span>⚙️ <strong>Lv.35:</strong> Sniper Barracks 34 + Steel</span>
+    </div>
+ 
+    <div class="sede-buttons-group">
+      <button class="btn-sede-primary" onclick="openSedeModalDirectTab('requisitos')">
+        📊 View Full Requirements Table
+      </button>
+      <button class="btn-sede-secondary" onclick="openSedeModalDirectTab('skins')">
+        🎨 View Skins &amp; Buffs
+      </button>
+    </div>
+ 
   </div>
-</div>
-
+</section>
+ 
 <!-- ========================================= -->
-<!-- MODAL DE SEDE CENTRAL -->
+<!-- MODAL DE SEDE CENTRAL                     -->
 <!-- ========================================= -->
-
+ 
 <div id="sedeModal" class="sede-modal">
   <div class="sede-modal-content">
-    
-    <!-- Header del Modal -->
+ 
     <div class="sede-modal-header">
       <h2>🏛️ HEADQUARTERS - Complete Guide</h2>
       <span class="sede-close" onclick="closeSedeModal()">&times;</span>
     </div>
-
-    <!-- Tabs -->
+ 
     <div class="sede-tabs">
-      <button class="sede-tab active" onclick="openSedeTab('skins')">
-        🎨 Skins
-      </button>
-      <button class="sede-tab" onclick="openSedeTab('requisitos')">
-        📊 Requirements
-      </button>
-      <button class="sede-tab" onclick="openSedeTab('niveles')">
-        📈 Full Table
-      </button>
+      <button class="sede-tab active" onclick="openSedeTab('skins')">🎨 Skins</button>
+      <button class="sede-tab" onclick="openSedeTab('requisitos')">📊 Requirements</button>
+      <button class="sede-tab" onclick="openSedeTab('niveles')">📈 Full Table</button>
     </div>
-
-    <!-- Contenido de los Tabs -->
+ 
     <div class="sede-tab-content">
-
+ 
       <!-- ============ TAB 1: SKINS ============ -->
       <div id="skins" class="sede-tab-panel active">
         <h3 class="sede-section-title">HQ Appearances</h3>
         <p class="sede-section-desc">Each skin grants unique buffs for your base</p>
-        
+ 
         <div class="sede-skins-carousel">
-          
-          <!-- Skin 1 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-1.webp" alt="Sede por Defecto">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-1.webp" alt="Default HQ"></div>
             <h4>Default HQ</h4>
             <p class="sede-skin-type">Base Skin</p>
-            <div class="sede-skin-buffs">
-              <p class="no-buff">No additional buffs</p>
-            </div>
+            <div class="sede-skin-buffs"><p class="no-buff">No additional buffs</p></div>
           </div>
-
-          <!-- Skin 2 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-2.webp" alt="Fortaleza de Combate">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-2.webp" alt="Combat Fortress"></div>
             <h4>Combat Fortress</h4>
             <p class="sede-skin-type">Premium Skin</p>
             <div class="sede-skin-buffs">
@@ -199,12 +186,9 @@
               <p>💰 Z Coins Bonus +10.0%</p>
             </div>
           </div>
-
-          <!-- Skin 3 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-3.webp" alt="Reino Armado Navideño">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-3.webp" alt="Armed Christmas Kingdom"></div>
             <h4>Armed Christmas Kingdom</h4>
             <p class="sede-skin-type">Event Skin</p>
             <div class="sede-skin-buffs">
@@ -212,12 +196,9 @@
               <p>🪵 Wood Prod. +10.0%</p>
             </div>
           </div>
-
-          <!-- Skin 4 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-4.webp" alt="Espectáculo Explosivo">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-4.webp" alt="Explosive Spectacle"></div>
             <h4>Explosive Spectacle</h4>
             <p class="sede-skin-type">Event Skin</p>
             <div class="sede-skin-buffs">
@@ -225,12 +206,9 @@
               <p>🥫 Food Prod. +10.0%</p>
             </div>
           </div>
-
-          <!-- Skin 5 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-5.webp" alt="Boxeador T-Rex">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-5.webp" alt="T-Rex Boxer"></div>
             <h4>T-Rex Boxer</h4>
             <p class="sede-skin-type">Event Skin</p>
             <div class="sede-skin-buffs">
@@ -238,12 +216,9 @@
               <p>⚡ Wind Turbine Prod. +10.0%</p>
             </div>
           </div>
-
-          <!-- Skin 5 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-6.webp" alt="Adorable Pequeña Nieves">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-6.webp" alt="Adorable Little Snow"></div>
             <h4>Adorable Little Snow</h4>
             <p class="sede-skin-type">Event Skin</p>
             <div class="sede-skin-buffs">
@@ -251,12 +226,9 @@
               <p>⚔️ Troop ATK +1.0%</p>
             </div>
           </div>
-
-          <!-- Skin 6 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-7.webp" alt="Gato Baterista">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-7.webp" alt="Drummer Cat"></div>
             <h4>Drummer Cat</h4>
             <p class="sede-skin-type">Event Skin</p>
             <div class="sede-skin-buffs">
@@ -264,12 +236,9 @@
               <p>💰 Z Coins Bonus +10.0%</p>
             </div>
           </div>
-
-          <!-- Skin 7 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-8.webp" alt="Dragón de Pesadilla">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-8.webp" alt="Nightmare Dragon"></div>
             <h4>Nightmare Dragon</h4>
             <p class="sede-skin-type">Premium Skin</p>
             <div class="sede-skin-buffs">
@@ -277,14 +246,9 @@
               <p>🛡️ Troop DEF +2.0%</p>
             </div>
           </div>
-
-
-
-          <!-- Skin 9 -->
+ 
           <div class="sede-skin-card">
-            <div class="sede-skin-image">
-              <img src="../img-sede-9.webp" alt="Asesino Polar">
-            </div>
+            <div class="sede-skin-image"><img src="../img-sede-9.webp" alt="Polar Assassin"></div>
             <h4>Polar Assassin</h4>
             <p class="sede-skin-type">Event Skin</p>
             <div class="sede-skin-buffs">
@@ -292,648 +256,442 @@
               <p>🛡️ Troop DEF +2.0%</p>
             </div>
           </div>
+ 
         </div>
       </div>
-
-      <!-- ============ TAB 2: REQUISITOS ============ -->
+ 
+      <!-- ============ TAB 2: REQUIREMENTS ============ -->
+      <!-- FIX 2: Botones "Nivel" → "Level"            -->
       <div id="requisitos" class="sede-tab-panel">
         <h3 class="sede-section-title">Requirements by Level</h3>
-        
-       <!-- Filtros -->
+ 
         <div class="sede-nivel-filters">
           <button class="sede-filter-btn active" onclick="filterSedeNivel('all')">All</button>
-          <button class="sede-filter-btn" onclick="filterSedeNivel('1-9')">Nivel 1-9</button>
-          <button class="sede-filter-btn" onclick="filterSedeNivel('10-14')">Nivel 10-14</button>
-          <button class="sede-filter-btn" onclick="filterSedeNivel('15-19')">Nivel 15-19</button>
-          <button class="sede-filter-btn" onclick="filterSedeNivel('20-25')">Nivel 20-25</button>
-          <button class="sede-filter-btn" onclick="filterSedeNivel('26-30')">Nivel 26-30</button>
-          <button class="sede-filter-btn" onclick="filterSedeNivel('31-35')">Nivel 31-35</button>
+          <button class="sede-filter-btn" onclick="filterSedeNivel('1-9')">Level 1-9</button>
+          <button class="sede-filter-btn" onclick="filterSedeNivel('10-14')">Level 10-14</button>
+          <button class="sede-filter-btn" onclick="filterSedeNivel('15-19')">Level 15-19</button>
+          <button class="sede-filter-btn" onclick="filterSedeNivel('20-25')">Level 20-25</button>
+          <button class="sede-filter-btn" onclick="filterSedeNivel('26-30')">Level 26-30</button>
+          <button class="sede-filter-btn" onclick="filterSedeNivel('31-35')">Level 31-35</button>
         </div>
-
+ 
         <div class="sede-requisitos-list">
-
-<!-- ============================================
-     SEDE PRINCIPAL - NIVELES 1-19 CORREGIDOS
-     Replace from block "Level 1 → 2" 
-     up to block "Level 18 → 19" in buildings.html
-     ============================================ -->
-
-          <!-- Nivel 1 → 2 -->
+ 
+          <!-- Level 1 → 2 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 1 → 2</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 1 → 2</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> None required
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> None required</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 12k</span>
-                <span>🥫 Food: ---</span>
-                <span>💰 Coins: ---</span>
+                <span>🪵 Wood: 12k</span><span>🥫 Food: ---</span><span>💰 Coins: ---</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 2 → 3 -->
+ 
+          <!-- Level 2 → 3 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 2 → 3</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 2 → 3</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> None required
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> None required</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: ---</span>
-                <span>🥫 Food: 10.3k</span>
-                <span>💰 Coins: ---</span>
+                <span>🪵 Wood: ---</span><span>🥫 Food: 10.3k</span><span>💰 Coins: ---</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 3 → 4 -->
+ 
+          <!-- Level 3 → 4 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 3 → 4</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 3 → 4</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Wall level 3
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Wall level 3</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: ---</span>
-                <span>🥫 Food: 15.5k</span>
-                <span>💰 Coins: ---</span>
+                <span>🪵 Wood: ---</span><span>🥫 Food: 15.5k</span><span>💰 Coins: ---</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 4 → 5 -->
+ 
+          <!-- Level 4 → 5 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 4 → 5</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 4 → 5</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Radar level 1, Raiders Camp level 4
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Radar level 1, Raiders Camp level 4</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: ---</span>
-                <span>🥫 Food: 23.3k</span>
-                <span>💰 Coins: ---</span>
+                <span>🪵 Wood: ---</span><span>🥫 Food: 23.3k</span><span>💰 Coins: ---</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 5 → 6 -->
+ 
+          <!-- Level 5 → 6 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 5 → 6</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 5 → 6</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Military Center level 5
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Military Center level 5</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 139.9k</span>
-                <span>🥫 Food: 139.9k</span>
-                <span>💰 Coins: 27.4k</span>
+                <span>🪵 Wood: 139.9k</span><span>🥫 Food: 139.9k</span><span>💰 Coins: 27.4k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 6 → 7 -->
+ 
+          <!-- Level 6 → 7 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 6 → 7</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 6 → 7</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Alliance Center, Training Camp
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Alliance Center, Training Camp</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 279.9k</span>
-                <span>🥫 Food: 279.9k</span>
-                <span>💰 Coins: 54.8k</span>
+                <span>🪵 Wood: 279.9k</span><span>🥫 Food: 279.9k</span><span>💰 Coins: 54.8k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 7 → 8 -->
+ 
+          <!-- Level 7 → 8 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 7 → 8</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 7 → 8</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 7, Raiders Camp level 7
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 7, Raiders Camp level 7</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 447.9k</span>
-                <span>🥫 Food: 447.9k</span>
-                <span>💰 Coins: 87.8k</span>
+                <span>🪵 Wood: 447.9k</span><span>🥫 Food: 447.9k</span><span>💰 Coins: 87.8k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 8 → 9 -->
+ 
+          <!-- Level 8 → 9 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 8 → 9</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 8 → 9</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 8, Hospital level 8
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 8, Hospital level 8</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 716.6k</span>
-                <span>🥫 Food: 716.6k</span>
-                <span>💰 Coins: 140k</span>
+                <span>🪵 Wood: 716.6k</span><span>🥫 Food: 716.6k</span><span>💰 Coins: 140k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 9 → 10 -->
+ 
+          <!-- Level 9 → 10 -->
           <div class="sede-req-item" data-range="1-9">
-            <div class="sede-req-header">
-              <h4>Level 9 → 10</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 9 → 10</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 9, Shooting Range level 9
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 9, Shooting Range level 9</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 859.9k</span>
-                <span>🥫 Food: 859.9k</span>
-                <span>💰 Coins: 168k</span>
+                <span>🪵 Wood: 859.9k</span><span>🥫 Food: 859.9k</span><span>💰 Coins: 168k</span>
               </div>
             </div>
           </div>
-
-          <!-- ==================== NIVELES 10-14 ==================== -->
-
-          <!-- Nivel 10 → 11 -->
+ 
+          <!-- Level 10 → 11 -->
           <div class="sede-req-item" data-range="10-14">
-            <div class="sede-req-header">
-              <h4>Level 10 → 11</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 10 → 11</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 10, Bikers Camp level 10
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 10, Bikers Camp level 10</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 2.14M</span>
-                <span>🥫 Food: 2.14M</span>
-                <span>💰 Coins: 421k</span>
+                <span>🪵 Wood: 2.14M</span><span>🥫 Food: 2.14M</span><span>💰 Coins: 421k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 11 → 12 -->
+ 
+          <!-- Level 11 → 12 -->
           <div class="sede-req-item" data-range="10-14">
-            <div class="sede-req-header">
-              <h4>Level 11 → 12</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 11 → 12</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 11, Wall level 11
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 11, Wall level 11</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 3.6M</span>
-                <span>🥫 Food: 3.6M</span>
-                <span>💰 Coins: 716k</span>
+                <span>🪵 Wood: 3.6M</span><span>🥫 Food: 3.6M</span><span>💰 Coins: 716k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 12 → 13 -->
+ 
+          <!-- Level 12 → 13 -->
           <div class="sede-req-item" data-range="10-14">
-            <div class="sede-req-header">
-              <h4>Level 12 → 13</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 12 → 13</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 12, Alliance Center level 12
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 12, Alliance Center level 12</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 4.0M</span>
-                <span>🥫 Food: 4.0M</span>
-                <span>💰 Coins: 788k</span>
+                <span>🪵 Wood: 4.0M</span><span>🥫 Food: 4.0M</span><span>💰 Coins: 788k</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 13 → 14 -->
+ 
+          <!-- Level 13 → 14 -->
           <div class="sede-req-item" data-range="10-14">
-            <div class="sede-req-header">
-              <h4>Level 13 → 14</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 13 → 14</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 13, Raiders Camp level 13
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 13, Raiders Camp level 13</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 5.6M</span>
-                <span>🥫 Food: 5.6M</span>
-                <span>💰 Coins: 1.1M</span>
+                <span>🪵 Wood: 5.6M</span><span>🥫 Food: 5.6M</span><span>💰 Coins: 1.1M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 14 → 15 -->
+ 
+          <!-- Level 14 → 15 -->
           <div class="sede-req-item" data-range="10-14">
-            <div class="sede-req-header">
-              <h4>Level 14 → 15</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 14 → 15</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 14, Shooting Range level 14
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 14, Shooting Range level 14</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 7.8M</span>
-                <span>🥫 Food: 7.8M</span>
-                <span>💰 Coins: 1.5M</span>
+                <span>🪵 Wood: 7.8M</span><span>🥫 Food: 7.8M</span><span>💰 Coins: 1.5M</span>
               </div>
             </div>
           </div>
-
-          <!-- ==================== NIVELES 15-19 ==================== -->
-
-          <!-- Nivel 15 → 16 -->
+ 
+          <!-- Level 15 → 16 -->
           <div class="sede-req-item" data-range="15-19">
-            <div class="sede-req-header">
-              <h4>Level 15 → 16</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 15 → 16</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 15, Camp level 15
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 15, Camp level 15</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 14.0M</span>
-                <span>🥫 Food: 14.0M</span>
-                <span>💰 Coins: ---</span>
+                <span>🪵 Wood: 14.0M</span><span>🥫 Food: 14.0M</span><span>💰 Coins: ---</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 16 → 17 -->
+ 
+          <!-- Level 16 → 17 -->
           <div class="sede-req-item" data-range="15-19">
-            <div class="sede-req-header">
-              <h4>Level 16 → 17</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 16 → 17</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 16, Wall level 16
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 16, Wall level 16</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 18.23M</span>
-                <span>🥫 Food: 18.23M</span>
-                <span>💰 Coins: 3.57M</span>
+                <span>🪵 Wood: 18.23M</span><span>🥫 Food: 18.23M</span><span>💰 Coins: 3.57M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 17 → 18 -->
+ 
+          <!-- Level 17 → 18 -->
           <div class="sede-req-item" data-range="15-19">
-            <div class="sede-req-header">
-              <h4>Level 17 → 18</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 17 → 18</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 17, Alliance Center level 17
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 17, Alliance Center level 17</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 31.91M</span>
-                <span>🥫 Food: 31.91M</span>
-                <span>💰 Coins: 6.25M</span>
+                <span>🪵 Wood: 31.91M</span><span>🥫 Food: 31.91M</span><span>💰 Coins: 6.25M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 18 → 19 -->
+ 
+          <!-- Level 18 → 19 -->
           <div class="sede-req-item" data-range="15-19">
-            <div class="sede-req-header">
-              <h4>Level 18 → 19</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 18 → 19</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 18, Alliance Center level 18
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 18, Alliance Center level 18</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 38.2M</span>
-                <span>🥫 Food: 38.2M</span>
-                <span>💰 Coins: 7.5M</span>
+                <span>🪵 Wood: 38.2M</span><span>🥫 Food: 38.2M</span><span>💰 Coins: 7.5M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 19 → 20 (ya correcto en tu web, dejarlo igual) -->
+ 
+          <!-- Level 19 → 20 -->
           <div class="sede-req-item" data-range="15-19">
-            <div class="sede-req-header">
-              <h4>Level 19 → 20</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 19 → 20</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratory level 19, Shooting Range level 19
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory level 19, Shooting Range level 19</p>
               <div class="sede-req-resources">
-                <span>🪵 Wood: 68.92M</span>
-                <span>🥫 Food: 68.92M</span>
-                <span>💰 Coins: 13.50M</span>
+                <span>🪵 Wood: 68.92M</span><span>🥫 Food: 68.92M</span><span>💰 Coins: 13.50M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 20 -->
+ 
+          <!-- FIX 3: Niveles 20-35 — edificios traducidos -->
+ 
+          <!-- Level 20 -->
           <div class="sede-req-item" data-range="20-25">
-            <div class="sede-req-header">
-              <h4>Level 19 → 20</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 19 → 20</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 19, Campo de Tiro 19
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 19, Shooting Range 19</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 68.9 M</span>
-                <span>🪵 Wood: 68.9 M</span>
-                <span>💰 Coins: 13.5 M</span>
+                <span>🥫 Food: 68.9M</span><span>🪵 Wood: 68.9M</span><span>💰 Coins: 13.5M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 21 -->
+ 
+          <!-- Level 21 -->
           <div class="sede-req-item" data-range="20-25">
-            <div class="sede-req-header">
-              <h4>Level 20 → 21</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 20 → 21</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 20, Bikers Barracks 20
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 20, Bikers Barracks 20</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 96.4 M</span>
-                <span>🪵 Wood: 96.4 M</span>
-                <span>💰 Coins: 18.9 M</span>
+                <span>🥫 Food: 96.4M</span><span>🪵 Wood: 96.4M</span><span>💰 Coins: 18.9M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 22 -->
+ 
+          <!-- Level 22 -->
           <div class="sede-req-item" data-range="20-25">
-            <div class="sede-req-header">
-              <h4>Level 21 → 22</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 21 → 22</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 21, Muro 21
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 21, Wall 21</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 125.4 M</span>
-                <span>🪵 Wood: 125.4 M</span>
-                <span>💰 Coins: 24.6 M</span>
+                <span>🥫 Food: 125.4M</span><span>🪵 Wood: 125.4M</span><span>💰 Coins: 24.6M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 23 -->
+ 
+          <!-- Level 23 -->
           <div class="sede-req-item" data-range="20-25">
-            <div class="sede-req-header">
-              <h4>Level 22 → 23</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 22 → 23</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 22, Alliance Center 22
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 22, Alliance Center 22</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 156.8 M</span>
-                <span>🪵 Wood: 156.8 M</span>
-                <span>💰 Coins: 30.7 M</span>
+                <span>🥫 Food: 156.8M</span><span>🪵 Wood: 156.8M</span><span>💰 Coins: 30.7M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 24 -->
+ 
+          <!-- Level 24 -->
           <div class="sede-req-item" data-range="20-25">
-            <div class="sede-req-header">
-              <h4>Level 23 → 24</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 23 → 24</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 23, Assault Barracks 23
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 23, Assault Barracks 23</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 196 M</span>
-                <span>🪵 Wood: 196 M</span>
-                <span>💰 Coins: 38.4 M</span>
+                <span>🥫 Food: 196M</span><span>🪵 Wood: 196M</span><span>💰 Coins: 38.4M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 25 -->
+ 
+          <!-- Level 25 -->
           <div class="sede-req-item" data-range="20-25">
-            <div class="sede-req-header">
-              <h4>Level 24 → 25</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 24 → 25</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 24, Campo de Tiro 24
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 24, Shooting Range 24</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 333.2 M</span>
-                <span>🪵 Wood: 333.2 M</span>
-                <span>💰 Coins: 65.3 M</span>
+                <span>🥫 Food: 333.2M</span><span>🪵 Wood: 333.2M</span><span>💰 Coins: 65.3M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 26 -->
+ 
+          <!-- Level 26 -->
           <div class="sede-req-item" data-range="26-30">
-            <div class="sede-req-header">
-              <h4>Level 25 → 26</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 25 → 26</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 25, Bikers Barracks 25
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 25, Bikers Barracks 25</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 443.1 M</span>
-                <span>🪵 Wood: 443.1 M</span>
-                <span>💰 Coins: 86.8 M</span>
+                <span>🥫 Food: 443.1M</span><span>🪵 Wood: 443.1M</span><span>💰 Coins: 86.8M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 27 -->
+ 
+          <!-- Level 27 -->
           <div class="sede-req-item" data-range="26-30">
-            <div class="sede-req-header">
-              <h4>Level 26 → 27</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 26 → 27</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 26, Muro 26
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 26, Wall 26</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 515.4 M</span>
-                <span>🪵 Wood: 515.4 M</span>
-                <span>💰 Coins: 101.1 M</span>
+                <span>🥫 Food: 515.4M</span><span>🪵 Wood: 515.4M</span><span>💰 Coins: 101.1M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 28 -->
+ 
+          <!-- Level 28 -->
           <div class="sede-req-item" data-range="26-30">
-            <div class="sede-req-header">
-              <h4>Level 27 → 28</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 27 → 28</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 27, Alliance Center 27
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 27, Alliance Center 27</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 806.5 M</span>
-                <span>🪵 Wood: 806.5 M</span>
-                <span>💰 Coins: 157.7 M</span>
+                <span>🥫 Food: 806.5M</span><span>🪵 Wood: 806.5M</span><span>💰 Coins: 157.7M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 29 -->
+ 
+          <!-- Level 29 -->
           <div class="sede-req-item" data-range="26-30">
-            <div class="sede-req-header">
-              <h4>Level 28 → 29</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 28 → 29</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 28, Campo de Asaltantes 28
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 28, Raiders Camp 28</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 1.1 B</span>
-                <span>🪵 Wood: 1.1 B</span>
-                <span>💰 Coins: 221.3 M</span>
+                <span>🥫 Food: 1.1B</span><span>🪵 Wood: 1.1B</span><span>💰 Coins: 221.3M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 30 -->
+ 
+          <!-- Level 30 -->
           <div class="sede-req-item" data-range="26-30">
-            <div class="sede-req-header">
-              <h4>Level 29 → 30</h4>
-            </div>
+            <div class="sede-req-header"><h4>Level 29 → 30</h4></div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 29, Campo de Tiro 29
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 29, Shooting Range 29</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 1.4 B</span>
-                <span>🪵 Wood: 1.4 B</span>
-                <span>💰 Coins: 277.1 M</span>
+                <span>🥫 Food: 1.4B</span><span>🪵 Wood: 1.4B</span><span>💰 Coins: 277.1M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 31 -->
+ 
+          <!-- Level 31 — FIX 4: Acero → Steel -->
           <div class="sede-req-item" data-range="31-35">
             <div class="sede-req-header">
               <h4>Level 30 → 31</h4>
               <span class="sede-badge-acero">⚙️ STEEL REQUIRED</span>
             </div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Laboratorio 30, Assault Barracks 30
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Laboratory 30, Assault Barracks 30</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 1.2 B</span>
-                <span>🪵 Wood: 1.2 B</span>
-                <span>💰 Coins: 241 M</span>
-                <span class="acero">⚙️ Acero: 2.2 M</span>
+                <span>🥫 Food: 1.2B</span><span>🪵 Wood: 1.2B</span><span>💰 Coins: 241M</span>
+                <span class="acero">⚙️ Steel: 2.2M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 32 -->
+ 
+          <!-- Level 32 -->
           <div class="sede-req-item" data-range="31-35">
             <div class="sede-req-header">
               <h4>Level 31 → 32</h4>
               <span class="sede-badge-acero">⚙️ STEEL REQUIRED</span>
             </div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Muro 31
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Wall 31</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 1.4 B</span>
-                <span>🪵 Wood: 1.4 B</span>
-                <span>💰 Coins: 290 M</span>
-                <span class="acero">⚙️ Acero: 3.1 M</span>
+                <span>🥫 Food: 1.4B</span><span>🪵 Wood: 1.4B</span><span>💰 Coins: 290M</span>
+                <span class="acero">⚙️ Steel: 3.1M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 33 -->
+ 
+          <!-- Level 33 -->
           <div class="sede-req-item" data-range="31-35">
             <div class="sede-req-header">
               <h4>Level 32 → 33</h4>
               <span class="sede-badge-acero">⚙️ STEEL REQUIRED</span>
             </div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Alliance Center 32
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Alliance Center 32</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 1.7 B</span>
-                <span>🪵 Wood: 1.7 B</span>
-                <span>💰 Coins: 388 M</span>
-                <span class="acero">⚙️ Acero: 4.0 M</span>
+                <span>🥫 Food: 1.7B</span><span>🪵 Wood: 1.7B</span><span>💰 Coins: 388M</span>
+                <span class="acero">⚙️ Steel: 4.0M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 34 -->
+ 
+          <!-- Level 34 -->
           <div class="sede-req-item" data-range="31-35">
             <div class="sede-req-header">
               <h4>Level 33 → 34</h4>
               <span class="sede-badge-acero">⚙️ STEEL REQUIRED</span>
             </div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Assault Barracks 33
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Assault Barracks 33</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 2.0 B</span>
-                <span>🪵 Wood: 2.0 B</span>
-                <span>💰 Coins: 400 M</span>
-                <span class="acero">⚙️ Acero: 5.0 M</span>
+                <span>🥫 Food: 2.0B</span><span>🪵 Wood: 2.0B</span><span>💰 Coins: 400M</span>
+                <span class="acero">⚙️ Steel: 5.0M</span>
               </div>
             </div>
           </div>
-
-          <!-- Nivel 35 -->
+ 
+          <!-- Level 35 -->
           <div class="sede-req-item" data-range="31-35">
             <div class="sede-req-header">
               <h4>Level 34 → 35</h4>
               <span class="sede-badge-acero">⚙️ STEEL REQUIRED</span>
             </div>
             <div class="sede-req-body">
-              <p class="sede-req-buildings">
-                🏗️ <strong>Buildings:</strong> Sniper Barracks 34
-              </p>
+              <p class="sede-req-buildings">🏗️ <strong>Buildings:</strong> Sniper Barracks 34</p>
               <div class="sede-req-resources">
-                <span>🥫 Food: 2.3 B</span>
-                <span>🪵 Wood: 2.3 B</span>
-                <span>💰 Coins: 460 M</span>
-                <span class="acero">⚙️ Acero: 6.4 M</span>
+                <span>🥫 Food: 2.3B</span><span>🪵 Wood: 2.3B</span><span>💰 Coins: 460M</span>
+                <span class="acero">⚙️ Steel: 6.4M</span>
               </div>
             </div>
           </div>
-
+ 
         </div>
       </div>
-
-<!-- ============ TAB 3: TABLA COMPLETA ============ -->
+ 
+      <!-- ============ TAB 3: FULL TABLE ============ -->
+      <!-- FIX 5: Tabla completa — todo en inglés     -->
       <div id="niveles" class="sede-tab-panel">
         <h3 class="sede-section-title">Full Requirements Table</h3>
-        
+ 
         <div class="sede-table-wrapper">
           <table class="sede-table">
             <thead>
@@ -946,257 +704,47 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td><strong>1</strong></td>
-                <td>None</td>
-                <td>🪵 12k / 🥫 ---</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>2</strong></td>
-                <td>None</td>
-                <td>🪵 --- / 🥫 10.3k</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>3</strong></td>
-                <td>Wall level 3</td>
-                <td>🪵 --- / 🥫 15.5k</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>4</strong></td>
-                <td>Radar 1, Campo de Asaltantes 4</td>
-                <td>🪵 --- / 🥫 23.3k</td>
-                <td>—</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>5</strong></td>
-                <td>Centro Militar 5</td>
-                <td>139.9k</td>
-                <td>27.4k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>6</strong></td>
-                <td>Alliance Center, Training Camp</td>
-                <td>279.9k</td>
-                <td>54.8k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>7</strong></td>
-                <td>Laboratorio 7, Campo de Asaltantes 7</td>
-                <td>447.9k</td>
-                <td>87.8k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>8</strong></td>
-                <td>Laboratorio 8, Hospital 8</td>
-                <td>716.6k</td>
-                <td>140k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>9</strong></td>
-                <td>Laboratorio 9, Campo de Tiro 9</td>
-                <td>859.9k</td>
-                <td>168k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>10</strong></td>
-                <td>Laboratorio 10, Campo de Motoristas 10</td>
-                <td>2.14M</td>
-                <td>421k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>11</strong></td>
-                <td>Laboratorio 11, Muralla 11</td>
-                <td>3.6M</td>
-                <td>716k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>12</strong></td>
-                <td>Laboratorio 12, Alliance Center 12</td>
-                <td>4.0M</td>
-                <td>788k</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>13</strong></td>
-                <td>Laboratorio 13, Campo de Asaltantes 13</td>
-                <td>5.6M</td>
-                <td>1.1M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>14</strong></td>
-                <td>Laboratorio 14, Campo de Tiro 14</td>
-                <td>7.8M</td>
-                <td>1.5M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>15</strong></td>
-                <td>Laboratorio 15, Camp level 15</td>
-                <td>14.0M</td>
-                <td>---</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>16</strong></td>
-                <td>Laboratorio 16, Muralla 16</td>
-                <td>18.23M</td>
-                <td>3.57M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>17</strong></td>
-                <td>Laboratorio 17, Alliance Center 17</td>
-                <td>31.91M</td>
-                <td>6.25M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>18</strong></td>
-                <td>Laboratorio 18, Alliance Center 18</td>
-                <td>38.2M</td>
-                <td>7.5M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>19</strong></td>
-                <td>Laboratorio 19, Campo de Tiro 19</td>
-                <td>68.92M</td>
-                <td>13.50M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>20</strong></td>
-                <td>Lab. and Shooting Range 19</td>
-                <td>68.9 M</td>
-                <td>13.5 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>21</strong></td>
-                <td>Lab. y Bikers Barracks 20</td>
-                <td>96.4 M</td>
-                <td>18.9 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>22</strong></td>
-                <td>Lab. and Wall 21</td>
-                <td>125.4 M</td>
-                <td>24.6 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>23</strong></td>
-                <td>Lab. y Alliance Center 22</td>
-                <td>156.8 M</td>
-                <td>30.7 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>24</strong></td>
-                <td>Lab. y Assault Barracks 23</td>
-                <td>196 M</td>
-                <td>38.4 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>25</strong></td>
-                <td>Lab. and Shooting Range 24</td>
-                <td>333.2 M</td>
-                <td>65.3 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>26</strong></td>
-                <td>Lab. y Bikers Barracks 25</td>
-                <td>443.1 M</td>
-                <td>86.8 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>27</strong></td>
-                <td>Lab. and Wall 26</td>
-                <td>515.4 M</td>
-                <td>101.1 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>28</strong></td>
-                <td>Lab. y Alliance Center 27</td>
-                <td>806.5 M</td>
-                <td>157.7 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>29</strong></td>
-                <td>Lab. and Raiders Camp 28</td>
-                <td>1.1 B</td>
-                <td>221.3 M</td>
-                <td>—</td>
-              </tr>
-              <tr>
-                <td><strong>30</strong></td>
-                <td>Lab. and Shooting Range 29</td>
-                <td>1.4 B</td>
-                <td>277.1 M</td>
-                <td>—</td>
-              </tr>
-              <tr class="sede-acero-row">
-                <td><strong>31</strong></td>
-                <td>Lab. y Assault Barracks 30</td>
-                <td>1.2 B</td>
-                <td>241 M</td>
-                <td>2.2 M</td>
-              </tr>
-              <tr class="sede-acero-row">
-                <td><strong>32</strong></td>
-                <td>Wall level 31</td>
-                <td>1.4 B</td>
-                <td>290 M</td>
-                <td>3.1 M</td>
-              </tr>
-              <tr class="sede-acero-row">
-                <td><strong>33</strong></td>
-                <td>Alliance Center 32</td>
-                <td>1.7 B</td>
-                <td>388 M</td>
-                <td>4.0 M</td>
-              </tr>
-              <tr class="sede-acero-row">
-                <td><strong>34</strong></td>
-                <td>Assault Barracks 33</td>
-                <td>2.0 B</td>
-                <td>400 M</td>
-                <td>5.0 M</td>
-              </tr>
-              <tr class="sede-acero-row">
-                <td><strong>35</strong></td>
-                <td>Sniper Barracks 34</td>
-                <td>2.3 B</td>
-                <td>460 M</td>
-                <td>6.4 M</td>
-              </tr>
+              <tr><td><strong>1</strong></td><td>None</td><td>🪵 12k / 🥫 ---</td><td>—</td><td>—</td></tr>
+              <tr><td><strong>2</strong></td><td>None</td><td>🪵 --- / 🥫 10.3k</td><td>—</td><td>—</td></tr>
+              <tr><td><strong>3</strong></td><td>Wall level 3</td><td>🪵 --- / 🥫 15.5k</td><td>—</td><td>—</td></tr>
+              <tr><td><strong>4</strong></td><td>Radar 1, Raiders Camp 4</td><td>🪵 --- / 🥫 23.3k</td><td>—</td><td>—</td></tr>
+              <tr><td><strong>5</strong></td><td>Military Center 5</td><td>139.9k</td><td>27.4k</td><td>—</td></tr>
+              <tr><td><strong>6</strong></td><td>Alliance Center, Training Camp</td><td>279.9k</td><td>54.8k</td><td>—</td></tr>
+              <tr><td><strong>7</strong></td><td>Laboratory 7, Raiders Camp 7</td><td>447.9k</td><td>87.8k</td><td>—</td></tr>
+              <tr><td><strong>8</strong></td><td>Laboratory 8, Hospital 8</td><td>716.6k</td><td>140k</td><td>—</td></tr>
+              <tr><td><strong>9</strong></td><td>Laboratory 9, Shooting Range 9</td><td>859.9k</td><td>168k</td><td>—</td></tr>
+              <tr><td><strong>10</strong></td><td>Laboratory 10, Bikers Camp 10</td><td>2.14M</td><td>421k</td><td>—</td></tr>
+              <tr><td><strong>11</strong></td><td>Laboratory 11, Wall 11</td><td>3.6M</td><td>716k</td><td>—</td></tr>
+              <tr><td><strong>12</strong></td><td>Laboratory 12, Alliance Center 12</td><td>4.0M</td><td>788k</td><td>—</td></tr>
+              <tr><td><strong>13</strong></td><td>Laboratory 13, Raiders Camp 13</td><td>5.6M</td><td>1.1M</td><td>—</td></tr>
+              <tr><td><strong>14</strong></td><td>Laboratory 14, Shooting Range 14</td><td>7.8M</td><td>1.5M</td><td>—</td></tr>
+              <tr><td><strong>15</strong></td><td>Laboratory 15, Camp level 15</td><td>14.0M</td><td>---</td><td>—</td></tr>
+              <tr><td><strong>16</strong></td><td>Laboratory 16, Wall 16</td><td>18.23M</td><td>3.57M</td><td>—</td></tr>
+              <tr><td><strong>17</strong></td><td>Laboratory 17, Alliance Center 17</td><td>31.91M</td><td>6.25M</td><td>—</td></tr>
+              <tr><td><strong>18</strong></td><td>Laboratory 18, Alliance Center 18</td><td>38.2M</td><td>7.5M</td><td>—</td></tr>
+              <tr><td><strong>19</strong></td><td>Laboratory 19, Shooting Range 19</td><td>68.92M</td><td>13.50M</td><td>—</td></tr>
+              <tr><td><strong>20</strong></td><td>Lab. and Shooting Range 19</td><td>68.9M</td><td>13.5M</td><td>—</td></tr>
+              <tr><td><strong>21</strong></td><td>Lab. and Bikers Barracks 20</td><td>96.4M</td><td>18.9M</td><td>—</td></tr>
+              <tr><td><strong>22</strong></td><td>Lab. and Wall 21</td><td>125.4M</td><td>24.6M</td><td>—</td></tr>
+              <tr><td><strong>23</strong></td><td>Lab. and Alliance Center 22</td><td>156.8M</td><td>30.7M</td><td>—</td></tr>
+              <tr><td><strong>24</strong></td><td>Lab. and Assault Barracks 23</td><td>196M</td><td>38.4M</td><td>—</td></tr>
+              <tr><td><strong>25</strong></td><td>Lab. and Shooting Range 24</td><td>333.2M</td><td>65.3M</td><td>—</td></tr>
+              <tr><td><strong>26</strong></td><td>Lab. and Bikers Barracks 25</td><td>443.1M</td><td>86.8M</td><td>—</td></tr>
+              <tr><td><strong>27</strong></td><td>Lab. and Wall 26</td><td>515.4M</td><td>101.1M</td><td>—</td></tr>
+              <tr><td><strong>28</strong></td><td>Lab. and Alliance Center 27</td><td>806.5M</td><td>157.7M</td><td>—</td></tr>
+              <tr><td><strong>29</strong></td><td>Lab. and Raiders Camp 28</td><td>1.1B</td><td>221.3M</td><td>—</td></tr>
+              <tr><td><strong>30</strong></td><td>Lab. and Shooting Range 29</td><td>1.4B</td><td>277.1M</td><td>—</td></tr>
+              <tr class="sede-acero-row"><td><strong>31</strong></td><td>Lab. and Assault Barracks 30</td><td>1.2B</td><td>241M</td><td>2.2M</td></tr>
+              <tr class="sede-acero-row"><td><strong>32</strong></td><td>Wall level 31</td><td>1.4B</td><td>290M</td><td>3.1M</td></tr>
+              <tr class="sede-acero-row"><td><strong>33</strong></td><td>Alliance Center 32</td><td>1.7B</td><td>347M</td><td>4.1M</td></tr>
+              <tr class="sede-acero-row"><td><strong>34</strong></td><td>Assault Barracks 33</td><td>2.0B</td><td>400M</td><td>5.3M</td></tr>
+              <tr class="sede-acero-row"><td><strong>35</strong></td><td>Sniper Barracks 34</td><td>2.3B</td><td>460M</td><td>6.4M</td></tr>
             </tbody>
           </table>
         </div>
       </div>
+ 
     </div>
-
   </div>
 </div>
 
