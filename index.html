@@ -134,10 +134,10 @@
     <div class="apoc-item">
       <span class="apoc-label">🌹 Rosa Semanal</span>
       <span class="rosa-value">
-        <span class="rosa-num" id="rosa-num">3</span>
+        <span class="rosa-num" id="rosa-num">9</span>
         <span> rosas → </span>
-        <span class="rosa-buff-text" id="rosa-buff">Aceleración de Recolección +30%</span>
-        <span class="rosa-duration"> (<span id="rosa-duration">24h</span>)</span>
+        <span class="rosa-buff-text" id="rosa-buff">Mejora de Investigación +20%</span>
+        <span class="rosa-duration"> (<span id="rosa-duration">2 hs</span>)</span>
       </span>
     </div>
   </div>
@@ -237,18 +237,20 @@
 
       <section class="tips-grid">
 
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="img-tip-refuerzo-1.jpg" class="active" alt="Refuerzo rápido">
-            <img src="img-tip-refuerzo-2.jpg" alt="Territorio alianza">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">⚡ Movilidad</span>
-            <h3>Refuerzo Rápido</h3>
-            <p>Si hay un tesoro de tu alianza lejos, puedes llegar más rápido <b>reforzando ciudades o bases</b> aliadas. Esta velocidad de refuerzo solo funciona <b>dentro de tu territorio de alianza</b>.</p>
-            <a href="#" class="tip-link" onclick="openTipModal('tip1'); return false;">Leer más →</a>
-          </div>
-        </article>
+<!-- TIP 1: Mejores Refugiados -->
+<article class="tip-card">
+  <div class="tip-carousel">
+    <img src="img-tip-refugiados-1.png" class="active" alt="Mayordomo">
+    <img src="img-tip-refugiados-2.png" alt="Diplomático">
+  </div>
+  <div class="tip-content">
+    <span class="tip-category">🏕️ Refugiados</span>
+    <h3>Mejores Refugiados para Reclutar</h3>
+    <p>Los refugiados <b>Mayordomo</b> y <b>Diplomático</b> son los más valiosos del juego. Prioriza conseguirlos para acelerar tu progresión enormemente.</p>
+    <a href="#" class="tip-link" onclick="openTipModal('tip12'); return false;">Leer más →</a>
+  </div>
+</article>
+
 
         <article class="tip-card">
           <div class="tip-carousel">
@@ -388,19 +390,19 @@
   </div>
 </article>
 
-<!-- TIP 12: Mejores Refugiados -->
+<!-- TIP 12: Refuerzo -->
 <article class="tip-card">
   <div class="tip-carousel">
-    <img src="img-tip-refugiados-1.png" class="active" alt="Mayordomo">
-    <img src="img-tip-refugiados-2.png" alt="Diplomático">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">🏕️ Refugiados</span>
-    <h3>Mejores Refugiados para Reclutar</h3>
-    <p>Los refugiados <b>Mayordomo</b> y <b>Diplomático</b> son los más valiosos del juego. Prioriza conseguirlos para acelerar tu progresión enormemente.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip12'); return false;">Leer más →</a>
-  </div>
-</article>
+     <img src="img-tip-refuerzo-1.jpg" class="active" alt="Refuerzo rápido">
+     <img src="img-tip-refuerzo-2.jpg" alt="Territorio alianza">
+     </div>
+   <div class="tip-content">
+   <span class="tip-category">⚡ Movilidad</span>
+   <h3>Refuerzo Rápido</h3>
+   <p>Si hay un tesoro de tu alianza lejos, puedes llegar más rápido <b>reforzando ciudades o bases</b> aliadas. Esta velocidad de refuerzo solo funciona <b>dentro de tu territorio de alianza</b>.</p>
+   <a href="#" class="tip-link" onclick="openTipModal('tip1'); return false;">Leer más →</a>
+   </div>
+ </article>
 
       </section>
     </section>
@@ -464,9 +466,9 @@
     // =============================================
 
     // ⬇️ EDITAR CADA LUNES — Rosa Semanal
-    const rosaCantidad = 3;
-    const rosaBuff = "Aceleración de Recolección +30%";
-    const rosaDuracion = "24h";
+    const rosaCantidad = 9;
+    const rosaBuff = "Mejora de Investigación +20%";
+    const rosaDuracion = "2 hs";
     // ⬆️ Solo cambia estos 3 valores cada semana
 
     document.getElementById('rosa-num').textContent = rosaCantidad;

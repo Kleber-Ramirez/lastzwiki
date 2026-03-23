@@ -18,9 +18,7 @@ const nombreHeroe = document.getElementById('nombre-heroe');
 const nivelHeroe = document.getElementById('nivel-heroe');
 
 const imgHabilidad = document.getElementById('img-habilidad');
-const imgEstrellas = document.getElementById('img-estrellas');
 
-const switchBtns = document.querySelectorAll('.btn-switch');
 const infoDerecha = document.getElementById('infoHabilidad');
 
 const allCarousels = document.querySelector('.all-carousels');
@@ -1647,13 +1645,8 @@ cards.forEach(card => {
     nivelHeroe.textContent = `Nivel ${nivel}`;
 
     imgHabilidad.src = dataHeroe.imgHabilidad;
-    imgEstrellas.src = dataHeroe.imgEstrellas;
 
     imgHabilidad.classList.add('active');
-    imgEstrellas.classList.remove('active');
-
-    switchBtns.forEach(b => b.classList.remove('active'));
-    switchBtns[0].classList.add('active');
 
     infoDerecha.innerHTML = `
       <h3>${dataHeroe.habilidades[1].titulo}</h3>
@@ -1662,28 +1655,6 @@ cards.forEach(card => {
 
     detalle.classList.remove('hidden');
     detalle.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
-/* ===============================
-   SWITCH IMAGEN
-================================ */
-
-switchBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-
-    switchBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-
-    if (btn.dataset.img === 'habilidad') {
-      imgHabilidad.classList.add('active');
-      imgEstrellas.classList.remove('active');
-      infoDerecha.style.display = 'block';
-    } else {
-      imgEstrellas.classList.add('active');
-      imgHabilidad.classList.remove('active');
-      infoDerecha.style.display = 'none';
-    }
   });
 });
 
@@ -1877,7 +1848,3 @@ const btnEquipAll = document.querySelector('.btn-equip[data-tier="all"]');
 if (btnEquipAll) btnEquipAll.click();
 
 } // ← CIERRA inicializarHeroes() AL FINAL DE TODO
-
-
-
-

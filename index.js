@@ -89,18 +89,115 @@ document.querySelectorAll('.tip-carousel').forEach(carousel => {
 // ===========================
 
 const tipContent = {
-  tip1: `
-    <h2>⚡ Refuerzo Rápido</h2>
-    <img src="img-tip-refuerzo-1.jpg" alt="Refuerzo">
-    <p>Si hay un <b>tesoro de tu alianza</b> que está un poco lejos, puedes llegar de forma más rápida <b>reforzando ciudad o bases</b> aliadas.</p>
-    <p><b>¿Cómo funciona?</b></p>
-    <ul>
-      <li>Solo funciona <b>dentro de tu territorio de alianza</b>.</li>
-      <li>La velocidad de refuerzo es <b>3x más rápida</b> que el movimiento normal.</li>
-      <li>Ideal para llegar rápido a <b>eventos de alianza</b> o <b>puntos de reunión</b>.</li>
-    </ul>
-    <p><b>Consejo:</b> Usa esta mecánica para llegar primero a tesoros y obtener mejores recompensas.</p>
-  `,
+
+tip1: `
+  <h2>🏕️ Mejores Refugiados para Reclutar</h2>
+  <img src="img-tip-refugiados-1.jpg" alt="Refugiados">
+  
+  <h3>🎯 Los 2 Refugiados Más Importantes</h3>
+  <p>En Last Z, los refugiados te otorgan <b>habilidades pasivas permanentes</b> que mejoran tu progreso. Sin embargo, <b>NO todos los refugiados son igual de útiles</b>.</p>
+  
+  <p>Estos son los <b>2 refugiados que DEBES priorizar</b> conseguir:</p>
+
+  <h3>🏗️ #1 - Mayordomo</h3>
+  
+  <div class="refugiado-box" style="background: rgba(196, 30, 58, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+    <p><b>Habilidad Principal:</b> Velocidad de Construcción</p>
+    <p><b>Bonificación Extra:</b> Tiempo de aceleración gratuita</p>
+  </div>
+  
+  <p><b>¿Por qué es el mejor?</b></p>
+  <ul>
+    <li><b>Reduce drásticamente</b> el tiempo de construcción de edificios</li>
+    <li>La construcción es el <b>mayor cuello de botella</b> del juego</li>
+    <li>Te da tiempo de <b>aceleración gratuita</b> adicional al construir</li>
+    <li>Útil durante <b>toda tu progresión</b>, desde nivel 1 hasta endgame</li>
+    <li>Ahorra <b>días o semanas</b> de espera acumulada</li>
+  </ul>
+
+  <img src="img-tip-refugiados-2.jpg" alt="Mayordomo">
+
+  <h3>🤝 #2 - Diplomático</h3>
+  
+  <div class="refugiado-box" style="background: rgba(88, 137, 232, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+    <p><b>Habilidad Principal:</b> Límite de Ayuda de Alianza</p>
+    <p><b>Bonificación Extra:</b> Tiempo que reduce cada ayuda</p>
+  </div>
+  
+  <p><b>¿Por qué es el mejor?</b></p>
+  <ul>
+    <li>Aumenta <b>cuántas ayudas puedes recibir</b> de tu alianza</li>
+    <li>Cada ayuda <b>reduce más tiempo</b> en construcciones/investigaciones</li>
+    <li>Combina perfectamente con el <b>Mayordomo</b></li>
+    <li>En alianzas activas, puedes <b>completar construcciones casi instantáneamente</b></li>
+    <li>Funciona para <b>edificios, investigaciones y curaciones</b></li>
+  </ul>
+
+  <h3>💡 ¿Por qué estos 2 son los mejores?</h3>
+  
+  <p>La combinación de <b>Mayordomo + Diplomático</b> crea una sinergia poderosa:</p>
+  
+  <ol>
+    <li><b>Mayordomo</b> reduce el tiempo base de construcción</li>
+    <li><b>Diplomático</b> te permite recibir más ayudas</li>
+    <li>Cada ayuda reduce <b>aún más tiempo</b> gracias al Diplomático</li>
+    <li>Resultado: Construcciones que tomarían días se completan en <b>horas o minutos</b></li>
+  </ol>
+
+  <h3>🌟 Sobre las Rarezas</h3>
+  
+  <p>Tanto Mayordomo como Diplomático vienen en <b>diferentes rarezas</b>:</p>
+  
+  <ul>
+    <li>🟢 <b>Verde</b> (Común) - Bonificaciones básicas</li>
+    <li>🔵 <b>Azul</b> (Raro) - Bonificaciones mejoradas</li>
+    <li>🟣 <b>Morado</b> (Épico) - Bonificaciones altas</li>
+    <li>🟠 <b>Naranja</b> (Legendario) - Bonificaciones máximas</li>
+  </ul>
+  
+  <p><b>Importante:</b> Incluso un Mayordomo o Diplomático <b>verde</b> es mejor que otros refugiados de rareza superior. Prioriza <b>el tipo de refugiado</b> sobre la rareza.</p>
+
+  <h3>⚠️ Otros Refugiados</h3>
+  
+  <p>Existen muchos otros refugiados en el juego, pero la mayoría tienen habilidades <b>mucho menos impactantes</b>:</p>
+  
+  <ul>
+    <li>Bonos a producción de recursos (obtienes recursos fácilmente de otras formas)</li>
+    <li>Bonos a entrenamiento de tropas (útil pero no crítico)</li>
+    <li>Bonos a ataque/defensa (marginales comparado con héroes y equipo)</li>
+  </ul>
+  
+  <p>Ninguno de estos se compara al <b>impacto masivo</b> que tienen Mayordomo y Diplomático en tu velocidad de progreso.</p>
+
+  <h3>🎯 Estrategia de Reclutamiento</h3>
+  
+  <p><b>Prioridad 1:</b> Consigue un <b>Mayordomo</b> lo antes posible.</p>
+  <p><b>Prioridad 2:</b> Consigue un <b>Diplomático</b> después.</p>
+  <p><b>Prioridad 3:</b> Mejora la rareza de ambos cuando puedas.</p>
+  
+  <div class="club-tip destacado" style="background: rgba(196, 30, 58, 0.15); padding: 1rem; border-left: 4px solid var(--acento); margin: 1.5rem 0; border-radius: 4px;">
+    <p>💎 <strong>Consejo F2P:</strong> Vale la pena gastar diamantes o cupones en conseguir estos 2 refugiados. Son una de las <b>mejores inversiones</b> que puedes hacer en el juego, superando incluso a muchos héroes.</p>
+  </div>
+
+  <h3>🏢 ¿Cómo Conseguir Refugiados?</h3>
+  
+  <p>Los refugiados se reclutan en el <a href="edificios.html#club-refugiados" class="edificio-link" style="color: var(--acento); background: rgba(196, 30, 58, 0.1); padding: 0.3rem 0.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">🏢 Club</a> usando <b>Cupones de Refugiado</b> o <b>Diamantes</b>.</p>
+  
+  <p><b>Costos de reclutamiento:</b></p>
+  <ul>
+    <li>1er Refugiado: 500 cupones/diamantes</li>
+    <li>2do Refugiado: 2,000 cupones/diamantes</li>
+    <li>3er Refugiado: 5,000 cupones/diamantes</li>
+  </ul>
+  
+  <p>Los refugiados disponibles <b>cambian cada 12 horas</b>, y puedes usar una <b>actualización gratuita</b> después de cada reclutamiento para cambiar las opciones disponibles.</p>
+  
+  <p>📖 <b>Para más detalles sobre el sistema de reclutamiento, costos y estrategias óptimas, visita la sección de</b> <a href="edificios.html#club-refugiados" class="edificio-link" style="color: var(--acento); background: rgba(196, 30, 58, 0.1); padding: 0.3rem 0.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">🏢 Club - Refugiados</a>.</p>
+
+  <h3>🔥 Conclusión</h3>
+  
+  <p><b>Mayordomo y Diplomático</b> son los refugiados más importantes del juego. Su impacto en tu velocidad de progreso es <b>insuperable</b>. Consíguelos lo antes posible y notarás una diferencia enorme en qué tan rápido avanzas. 🚀</p>
+`,  
   
 tip2: `
   <h2>⚔️ Mejora el ataque de tus formaciones</h2>
@@ -845,113 +942,17 @@ tip11: `
 `,
 
 tip12: `
-  <h2>🏕️ Mejores Refugiados para Reclutar</h2>
-  <img src="img-tip-refugiados-1.jpg" alt="Refugiados">
-  
-  <h3>🎯 Los 2 Refugiados Más Importantes</h3>
-  <p>En Last Z, los refugiados te otorgan <b>habilidades pasivas permanentes</b> que mejoran tu progreso. Sin embargo, <b>NO todos los refugiados son igual de útiles</b>.</p>
-  
-  <p>Estos son los <b>2 refugiados que DEBES priorizar</b> conseguir:</p>
-
-  <h3>🏗️ #1 - Mayordomo</h3>
-  
-  <div class="refugiado-box" style="background: rgba(196, 30, 58, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-    <p><b>Habilidad Principal:</b> Velocidad de Construcción</p>
-    <p><b>Bonificación Extra:</b> Tiempo de aceleración gratuita</p>
-  </div>
-  
-  <p><b>¿Por qué es el mejor?</b></p>
-  <ul>
-    <li><b>Reduce drásticamente</b> el tiempo de construcción de edificios</li>
-    <li>La construcción es el <b>mayor cuello de botella</b> del juego</li>
-    <li>Te da tiempo de <b>aceleración gratuita</b> adicional al construir</li>
-    <li>Útil durante <b>toda tu progresión</b>, desde nivel 1 hasta endgame</li>
-    <li>Ahorra <b>días o semanas</b> de espera acumulada</li>
-  </ul>
-
-  <img src="img-tip-refugiados-2.jpg" alt="Mayordomo">
-
-  <h3>🤝 #2 - Diplomático</h3>
-  
-  <div class="refugiado-box" style="background: rgba(88, 137, 232, 0.1); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
-    <p><b>Habilidad Principal:</b> Límite de Ayuda de Alianza</p>
-    <p><b>Bonificación Extra:</b> Tiempo que reduce cada ayuda</p>
-  </div>
-  
-  <p><b>¿Por qué es el mejor?</b></p>
-  <ul>
-    <li>Aumenta <b>cuántas ayudas puedes recibir</b> de tu alianza</li>
-    <li>Cada ayuda <b>reduce más tiempo</b> en construcciones/investigaciones</li>
-    <li>Combina perfectamente con el <b>Mayordomo</b></li>
-    <li>En alianzas activas, puedes <b>completar construcciones casi instantáneamente</b></li>
-    <li>Funciona para <b>edificios, investigaciones y curaciones</b></li>
-  </ul>
-
-  <h3>💡 ¿Por qué estos 2 son los mejores?</h3>
-  
-  <p>La combinación de <b>Mayordomo + Diplomático</b> crea una sinergia poderosa:</p>
-  
-  <ol>
-    <li><b>Mayordomo</b> reduce el tiempo base de construcción</li>
-    <li><b>Diplomático</b> te permite recibir más ayudas</li>
-    <li>Cada ayuda reduce <b>aún más tiempo</b> gracias al Diplomático</li>
-    <li>Resultado: Construcciones que tomarían días se completan en <b>horas o minutos</b></li>
-  </ol>
-
-  <h3>🌟 Sobre las Rarezas</h3>
-  
-  <p>Tanto Mayordomo como Diplomático vienen en <b>diferentes rarezas</b>:</p>
-  
-  <ul>
-    <li>🟢 <b>Verde</b> (Común) - Bonificaciones básicas</li>
-    <li>🔵 <b>Azul</b> (Raro) - Bonificaciones mejoradas</li>
-    <li>🟣 <b>Morado</b> (Épico) - Bonificaciones altas</li>
-    <li>🟠 <b>Naranja</b> (Legendario) - Bonificaciones máximas</li>
-  </ul>
-  
-  <p><b>Importante:</b> Incluso un Mayordomo o Diplomático <b>verde</b> es mejor que otros refugiados de rareza superior. Prioriza <b>el tipo de refugiado</b> sobre la rareza.</p>
-
-  <h3>⚠️ Otros Refugiados</h3>
-  
-  <p>Existen muchos otros refugiados en el juego, pero la mayoría tienen habilidades <b>mucho menos impactantes</b>:</p>
-  
-  <ul>
-    <li>Bonos a producción de recursos (obtienes recursos fácilmente de otras formas)</li>
-    <li>Bonos a entrenamiento de tropas (útil pero no crítico)</li>
-    <li>Bonos a ataque/defensa (marginales comparado con héroes y equipo)</li>
-  </ul>
-  
-  <p>Ninguno de estos se compara al <b>impacto masivo</b> que tienen Mayordomo y Diplomático en tu velocidad de progreso.</p>
-
-  <h3>🎯 Estrategia de Reclutamiento</h3>
-  
-  <p><b>Prioridad 1:</b> Consigue un <b>Mayordomo</b> lo antes posible.</p>
-  <p><b>Prioridad 2:</b> Consigue un <b>Diplomático</b> después.</p>
-  <p><b>Prioridad 3:</b> Mejora la rareza de ambos cuando puedas.</p>
-  
-  <div class="club-tip destacado" style="background: rgba(196, 30, 58, 0.15); padding: 1rem; border-left: 4px solid var(--acento); margin: 1.5rem 0; border-radius: 4px;">
-    <p>💎 <strong>Consejo F2P:</strong> Vale la pena gastar diamantes o cupones en conseguir estos 2 refugiados. Son una de las <b>mejores inversiones</b> que puedes hacer en el juego, superando incluso a muchos héroes.</p>
-  </div>
-
-  <h3>🏢 ¿Cómo Conseguir Refugiados?</h3>
-  
-  <p>Los refugiados se reclutan en el <a href="edificios.html#club-refugiados" class="edificio-link" style="color: var(--acento); background: rgba(196, 30, 58, 0.1); padding: 0.3rem 0.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">🏢 Club</a> usando <b>Cupones de Refugiado</b> o <b>Diamantes</b>.</p>
-  
-  <p><b>Costos de reclutamiento:</b></p>
-  <ul>
-    <li>1er Refugiado: 500 cupones/diamantes</li>
-    <li>2do Refugiado: 2,000 cupones/diamantes</li>
-    <li>3er Refugiado: 5,000 cupones/diamantes</li>
-  </ul>
-  
-  <p>Los refugiados disponibles <b>cambian cada 12 horas</b>, y puedes usar una <b>actualización gratuita</b> después de cada reclutamiento para cambiar las opciones disponibles.</p>
-  
-  <p>📖 <b>Para más detalles sobre el sistema de reclutamiento, costos y estrategias óptimas, visita la sección de</b> <a href="edificios.html#club-refugiados" class="edificio-link" style="color: var(--acento); background: rgba(196, 30, 58, 0.1); padding: 0.3rem 0.8rem; border-radius: 6px; text-decoration: none; font-weight: 600; display: inline-block;">🏢 Club - Refugiados</a>.</p>
-
-  <h3>🔥 Conclusión</h3>
-  
-  <p><b>Mayordomo y Diplomático</b> son los refugiados más importantes del juego. Su impacto en tu velocidad de progreso es <b>insuperable</b>. Consíguelos lo antes posible y notarás una diferencia enorme en qué tan rápido avanzas. 🚀</p>
-`,
+    <h2>⚡ Refuerzo Rápido</h2>
+    <img src="img-tip-refuerzo-1.jpg" alt="Refuerzo">
+    <p>Si hay un <b>tesoro de tu alianza</b> que está un poco lejos, puedes llegar de forma más rápida <b>reforzando ciudad o bases</b> aliadas.</p>
+    <p><b>¿Cómo funciona?</b></p>
+    <ul>
+      <li>Solo funciona <b>dentro de tu territorio de alianza</b>.</li>
+      <li>La velocidad de refuerzo es <b>3x más rápida</b> que el movimiento normal.</li>
+      <li>Ideal para llegar rápido a <b>eventos de alianza</b> o <b>puntos de reunión</b>.</li>
+    </ul>
+    <p><b>Consejo:</b> Usa esta mecánica para llegar primero a tesoros y obtener mejores recompensas.</p>
+  `,
 
 };
 
