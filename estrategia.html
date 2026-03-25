@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <title>Planificador de Guerra | Last Z Wiki — Estrategia de Servidor</title>
+  <meta name="description" content="Planificador visual de guerra de servidores en Last Z. Organiza alianzas amigas y enemigas en el mapa de la capital, asigna zonas y exporta tu estrategia.">
+  <meta name="keywords" content="last z guerra de servidores, last z estrategia capital, planificador alianzas last z, war strategy last z">
+  <meta name="author" content="Hypnos - Last Z Wiki">
+  <meta name="language" content="Spanish">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="googlebot" content="index, follow">
+  <meta name="theme-color" content="#c41e3a">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lastzwiki.com/estrategia.html">
+  <meta property="og:title" content="Planificador de Guerra | Last Z Wiki">
+  <meta property="og:description" content="Organiza tu estrategia de guerra de servidores con el planificador visual de la capital.">
+  <meta property="og:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
+  <meta property="og:site_name" content="Last Z Wiki">
+  <meta property="og:locale" content="es_ES">
+  <link rel="canonical" href="https://lastzwiki.com/estrategia.html">
+  <link rel="alternate" hreflang="es" href="https://lastzwiki.com/estrategia.html">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D52HENZW9L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D52HENZW9L');
+  </script>
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="global.css">
+  <style>
+    .strat-hero {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a0608 50%, #0d0d0d 100%);
+      border-bottom: 1px solid rgba(196,30,58,0.3);
+      padding: 2rem 1.5rem 1.5rem;
+      text-align: center;
+    }
+    .strat-hero h2 { color: #fff; font-size: clamp(1.3rem, 3vw, 1.9rem); margin-bottom: 0.4rem; }
+    .strat-hero p { color: #777; font-size: 0.85rem; }
+    .strat-layout {
+      display: grid;
+      grid-template-columns: 1fr 290px;
+      gap: 1rem;
+      padding: 1rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    @media (max-width: 800px) { .strat-layout { grid-template-columns: 1fr; } }
+    .war-countdown {
+      background: linear-gradient(135deg, #1a0608, #0e0e0e);
+      border: 1px solid rgba(196,30,58,0.35);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.8rem;
+      flex-wrap: wrap;
+    }
+    .war-countdown .label { font-size: 0.72rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+    .war-countdown .timer { font-size: 1.3rem; font-weight: 700; color: #c41e3a; font-variant-numeric: tabular-nums; }
+    .mode-btns { display: flex; gap: 6px; }
+    .mode-btn {
+      padding: 4px 11px; font-size: 0.72rem; border-radius: 4px;
+      border: 1px solid #333; cursor: pointer; background: #111; color: #666; transition: all 0.2s;
+    }
+    .mode-btn.active-atk { background: rgba(196,30,58,0.18); border-color: #c41e3a; color: #c41e3a; }
+    .mode-btn.active-def { background: rgba(30,100,196,0.18); border-color: #3a7bc8; color: #6aaaf0; }
+    .map-container {
+      position: relative;
+      border-radius: 8px;
+      border: 1px solid #2a2a2a;
+      overflow: hidden;
+      aspect-ratio: 3 / 3.5;
+      user-select: none;
+      cursor: default;
+    }
+    #map-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .token {
+      position: absolute;
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center; justify-content: center;
+      cursor: grab;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(255,255,255,0.6);
+      font-size: 8.5px; font-weight: 700;
+      color: #fff; text-align: center; line-height: 1.2;
+      padding: 4px; word-break: break-all;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+      z-index: 10; transition: box-shadow 0.1s;
+      letter-spacing: 0.01em;
+    }
+    .token:hover { filter: brightness(1.15); }
+    .token.dragging { cursor: grabbing; z-index: 100; }
+    .token.selected { box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
+    .sidebar { display: flex; flex-direction: column; gap: 0.7rem; }
+    .panel {
+      background: #111; border: 1px solid #1e1e1e;
+      border-radius: 8px; padding: 0.85rem 0.9rem;
+    }
+    .panel h3 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #555; margin-bottom: 0.7rem; }
+    .panel h3 em { color: #c41e3a; font-style: normal; }
+    .add-form { display: flex; flex-direction: column; gap: 6px; }
+    .add-form input[type=text] {
+      background: #1a1a1a; border: 1px solid #252525; border-radius: 4px;
+      color: #ddd; padding: 6px 9px; font-size: 0.82rem; width: 100%; outline: none;
+    }
+    .add-form input[type=text]:focus { border-color: #c41e3a; }
+    .type-row { display: flex; gap: 5px; }
+    .type-btn {
+      flex: 1; padding: 5px 3px; font-size: 0.68rem; font-weight: 700;
+      border-radius: 4px; border: 1px solid #252525; cursor: pointer;
+      background: #1a1a1a; color: #666; transition: all 0.18s; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .type-btn.sel-friend { background: rgba(76,255,136,0.12); border-color: #4cff88; color: #4cff88; }
+    .type-btn.sel-enemy { background: rgba(255,76,76,0.12); border-color: #ff4c4c; color: #ff4c4c; }
+    .type-btn.sel-neutral { background: rgba(255,204,68,0.12); border-color: #ffcc44; color: #ffcc44; }
+    .btn-add {
+      background: #c41e3a; color: #fff; border: none; border-radius: 4px;
+      padding: 7px; font-size: 0.8rem; font-weight: 700; cursor: pointer;
+      transition: background 0.2s; width: 100%;
+    }
+    .btn-add:hover { background: #a01830; }
+    .token-list { display: flex; flex-direction: column; gap: 4px; max-height: 170px; overflow-y: auto; }
+    .token-list::-webkit-scrollbar { width: 4px; }
+    .token-list::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+    .token-list-item {
+      display: flex; align-items: center; gap: 7px;
+      padding: 5px 8px; border-radius: 5px;
+      background: #161616; border: 1px solid #1e1e1e;
+      font-size: 0.78rem; color: #bbb; cursor: pointer; transition: border-color 0.15s;
+    }
+    .token-list-item:hover { border-color: #2a2a2a; }
+    .token-list-item.tli-active { border-color: #c41e3a; }
+    .token-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .ttype { font-size: 0.62rem; margin-left: auto; padding: 2px 5px; border-radius: 3px; }
+    .ttype.friend { background: rgba(76,255,136,0.12); color: #4cff88; }
+    .ttype.enemy { background: rgba(255,76,76,0.12); color: #ff4c4c; }
+    .ttype.neutral { background: rgba(255,204,68,0.12); color: #ffcc44; }
+    .btn-del { background: none; border: none; color: #333; cursor: pointer; font-size: 0.85rem; padding: 0 2px; transition: color 0.2s; }
+    .btn-del:hover { color: #c41e3a; }
+    .edit-row { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
+    .edit-row label { font-size: 0.72rem; color: #555; min-width: 46px; }
+    .edit-row input[type=text] {
+      flex: 1; background: #1a1a1a; border: 1px solid #252525; border-radius: 4px;
+      color: #ddd; padding: 5px 8px; font-size: 0.8rem; outline: none;
+    }
+    .notes-area {
+      width: 100%; min-height: 75px; background: #161616;
+      border: 1px solid #252525; border-radius: 4px;
+      color: #bbb; padding: 7px 9px; font-size: 0.8rem;
+      resize: vertical; font-family: inherit; line-height: 1.5; outline: none;
+    }
+    .notes-area:focus { border-color: #333; }
+    .action-row { display: flex; gap: 5px; flex-wrap: wrap; }
+    .btn-action {
+      flex: 1; min-width: 70px; padding: 6px 6px; font-size: 0.72rem; font-weight: 700;
+      border-radius: 4px; border: 1px solid #1e1e1e; cursor: pointer;
+      background: #161616; color: #666; transition: all 0.18s; text-transform: uppercase; letter-spacing: 0.04em;
+    }
+    .btn-action:hover { border-color: #333; color: #aaa; }
+    .btn-action.primary { background: #c41e3a; border-color: #c41e3a; color: #fff; }
+    .btn-action.primary:hover { background: #a01830; }
+    .btn-action.danger { border-color: #5a1010; color: #c41e3a; }
+    .btn-action.danger:hover { background: rgba(196,30,58,0.1); }
+    #status-msg { font-size: 0.72rem; color: #4cff88; margin-top: 5px; height: 13px; text-align: center; }
+    .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; padding: 0 2px; }
+    .legend-item { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; color: #666; }
+    .legend-dot { width: 7px; height: 7px; border-radius: 50%; }
+    .strat-tip {
+      background: rgba(196,30,58,0.07); border-left: 3px solid #c41e3a;
+      border-radius: 0 4px 4px 0; padding: 0.65rem 0.85rem;
+      font-size: 0.78rem; color: #777;
+    }
+    .strat-tip strong { color: #c41e3a; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="brand">
+      <img src="lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
+      <h1>Last Z Wiki</h1>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="main-nav">
+      <ul id="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="edificios.html">Edificios</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="alianzas.html">Alianzas</a></li>
+        <li><a href="heroes.html">Héroes</a></li>
+        <li><a href="comunidad.html">Comunidad</a></li>
+      </ul>
+    </nav>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main>
+
+    <div class="strat-hero">
+      <h2>Planificador de <span style="color:#c41e3a;">Guerra de Servidores</span></h2>
+      <p>Organiza las alianzas en el mapa · Arrastra las fichas · Exporta tu estrategia</p>
+    </div>
+
+    <div style="padding:0.8rem 1rem 0; max-width:1080px; margin:0 auto;">
+      <div class="war-countdown">
+        <div>
+          <div class="label">Próxima guerra — Sábado</div>
+          <div class="timer" id="countdown">--d --h --m --s</div>
+        </div>
+        <div>
+          <div class="label" style="margin-bottom:4px;">Modo de servidor</div>
+          <div class="mode-btns">
+            <button class="mode-btn active-atk" id="btn-atk" onclick="setMode('ataque')">⚔️ Atacante</button>
+            <button class="mode-btn" id="btn-def" onclick="setMode('defensa')">🛡️ Defensor</button>
+          </div>
+        </div>
+        <div style="font-size:0.78rem; color:#555;" id="mode-label">Tu servidor ataca la capital este sábado</div>
+      </div>
+    </div>
+
+    <div class="strat-layout">
+
+      <div>
+        <div class="map-container" id="map-wrap">
+          <canvas id="map-canvas"></canvas>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#4cff88;"></div>Aliada</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#ff4c4c;"></div>Enemiga</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#ffcc44;"></div>Neutral</div>
+          <div class="legend-item" style="margin-left:auto;">Toca una ficha para editarla</div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+
+        <div class="panel">
+          <h3>Nueva <em>ficha</em></h3>
+          <div class="add-form">
+            <input type="text" id="new-name" placeholder="Ej: [TW7] o NMSL" maxlength="12">
+            <div class="type-row">
+              <button class="type-btn sel-friend" id="tb-friend" onclick="selectType('friend')">Aliada</button>
+              <button class="type-btn" id="tb-enemy" onclick="selectType('enemy')">Enemiga</button>
+              <button class="type-btn" id="tb-neutral" onclick="selectType('neutral')">Neutral</button>
+            </div>
+            <button class="btn-add" onclick="addToken()">+ Agregar ficha</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Alianzas en el <em>mapa</em></h3>
+          <div class="token-list" id="token-list">
+            <div style="font-size:0.78rem;color:#333;text-align:center;padding:8px;">Sin fichas aún</div>
+          </div>
+        </div>
+
+        <div class="panel" id="edit-panel" style="display:none;">
+          <h3>Editar <em>ficha</em></h3>
+          <div class="edit-row">
+            <label>Nombre</label>
+            <input type="text" id="edit-name" maxlength="12">
+          </div>
+          <div class="type-row" style="margin-bottom:7px;">
+            <button class="type-btn" id="etb-friend" onclick="editType('friend')">Aliada</button>
+            <button class="type-btn" id="etb-enemy" onclick="editType('enemy')">Enemiga</button>
+            <button class="type-btn" id="etb-neutral" onclick="editType('neutral')">Neutral</button>
+          </div>
+          <div class="action-row">
+            <button class="btn-action primary" onclick="applyEdit()">Aplicar</button>
+            <button class="btn-action danger" onclick="deleteSelected()">Eliminar</button>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Notas de <em>estrategia</em></h3>
+          <textarea class="notes-area" id="notes" placeholder="Ej: [TW7] ataca norte 20:00&#10;[NMSL] defiende torreta 1&#10;Flanquear por el oeste con [ALZ]..."></textarea>
+        </div>
+
+        <div class="panel">
+          <h3>Acciones</h3>
+          <div class="action-row">
+            <button class="btn-action primary" onclick="saveAll()">Guardar</button>
+            <button class="btn-action" onclick="exportImage()">Exportar</button>
+            <button class="btn-action" onclick="resetAll()">Resetear</button>
+          </div>
+          <div id="status-msg"></div>
+        </div>
+
+        <div class="strat-tip">
+          <strong>Tip:</strong> Usa <strong>Exportar</strong> para descargar una imagen del mapa y compartirla por WhatsApp o Discord con tu alianza.
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+        <span class="separator">•</span>
+        <a href="privacidad.html">Política de Privacidad</a>
+        <span class="separator">•</span>
+        <a href="terminos.html">Términos y Condiciones</a>
+        <span class="separator">•</span>
+        <a href="contacto.html">Contacto</a>
+      </div>
+      <div class="footer-disclaimer">
+        <p>⚠️ <strong>Aviso Importante</strong></p>
+        <p>Last Z Wiki es un sitio web <strong>no oficial</strong> creado por fans para la comunidad de Last Z Survival Shooter.</p>
+      </div>
+      <div class="footer-copyright">
+        <p>© 2026 Last Z Wiki — Creado por la comunidad, para la comunidad.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="menu.js"></script>
+
+  <script>
+    const canvas = document.getElementById('map-canvas');
+    const ctx = canvas.getContext('2d');
+    const mapWrap = document.getElementById('map-wrap');
+
+    let tokens = [];
+    let selectedId = null;
+    let dragging = null;
+    let dragOffset = { x: 0, y: 0 };
+    let newType = 'friend';
+    let editCurrentType = 'friend';
+    let warMode = 'ataque';
+
+    const BG = { friend: '#0f4a22', enemy: '#4a0f0f', neutral: '#3a3a0a' };
+    const BORDER = { friend: '#4cff88', enemy: '#ff4c4c', neutral: '#ffcc44' };
+    const LABEL = { friend: 'Aliada', enemy: 'Enemiga', neutral: 'Neutral' };
+
+    function resizeCanvas() {
+      const r = mapWrap.getBoundingClientRect();
+      canvas.width = r.width;
+      canvas.height = r.height;
+      drawMap();
+    }
+
+    function drawMap() {
+      const w = canvas.width, h = canvas.height;
+      const cx = w / 2, cy = h * 0.46;
+
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.fillStyle = '#9fb8cc';
+      ctx.fillRect(0, 0, w, h);
+
+      if (warMode === 'ataque') {
+        ctx.fillStyle = 'rgba(140,90,180,0.3)';
+        ctx.fillRect(0, 0, w * 0.44, h);
+        ctx.fillStyle = 'rgba(70,180,170,0.3)';
+        ctx.fillRect(w * 0.56, 0, w * 0.44, h);
+      } else {
+        ctx.fillStyle = 'rgba(70,120,200,0.28)';
+        ctx.fillRect(0, 0, w * 0.44, h);
+        ctx.fillStyle = 'rgba(200,70,70,0.28)';
+        ctx.fillRect(w * 0.56, 0, w * 0.44, h);
+      }
+
+      ctx.strokeStyle = 'rgba(80,110,140,0.18)';
+      ctx.lineWidth = 0.5;
+      for (let x = 0; x < w; x += 36) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+      for (let y = 0; y < h; y += 36) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+
+      const hexR = Math.min(w, h) * 0.3;
+      drawHex(cx, cy, hexR, '#8fa8bc', '#7a99ae', 2.5);
+
+      const innerR = hexR * 0.7;
+      ctx.save();
+      clipHex(cx, cy, innerR);
+      ctx.fillStyle = '#5a8aaa';
+      ctx.fillRect(cx - innerR, cy - innerR, innerR * 2, innerR * 2);
+
+      for (let i = 0; i < 12; i++) {
+        ctx.fillStyle = `rgba(80,120,160,${0.1 + Math.random() * 0.15})`;
+        const rx = cx - innerR + Math.random() * innerR * 2;
+        const ry = cy - innerR + Math.random() * innerR * 2;
+        ctx.beginPath();
+        ctx.arc(rx, ry, 6 + Math.random() * 14, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+      drawHex(cx, cy, innerR, 'transparent', '#7aaabf', 1.5);
+
+      const bs = Math.min(w, h) * 0.1;
+      ctx.fillStyle = '#ddd8cc';
+      ctx.strokeStyle = '#bbb0a0';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.rect(cx - bs * 0.55, cy - bs * 0.7, bs * 1.1, bs * 1.1);
+      ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#ccc8ba';
+      ctx.fillRect(cx - bs * 0.3, cy - bs * 0.45, bs * 0.6, bs * 0.6);
+      ctx.fillStyle = '#2a1a0a';
+      const fsCap = Math.max(8, w * 0.022);
+      ctx.font = `bold ${fsCap}px sans-serif`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      ctx.fillText('[NMSL]Capital', cx, cy + bs * 0.5);
+
+      const tR = hexR * 0.52;
+      const turrets = [
+        { a: -90, label: 'Torreta 2' },
+        { a: 30,  label: 'Torreta 3' },
+        { a: 150, label: 'Torreta 1' },
+      ];
+      turrets.forEach(t => {
+        const tx = cx + Math.cos(t.a * Math.PI / 180) * tR;
+        const ty = cy + Math.sin(t.a * Math.PI / 180) * tR;
+        drawTurret(tx, ty, Math.min(w,h) * 0.042, t.label);
+      });
+
+      ctx.font = `${Math.max(8, w*0.018)}px sans-serif`;
+      ctx.fillStyle = 'rgba(40,60,80,0.6)';
+      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      ctx.fillText('Norte', cx, h * 0.06);
+      ctx.fillText('Sur', cx, h * 0.94);
+      ctx.fillText('Oeste', w * 0.05, cy);
+      ctx.fillText('Este', w * 0.95, cy);
+    }
+
+    function drawHex(cx, cy, r, fill, stroke, lw) {
+      ctx.beginPath();
+      for (let i = 0; i < 6; i++) {
+        const a = (Math.PI / 3) * i - Math.PI / 6;
+        i === 0 ? ctx.moveTo(cx + r * Math.cos(a), cy + r * Math.sin(a))
+                : ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+      }
+      ctx.closePath();
+      if (fill !== 'transparent') { ctx.fillStyle = fill; ctx.fill(); }
+      ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke();
+    }
+
+    function clipHex(cx, cy, r) {
+      ctx.beginPath();
+      for (let i = 0; i < 6; i++) {
+        const a = (Math.PI / 3) * i - Math.PI / 6;
+        i === 0 ? ctx.moveTo(cx + r * Math.cos(a), cy + r * Math.sin(a))
+                : ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+      }
+      ctx.closePath(); ctx.clip();
+    }
+
+    function drawTurret(x, y, r, label) {
+      ctx.fillStyle = '#d0c8b8'; ctx.strokeStyle = '#aaa090'; ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#b8b0a0';
+      ctx.beginPath(); ctx.arc(x, y, r * 0.45, 0, Math.PI * 2); ctx.fill();
+      const fs = Math.max(7.5, canvas.height * 0.017);
+      ctx.font = `bold ${fs}px sans-serif`;
+      const tw = ctx.measureText(label).width;
+      const lx = x - tw / 2 - 5, ly = y + r + 3;
+      ctx.fillStyle = 'rgba(20,12,5,0.8)';
+      ctx.beginPath(); ctx.roundRect(lx, ly, tw + 10, fs + 7, 3); ctx.fill();
+      ctx.fillStyle = '#f0e8d0'; ctx.textAlign = 'left'; ctx.textBaseline = 'top';
+      ctx.fillText(label, lx + 5, ly + 3.5);
+    }
+
+    function renderTokens() {
+      mapWrap.querySelectorAll('.token').forEach(e => e.remove());
+      tokens.forEach(t => {
+        const el = document.createElement('div');
+        el.className = 'token' + (t.id === selectedId ? ' selected' : '') + (dragging === t.id ? ' dragging' : '');
+        el.id = 'tk-' + t.id;
+        el.style.cssText = `background:${BG[t.type]};left:${t.x}%;top:${t.y}%;border-color:${BORDER[t.type]};box-shadow:0 2px 8px ${BORDER[t.type]}44;`;
+        el.textContent = t.name;
+        el.addEventListener('mousedown', e => { e.preventDefault(); e.stopPropagation(); startDrag(e, t.id); });
+        el.addEventListener('touchstart', e => { e.preventDefault(); e.stopPropagation(); startDragTouch(e, t.id); }, { passive: false });
+        el.addEventListener('click', e => { e.stopPropagation(); selectToken(t.id); });
+        mapWrap.appendChild(el);
+      });
+      renderList();
+    }
+
+    function renderList() {
+      const list = document.getElementById('token-list');
+      if (tokens.length === 0) {
+        list.innerHTML = '<div style="font-size:0.78rem;color:#333;text-align:center;padding:8px;">Sin fichas aún</div>';
+        return;
+      }
+      list.innerHTML = '';
+      tokens.forEach(t => {
+        const item = document.createElement('div');
+        item.className = 'token-list-item' + (t.id === selectedId ? ' tli-active' : '');
+        item.innerHTML = `<div class="token-dot" style="background:${BORDER[t.type]};"></div><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${t.name}</span><span class="ttype ${t.type}">${LABEL[t.type]}</span><button class="btn-del" onclick="removeToken(${t.id},event)">✕</button>`;
+        item.addEventListener('click', () => selectToken(t.id));
+        list.appendChild(item);
+      });
+    }
+
+    function selectToken(id) {
+      selectedId = id;
+      const t = tokens.find(x => x.id === id);
+      if (t) {
+        document.getElementById('edit-panel').style.display = 'block';
+        document.getElementById('edit-name').value = t.name;
+        editCurrentType = t.type;
+        updateEditBtns();
+      }
+      renderTokens();
+    }
+
+    function deselectAll() {
+      selectedId = null;
+      document.getElementById('edit-panel').style.display = 'none';
+      renderTokens();
+    }
+
+    function addToken() {
+      const name = document.getElementById('new-name').value.trim();
+      if (!name) { setStatus('Escribe un nombre ⚠️'); return; }
+      tokens.push({ id: Date.now(), name, type: newType, x: 40 + Math.random() * 20, y: 40 + Math.random() * 20 });
+      document.getElementById('new-name').value = '';
+      renderTokens();
+      setStatus('Ficha agregada ✓');
+    }
+
+    function removeToken(id, e) {
+      e.stopPropagation();
+      tokens = tokens.filter(t => t.id !== id);
+      if (selectedId === id) deselectAll(); else renderTokens();
+      setStatus('Ficha eliminada');
+    }
+
+    function deleteSelected() {
+      if (!selectedId) return;
+      tokens = tokens.filter(t => t.id !== selectedId);
+      deselectAll();
+      setStatus('Ficha eliminada');
+    }
+
+    function applyEdit() {
+      if (!selectedId) return;
+      const t = tokens.find(x => x.id === selectedId);
+      if (t) {
+        const n = document.getElementById('edit-name').value.trim();
+        if (n) t.name = n;
+        t.type = editCurrentType;
+      }
+      renderTokens();
+      setStatus('Cambios aplicados ✓');
+    }
+
+    function selectType(tp) {
+      newType = tp;
+      ['friend','enemy','neutral'].forEach(x => {
+        document.getElementById('tb-' + x).className = 'type-btn' + (x === tp ? ` sel-${x}` : '');
+      });
+    }
+
+    function editType(tp) {
+      editCurrentType = tp;
+      updateEditBtns();
+    }
+
+    function updateEditBtns() {
+      ['friend','enemy','neutral'].forEach(x => {
+        document.getElementById('etb-' + x).className = 'type-btn' + (x === editCurrentType ? ` sel-${x}` : '');
+      });
+    }
+
+    function startDrag(e, id) {
+      dragging = id;
+      const el = document.getElementById('tk-' + id);
+      const rw = mapWrap.getBoundingClientRect();
+      const re = el.getBoundingClientRect();
+      dragOffset.x = e.clientX - (re.left + re.width / 2 - rw.left);
+      dragOffset.y = e.clientY - (re.top + re.height / 2 - rw.top);
+    }
+
+    function startDragTouch(e, id) {
+      dragging = id;
+      const touch = e.touches[0];
+      const el = document.getElementById('tk-' + id);
+      const rw = mapWrap.getBoundingClientRect();
+      const re = el.getBoundingClientRect();
+      dragOffset.x = touch.clientX - (re.left + re.width / 2 - rw.left);
+      dragOffset.y = touch.clientY - (re.top + re.height / 2 - rw.top);
+    }
+
+    function onMove(cx, cy) {
+      if (!dragging) return;
+      const r = mapWrap.getBoundingClientRect();
+      const x = ((cx - r.left - dragOffset.x) / r.width) * 100;
+      const y = ((cy - r.top - dragOffset.y) / r.height) * 100;
+      const t = tokens.find(t => t.id === dragging);
+      if (t) { t.x = Math.max(3, Math.min(97, x)); t.y = Math.max(3, Math.min(97, y)); }
+      renderTokens();
+    }
+
+    document.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
+    document.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX, e.touches[0].clientY); }}, { passive: false });
+    document.addEventListener('mouseup', () => { dragging = null; });
+    document.addEventListener('touchend', () => { dragging = null; });
+    mapWrap.addEventListener('click', e => { if (e.target === mapWrap || e.target === canvas) deselectAll(); });
+
+    function setMode(mode) {
+      warMode = mode;
+      document.getElementById('btn-atk').className = 'mode-btn' + (mode === 'ataque' ? ' active-atk' : '');
+      document.getElementById('btn-def').className = 'mode-btn' + (mode === 'defensa' ? ' active-def' : '');
+      document.getElementById('mode-label').textContent = mode === 'ataque'
+        ? 'Tu servidor ataca la capital este sábado'
+        : 'Tu servidor defiende la capital este sábado';
+      drawMap();
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const day = now.getDay();
+      const diff = ((6 - day + 7) % 7 || 7);
+      const nextSat = new Date(now);
+      nextSat.setDate(now.getDate() + diff);
+      nextSat.setHours(20, 0, 0, 0);
+      const ms = nextSat - now;
+      if (ms <= 0) { document.getElementById('countdown').textContent = '¡HOY ES LA GUERRA!'; return; }
+      const d = Math.floor(ms / 86400000);
+      const h = Math.floor((ms % 86400000) / 3600000);
+      const m = Math.floor((ms % 3600000) / 60000);
+      const s = Math.floor((ms % 60000) / 1000);
+      document.getElementById('countdown').textContent = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+    }
+
+    function saveAll() {
+      try {
+        localStorage.setItem('lz-war-tokens', JSON.stringify(tokens));
+        localStorage.setItem('lz-war-notes', document.getElementById('notes').value);
+        localStorage.setItem('lz-war-mode', warMode);
+        setStatus('Guardado ✓');
+      } catch(e) { setStatus('Error al guardar'); }
+    }
+
+    function resetAll() {
+      if (!confirm('¿Resetear el mapa? Se perderán las fichas actuales.')) return;
+      tokens = [];
+      deselectAll();
+      document.getElementById('notes').value = '';
+      setStatus('Mapa reseteado');
+    }
+
+    function exportImage() {
+      setStatus('Generando imagen...');
+
+      const exportCanvas = document.createElement('canvas');
+      const scale = 2;
+      exportCanvas.width = canvas.width * scale;
+      exportCanvas.height = canvas.height * scale;
+      const ectx = exportCanvas.getContext('2d');
+      ectx.scale(scale, scale);
+
+      const tmpCtx = ctx;
+      const tmpCanvas = canvas;
+
+      ectx.drawImage(canvas, 0, 0);
+
+      const r = mapWrap.getBoundingClientRect();
+      tokens.forEach(t => {
+        const x = (t.x / 100) * r.width;
+        const y = (t.y / 100) * r.height;
+        const radius = 23;
+
+        ectx.beginPath();
+        ectx.arc(x, y, radius, 0, Math.PI * 2);
+        ectx.fillStyle = BG[t.type];
+        ectx.fill();
+        ectx.strokeStyle = BORDER[t.type];
+        ectx.lineWidth = 2;
+        ectx.stroke();
+
+        ectx.fillStyle = '#fff';
+        ectx.font = 'bold 8px sans-serif';
+        ectx.textAlign = 'center';
+        ectx.textBaseline = 'middle';
+
+        const words = t.name.match(/.{1,8}/g) || [t.name];
+        if (words.length === 1) {
+          ectx.fillText(words[0], x, y);
+        } else {
+          ectx.fillText(words[0], x, y - 5);
+          ectx.fillText(words[1], x, y + 5);
+        }
+      });
+
+      const notes = document.getElementById('notes').value;
+      if (notes.trim()) {
+        const lines = notes.split('\n').slice(0, 4);
+        const panelH = lines.length * 16 + 20;
+        ectx.fillStyle = 'rgba(0,0,0,0.75)';
+        ectx.beginPath();
+        ectx.roundRect(8, exportCanvas.height / scale - panelH - 8, exportCanvas.width / scale - 16, panelH, 6);
+        ectx.fill();
+        ectx.fillStyle = '#c41e3a';
+        ectx.font = 'bold 9px sans-serif';
+        ectx.textAlign = 'left';
+        ectx.fillText('NOTAS DE ESTRATEGIA', 16, exportCanvas.height / scale - panelH - 8 + 10);
+        ectx.fillStyle = '#ccc';
+        ectx.font = '8px sans-serif';
+        lines.forEach((line, i) => {
+          ectx.fillText(line.substring(0, 50), 16, exportCanvas.height / scale - panelH - 8 + 22 + i * 14);
+        });
+      }
+
+      ectx.fillStyle = 'rgba(0,0,0,0.5)';
+      ectx.font = 'bold 9px sans-serif';
+      ectx.textAlign = 'right';
+      ectx.fillStyle = '#c41e3a';
+      ectx.fillText('lastzwiki.com', exportCanvas.width / scale - 10, 16);
+
+      exportCanvas.toBlob(blob => {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'estrategia-lastz.png';
+        a.click();
+        URL.revokeObjectURL(url);
+        setStatus('Imagen exportada ✓');
+      });
+    }
+
+    function setStatus(msg) {
+      document.getElementById('status-msg').textContent = msg;
+      setTimeout(() => { document.getElementById('status-msg').textContent = ''; }, 2500);
+    }
+
+    try {
+      const saved = localStorage.getItem('lz-war-tokens');
+      if (saved) tokens = JSON.parse(saved);
+      const savedNotes = localStorage.getItem('lz-war-notes');
+      if (savedNotes) document.getElementById('notes').value = savedNotes;
+      const savedMode = localStorage.getItem('lz-war-mode');
+      if (savedMode) setMode(savedMode);
+    } catch(e) {}
+
+    window.addEventListener('load', () => {
+      resizeCanvas();
+      renderTokens();
+    });
+    window.addEventListener('resize', resizeCanvas);
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+
+</body>
+</html>
