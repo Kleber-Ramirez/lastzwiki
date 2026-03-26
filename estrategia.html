@@ -27,162 +27,79 @@
   <link rel="canonical" href="https://lastzwiki.com/estrategia.html">
   <link rel="alternate" hreflang="es" href="https://lastzwiki.com/estrategia.html">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D52HENZW9L"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-D52HENZW9L');
-  </script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-D52HENZW9L');</script>
   <link rel="stylesheet" href="responsive.css">
   <link rel="stylesheet" href="global.css">
   <style>
-    .strat-hero {
-      background: linear-gradient(135deg, #0a0a0a 0%, #1a0608 50%, #0d0d0d 100%);
-      border-bottom: 1px solid rgba(196,30,58,0.3);
-      padding: 2rem 1.5rem 1.5rem;
-      text-align: center;
-    }
-    .strat-hero h2 { color: #fff; font-size: clamp(1.3rem, 3vw, 1.9rem); margin-bottom: 0.4rem; }
-    .strat-hero p { color: #777; font-size: 0.85rem; }
-    .strat-layout {
-      display: grid;
-      grid-template-columns: 1fr 290px;
-      gap: 1rem;
-      padding: 1rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-    @media (max-width: 800px) { .strat-layout { grid-template-columns: 1fr; } }
-    .war-countdown {
-      background: linear-gradient(135deg, #1a0608, #0e0e0e);
-      border: 1px solid rgba(196,30,58,0.35);
-      border-radius: 8px;
-      padding: 0.75rem 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 0.8rem;
-      flex-wrap: wrap;
-    }
-    .war-countdown .label { font-size: 0.72rem; color: #666; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
-    .war-countdown .timer { font-size: 1.3rem; font-weight: 700; color: #c41e3a; font-variant-numeric: tabular-nums; }
-    .mode-btns { display: flex; gap: 6px; }
-    .mode-btn {
-      padding: 4px 11px; font-size: 0.72rem; border-radius: 4px;
-      border: 1px solid #333; cursor: pointer; background: #111; color: #666; transition: all 0.2s;
-    }
-    .mode-btn.active-atk { background: rgba(196,30,58,0.18); border-color: #c41e3a; color: #c41e3a; }
-    .mode-btn.active-def { background: rgba(30,100,196,0.18); border-color: #3a7bc8; color: #6aaaf0; }
-    .map-container {
-      position: relative;
-      border-radius: 8px;
-      border: 1px solid #2a2a2a;
-      overflow: hidden;
-      aspect-ratio: 3 / 3.5;
-      user-select: none;
-      cursor: default;
-    }
-    #map-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-    .token {
-      position: absolute;
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center; justify-content: center;
-      cursor: grab;
-      transform: translate(-50%, -50%);
-      border: 2px solid rgba(255,255,255,0.6);
-      font-size: 8.5px; font-weight: 700;
-      color: #fff; text-align: center; line-height: 1.2;
-      padding: 4px; word-break: break-all;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-      z-index: 10; transition: box-shadow 0.1s;
-      letter-spacing: 0.01em;
-    }
-    .token:hover { filter: brightness(1.15); }
-    .token.dragging { cursor: grabbing; z-index: 100; }
-    .token.selected { box-shadow: 0 0 0 3px rgba(255,255,255,0.4); }
-    .sidebar { display: flex; flex-direction: column; gap: 0.7rem; }
-    .panel {
-      background: #111; border: 1px solid #1e1e1e;
-      border-radius: 8px; padding: 0.85rem 0.9rem;
-    }
-    .panel h3 { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #555; margin-bottom: 0.7rem; }
-    .panel h3 em { color: #c41e3a; font-style: normal; }
-    .add-form { display: flex; flex-direction: column; gap: 6px; }
-    .add-form input[type=text] {
-      background: #1a1a1a; border: 1px solid #252525; border-radius: 4px;
-      color: #ddd; padding: 6px 9px; font-size: 0.82rem; width: 100%; outline: none;
-    }
-    .add-form input[type=text]:focus { border-color: #c41e3a; }
-    .type-row { display: flex; gap: 5px; }
-    .type-btn {
-      flex: 1; padding: 5px 3px; font-size: 0.68rem; font-weight: 700;
-      border-radius: 4px; border: 1px solid #252525; cursor: pointer;
-      background: #1a1a1a; color: #666; transition: all 0.18s; text-transform: uppercase; letter-spacing: 0.04em;
-    }
-    .type-btn.sel-friend { background: rgba(76,255,136,0.12); border-color: #4cff88; color: #4cff88; }
-    .type-btn.sel-enemy { background: rgba(255,76,76,0.12); border-color: #ff4c4c; color: #ff4c4c; }
-    .type-btn.sel-neutral { background: rgba(255,204,68,0.12); border-color: #ffcc44; color: #ffcc44; }
-    .btn-add {
-      background: #c41e3a; color: #fff; border: none; border-radius: 4px;
-      padding: 7px; font-size: 0.8rem; font-weight: 700; cursor: pointer;
-      transition: background 0.2s; width: 100%;
-    }
-    .btn-add:hover { background: #a01830; }
-    .token-list { display: flex; flex-direction: column; gap: 4px; max-height: 170px; overflow-y: auto; }
-    .token-list::-webkit-scrollbar { width: 4px; }
-    .token-list::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
-    .token-list-item {
-      display: flex; align-items: center; gap: 7px;
-      padding: 5px 8px; border-radius: 5px;
-      background: #161616; border: 1px solid #1e1e1e;
-      font-size: 0.78rem; color: #bbb; cursor: pointer; transition: border-color 0.15s;
-    }
-    .token-list-item:hover { border-color: #2a2a2a; }
-    .token-list-item.tli-active { border-color: #c41e3a; }
-    .token-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
-    .ttype { font-size: 0.62rem; margin-left: auto; padding: 2px 5px; border-radius: 3px; }
-    .ttype.friend { background: rgba(76,255,136,0.12); color: #4cff88; }
-    .ttype.enemy { background: rgba(255,76,76,0.12); color: #ff4c4c; }
-    .ttype.neutral { background: rgba(255,204,68,0.12); color: #ffcc44; }
-    .btn-del { background: none; border: none; color: #333; cursor: pointer; font-size: 0.85rem; padding: 0 2px; transition: color 0.2s; }
-    .btn-del:hover { color: #c41e3a; }
-    .edit-row { display: flex; gap: 6px; align-items: center; margin-bottom: 6px; }
-    .edit-row label { font-size: 0.72rem; color: #555; min-width: 46px; }
-    .edit-row input[type=text] {
-      flex: 1; background: #1a1a1a; border: 1px solid #252525; border-radius: 4px;
-      color: #ddd; padding: 5px 8px; font-size: 0.8rem; outline: none;
-    }
-    .notes-area {
-      width: 100%; min-height: 75px; background: #161616;
-      border: 1px solid #252525; border-radius: 4px;
-      color: #bbb; padding: 7px 9px; font-size: 0.8rem;
-      resize: vertical; font-family: inherit; line-height: 1.5; outline: none;
-    }
-    .notes-area:focus { border-color: #333; }
-    .action-row { display: flex; gap: 5px; flex-wrap: wrap; }
-    .btn-action {
-      flex: 1; min-width: 70px; padding: 6px 6px; font-size: 0.72rem; font-weight: 700;
-      border-radius: 4px; border: 1px solid #1e1e1e; cursor: pointer;
-      background: #161616; color: #666; transition: all 0.18s; text-transform: uppercase; letter-spacing: 0.04em;
-    }
-    .btn-action:hover { border-color: #333; color: #aaa; }
-    .btn-action.primary { background: #c41e3a; border-color: #c41e3a; color: #fff; }
-    .btn-action.primary:hover { background: #a01830; }
-    .btn-action.danger { border-color: #5a1010; color: #c41e3a; }
-    .btn-action.danger:hover { background: rgba(196,30,58,0.1); }
-    #status-msg { font-size: 0.72rem; color: #4cff88; margin-top: 5px; height: 13px; text-align: center; }
-    .legend { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; padding: 0 2px; }
-    .legend-item { display: flex; align-items: center; gap: 4px; font-size: 0.72rem; color: #666; }
-    .legend-dot { width: 7px; height: 7px; border-radius: 50%; }
-    .strat-tip {
-      background: rgba(196,30,58,0.07); border-left: 3px solid #c41e3a;
-      border-radius: 0 4px 4px 0; padding: 0.65rem 0.85rem;
-      font-size: 0.78rem; color: #777;
-    }
-    .strat-tip strong { color: #c41e3a; }
+    *{box-sizing:border-box}
+    .strat-hero{background:linear-gradient(135deg,#0a0a0a 0%,#1a0608 50%,#0d0d0d 100%);border-bottom:2px solid rgba(196,30,58,0.4);padding:2rem 1.5rem 1.5rem;text-align:center}
+    .strat-hero h2{color:#fff;font-size:clamp(1.3rem,3vw,1.9rem);margin-bottom:0.3rem}
+    .strat-hero h2 span{color:#c41e3a}
+    .strat-hero p{color:#666;font-size:0.82rem}
+    .strat-layout{display:grid;grid-template-columns:1fr 290px;gap:1rem;padding:1rem;max-width:1080px;margin:0 auto}
+    @media(max-width:800px){.strat-layout{grid-template-columns:1fr}}
+    .war-bar{background:linear-gradient(135deg,#140608,#0e0e0e);border:1px solid rgba(196,30,58,0.3);border-radius:8px;padding:0.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:0.8rem;flex-wrap:wrap}
+    .war-bar .wlabel{font-size:0.68rem;color:#555;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:2px}
+    .war-bar .wtimer{font-size:1.25rem;font-weight:700;color:#c41e3a;font-variant-numeric:tabular-nums}
+    .mode-btns{display:flex;gap:5px}
+    .mode-btn{padding:4px 10px;font-size:0.72rem;border-radius:4px;border:1px solid #252525;cursor:pointer;background:#111;color:#555;transition:all 0.2s}
+    .mode-btn.active-atk{background:rgba(196,30,58,0.15);border-color:#c41e3a;color:#c41e3a}
+    .mode-btn.active-def{background:rgba(58,123,200,0.15);border-color:#3a7bc8;color:#6aaaf0}
+    .map-container{position:relative;border-radius:8px;border:1px solid #1e1e1e;overflow:hidden;aspect-ratio:4/3;user-select:none;cursor:default}
+    #map-canvas{position:absolute;inset:0;width:100%;height:100%}
+    .token{position:absolute;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:grab;transform:translate(-50%,-50%);border:2px solid rgba(255,255,255,0.6);font-size:8.5px;font-weight:700;color:#fff;text-align:center;line-height:1.2;padding:4px;word-break:break-all;text-shadow:0 1px 3px rgba(0,0,0,0.9);z-index:10;letter-spacing:0.01em;transition:filter 0.1s}
+    .token:hover{filter:brightness(1.2)}
+    .token.dragging{cursor:grabbing;z-index:100}
+    .token.selected{box-shadow:0 0 0 3px rgba(255,255,255,0.45)}
+    .clock-ring{position:absolute;inset:0;pointer-events:none;z-index:5}
+    .sidebar{display:flex;flex-direction:column;gap:0.7rem}
+    .panel{background:#111;border:1px solid #1a1a1a;border-radius:8px;padding:0.85rem 0.9rem}
+    .panel h3{font-size:0.68rem;text-transform:uppercase;letter-spacing:0.1em;color:#444;margin-bottom:0.7rem}
+    .panel h3 em{color:#c41e3a;font-style:normal}
+    .add-form{display:flex;flex-direction:column;gap:6px}
+    .add-form input[type=text]{background:#161616;border:1px solid #222;border-radius:4px;color:#ddd;padding:6px 9px;font-size:0.82rem;width:100%;outline:none}
+    .add-form input[type=text]:focus{border-color:rgba(196,30,58,0.5)}
+    .add-form input[type=text]::placeholder{color:#333}
+    .type-row{display:flex;gap:5px}
+    .type-btn{flex:1;padding:5px 3px;font-size:0.68rem;font-weight:700;border-radius:4px;border:1px solid #222;cursor:pointer;background:#161616;color:#444;transition:all 0.15s;text-transform:uppercase;letter-spacing:0.04em}
+    .type-btn.sel-friend{background:rgba(76,255,136,0.1);border-color:#4cff88;color:#4cff88}
+    .type-btn.sel-enemy{background:rgba(255,76,76,0.1);border-color:#ff4c4c;color:#ff4c4c}
+    .type-btn.sel-neutral{background:rgba(255,204,68,0.1);border-color:#ffcc44;color:#ffcc44}
+    .btn-add{background:#c41e3a;color:#fff;border:none;border-radius:4px;padding:7px;font-size:0.8rem;font-weight:700;cursor:pointer;transition:background 0.2s;width:100%}
+    .btn-add:hover{background:#a01830}
+    .token-list{display:flex;flex-direction:column;gap:4px;max-height:160px;overflow-y:auto}
+    .token-list::-webkit-scrollbar{width:3px}
+    .token-list::-webkit-scrollbar-thumb{background:#222;border-radius:2px}
+    .tli{display:flex;align-items:center;gap:7px;padding:5px 8px;border-radius:5px;background:#0e0e0e;border:1px solid #1a1a1a;font-size:0.78rem;color:#aaa;cursor:pointer;transition:border-color 0.15s}
+    .tli:hover{border-color:#252525}
+    .tli.active{border-color:rgba(196,30,58,0.5);background:rgba(196,30,58,0.05)}
+    .tdot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+    .ttag{font-size:0.6rem;margin-left:auto;padding:2px 5px;border-radius:3px}
+    .ttag.friend{background:rgba(76,255,136,0.1);color:#4cff88}
+    .ttag.enemy{background:rgba(255,76,76,0.1);color:#ff4c4c}
+    .ttag.neutral{background:rgba(255,204,68,0.1);color:#ffcc44}
+    .btn-del{background:none;border:none;color:#2a2a2a;cursor:pointer;font-size:0.85rem;padding:0 2px;transition:color 0.15s}
+    .btn-del:hover{color:#c41e3a}
+    .edit-row{display:flex;gap:6px;align-items:center;margin-bottom:6px}
+    .edit-row label{font-size:0.7rem;color:#444;min-width:46px}
+    .edit-row input[type=text]{flex:1;background:#161616;border:1px solid #222;border-radius:4px;color:#ddd;padding:5px 8px;font-size:0.8rem;outline:none}
+    .notes-area{width:100%;min-height:75px;background:#0e0e0e;border:1px solid #1e1e1e;border-radius:4px;color:#999;padding:7px 9px;font-size:0.8rem;resize:vertical;font-family:inherit;line-height:1.5;outline:none}
+    .notes-area:focus{border-color:#252525}
+    .notes-area::placeholder{color:#2a2a2a}
+    .action-row{display:flex;gap:5px;flex-wrap:wrap}
+    .btn-act{flex:1;min-width:70px;padding:6px;font-size:0.72rem;font-weight:700;border-radius:4px;border:1px solid #1e1e1e;cursor:pointer;background:#0e0e0e;color:#555;transition:all 0.18s;text-transform:uppercase;letter-spacing:0.04em}
+    .btn-act:hover{border-color:#2a2a2a;color:#aaa}
+    .btn-act.primary{background:#c41e3a;border-color:#c41e3a;color:#fff}
+    .btn-act.primary:hover{background:#a01830}
+    .btn-act.danger{border-color:#3a1010;color:#c41e3a}
+    .btn-act.danger:hover{background:rgba(196,30,58,0.08)}
+    #status-msg{font-size:0.7rem;color:#4cff88;margin-top:5px;height:13px;text-align:center}
+    .legend{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;padding:0 2px;align-items:center}
+    .legend-item{display:flex;align-items:center;gap:4px;font-size:0.7rem;color:#555}
+    .ldot{width:7px;height:7px;border-radius:50%}
+    .strat-tip{background:rgba(196,30,58,0.06);border-left:3px solid rgba(196,30,58,0.4);border-radius:0 4px 4px 0;padding:0.6rem 0.85rem;font-size:0.75rem;color:#666}
+    .strat-tip strong{color:#c41e3a}
+    .empty-list{font-size:0.75rem;color:#2a2a2a;text-align:center;padding:10px}
   </style>
 </head>
 <body>
@@ -209,49 +126,46 @@
   </header>
 
   <main>
-
     <div class="strat-hero">
-      <h2>Planificador de <span style="color:#c41e3a;">Guerra de Servidores</span></h2>
-      <p>Organiza las alianzas en el mapa · Arrastra las fichas · Exporta tu estrategia</p>
+      <h2>Planificador de <span>Guerra de Servidores</span></h2>
+      <p>Organiza alianzas en el mapa · Arrastra fichas · Exporta tu estrategia</p>
     </div>
 
-    <div style="padding:0.8rem 1rem 0; max-width:1080px; margin:0 auto;">
-      <div class="war-countdown">
+    <div style="padding:0.8rem 1rem 0;max-width:1080px;margin:0 auto;">
+      <div class="war-bar">
         <div>
-          <div class="label">Próxima guerra — Sábado</div>
-          <div class="timer" id="countdown">--d --h --m --s</div>
+          <div class="wlabel">Próxima guerra — Sábado</div>
+          <div class="wtimer" id="countdown">--d --h --m --s</div>
         </div>
         <div>
-          <div class="label" style="margin-bottom:4px;">Modo de servidor</div>
+          <div class="wlabel" style="margin-bottom:4px;">Modo de servidor</div>
           <div class="mode-btns">
             <button class="mode-btn active-atk" id="btn-atk" onclick="setMode('ataque')">⚔️ Atacante</button>
             <button class="mode-btn" id="btn-def" onclick="setMode('defensa')">🛡️ Defensor</button>
           </div>
         </div>
-        <div style="font-size:0.78rem; color:#555;" id="mode-label">Tu servidor ataca la capital este sábado</div>
+        <div style="font-size:0.75rem;color:#444;" id="mode-label">Tu servidor ataca la capital este sábado</div>
       </div>
     </div>
 
     <div class="strat-layout">
-
       <div>
         <div class="map-container" id="map-wrap">
           <canvas id="map-canvas"></canvas>
         </div>
         <div class="legend">
-          <div class="legend-item"><div class="legend-dot" style="background:#4cff88;"></div>Aliada</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#ff4c4c;"></div>Enemiga</div>
-          <div class="legend-item"><div class="legend-dot" style="background:#ffcc44;"></div>Neutral</div>
-          <div class="legend-item" style="margin-left:auto;">Toca una ficha para editarla</div>
+          <div class="legend-item"><div class="ldot" style="background:#4cff88;"></div>Aliada</div>
+          <div class="legend-item"><div class="ldot" style="background:#ff4c4c;"></div>Enemiga</div>
+          <div class="legend-item"><div class="ldot" style="background:#ffcc44;"></div>Neutral</div>
+          <div style="margin-left:auto;font-size:0.7rem;color:#333;">Toca una ficha para editarla</div>
         </div>
       </div>
 
       <div class="sidebar">
-
         <div class="panel">
           <h3>Nueva <em>ficha</em></h3>
           <div class="add-form">
-            <input type="text" id="new-name" placeholder="Ej: [TW7] o NMSL" maxlength="12">
+            <input type="text" id="new-name" placeholder="Ej: SHk o WAT" maxlength="12">
             <div class="type-row">
               <button class="type-btn sel-friend" id="tb-friend" onclick="selectType('friend')">Aliada</button>
               <button class="type-btn" id="tb-enemy" onclick="selectType('enemy')">Enemiga</button>
@@ -264,7 +178,7 @@
         <div class="panel">
           <h3>Alianzas en el <em>mapa</em></h3>
           <div class="token-list" id="token-list">
-            <div style="font-size:0.78rem;color:#333;text-align:center;padding:8px;">Sin fichas aún</div>
+            <div class="empty-list">Sin fichas aún</div>
           </div>
         </div>
 
@@ -280,44 +194,39 @@
             <button class="type-btn" id="etb-neutral" onclick="editType('neutral')">Neutral</button>
           </div>
           <div class="action-row">
-            <button class="btn-action primary" onclick="applyEdit()">Aplicar</button>
-            <button class="btn-action danger" onclick="deleteSelected()">Eliminar</button>
+            <button class="btn-act primary" onclick="applyEdit()">Aplicar</button>
+            <button class="btn-act danger" onclick="deleteSelected()">Eliminar</button>
           </div>
         </div>
 
         <div class="panel">
           <h3>Notas de <em>estrategia</em></h3>
-          <textarea class="notes-area" id="notes" placeholder="Ej: [TW7] ataca norte 20:00&#10;[NMSL] defiende torreta 1&#10;Flanquear por el oeste con [ALZ]..."></textarea>
+          <textarea class="notes-area" id="notes" placeholder="Ej: [TW7] ataca por las 12&#10;[NMSL] defiende Torreta 2 (10-11)&#10;Flanquear por las 3..."></textarea>
         </div>
 
         <div class="panel">
           <h3>Acciones</h3>
           <div class="action-row">
-            <button class="btn-action primary" onclick="saveAll()">Guardar</button>
-            <button class="btn-action" onclick="exportImage()">Exportar</button>
-            <button class="btn-action" onclick="resetAll()">Resetear</button>
+            <button class="btn-act primary" onclick="saveAll()">Guardar</button>
+            <button class="btn-act" onclick="exportImage()">Exportar</button>
+            <button class="btn-act danger" onclick="resetAll()">Resetear</button>
           </div>
           <div id="status-msg"></div>
         </div>
 
         <div class="strat-tip">
-          <strong>Tip:</strong> Usa <strong>Exportar</strong> para descargar una imagen del mapa y compartirla por WhatsApp o Discord con tu alianza.
+          <strong>Tip:</strong> Usa las posiciones del reloj para coordinar — "ataca por las 12", "cubre las 6". Exporta la imagen y compártela por Discord o WhatsApp.
         </div>
-
       </div>
     </div>
-
   </main>
 
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-links">
-        <a href="sobre-nosotros.html">Sobre Nosotros</a>
-        <span class="separator">•</span>
-        <a href="privacidad.html">Política de Privacidad</a>
-        <span class="separator">•</span>
-        <a href="terminos.html">Términos y Condiciones</a>
-        <span class="separator">•</span>
+        <a href="sobre-nosotros.html">Sobre Nosotros</a><span class="separator">•</span>
+        <a href="privacidad.html">Política de Privacidad</a><span class="separator">•</span>
+        <a href="terminos.html">Términos y Condiciones</a><span class="separator">•</span>
         <a href="contacto.html">Contacto</a>
       </div>
       <div class="footer-disclaimer">
@@ -331,7 +240,6 @@
   </footer>
 
   <script src="menu.js"></script>
-
   <script>
     const canvas = document.getElementById('map-canvas');
     const ctx = canvas.getContext('2d');
@@ -340,14 +248,14 @@
     let tokens = [];
     let selectedId = null;
     let dragging = null;
-    let dragOffset = { x: 0, y: 0 };
+    let dragOffset = {x:0,y:0};
     let newType = 'friend';
     let editCurrentType = 'friend';
     let warMode = 'ataque';
 
-    const BG = { friend: '#0f4a22', enemy: '#4a0f0f', neutral: '#3a3a0a' };
-    const BORDER = { friend: '#4cff88', enemy: '#ff4c4c', neutral: '#ffcc44' };
-    const LABEL = { friend: 'Aliada', enemy: 'Enemiga', neutral: 'Neutral' };
+    const BG = {friend:'#0a3a18',enemy:'#3a0a0a',neutral:'#2a2a08'};
+    const BORDER = {friend:'#4cff88',enemy:'#ff4c4c',neutral:'#ffcc44'};
+    const LABEL = {friend:'Aliada',enemy:'Enemiga',neutral:'Neutral'};
 
     function resizeCanvas() {
       const r = mapWrap.getBoundingClientRect();
@@ -358,406 +266,393 @@
 
     function drawMap() {
       const w = canvas.width, h = canvas.height;
-      const cx = w / 2, cy = h * 0.46;
+      const cx = w/2, cy = h*0.5;
 
-      ctx.clearRect(0, 0, w, h);
+      ctx.clearRect(0,0,w,h);
 
-      ctx.fillStyle = '#9fb8cc';
-      ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = '#a8bfcc';
+      ctx.fillRect(0,0,w,h);
 
-      if (warMode === 'ataque') {
-        ctx.fillStyle = 'rgba(140,90,180,0.3)';
-        ctx.fillRect(0, 0, w * 0.44, h);
-        ctx.fillStyle = 'rgba(70,180,170,0.3)';
-        ctx.fillRect(w * 0.56, 0, w * 0.44, h);
+      if(warMode==='ataque'){
+        ctx.fillStyle='rgba(120,80,180,0.28)';
+        ctx.fillRect(0,0,w*0.46,h);
+        ctx.fillStyle='rgba(60,170,160,0.28)';
+        ctx.fillRect(w*0.54,0,w*0.46,h);
       } else {
-        ctx.fillStyle = 'rgba(70,120,200,0.28)';
-        ctx.fillRect(0, 0, w * 0.44, h);
-        ctx.fillStyle = 'rgba(200,70,70,0.28)';
-        ctx.fillRect(w * 0.56, 0, w * 0.44, h);
+        ctx.fillStyle='rgba(50,100,200,0.25)';
+        ctx.fillRect(0,0,w*0.46,h);
+        ctx.fillStyle='rgba(200,60,60,0.25)';
+        ctx.fillRect(w*0.54,0,w*0.46,h);
       }
 
-      ctx.strokeStyle = 'rgba(80,110,140,0.18)';
-      ctx.lineWidth = 0.5;
-      for (let x = 0; x < w; x += 36) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
-      for (let y = 0; y < h; y += 36) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+      ctx.strokeStyle='rgba(70,100,130,0.15)';
+      ctx.lineWidth=0.5;
+      const gs=Math.min(w,h)/16;
+      for(let x=0;x<w;x+=gs){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke();}
+      for(let y=0;y<h;y+=gs){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke();}
 
-      const hexR = Math.min(w, h) * 0.3;
-      drawHex(cx, cy, hexR, '#8fa8bc', '#7a99ae', 2.5);
+      const hexR = Math.min(w,h)*0.28;
 
-      const innerR = hexR * 0.7;
+      /* Hexágono exterior — más grande para fichas */
+      const outerR = w * 0.35;
+
+      /* Hexágono exterior */
+      drawHex(cx,cy,outerR,'#92a8b8','#7a96a8',2);
+
+      /* Hexágono interior — zona agua azul */
+      const innerR = hexR*0.58;
       ctx.save();
-      clipHex(cx, cy, innerR);
-      ctx.fillStyle = '#5a8aaa';
-      ctx.fillRect(cx - innerR, cy - innerR, innerR * 2, innerR * 2);
-
-      for (let i = 0; i < 12; i++) {
-        ctx.fillStyle = `rgba(80,120,160,${0.1 + Math.random() * 0.15})`;
-        const rx = cx - innerR + Math.random() * innerR * 2;
-        const ry = cy - innerR + Math.random() * innerR * 2;
+      clipHex(cx,cy,innerR);
+      ctx.fillStyle='#5a8faa';
+      ctx.fillRect(cx-innerR,cy-innerR,innerR*2,innerR*2);
+      /* Efecto agua sutil */
+      for(let i=0;i<8;i++){
+        ctx.fillStyle=`rgba(80,130,170,${0.08+Math.random()*0.1})`;
         ctx.beginPath();
-        ctx.arc(rx, ry, 6 + Math.random() * 14, 0, Math.PI * 2);
+        ctx.ellipse(cx-innerR+Math.random()*innerR*2,cy-innerR+Math.random()*innerR*2,
+          8+Math.random()*20,4+Math.random()*10,Math.random()*Math.PI,0,Math.PI*2);
         ctx.fill();
       }
       ctx.restore();
-      drawHex(cx, cy, innerR, 'transparent', '#7aaabf', 1.5);
+      drawHex(cx,cy,innerR,'transparent','#6aaabf',1.5);
 
-      const bs = Math.min(w, h) * 0.1;
-      ctx.fillStyle = '#ddd8cc';
-      ctx.strokeStyle = '#bbb0a0';
-      ctx.lineWidth = 2;
+      /* Capital — edificio cuadrado como en el juego */
+      const bs = Math.min(w,h)*0.085;
+      ctx.fillStyle='#ddd8cc';
+      ctx.strokeStyle='#bbb0a0';
+      ctx.lineWidth=1.5;
       ctx.beginPath();
-      ctx.rect(cx - bs * 0.55, cy - bs * 0.7, bs * 1.1, bs * 1.1);
-      ctx.fill(); ctx.stroke();
-      ctx.fillStyle = '#ccc8ba';
-      ctx.fillRect(cx - bs * 0.3, cy - bs * 0.45, bs * 0.6, bs * 0.6);
-      ctx.fillStyle = '#2a1a0a';
-      const fsCap = Math.max(8, w * 0.022);
-      ctx.font = `bold ${fsCap}px sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillText('[NMSL]Capital', cx, cy + bs * 0.5);
+      ctx.rect(cx-bs*0.6,cy-bs*0.75,bs*1.2,bs*1.15);
+      ctx.fill();ctx.stroke();
+      ctx.fillStyle='#ccc8ba';
+      ctx.beginPath();
+      ctx.rect(cx-bs*0.32,cy-bs*0.5,bs*0.64,bs*0.64);
+      ctx.fill();
+      /* Label capital */
+      const capFs=Math.max(8,w*0.021);
+      ctx.fillStyle='rgba(20,10,5,0.85)';
+      const capLabel='Capital';
+      const capW=ctx.measureText(capLabel).width+12;
+      ctx.beginPath();
+      ctx.roundRect(cx-capW/2,cy+bs*0.5,capW,capFs+7,3);
+      ctx.fill();
+      ctx.fillStyle='#f0e8d0';
+      ctx.font=`bold ${capFs}px sans-serif`;
+      ctx.textAlign='center';ctx.textBaseline='top';
+      ctx.fillText(capLabel,cx,cy+bs*0.5+3.5);
 
-      const tR = hexR * 0.52;
-      const turrets = [
-        { a: -90, label: 'Torreta 2' },
-        { a: 30,  label: 'Torreta 3' },
-        { a: 150, label: 'Torreta 1' },
+      /* Torretas — posiciones correctas según el juego:
+         Torreta 2: ~10-11 (arriba-izquierda, ~-120°)
+         Torreta 3: ~3-4 (derecha, ~30°)
+         Torreta 1: ~6-7 (abajo-centro, ~90°)
+      */
+      const tR = hexR*0.53;
+      const turrets=[
+        {a:-120, label:'Torreta 2'},
+        {a:  0,  label:'Torreta 3'},
+        {a: 120, label:'Torreta 1'},
       ];
-      turrets.forEach(t => {
-        const tx = cx + Math.cos(t.a * Math.PI / 180) * tR;
-        const ty = cy + Math.sin(t.a * Math.PI / 180) * tR;
-        drawTurret(tx, ty, Math.min(w,h) * 0.042, t.label);
+      turrets.forEach(t=>{
+        const tx=cx+Math.cos(t.a*Math.PI/180)*tR;
+        const ty=cy+Math.sin(t.a*Math.PI/180)*tR;
+        drawTurret(tx,ty,Math.min(w,h)*0.055,t.label);
       });
 
-      ctx.font = `${Math.max(8, w*0.018)}px sans-serif`;
-      ctx.fillStyle = 'rgba(40,60,80,0.6)';
-      ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-      ctx.fillText('Norte', cx, h * 0.06);
-      ctx.fillText('Sur', cx, h * 0.94);
-      ctx.fillText('Oeste', w * 0.05, cy);
-      ctx.fillText('Este', w * 0.95, cy);
+      /* Reloj circular — radio único para distribución uniforme */
+      const clockR = Math.min(w * 0.46, h * 0.46);
+      const dotR = Math.max(10, w * 0.018);
+
+      ctx.font=`bold ${Math.max(10,w*0.022)}px sans-serif`;
+      ctx.textAlign='center';ctx.textBaseline='middle';
+      [{a:-90,l:'12'},{a:0,l:'3'},{a:90,l:'6'},{a:180,l:'9'}].forEach(p=>{
+        const rad=p.a*Math.PI/180;
+        const px=cx+Math.cos(rad)*clockR;
+        const py=cy+Math.sin(rad)*clockR;
+        ctx.fillStyle='rgba(30,50,70,0.65)';
+        ctx.beginPath();ctx.arc(px,py,dotR,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='rgba(240,240,240,0.95)';
+        ctx.fillText(p.l,px,py);
+      });
+
+      const dotRsm=Math.max(8,w*0.014);
+      ctx.font=`${Math.max(8,w*0.016)}px sans-serif`;
+      [1,2,4,5,7,8,10,11].forEach(n=>{
+        const rad=(-90+n*30)*Math.PI/180;
+        const px=cx+Math.cos(rad)*clockR;
+        const py=cy+Math.sin(rad)*clockR;
+        ctx.fillStyle='rgba(30,50,70,0.4)';
+        ctx.beginPath();ctx.arc(px,py,dotRsm,0,Math.PI*2);ctx.fill();
+        ctx.fillStyle='rgba(230,230,230,0.75)';
+        ctx.textAlign='center';ctx.textBaseline='middle';
+        ctx.fillText(n,px,py);
+      });
+
+      /* Marca lastzwiki.com */
+      ctx.font=`bold ${Math.max(7,w*0.016)}px sans-serif`;
+      ctx.textAlign='right';ctx.textBaseline='bottom';
+      ctx.fillStyle='rgba(196,30,58,0.7)';
+      ctx.fillText('lastzwiki.com',w-6,h-5);
     }
 
-    function drawHex(cx, cy, r, fill, stroke, lw) {
+    function drawHex(cx,cy,r,fill,stroke,lw){
       ctx.beginPath();
-      for (let i = 0; i < 6; i++) {
-        const a = (Math.PI / 3) * i - Math.PI / 6;
-        i === 0 ? ctx.moveTo(cx + r * Math.cos(a), cy + r * Math.sin(a))
-                : ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+      for(let i=0;i<6;i++){
+        const a=(Math.PI/3)*i;
+        i===0?ctx.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a)):ctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
       }
       ctx.closePath();
-      if (fill !== 'transparent') { ctx.fillStyle = fill; ctx.fill(); }
-      ctx.strokeStyle = stroke; ctx.lineWidth = lw; ctx.stroke();
+      if(fill!=='transparent'){ctx.fillStyle=fill;ctx.fill();}
+      ctx.strokeStyle=stroke;ctx.lineWidth=lw;ctx.stroke();
     }
 
-    function clipHex(cx, cy, r) {
+    function clipHex(cx,cy,r){
       ctx.beginPath();
-      for (let i = 0; i < 6; i++) {
-        const a = (Math.PI / 3) * i - Math.PI / 6;
-        i === 0 ? ctx.moveTo(cx + r * Math.cos(a), cy + r * Math.sin(a))
-                : ctx.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a));
+      for(let i=0;i<6;i++){
+        const a=(Math.PI/3)*i;
+        i===0?ctx.moveTo(cx+r*Math.cos(a),cy+r*Math.sin(a)):ctx.lineTo(cx+r*Math.cos(a),cy+r*Math.sin(a));
       }
-      ctx.closePath(); ctx.clip();
+      ctx.closePath();ctx.clip();
     }
 
-    function drawTurret(x, y, r, label) {
-      ctx.fillStyle = '#d0c8b8'; ctx.strokeStyle = '#aaa090'; ctx.lineWidth = 1.5;
-      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2); ctx.fill(); ctx.stroke();
-      ctx.fillStyle = '#b8b0a0';
-      ctx.beginPath(); ctx.arc(x, y, r * 0.45, 0, Math.PI * 2); ctx.fill();
-      const fs = Math.max(7.5, canvas.height * 0.017);
-      ctx.font = `bold ${fs}px sans-serif`;
-      const tw = ctx.measureText(label).width;
-      const lx = x - tw / 2 - 5, ly = y + r + 3;
-      ctx.fillStyle = 'rgba(20,12,5,0.8)';
-      ctx.beginPath(); ctx.roundRect(lx, ly, tw + 10, fs + 7, 3); ctx.fill();
-      ctx.fillStyle = '#f0e8d0'; ctx.textAlign = 'left'; ctx.textBaseline = 'top';
-      ctx.fillText(label, lx + 5, ly + 3.5);
+    function drawTurret(x,y,r,label){
+      /* Base circular */
+      ctx.fillStyle='#cec8b8';ctx.strokeStyle='#a8a090';ctx.lineWidth=1.5;
+      ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();ctx.stroke();
+      /* Núcleo */
+      ctx.fillStyle='#b0a898';
+      ctx.beginPath();ctx.arc(x,y,r*0.44,0,Math.PI*2);ctx.fill();
+      ctx.fillStyle='#989080';
+      ctx.beginPath();ctx.arc(x,y,r*0.22,0,Math.PI*2);ctx.fill();
+      /* Label */
+      const fs=Math.max(7.5,canvas.height*0.016);
+      ctx.font=`bold ${fs}px sans-serif`;
+      const tw=ctx.measureText(label).width;
+      const lx=x-tw/2-5,ly=y+r+3;
+      ctx.fillStyle='rgba(15,8,3,0.82)';
+      ctx.beginPath();ctx.roundRect(lx,ly,tw+10,fs+7,3);ctx.fill();
+      ctx.fillStyle='#f0e8d0';ctx.textAlign='left';ctx.textBaseline='top';
+      ctx.fillText(label,lx+5,ly+3.5);
     }
 
-    function renderTokens() {
-      mapWrap.querySelectorAll('.token').forEach(e => e.remove());
-      tokens.forEach(t => {
-        const el = document.createElement('div');
-        el.className = 'token' + (t.id === selectedId ? ' selected' : '') + (dragging === t.id ? ' dragging' : '');
-        el.id = 'tk-' + t.id;
-        el.style.cssText = `background:${BG[t.type]};left:${t.x}%;top:${t.y}%;border-color:${BORDER[t.type]};box-shadow:0 2px 8px ${BORDER[t.type]}44;`;
-        el.textContent = t.name;
-        el.addEventListener('mousedown', e => { e.preventDefault(); e.stopPropagation(); startDrag(e, t.id); });
-        el.addEventListener('touchstart', e => { e.preventDefault(); e.stopPropagation(); startDragTouch(e, t.id); }, { passive: false });
-        el.addEventListener('click', e => { e.stopPropagation(); selectToken(t.id); });
+    function renderTokens(){
+      mapWrap.querySelectorAll('.token').forEach(e=>e.remove());
+      tokens.forEach(t=>{
+        const el=document.createElement('div');
+        el.className='token'+(t.id===selectedId?' selected':'')+(dragging===t.id?' dragging':'');
+        el.id='tk-'+t.id;
+        el.style.cssText=`background:${BG[t.type]};left:${t.x}%;top:${t.y}%;border-color:${BORDER[t.type]};box-shadow:0 2px 10px ${BORDER[t.type]}55;`;
+        el.textContent=t.name;
+        el.addEventListener('mousedown',e=>{e.preventDefault();e.stopPropagation();startDrag(e,t.id,'mouse');});
+        el.addEventListener('touchstart',e=>{e.preventDefault();e.stopPropagation();startDrag(e,t.id,'touch');},{passive:false});
+        el.addEventListener('click',e=>{e.stopPropagation();selectToken(t.id);});
         mapWrap.appendChild(el);
       });
       renderList();
     }
 
-    function renderList() {
-      const list = document.getElementById('token-list');
-      if (tokens.length === 0) {
-        list.innerHTML = '<div style="font-size:0.78rem;color:#333;text-align:center;padding:8px;">Sin fichas aún</div>';
-        return;
-      }
-      list.innerHTML = '';
-      tokens.forEach(t => {
-        const item = document.createElement('div');
-        item.className = 'token-list-item' + (t.id === selectedId ? ' tli-active' : '');
-        item.innerHTML = `<div class="token-dot" style="background:${BORDER[t.type]};"></div><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${t.name}</span><span class="ttype ${t.type}">${LABEL[t.type]}</span><button class="btn-del" onclick="removeToken(${t.id},event)">✕</button>`;
-        item.addEventListener('click', () => selectToken(t.id));
+    function renderList(){
+      const list=document.getElementById('token-list');
+      if(tokens.length===0){list.innerHTML='<div class="empty-list">Sin fichas aún</div>';return;}
+      list.innerHTML='';
+      tokens.forEach(t=>{
+        const item=document.createElement('div');
+        item.className='tli'+(t.id===selectedId?' active':'');
+        item.innerHTML=`<div class="tdot" style="background:${BORDER[t.type]};"></div><span style="flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${t.name}</span><span class="ttag ${t.type}">${LABEL[t.type]}</span><button class="btn-del" onclick="removeToken(${t.id},event)">✕</button>`;
+        item.addEventListener('click',()=>selectToken(t.id));
         list.appendChild(item);
       });
     }
 
-    function selectToken(id) {
-      selectedId = id;
-      const t = tokens.find(x => x.id === id);
-      if (t) {
-        document.getElementById('edit-panel').style.display = 'block';
-        document.getElementById('edit-name').value = t.name;
-        editCurrentType = t.type;
+    function selectToken(id){
+      selectedId=id;
+      const t=tokens.find(x=>x.id===id);
+      if(t){
+        document.getElementById('edit-panel').style.display='block';
+        document.getElementById('edit-name').value=t.name;
+        editCurrentType=t.type;
         updateEditBtns();
       }
       renderTokens();
     }
 
-    function deselectAll() {
-      selectedId = null;
-      document.getElementById('edit-panel').style.display = 'none';
+    function deselectAll(){
+      selectedId=null;
+      document.getElementById('edit-panel').style.display='none';
       renderTokens();
     }
 
-    function addToken() {
-      const name = document.getElementById('new-name').value.trim();
-      if (!name) { setStatus('Escribe un nombre ⚠️'); return; }
-      tokens.push({ id: Date.now(), name, type: newType, x: 40 + Math.random() * 20, y: 40 + Math.random() * 20 });
-      document.getElementById('new-name').value = '';
-      renderTokens();
-      setStatus('Ficha agregada ✓');
+    function addToken(){
+      const name=document.getElementById('new-name').value.trim();
+      if(!name){setStatus('Escribe un nombre ⚠️');return;}
+      tokens.push({id:Date.now(),name,type:newType,x:40+Math.random()*20,y:40+Math.random()*20});
+      document.getElementById('new-name').value='';
+      renderTokens();setStatus('Ficha agregada ✓');
     }
 
-    function removeToken(id, e) {
+    function removeToken(id,e){
       e.stopPropagation();
-      tokens = tokens.filter(t => t.id !== id);
-      if (selectedId === id) deselectAll(); else renderTokens();
+      tokens=tokens.filter(t=>t.id!==id);
+      if(selectedId===id)deselectAll();else renderTokens();
       setStatus('Ficha eliminada');
     }
 
-    function deleteSelected() {
-      if (!selectedId) return;
-      tokens = tokens.filter(t => t.id !== selectedId);
-      deselectAll();
-      setStatus('Ficha eliminada');
+    function deleteSelected(){
+      if(!selectedId)return;
+      tokens=tokens.filter(t=>t.id!==selectedId);
+      deselectAll();setStatus('Ficha eliminada');
     }
 
-    function applyEdit() {
-      if (!selectedId) return;
-      const t = tokens.find(x => x.id === selectedId);
-      if (t) {
-        const n = document.getElementById('edit-name').value.trim();
-        if (n) t.name = n;
-        t.type = editCurrentType;
-      }
-      renderTokens();
-      setStatus('Cambios aplicados ✓');
+    function applyEdit(){
+      if(!selectedId)return;
+      const t=tokens.find(x=>x.id===selectedId);
+      if(t){const n=document.getElementById('edit-name').value.trim();if(n)t.name=n;t.type=editCurrentType;}
+      renderTokens();setStatus('Cambios aplicados ✓');
     }
 
-    function selectType(tp) {
-      newType = tp;
-      ['friend','enemy','neutral'].forEach(x => {
-        document.getElementById('tb-' + x).className = 'type-btn' + (x === tp ? ` sel-${x}` : '');
+    function selectType(tp){
+      newType=tp;
+      ['friend','enemy','neutral'].forEach(x=>{
+        document.getElementById('tb-'+x).className='type-btn'+(x===tp?` sel-${x}`:'');
       });
     }
 
-    function editType(tp) {
-      editCurrentType = tp;
-      updateEditBtns();
-    }
+    function editType(tp){editCurrentType=tp;updateEditBtns();}
 
-    function updateEditBtns() {
-      ['friend','enemy','neutral'].forEach(x => {
-        document.getElementById('etb-' + x).className = 'type-btn' + (x === editCurrentType ? ` sel-${x}` : '');
+    function updateEditBtns(){
+      ['friend','enemy','neutral'].forEach(x=>{
+        document.getElementById('etb-'+x).className='type-btn'+(x===editCurrentType?` sel-${x}`:'');
       });
     }
 
-    function startDrag(e, id) {
-      dragging = id;
-      const el = document.getElementById('tk-' + id);
-      const rw = mapWrap.getBoundingClientRect();
-      const re = el.getBoundingClientRect();
-      dragOffset.x = e.clientX - (re.left + re.width / 2 - rw.left);
-      dragOffset.y = e.clientY - (re.top + re.height / 2 - rw.top);
+    function startDrag(e,id,mode){
+      dragging=id;
+      const el=document.getElementById('tk-'+id);
+      const rw=mapWrap.getBoundingClientRect();
+      const re=el.getBoundingClientRect();
+      const client=mode==='touch'?e.touches[0]:e;
+      dragOffset.x=client.clientX-(re.left+re.width/2-rw.left);
+      dragOffset.y=client.clientY-(re.top+re.height/2-rw.top);
     }
 
-    function startDragTouch(e, id) {
-      dragging = id;
-      const touch = e.touches[0];
-      const el = document.getElementById('tk-' + id);
-      const rw = mapWrap.getBoundingClientRect();
-      const re = el.getBoundingClientRect();
-      dragOffset.x = touch.clientX - (re.left + re.width / 2 - rw.left);
-      dragOffset.y = touch.clientY - (re.top + re.height / 2 - rw.top);
-    }
-
-    function onMove(cx, cy) {
-      if (!dragging) return;
-      const r = mapWrap.getBoundingClientRect();
-      const x = ((cx - r.left - dragOffset.x) / r.width) * 100;
-      const y = ((cy - r.top - dragOffset.y) / r.height) * 100;
-      const t = tokens.find(t => t.id === dragging);
-      if (t) { t.x = Math.max(3, Math.min(97, x)); t.y = Math.max(3, Math.min(97, y)); }
+    function onMove(cx,cy){
+      if(!dragging)return;
+      const r=mapWrap.getBoundingClientRect();
+      const x=((cx-r.left-dragOffset.x)/r.width)*100;
+      const y=((cy-r.top-dragOffset.y)/r.height)*100;
+      const t=tokens.find(t=>t.id===dragging);
+      if(t){t.x=Math.max(3,Math.min(97,x));t.y=Math.max(3,Math.min(97,y));}
       renderTokens();
     }
 
-    document.addEventListener('mousemove', e => onMove(e.clientX, e.clientY));
-    document.addEventListener('touchmove', e => { if (dragging) { e.preventDefault(); onMove(e.touches[0].clientX, e.touches[0].clientY); }}, { passive: false });
-    document.addEventListener('mouseup', () => { dragging = null; });
-    document.addEventListener('touchend', () => { dragging = null; });
-    mapWrap.addEventListener('click', e => { if (e.target === mapWrap || e.target === canvas) deselectAll(); });
+    document.addEventListener('mousemove',e=>onMove(e.clientX,e.clientY));
+    document.addEventListener('touchmove',e=>{if(dragging){e.preventDefault();onMove(e.touches[0].clientX,e.touches[0].clientY);}},{passive:false});
+    document.addEventListener('mouseup',()=>{dragging=null;});
+    document.addEventListener('touchend',()=>{dragging=null;});
+    mapWrap.addEventListener('click',e=>{if(e.target===mapWrap||e.target===canvas)deselectAll();});
 
-    function setMode(mode) {
-      warMode = mode;
-      document.getElementById('btn-atk').className = 'mode-btn' + (mode === 'ataque' ? ' active-atk' : '');
-      document.getElementById('btn-def').className = 'mode-btn' + (mode === 'defensa' ? ' active-def' : '');
-      document.getElementById('mode-label').textContent = mode === 'ataque'
-        ? 'Tu servidor ataca la capital este sábado'
-        : 'Tu servidor defiende la capital este sábado';
+    function setMode(mode){
+      warMode=mode;
+      document.getElementById('btn-atk').className='mode-btn'+(mode==='ataque'?' active-atk':'');
+      document.getElementById('btn-def').className='mode-btn'+(mode==='defensa'?' active-def':'');
+      document.getElementById('mode-label').textContent=mode==='ataque'
+        ?'Tu servidor ataca la capital este sábado'
+        :'Tu servidor defiende la capital este sábado';
       drawMap();
     }
 
-    function updateCountdown() {
+    function updateCountdown(){
       const now = new Date();
-      const day = now.getDay();
-      const diff = ((6 - day + 7) % 7 || 7);
-      const nextSat = new Date(now);
-      nextSat.setDate(now.getDate() + diff);
-      nextSat.setHours(20, 0, 0, 0);
+      const day = now.getUTCDay();
+      const diff = ((6 - day + 7) % 7) || 7;
+      const nextSat = new Date(Date.UTC(
+        now.getUTCFullYear(),
+        now.getUTCMonth(),
+        now.getUTCDate() + diff,
+        14, 0, 0, 0
+      ));
       const ms = nextSat - now;
-      if (ms <= 0) { document.getElementById('countdown').textContent = '¡HOY ES LA GUERRA!'; return; }
-      const d = Math.floor(ms / 86400000);
-      const h = Math.floor((ms % 86400000) / 3600000);
-      const m = Math.floor((ms % 3600000) / 60000);
-      const s = Math.floor((ms % 60000) / 1000);
-      document.getElementById('countdown').textContent = `${d}d ${String(h).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
+      if(ms<=0){document.getElementById('countdown').textContent='¡HOY ES LA GUERRA!';return;}
+      const d=Math.floor(ms/86400000);
+      const hh=Math.floor((ms%86400000)/3600000);
+      const m=Math.floor((ms%3600000)/60000);
+      const s=Math.floor((ms%60000)/1000);
+      document.getElementById('countdown').textContent=`${d}d ${String(hh).padStart(2,'0')}h ${String(m).padStart(2,'0')}m ${String(s).padStart(2,'0')}s`;
     }
 
-    function saveAll() {
-      try {
-        localStorage.setItem('lz-war-tokens', JSON.stringify(tokens));
-        localStorage.setItem('lz-war-notes', document.getElementById('notes').value);
-        localStorage.setItem('lz-war-mode', warMode);
+    function saveAll(){
+      try{
+        localStorage.setItem('lz-war-tokens',JSON.stringify(tokens));
+        localStorage.setItem('lz-war-notes',document.getElementById('notes').value);
+        localStorage.setItem('lz-war-mode',warMode);
         setStatus('Guardado ✓');
-      } catch(e) { setStatus('Error al guardar'); }
+      }catch(e){setStatus('Error al guardar');}
     }
 
-    function resetAll() {
-      if (!confirm('¿Resetear el mapa? Se perderán las fichas actuales.')) return;
-      tokens = [];
-      deselectAll();
-      document.getElementById('notes').value = '';
+    function resetAll(){
+      if(!confirm('¿Resetear el mapa? Se perderán las fichas actuales.'))return;
+      tokens=[];deselectAll();
+      document.getElementById('notes').value='';
       setStatus('Mapa reseteado');
     }
 
-    function exportImage() {
+    function exportImage(){
       setStatus('Generando imagen...');
-
-      const exportCanvas = document.createElement('canvas');
-      const scale = 2;
-      exportCanvas.width = canvas.width * scale;
-      exportCanvas.height = canvas.height * scale;
-      const ectx = exportCanvas.getContext('2d');
-      ectx.scale(scale, scale);
-
-      const tmpCtx = ctx;
-      const tmpCanvas = canvas;
-
-      ectx.drawImage(canvas, 0, 0);
-
-      const r = mapWrap.getBoundingClientRect();
-      tokens.forEach(t => {
-        const x = (t.x / 100) * r.width;
-        const y = (t.y / 100) * r.height;
-        const radius = 23;
-
-        ectx.beginPath();
-        ectx.arc(x, y, radius, 0, Math.PI * 2);
-        ectx.fillStyle = BG[t.type];
-        ectx.fill();
-        ectx.strokeStyle = BORDER[t.type];
-        ectx.lineWidth = 2;
-        ectx.stroke();
-
-        ectx.fillStyle = '#fff';
-        ectx.font = 'bold 8px sans-serif';
-        ectx.textAlign = 'center';
-        ectx.textBaseline = 'middle';
-
-        const words = t.name.match(/.{1,8}/g) || [t.name];
-        if (words.length === 1) {
-          ectx.fillText(words[0], x, y);
-        } else {
-          ectx.fillText(words[0], x, y - 5);
-          ectx.fillText(words[1], x, y + 5);
-        }
+      const ec=document.createElement('canvas');
+      const scale=2;
+      ec.width=canvas.width*scale;ec.height=canvas.height*scale;
+      const ectx=ec.getContext('2d');
+      ectx.scale(scale,scale);
+      ectx.drawImage(canvas,0,0);
+      const r=mapWrap.getBoundingClientRect();
+      tokens.forEach(t=>{
+        const x=(t.x/100)*r.width,y=(t.y/100)*r.height,rad=23;
+        ectx.beginPath();ectx.arc(x,y,rad,0,Math.PI*2);
+        ectx.fillStyle=BG[t.type];ectx.fill();
+        ectx.strokeStyle=BORDER[t.type];ectx.lineWidth=2;ectx.stroke();
+        ectx.fillStyle='#fff';ectx.font='bold 8px sans-serif';
+        ectx.textAlign='center';ectx.textBaseline='middle';
+        const words=t.name.match(/.{1,8}/g)||[t.name];
+        if(words.length===1){ectx.fillText(words[0],x,y);}
+        else{ectx.fillText(words[0],x,y-5);ectx.fillText(words[1],x,y+5);}
       });
-
-      const notes = document.getElementById('notes').value;
-      if (notes.trim()) {
-        const lines = notes.split('\n').slice(0, 4);
-        const panelH = lines.length * 16 + 20;
-        ectx.fillStyle = 'rgba(0,0,0,0.75)';
-        ectx.beginPath();
-        ectx.roundRect(8, exportCanvas.height / scale - panelH - 8, exportCanvas.width / scale - 16, panelH, 6);
-        ectx.fill();
-        ectx.fillStyle = '#c41e3a';
-        ectx.font = 'bold 9px sans-serif';
-        ectx.textAlign = 'left';
-        ectx.fillText('NOTAS DE ESTRATEGIA', 16, exportCanvas.height / scale - panelH - 8 + 10);
-        ectx.fillStyle = '#ccc';
-        ectx.font = '8px sans-serif';
-        lines.forEach((line, i) => {
-          ectx.fillText(line.substring(0, 50), 16, exportCanvas.height / scale - panelH - 8 + 22 + i * 14);
-        });
+      const notes=document.getElementById('notes').value;
+      if(notes.trim()){
+        const lines=notes.split('\n').slice(0,4);
+        const ph=lines.length*16+20;
+        ectx.fillStyle='rgba(0,0,0,0.75)';
+        ectx.beginPath();ectx.roundRect(8,ec.height/scale-ph-8,ec.width/scale-16,ph,6);ectx.fill();
+        ectx.fillStyle='#c41e3a';ectx.font='bold 9px sans-serif';ectx.textAlign='left';
+        ectx.fillText('NOTAS DE ESTRATEGIA',16,ec.height/scale-ph-8+10);
+        ectx.fillStyle='#ccc';ectx.font='8px sans-serif';
+        lines.forEach((line,i)=>ectx.fillText(line.substring(0,50),16,ec.height/scale-ph-8+22+i*14));
       }
-
-      ectx.fillStyle = 'rgba(0,0,0,0.5)';
-      ectx.font = 'bold 9px sans-serif';
-      ectx.textAlign = 'right';
-      ectx.fillStyle = '#c41e3a';
-      ectx.fillText('lastzwiki.com', exportCanvas.width / scale - 10, 16);
-
-      exportCanvas.toBlob(blob => {
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'estrategia-lastz.png';
-        a.click();
+      ec.toBlob(blob=>{
+        const url=URL.createObjectURL(blob);
+        const a=document.createElement('a');
+        a.href=url;a.download='estrategia-lastz.png';a.click();
         URL.revokeObjectURL(url);
         setStatus('Imagen exportada ✓');
       });
     }
 
-    function setStatus(msg) {
-      document.getElementById('status-msg').textContent = msg;
-      setTimeout(() => { document.getElementById('status-msg').textContent = ''; }, 2500);
+    function setStatus(msg){
+      document.getElementById('status-msg').textContent=msg;
+      setTimeout(()=>{document.getElementById('status-msg').textContent='';},2500);
     }
 
-    try {
-      const saved = localStorage.getItem('lz-war-tokens');
-      if (saved) tokens = JSON.parse(saved);
-      const savedNotes = localStorage.getItem('lz-war-notes');
-      if (savedNotes) document.getElementById('notes').value = savedNotes;
-      const savedMode = localStorage.getItem('lz-war-mode');
-      if (savedMode) setMode(savedMode);
-    } catch(e) {}
+    try{
+      const saved=localStorage.getItem('lz-war-tokens');
+      if(saved)tokens=JSON.parse(saved);
+      const sn=localStorage.getItem('lz-war-notes');
+      if(sn)document.getElementById('notes').value=sn;
+      const sm=localStorage.getItem('lz-war-mode');
+      if(sm)setMode(sm);
+    }catch(e){}
 
-    window.addEventListener('load', () => {
-      resizeCanvas();
-      renderTokens();
-    });
-    window.addEventListener('resize', resizeCanvas);
-    setInterval(updateCountdown, 1000);
+    window.addEventListener('load',()=>{resizeCanvas();renderTokens();});
+    window.addEventListener('resize',resizeCanvas);
+    setInterval(updateCountdown,1000);
     updateCountdown();
   </script>
-
 </body>
 </html>
