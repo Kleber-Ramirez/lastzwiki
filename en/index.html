@@ -106,6 +106,107 @@
   <link rel="stylesheet" href="../index.css">
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="../apocalypse.css">
+
+  <!-- ── CAROUSEL: viewport + buttons + dots ── -->
+  <style>
+    /* Wrapper gives position context to buttons without clipping them */
+    .carrusel-track-wrap {
+      position: relative;
+    }
+
+    /* Viewport: only clips the track */
+    .carrusel-viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    /* Track that moves */
+    .carrusel-container {
+      display: flex;
+      will-change: transform;
+    }
+
+    /* ── Buttons ──────────────────────────────── */
+    .carrusel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-70%);
+      z-index: 10;
+      width: 32px;
+      height: 56px;
+      background: rgba(0, 0, 0, 0.55);
+      color: rgba(255,255,255,0.75);
+      border: none;
+      border-top: 1px solid rgba(196, 30, 58, 0.4);
+      border-bottom: 1px solid rgba(196, 30, 58, 0.4);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .carrusel-prev {
+      left: 0;
+      border-radius: 0 4px 4px 0;
+      border-right: 1px solid rgba(196, 30, 58, 0.4);
+    }
+
+    .carrusel-next {
+      right: 0;
+      border-radius: 4px 0 0 4px;
+      border-left: 1px solid rgba(196, 30, 58, 0.4);
+    }
+
+    .carrusel-btn:hover {
+      background: rgba(138, 3, 3, 0.85);
+      color: #fff;
+      border-color: #c41e3a;
+    }
+
+    .carrusel-btn:active {
+      background: #c41e3a;
+      color: #fff;
+    }
+
+    /* Hide on mobile — they use swipe */
+    @media (max-width: 600px) {
+      .carrusel-btn { display: none; }
+    }
+
+    /* ── Dots ─────────────────────────────────── */
+    .carrusel-dots {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 0.55rem 0 0.15rem;
+    }
+
+    .carrusel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      border: none;
+      background: #2a2a2a;
+      cursor: pointer;
+      padding: 0;
+      transition: background 0.25s, width 0.25s, border-radius 0.25s;
+    }
+
+    .carrusel-dot.active {
+      background: #c41e3a;
+      width: 20px;
+      border-radius: 3px;
+    }
+
+    .carrusel-dot:hover:not(.active) { background: #444; }
+  </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -160,7 +261,9 @@
 
   <main>
    <section class="carrusel" aria-label="Featured sections">
-      <div class="carrusel-container">
+      <div class="carrusel-track-wrap">
+        <div class="carrusel-viewport">
+          <div class="carrusel-container">
         <article class="carrusel-item">
           <a href="beginner-guide.html" style="text-decoration: none; color: inherit;">
             <img src="../img-manual-principiante.webp" alt="Beginner's Guide - Last Z">
@@ -197,7 +300,14 @@
             <p>Store Guide - Gift Codes</p>
           </a>
         </article>
-      </div>
+        </div><!-- /.carrusel-container -->
+        </div><!-- /.carrusel-viewport -->
+        <button class="carrusel-btn carrusel-prev" aria-label="Previous slide">&#10094;</button>
+        <button class="carrusel-btn carrusel-next" aria-label="Next slide">&#10095;</button>
+      </div><!-- /.carrusel-track-wrap -->
+
+      <div class="carrusel-dots" id="carruselDots" aria-label="Slide indicators"></div>
+
     </section>
 
     <!-- Teasers: Laboratorio + Taller lado a lado -->

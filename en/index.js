@@ -2,10 +2,21 @@
 // MAIN CAROUSEL
 // ===========================
 
-const carrusel = document.querySelector('.carrusel-container');
-let items = document.querySelectorAll('.carrusel-item');
-let index = 0;
+const carrusel      = document.querySelector('.carrusel-container');
+const btnPrev       = document.querySelector('.carrusel-prev');
+const btnNext       = document.querySelector('.carrusel-next');
+const dotsContainer = document.getElementById('carruselDots');
+
+let items         = document.querySelectorAll('.carrusel-item');
+let index         = 0;
+let originalCount = 0;
 let autoPlay;
+let userPaused    = false;
+let resumeTimer;
+
+// Touch tracking
+let touchStartX   = 0;
+const SWIPE_THRESHOLD = 50;
 
 function getVisibleItems() {
   if (window.innerWidth <= 480) return 1;
@@ -13,59 +24,135 @@ function getVisibleItems() {
   return 3;
 }
 
+// ── Setup ────────────────────────────────────────────
 function setupCarrusel() {
-  // Remove previous clones
   document.querySelectorAll('.carrusel-item.clone').forEach(c => c.remove());
-  
-  items = document.querySelectorAll('.carrusel-item');
-  const visibleItems = getVisibleItems();
-  
-  // Clone first items for infinite loop
-  for (let i = 0; i < visibleItems; i++) {
+
+  items         = document.querySelectorAll('.carrusel-item');
+  originalCount = items.length;
+  const vis     = getVisibleItems();
+
+  for (let i = 0; i < vis; i++) {
     const clone = items[i].cloneNode(true);
     clone.classList.add('clone');
     carrusel.appendChild(clone);
   }
 
-  // Reset position
   index = 0;
-  carrusel.style.transition = "none";
-  carrusel.style.transform = `translateX(0)`;
+  carrusel.style.transition = 'none';
+  carrusel.style.transform  = 'translateX(0)';
 
-  // Update flex for each item
   document.querySelectorAll('.carrusel-item').forEach(item => {
-    item.style.flex = `0 0 ${100 / visibleItems}%`;
+    item.style.flex = `0 0 ${100 / vis}%`;
+  });
+
+  buildDots();
+  updateDots();
+}
+
+// ── Dots ─────────────────────────────────────────────
+function buildDots() {
+  if (!dotsContainer) return;
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < originalCount; i++) {
+    const dot = document.createElement('button');
+    dot.className = 'carrusel-dot';
+    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+    dot.addEventListener('click', () => { goToSlide(i); onUserInteraction(); });
+    dotsContainer.appendChild(dot);
+  }
+}
+
+function updateDots() {
+  document.querySelectorAll('.carrusel-dot').forEach((dot, i) => {
+    dot.classList.toggle('active', i === (index % originalCount));
   });
 }
 
-function moveCarrusel() {
-  const visibleItems = getVisibleItems();
-  const totalItems = document.querySelectorAll('.carrusel-item').length;
-  
-  index++;
-  carrusel.style.transition = "transform 0.5s ease";
-  carrusel.style.transform = `translateX(-${index * (100 / visibleItems)}%)`;
+// ── Go to specific slide ─────────────────────────────
+function goToSlide(i) {
+  const vis = getVisibleItems();
+  index = Math.max(0, Math.min(i, originalCount - 1));
+  carrusel.style.transition = 'transform 0.5s ease';
+  carrusel.style.transform  = `translateX(-${index * (100 / vis)}%)`;
+  updateDots();
+}
 
-  if (index >= totalItems - visibleItems) {
+// ── Move forward / backward ──────────────────────────
+function moveCarrusel(direction) {
+  const vis   = getVisibleItems();
+  const total = document.querySelectorAll('.carrusel-item').length;
+
+  if (direction === -1) {
+    if (index > 0) {
+      index--;
+    } else {
+      index = originalCount - 1;
+    }
+    carrusel.style.transition = 'transform 0.5s ease';
+    carrusel.style.transform  = `translateX(-${index * (100 / vis)}%)`;
+    updateDots();
+    return;
+  }
+
+  index++;
+  carrusel.style.transition = 'transform 0.5s ease';
+  carrusel.style.transform  = `translateX(-${index * (100 / vis)}%)`;
+  updateDots();
+
+  if (index >= total - vis) {
     setTimeout(() => {
-      carrusel.style.transition = "none";
+      carrusel.style.transition = 'none';
       index = 0;
-      carrusel.style.transform = `translateX(0)`;
+      carrusel.style.transform  = 'translateX(0)';
+      updateDots();
     }, 500);
   }
 }
 
+// ── Autoplay ─────────────────────────────────────────
 function startAutoPlay() {
   clearInterval(autoPlay);
-  autoPlay = setInterval(moveCarrusel, 2000);
+  if (!userPaused) {
+    autoPlay = setInterval(() => moveCarrusel(1), 3000);
+  }
 }
 
-// Restart on screen resize
+function onUserInteraction() {
+  userPaused = true;
+  clearInterval(autoPlay);
+  clearTimeout(resumeTimer);
+  resumeTimer = setTimeout(() => {
+    userPaused = false;
+    startAutoPlay();
+  }, 5000);
+}
+
+// ── Buttons ← → ──────────────────────────────────────
+btnPrev?.addEventListener('click', () => { moveCarrusel(-1); onUserInteraction(); });
+btnNext?.addEventListener('click', () => { moveCarrusel(1);  onUserInteraction(); });
+
+// ── Touch swipe ──────────────────────────────────────
+carrusel.addEventListener('touchstart', e => {
+  touchStartX = e.touches[0].clientX;
+}, { passive: true });
+
+carrusel.addEventListener('touchend', e => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > SWIPE_THRESHOLD) {
+    moveCarrusel(diff > 0 ? 1 : -1);
+    onUserInteraction();
+  }
+}, { passive: true });
+
+// ── Resize ───────────────────────────────────────────
 window.addEventListener('resize', () => {
   setupCarrusel();
+  userPaused = false;
   startAutoPlay();
 });
 
+// ── Start ─────────────────────────────────────────────
 setupCarrusel();
 startAutoPlay();
 

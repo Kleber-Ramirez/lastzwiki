@@ -24,10 +24,10 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="article">
+  <meta property="og:url" content="https://lastzwiki.com/en/season-3.html">
   <meta property="og:title" content="Season 3 Last Z | Complete Snow Monsters Guide">
   <meta property="og:description" content="Complete Season 3 guide with snow monsters, raids, exclusive buildings and rewards.">
   <meta property="og:image" content="https://lastzwiki.com/img-temporada3.png">
-  <meta property="og:url" content="https://lastzwiki.com/en/season-3.html">
   <meta property="og:site_name" content="Last Z Wiki">
   <meta property="og:locale" content="en_US">
 
@@ -40,14 +40,13 @@
 
   <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://lastzwiki.com/en/season-3.html">
-  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-3.html" />
-  <link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-3.html" />
-  <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-3.html" />
+  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/temporada-3.html">
+  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-3.html">
+  <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-3.html">
 
   <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PXVTLS5T');</script>
-<!-- End Google Tag Manager -->
-<!-- Google tag (gtag.js) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PXVTLS5T');</script>
+  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D52HENZW9L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -69,208 +68,355 @@
     "publisher": { "@type": "Organization", "name": "Last Z Wiki" }
   }
   </script>
-  
+
   <!-- CSS -->
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../global.css">
+
   <style>
-    /* Season 3 specific styles */
+    /* ── Variables S3 — Paleta Hielo ─────────────────── */
+    :root {
+      --s3-ice:      #4FC3F7;
+      --s3-ice-deep: #0288D1;
+      --s3-ice-glow: rgba(79, 195, 247, 0.25);
+      --s3-ice-dim:  rgba(79, 195, 247, 0.08);
+      --s3-ice-border: rgba(79, 195, 247, 0.3);
+    }
+
+    * { box-sizing: border-box; }
+
+    /* ── Layout ───────────────────────────────────────── */
+    .page-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3rem;
+    }
+
+    /* ── Hero — full-width, fuera del page-wrap ───────── */
     .s3-header {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
-      border: 2px solid #c41e3a;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 2rem 0;
+      background: linear-gradient(135deg, #060e18 0%, #0a1520 50%, #060e18 100%);
+      border-bottom: 2px solid var(--s3-ice);
+      padding: 2.5rem 1.5rem 2rem;
       text-align: center;
-      box-shadow: 0 0 30px rgba(196, 30, 58, 0.4);
+      box-shadow: 0 0 40px var(--s3-ice-glow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .s3-header::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 700px; height: 250px;
+      background: radial-gradient(ellipse, rgba(79,195,247,0.12) 0%, transparent 70%);
+      pointer-events: none;
     }
 
     .s3-header h1 {
-      color: #c41e3a;
-      text-shadow: 0 0 20px rgba(196, 30, 58, 0.8);
+      color: var(--s3-ice);
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      text-shadow: 0 0 20px rgba(79,195,247,0.7);
       margin-bottom: 0.5rem;
     }
 
-    .s3-duration {
-      color: #4FC3F7;
-      font-size: 1.2rem;
+    .s3-header p {
+      color: #aaa;
+      font-size: 0.95rem;
+      margin: 0.3rem 0;
+    }
+
+    .s3-meta {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-top: 1rem;
     }
 
+    .s3-badge {
+      background: var(--s3-ice-dim);
+      border: 1px solid var(--s3-ice-border);
+      color: var(--s3-ice);
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.2rem 0.65rem;
+      border-radius: 20px;
+    }
+
+    /* ── Secciones ────────────────────────────────────── */
     .s3-section {
       background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
       border: 1px solid #333;
-      border-left: 4px solid #c41e3a;
+      border-left: 4px solid var(--s3-ice);
       border-radius: 8px;
       padding: 1.5rem;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
+      scroll-margin-top: 90px;
     }
 
     .s3-section h2 {
-      color: #c41e3a;
+      color: var(--s3-ice);
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
       margin-bottom: 1rem;
-      font-size: 1.8rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--s3-ice-border);
     }
 
     .s3-section h3 {
       color: #fff;
       margin-top: 1.5rem;
       margin-bottom: 0.8rem;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
     }
 
+    .s3-section h4 {
+      color: var(--s3-ice);
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .s3-section p {
+      color: #ccc;
+      line-height: 1.7;
+      margin-bottom: 0.7rem;
+      font-size: 0.93rem;
+    }
+
+    ul, ol { margin-left: 1.5rem; line-height: 1.8; color: #ccc; }
+    li { margin: 0.4rem 0; font-size: 0.9rem; }
+
+    /* ── Grid 2 columnas ─────────────────────────────── */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+
+    /* ── Pases — lado a lado ──────────────────────────── */
+    .pass-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 500px) { .pass-grid { grid-template-columns: 1fr; } }
+
+    .pass-card {
+      background: #111;
+      border: 1px solid rgba(255, 215, 0, 0.25);
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+
+    .pass-card h4 { color: #FFD700; margin-bottom: 0.4rem; font-size: 0.9rem; }
+    .pass-price { color: #c41e3a; font-size: 1.6rem; font-weight: 800; margin-bottom: 0.4rem; }
+    .pass-card p { color: #888; font-size: 0.8rem; margin: 0; line-height: 1.5; }
+
+    /* ── Prioridad de edificios ───────────────────────── */
+    .priority-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.6rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 500px) { .priority-steps { grid-template-columns: 1fr 1fr; } }
+
+    .prio-step {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 0.75rem 0.5rem;
+      text-align: center;
+    }
+
+    .prio-num {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 0.8rem;
+      margin: 0 auto 0.4rem;
+    }
+
+    .prio-n1 { background: #c41e3a; color: #fff; }
+    .prio-n2 { background: var(--s3-ice-deep); color: #fff; }
+    .prio-n3 { background: #1a3a5a; color: var(--s3-ice); }
+    .prio-n4 { background: #333; color: #aaa; }
+    .prio-step p { color: #ccc; font-size: 0.72rem; line-height: 1.4; margin: 0; }
+
+    /* ── Building cards — grid 2 col ─────────────────── */
+    .building-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 600px) { .building-grid { grid-template-columns: 1fr; } }
+
     .building-card {
-      background: #1a1a1a;
-      border: 1px solid #4a4a4a;
-      border-left: 3px solid #8a0303;
+      background: #111;
+      border: 1px solid #333;
+      border-left: 3px solid var(--s3-ice-deep);
       border-radius: 8px;
       padding: 1rem;
-      margin: 1rem 0;
-      transition: all 0.3s;
+      transition: border-left-color 0.2s, box-shadow 0.2s;
     }
 
     .building-card:hover {
-      border-left-color: #c41e3a;
-      box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
+      border-left-color: var(--s3-ice);
+      box-shadow: 0 4px 12px var(--s3-ice-glow);
     }
 
-    .building-card h4 {
-      color: #c41e3a;
-      margin-bottom: 0.5rem;
-    }
+    .building-card h4 { color: var(--s3-ice); margin-bottom: 0.4rem; font-size: 0.92rem; }
+    .building-card p { color: #bbb; font-size: 0.84rem; margin-bottom: 0.3rem; line-height: 1.5; }
+
+    /* Card que ocupa las 2 columnas (prioridad alta) */
+    .building-card.full { grid-column: 1 / -1; border-left-width: 4px; border-left-color: var(--s3-ice); }
 
     .priority-badge {
       display: inline-block;
       background: #c41e3a;
-      color: white;
-      padding: 0.3rem 0.8rem;
+      color: #fff;
+      padding: 0.15rem 0.5rem;
       border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: bold;
-      margin-left: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 700;
+      margin-left: 0.4rem;
+      vertical-align: middle;
     }
 
-    .spec-type {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
-      border: 2px solid #8a0303;
+    /* ── Recursos clave ───────────────────────────────── */
+    .recursos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    @media (max-width: 500px) { .recursos-grid { grid-template-columns: 1fr; } }
+
+    .recurso-card {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-left: 4px solid var(--s3-ice);
       border-radius: 8px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
+      padding: 1rem;
     }
 
-    .spec-type h3 {
-      color: #c41e3a;
-      margin-bottom: 1rem;
+    .recurso-card h4 { color: var(--s3-ice); margin-bottom: 0.4rem; font-size: 0.9rem; }
+    .recurso-card p { color: #bbb; font-size: 0.83rem; margin: 0; line-height: 1.5; }
+
+    /* ── Especialización ──────────────────────────────── */
+    .spec-type {
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-top: 3px solid var(--s3-ice-deep);
+      border-radius: 8px;
+      padding: 1.25rem;
+      margin: 1rem 0;
     }
+
+    .spec-type h3 { color: var(--s3-ice); margin-top: 0; margin-bottom: 0.75rem; }
 
     .ability {
-      background: #0e0e0e;
-      border-left: 3px solid #8a0303;
-      padding: 1rem;
-      margin: 0.8rem 0;
+      background: #0d0d0d;
+      border-left: 3px solid var(--s3-ice-deep);
+      padding: 0.75rem 1rem;
+      margin: 0.5rem 0;
       border-radius: 4px;
     }
 
-    .ability strong {
-      color: #c41e3a;
+    .ability strong { color: var(--s3-ice); display: block; margin-bottom: 0.25rem; font-size: 0.87rem; }
+    .ability p { color: #bbb; font-size: 0.82rem; margin-bottom: 0.2rem; }
+
+    /* ── Raid bosses — grid 2 col ─────────────────────── */
+    .raid-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1rem 0;
     }
+
+    @media (max-width: 600px) { .raid-grid { grid-template-columns: 1fr; } }
 
     .raid-boss {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
-      border: 2px solid #8a0303;
-      border-left: 4px solid #c41e3a;
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-top: 3px solid #8a0303;
       border-radius: 8px;
       padding: 1.2rem;
-      margin: 1rem 0;
     }
 
-    .raid-boss h4 {
-      color: #c41e3a;
-      margin-bottom: 0.8rem;
+    .raid-boss.priority { border-top-color: var(--s3-ice); }
+    .raid-boss h4 { color: var(--s3-ice); margin-bottom: 0.8rem; font-size: 0.9rem; }
+    .raid-boss.priority h4 { color: var(--s3-ice); }
+    .raid-boss p { color: #bbb; font-size: 0.84rem; margin-bottom: 0.4rem; line-height: 1.5; }
+
+    /* ── Reward grid — 2 col ──────────────────────────── */
+    .reward-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-top: 0.75rem;
     }
 
-    .tip-box {
-      background: rgba(196, 30, 58, 0.1);
-      border-left: 4px solid #c41e3a;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 4px;
-    }
-
-    .tip-box strong {
-      color: #c41e3a;
-    }
+    @media (max-width: 600px) { .reward-grid { grid-template-columns: 1fr; } }
 
     .reward-category {
-      background: #1a1a1a;
-      border: 1px solid #4a4a4a;
-      border-left: 3px solid #8a0303;
+      background: #111;
+      border: 1px solid #2a2a2a;
+      border-left: 3px solid var(--s3-ice-deep);
       border-radius: 8px;
-      padding: 1rem;
-      margin: 1rem 0;
-      transition: all 0.3s;
+      padding: 0.75rem 1rem;
+      transition: border-left-color 0.2s;
     }
 
-    .reward-category:hover {
+    .reward-category:hover { border-left-color: var(--s3-ice); }
+    .reward-category h4 { color: var(--s3-ice); font-size: 0.87rem; margin-bottom: 0.2rem; }
+    .reward-rank { color: #f0c060; font-size: 0.75rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .reward-category p { color: #888; font-size: 0.78rem; margin: 0; }
+
+    /* ── Tip box ──────────────────────────────────────── */
+    .tip-box {
+      background: var(--s3-ice-dim);
+      border-left: 4px solid var(--s3-ice);
+      padding: 0.8rem 1rem;
+      margin: 0.75rem 0;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .tip-box strong { color: var(--s3-ice); }
+
+    .tip-box.red {
+      background: rgba(196, 30, 58, 0.08);
       border-left-color: #c41e3a;
-      box-shadow: 0 4px 12px rgba(196, 30, 58, 0.2);
     }
 
-    .reward-category h4 {
-      color: #c41e3a;
-      margin-bottom: 0.5rem;
-    }
-
-    .reward-rank {
-      color: #4FC3F7;
-      font-weight: bold;
-    }
-
-    .pass-card {
-      background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
-      border: 2px solid #FFD700;
-      border-radius: 8px;
-      padding: 1.2rem;
-      margin: 1rem 0;
-    }
-
-    .pass-card h4 {
-      color: #FFD700;
-      margin-bottom: 0.5rem;
-    }
-
-    .pass-price {
-      color: #c41e3a;
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    ul, ol {
-      margin-left: 1.5rem;
-      line-height: 1.8;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
+    .tip-box.red strong { color: #c41e3a; }
   </style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXVTLS5T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+
   <header class="site-header">
     <div class="brand">
       <img src="../lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
       <h1>Last Z Wiki</h1>
     </div>
-
     <button class="hamburger" aria-label="Navigation menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-
     <nav class="main-nav" aria-label="Main navigation">
       <ul>
         <li><a href="index.html">Home</a></li>
@@ -284,383 +430,328 @@
   </header>
 
   <main>
-    <!-- Season 3 Header -->
+
+    <!-- ── Hero full-width ────────────────────────────── -->
     <div class="s3-header">
-      <h1>❄️ SEASON 3: SNOW MONSTERS</h1>
+      <h1>❄️ Season 3: Snow Monsters</h1>
       <p>The frozen tundra has arrived in Last Z. Face frozen zombies, snow monsters and master the eternal cold.</p>
-      <p class="s3-duration">⏱️ Duration: ~70 days | 🗺️ Map: Snow Theme</p>
+      <div class="s3-meta">
+        <span class="s3-badge">⏱️ ~70 days</span>
+        <span class="s3-badge">🗺️ Snow Map</span>
+        <span class="s3-badge">❄️ Boomers + Yeti</span>
+        <span class="s3-badge">💎 Max level: 30</span>
+      </div>
     </div>
 
-    <!-- Introduction -->
-    <section class="s3-section">
-      <h2>📋 Introduction</h2>
-      <p>Season 3 maintains a similar structure to Season 2, but focuses much more on <strong>raids against snow bosses</strong>. The map transforms into a frozen wasteland where new enemies and challenges await.</p>
+    <div class="page-wrap">
 
-      <h3>🎯 Key Features:</h3>
-      <ul>
-        <li>New enemies: Snow Zombies (Boomers), Snow Leopard, Wandering Yeti</li>
-        <li>Exclusive seasonal buildings with unique resources</li>
-        <li>Improved specialization system (Support vs Combat)</li>
-        <li>Snowstorm rescue events</li>
-        <li>Alliance ranking with 7 reward categories</li>
-      </ul>
+      <!-- ── Introducción ──────────────────────────────── -->
+      <section class="s3-section" id="introduccion">
+        <h2>📋 Introduction</h2>
+        <p>Season 3 maintains a similar structure to Season 2, but focuses much more on <strong>raids against snow bosses</strong>. The map transforms into a frozen wasteland where new enemies and challenges await.</p>
 
-      <h3>💰 Recommended Passes:</h3>
-      <div class="pass-card">
-        <h4>🏆 Season Pass</h4>
-        <p class="pass-price">$25 USD</p>
-        <p>Benefits for the full 70 days. Upgraded version available for $25+ with additional rewards.</p>
-      </div>
+        <h3>🎯 Key Features:</h3>
+        <ul>
+          <li>New enemies: Snow Zombies (Boomers), Snow Leopard, Wandering Yeti</li>
+          <li>Exclusive seasonal buildings with unique resources</li>
+          <li>Specialization system: Support vs Combat (levels 1–30)</li>
+          <li>Snowstorm rescue events</li>
+          <li>Alliance ranking with 7 reward categories</li>
+        </ul>
 
-      <div class="pass-card">
-        <h4>📅 Weekly Pass</h4>
-        <p class="pass-price">$10 USD</p>
-        <p>Weekly benefits. If you buy it 4 times during the season, you earn permanent bonuses.</p>
-      </div>
-    </section>
+        <h3>💰 Recommended Passes:</h3>
+        <div class="pass-grid">
+          <div class="pass-card">
+            <h4>🏆 Season Pass</h4>
+            <div class="pass-price">$25 USD</div>
+            <p>Benefits for the full 70 days. Includes additional rewards and progression bonuses.</p>
+          </div>
+          <div class="pass-card">
+            <h4>📅 Weekly Pass</h4>
+            <div class="pass-price">$10 USD</div>
+            <p>Weekly benefits. If you buy it 4 times during the season, you earn permanent bonuses.</p>
+          </div>
+        </div>
+      </section>
 
-    <!-- Exclusive Buildings -->
-    <section class="s3-section">
-      <h2>🏗️ Season 3 Exclusive Buildings</h2>
-      <p>These buildings are only available during Season 3 and use special seasonal resources.</p>
+      <!-- ── Exclusive Buildings ──────────────────────── -->
+      <section class="s3-section" id="edificios">
+        <h2>🏗️ Season 3 Exclusive Buildings</h2>
+        <p>Only available during Season 3. Upgraded with <strong>Lotus Flowers</strong> and <strong>Ice Cores</strong>.</p>
 
-      <div class="building-card">
-        <h4>🧬 Biological Laboratory <span class="priority-badge">PRIORITY #1</span></h4>
-        <p><strong>Function:</strong> Increases your virus resistance, allowing you to attack higher-level Boomers (Snow Zombies).</p>
-        <p><strong>Reward:</strong> Boomers grant <strong>Ice Cores</strong>, required to upgrade ALL seasonal buildings.</p>
-        <p><strong>Strategy:</strong> This is the MOST IMPORTANT building. Upgrade it without hesitation. If you're short on Lotus Flowers, wait; if you're very short, upgrade the Control Center first.</p>
-      </div>
-
-      <div class="building-card">
-        <h4>🌸 Temperature Control Center <span class="priority-badge">PRIORITY #2</span></h4>
-        <p><strong>Function:</strong> Produces Lotus Flowers, the main resource for upgrading seasonal buildings.</p>
-        <p><strong>Strategy:</strong> If you have enough Ice Cores, upgrade it to increase Lotus production.</p>
-      </div>
-
-      <div class="building-card">
-        <h4>⚔️ Glacial Military Depot</h4>
-        <p><strong>Function:</strong> Increases your troops' <strong>ATTACK (ATK)</strong>.</p>
-        <p><strong>When to upgrade:</strong> After having the Biological Lab and Control Center at a good level.</p>
-      </div>
-
-      <div class="building-card">
-        <h4>🛡️ Glacial Fortress</h4>
-        <p><strong>Function:</strong> Increases your troops' <strong>DEFENSE</strong>.</p>
-        <p><strong>When to upgrade:</strong> Alongside Military Depot to balance offense/defense.</p>
-      </div>
-
-      <div class="building-card">
-        <h4>💥 Military Command</h4>
-        <p><strong>Function:</strong> Increases your troops' <strong>DAMAGE</strong>.</p>
-        <p><strong>When to upgrade:</strong> For players focused on combat and war.</p>
-      </div>
-
-      <div class="tip-box">
-        <strong>⚠️ IMPORTANT:</strong> According to external information, individual rewards will be granted based on the amount of seasonal resources stored at the end.
-      </div>
-
-      <h3>📊 Key Seasonal Resources:</h3>
-      <ul>
-        <li><strong>🌸 Lotus Flowers:</strong> Produced in the Temperature Control Center. Required to upgrade the Biological Laboratory and other buildings.</li>
-        <li><strong>❄️ Ice Cores:</strong> Obtained by eliminating Boomers. CRITICAL because they are needed to upgrade ALL seasonal buildings.</li>
-      </ul>
-
-      <h3>🎯 Upgrade Strategy (First 4 Weeks):</h3>
-      <ol>
-        <li><strong>Biological Laboratory</strong> — Top priority. Upgrade it constantly.</li>
-        <li><strong>Temperature Control Center</strong> — Second priority if you have spare Cores.</li>
-        <li>Once you have good Lotus and Core production, upgrade the <strong>power buildings</strong> (Depot, Fortress, Command).</li>
-      </ol>
-    </section>
-
-    <!-- Specialization Room -->
-    <section class="s3-section">
-      <h2>🎓 Specialization Room</h2>
-      <p>This building is shared between Season 2 and Season 3. Here you choose your specialization path based on your level and playstyle.</p>
-
-      <h3>🔀 Choice System:</h3>
-      <ul>
-        <li><strong>Level &lt;30:</strong> You will be <strong>SUPPORT</strong> by default (no choice).</li>
-        <li><strong>Level 30+:</strong> You can choose between <strong>SUPPORT</strong> or <strong>COMBAT</strong>.</li>
-      </ul>
-
-      <!-- SUPPORT -->
-      <div class="spec-type">
-        <h3>🤝 Specialization: SUPPORT</h3>
-        <p><strong>Recommended for:</strong> All alliance players. Greatly increases your individual progress and helps the team.</p>
-
-        <div class="ability">
-          <strong>🛡️ Friendship Shield</strong>
-          <p>Protects a teammate who is about to be attacked by the enemy.</p>
-          <p><strong>Cooldown:</strong> Once every 3 days.</p>
-          <p><strong>Strategy:</strong> Use it quickly and wisely. Save it for war days and protect key members.</p>
+        <h3>🎯 Priority Order:</h3>
+        <div class="priority-steps">
+          <div class="prio-step"><div class="prio-num prio-n1">1</div><p>🧬 Bio. Laboratory</p></div>
+          <div class="prio-step"><div class="prio-num prio-n2">2</div><p>🌸 Control Center</p></div>
+          <div class="prio-step"><div class="prio-num prio-n3">3</div><p>⚔️ Power Buildings</p></div>
+          <div class="prio-step"><div class="prio-num prio-n4">4</div><p>🛡️ Rest by resources</p></div>
         </div>
 
-        <div class="ability">
-          <strong>💎 Treasure Master</strong>
-          <p>Summons a chest that grants resources when attacked. Also increases your carry capacity by 30%.</p>
-          <p><strong>Limit:</strong> You can only attack it 2 times per day.</p>
-          <p><strong>Strategy:</strong> Attack it twice using your first troop to maximize resources.</p>
+        <div class="building-grid">
+          <div class="building-card full">
+            <h4>🧬 Biological Laboratory <span class="priority-badge">PRIORITY #1</span></h4>
+            <p><strong>Function:</strong> Increases your virus resistance, allowing you to attack higher-level Boomers.</p>
+            <p><strong>Reward:</strong> Boomers grant <strong>Ice Cores</strong>, required to upgrade ALL seasonal buildings.</p>
+            <p><strong>Strategy:</strong> The most important building — upgrade it without hesitation. If you're a bit short on Lotus, wait; if very short, upgrade the Control Center first.</p>
+          </div>
+          <div class="building-card">
+            <h4>🌸 Temperature Control Center <span class="priority-badge">PRIORITY #2</span></h4>
+            <p><strong>Function:</strong> Produces <strong>Lotus Flowers</strong>, the main resource for upgrading seasonal buildings.</p>
+            <p><strong>Strategy:</strong> If you have enough Ice Cores, upgrade it to increase Lotus production.</p>
+          </div>
+          <div class="building-card">
+            <h4>⚔️ Glacial Military Depot</h4>
+            <p><strong>Function:</strong> Increases your troops' <strong>ATTACK (ATK)</strong>.</p>
+            <p><strong>When to upgrade:</strong> After having the Bio Lab and Control Center at a good level.</p>
+          </div>
+          <div class="building-card">
+            <h4>🛡️ Glacial Fortress</h4>
+            <p><strong>Function:</strong> Increases your troops' <strong>DEFENSE</strong>.</p>
+            <p><strong>When to upgrade:</strong> Alongside Military Depot to balance offense/defense.</p>
+          </div>
+          <div class="building-card">
+            <h4>💥 Military Command</h4>
+            <p><strong>Function:</strong> Increases your troops' <strong>DAMAGE</strong>.</p>
+            <p><strong>When to upgrade:</strong> For players focused on combat and war.</p>
+          </div>
         </div>
 
-        <div class="ability">
-          <strong>🏗️ Cooperative Construction</strong>
-          <p>Reduces a teammate's construction time.</p>
-          <p><strong>Cooldown:</strong> Once per day.</p>
-          <p><strong>Strategy:</strong> Use it wisely on construction days to help members upgrading important buildings.</p>
+        <div class="tip-box red">
+          <strong>⚠️ IMPORTANT:</strong> Individual rewards will be granted based on seasonal resources stored at season end. Don't waste them!
         </div>
 
-        <div class="ability">
-          <strong>🔬 Cooperative Research</strong>
-          <p>Reduces a teammate's research time.</p>
-          <p><strong>Cooldown:</strong> Once per day.</p>
-          <p><strong>Strategy:</strong> Similar to Cooperative Construction. Use it on research days to accelerate team progress.</p>
-        </div>
-      </div>
-
-      <!-- COMBAT -->
-      <div class="spec-type">
-        <h3>⚔️ Specialization: COMBAT</h3>
-        <p><strong>Recommended for:</strong> Only level 30+ players with hero power above <strong>48 million</strong>. Greatly increases your battle power.</p>
-
-        <div class="ability">
-          <strong>🪖 Emergency Recruitment</strong>
-          <p>Instantly recruits 150 soldiers.</p>
-          <p><strong>Cooldown:</strong> Once per day.</p>
-          <p><strong>Strategy:</strong> Best used when it coincides with the "Full Preparation" event to maximize benefits.</p>
+        <h3>📦 Key Seasonal Resources:</h3>
+        <div class="recursos-grid">
+          <div class="recurso-card">
+            <h4>🌸 Lotus Flowers</h4>
+            <p>Produced in the <strong>Temperature Control Center</strong>. Required to upgrade the Biological Laboratory and other buildings.</p>
+          </div>
+          <div class="recurso-card">
+            <h4>❄️ Ice Cores</h4>
+            <p>Obtained by eliminating <strong>Boomers</strong>. CRITICAL — needed to upgrade ALL seasonal buildings.</p>
+          </div>
         </div>
 
-        <div class="ability">
-          <strong>🎭 Disguise</strong>
-          <p>Enemies won't get information when scouting you for 1 hour.</p>
-          <p><strong>Duration:</strong> 1 hour.</p>
-          <p><strong>Strategy:</strong> Very useful if you don't want enemies to know your resources or real power before an attack.</p>
+        <h3>🎯 Upgrade Strategy (First 4 Weeks):</h3>
+        <ol>
+          <li><strong>Biological Laboratory</strong> — Top priority. Upgrade it constantly.</li>
+          <li><strong>Temperature Control Center</strong> — Second priority if you have spare Cores.</li>
+          <li>Once you have good Lotus and Core production, upgrade the <strong>power buildings</strong> (Depot, Fortress, Command).</li>
+        </ol>
+      </section>
+
+      <!-- ── Especialización ───────────────────────────── -->
+      <section class="s3-section" id="especializacion">
+        <h2>🎓 Specialization Room</h2>
+        <p>Shared between Season 2 and Season 3. Choose your path based on your level and playstyle.</p>
+
+        <h3>🔀 Choice System:</h3>
+        <ul>
+          <li><strong>Level &lt;30:</strong> You will be <strong>SUPPORT</strong> by default.</li>
+          <li><strong>Level 30+:</strong> You can choose between <strong>SUPPORT</strong> or <strong>COMBAT</strong>.</li>
+        </ul>
+
+        <div class="grid-2">
+          <div class="spec-type">
+            <h3>🤝 Specialization: SUPPORT</h3>
+            <p style="color:#bbb; font-size:0.88rem;"><strong>Recommended for:</strong> All players. Maximizes individual progress and helps the team.</p>
+            <div class="ability">
+              <strong>🛡️ Friendship Shield</strong>
+              <p>Protects a teammate who is about to be attacked by the enemy.</p>
+              <p><strong>Cooldown:</strong> Once every 3 days.</p>
+              <p><strong>Strategy:</strong> Save it for war days — protect key members.</p>
+            </div>
+            <div class="ability">
+              <strong>💎 Treasure Master</strong>
+              <p>Summons a chest with resources and increases your carry capacity by 30%.</p>
+              <p><strong>Limit:</strong> 2 attacks per day.</p>
+              <p><strong>Strategy:</strong> Attack it twice with your first troop to maximize resources.</p>
+            </div>
+            <div class="ability">
+              <strong>🏗️ Cooperative Construction</strong>
+              <p>Reduces a teammate's construction time.</p>
+              <p><strong>Cooldown:</strong> Once per day.</p>
+            </div>
+            <div class="ability">
+              <strong>🔬 Cooperative Research</strong>
+              <p>Reduces a teammate's research time.</p>
+              <p><strong>Cooldown:</strong> Once per day.</p>
+            </div>
+          </div>
+
+          <div class="spec-type">
+            <h3>⚔️ Specialization: COMBAT</h3>
+            <p style="color:#bbb; font-size:0.88rem;"><strong>Recommended for:</strong> Level 30+ players with hero power above <strong>48 million</strong>.</p>
+            <div class="ability">
+              <strong>🪖 Emergency Recruitment</strong>
+              <p>Instantly recruits 150 soldiers.</p>
+              <p><strong>Cooldown:</strong> Once per day. Úsalo en el evento "Preparación Total".</p>
+            </div>
+            <div class="ability">
+              <strong>🎭 Disguise</strong>
+              <p>Enemies won't get information when scouting you for 1 hour.</p>
+              <p><strong>Strategy:</strong> Useful before an attack to hide your real power.</p>
+            </div>
+            <div class="ability">
+              <strong>⚡ Quick Attack</strong>
+              <p>Your focused attack departs faster.</p>
+              <p><strong>Limit:</strong> 5 times per week. Extremely useful on war days.</p>
+            </div>
+            <div class="ability">
+              <strong>🔄 Immediate Return</strong>
+              <p>Your troops return to base immediately.</p>
+              <p><strong>Limit:</strong> 2 times per day. Useful to reposition or escape.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="ability">
-          <strong>⚡ Quick Attack</strong>
-          <p>Makes your focused attack depart faster.</p>
-          <p><strong>Limit:</strong> Up to 5 times per week.</p>
-          <p><strong>Reset:</strong> On vehicle upgrade day.</p>
-          <p><strong>Strategy:</strong> Extremely useful on war days. Use it to hit key targets before the enemy can react.</p>
+        <h3>📚 How to Obtain Experience Books:</h3>
+        <ol>
+          <li><strong>🏆 Specialization Pass ($20):</strong> The fastest method.</li>
+          <li><strong>🏗️ Upgrade seasonal buildings:</strong> Each upgrade grants books.</li>
+          <li><strong>🏙️ Attack cities:</strong> Occupying and defending gives constant rewards.</li>
+          <li><strong>❄️ Kill Boomers:</strong> Daily raids add up points.</li>
+          <li><strong>⚔️ Attack enemy HQ:</strong> During alliance war.</li>
+        </ol>
+      </section>
+
+      <!-- ── Incursiones ────────────────────────────────── -->
+      <section class="s3-section" id="incursiones">
+        <h2>🎯 Raid System</h2>
+        <p>Raids are the main focus of S3. You can only earn <strong>15 rewards per day</strong> across all raids — prioritize correctly.</p>
+
+        <div class="raid-grid">
+          <div class="raid-boss priority">
+            <h4>❄️ BOOMERS (Snow Zombies) <span class="priority-badge">PRIORITY #1</span></h4>
+            <p><strong>Reward:</strong> Ice Cores (double that of the Leopard).</p>
+            <p><strong>Daily limit:</strong> 15 rewards.</p>
+            <p><strong>Estrategia:</strong> After server reset, start by attacking 15 of these. They are the best source of Ice Cores.</p>
+            <p><strong>Requisito:</strong> Upgrade your Biological Laboratory to attack higher levels.</p>
+          </div>
+          <div class="raid-boss">
+            <h4>🐆 SNOW LEOPARD — INTERMEDIATE</h4>
+            <p><strong>Reward:</strong> Resources and glory, but less than Boomers.</p>
+            <p><strong>Estrategia:</strong> Only attack it for the <strong>first elimination</strong> reward after using your 15 Boomer rewards.</p>
+          </div>
+          <div class="raid-boss">
+            <h4>🦍 YETI (Wandering Monster) — ADVANCED</h4>
+            <p><strong>Level:</strong> Found from level 100 to 350 on the map.</p>
+            <p><strong>Daily limit:</strong> Only 2 rewards per day.</p>
+            <p><strong>Condición:</strong> Rewards are only granted if you participate in the <strong>final raid</strong>.</p>
+            <p><strong>Dificultad:</strong> Many troops will end up in the hospital. Only if your alliance has enough power.</p>
+          </div>
         </div>
 
-        <div class="ability">
-          <strong>🔄 Immediate Return</strong>
-          <p>Makes your troops return to base immediately.</p>
-          <p><strong>Limit:</strong> 2 times per day.</p>
-          <p><strong>Strategy:</strong> Use it to enable a random teleport and escape, or to quickly reposition troops for a counterattack.</p>
+        <div class="tip-box">
+          <strong>💡 CRITICAL TIP — Yeti:</strong> If the Yeti approaches to attack you, start a raid and <strong>cancel it immediately</strong>. This makes it take a different route and you avoid damage.
         </div>
-      </div>
 
-      <h3>📚 How to Obtain Experience Books (Ranking):</h3>
-      <p>Experience Books are needed to upgrade specialization skills. Here they are from most to least:</p>
-      <ol>
-        <li><strong>🏆 Buy Specialization Pass ($20):</strong> The fastest and most effective method.</li>
-        <li><strong>🏗️ Upgrade seasonal buildings:</strong> Each upgrade grants books.</li>
-        <li><strong>🏙️ Attack cities:</strong> Occupying and defending cities gives constant rewards.</li>
-        <li><strong>❄️ Kill Boomers:</strong> Daily raids add up points.</li>
-        <li><strong>⚔️ Attack enemy headquarters:</strong> During alliance war.</li>
-      </ol>
-    </section>
+        <h3>📊 Daily Priority Summary:</h3>
+        <ol>
+          <li><strong>15x Boomers</strong> — Every day after server reset</li>
+          <li><strong>1x Snow Leopard</strong> — First elimination only if you have spare time</li>
+          <li><strong>Yeti</strong> — Only if your alliance is strong and coordinates</li>
+        </ol>
+      </section>
 
-    <!-- Raids / Incursions -->
-    <section class="s3-section">
-      <h2>🎯 Raid System</h2>
-      <p>Raids are the main focus of Season 3. You can only earn <strong>15 rewards per day</strong> across all raids combined, so it's crucial to prioritize correctly.</p>
+      <!-- ── Eventos Especiales ─────────────────────────── -->
+      <section class="s3-section" id="eventos">
+        <h2>🌨️ Special Events</h2>
 
-      <div class="raid-boss">
-        <h4>❄️ BOOMERS (Snow Zombies) — PRIORITY #1</h4>
-        <p><strong>Reward:</strong> Ice Cores (double that of the Leopard).</p>
-        <p><strong>Daily limit:</strong> 15 rewards.</p>
-        <p><strong>Strategy:</strong> After server reset, start by attacking 15 of these. They are the best source of Ice Cores.</p>
-        <p><strong>Requirement:</strong> Upgrade your Biological Laboratory to be able to attack higher levels.</p>
-      </div>
+        <h3>❄️ Snowstorm Rescue</h3>
+        <p><strong>Duration:</strong> Days 1–3 of Alliance vs Alliance.</p>
+        <p>Cold waves appear on the map forming <strong>large and small ice sculptures</strong> with animals inside.</p>
+        <p><strong>Daily limit:</strong> You can only claim 10 rewards per day.</p>
 
-      <div class="raid-boss">
-        <h4>🐆 SNOW LEOPARD — INTERMEDIATE</h4>
-        <p><strong>Reward:</strong> Resources and glory, but less than Boomers.</p>
-        <p><strong>Strategy:</strong> Only attack it to claim the <strong>first elimination</strong> reward after using your 15 Boomer rewards.</p>
-      </div>
+        <div class="tip-box">
+          <strong>🎯 Strategy:</strong> Look for <strong>LARGE</strong> sculptures only. Share their location in alliance chat. Explore quickly to break them before others.
+        </div>
 
-      <div class="raid-boss">
-        <h4>🦍 YETI (Wandering Snow Monster) — ADVANCED</h4>
-        <p><strong>Level:</strong> Found from level 100 to 350 on the map.</p>
-        <p><strong>Daily limit:</strong> You can only earn 2 rewards per day.</p>
-        <p><strong>Condition:</strong> Rewards are only granted if you participate in the <strong>final raid</strong> (last hit).</p>
-        <p><strong>Difficulty:</strong> Many troops will end up in the hospital. Only recommended if your alliance has enough power.</p>
-        <p><strong>Recommended levels:</strong> For mid-power alliances, attack Yetis at level 120-180.</p>
-        <p><strong>Rewards:</strong> Good, but Boomer rewards are enough for most players.</p>
-      </div>
+        <h3>🎁 Rewards for Breaking Sculptures:</h3>
+        <div class="grid-2">
+          <div class="ability">
+            <strong>🦣 MAMMOTH</strong>
+            <p>Grants 2 fragments for an exclusive seasonal <strong>weapon</strong>.</p>
+          </div>
+          <div class="ability">
+            <strong>🦌 DEER</strong>
+            <p>Grants <strong>300 badges</strong>.</p>
+          </div>
+        </div>
+        <p>Choose the animal that benefits you most based on your current needs (weapon vs badges).</p>
 
-      <div class="tip-box">
-        <strong>💡 CRITICAL TIP:</strong> If the Yeti approaches to attack you or a teammate, start a raid and <strong>cancel it immediately</strong>. This will make the Yeti take a different route and you'll avoid damage.
-      </div>
+        <h3>⚔️ Glory War</h3>
+        <p>The most important event of the season. The winner can <strong>steal season points</strong> from the loser. Defines your final ranking position and rewards.</p>
+      </section>
 
-      <h3>📊 Priority Summary:</h3>
-      <ol>
-        <li>15x Boomers (Snow Zombies) — Every day after reset</li>
-        <li>1x Snow Leopard — First elimination only if you have spare time</li>
-        <li>Yeti — Only if your alliance is strong and coordinates</li>
-      </ol>
-    </section>
+      <!-- ── Ranking ────────────────────────────────────── -->
+      <section class="s3-section" id="ranking">
+        <h2>🏆 Season Point Ranking</h2>
 
-    <!-- Special Events -->
-    <section class="s3-section">
-      <h2>🌨️ Special Events</h2>
+        <div class="tip-box">
+          <strong>Alliance Season Points</strong> = Personal Glory (all members) + City Season Points
+        </div>
 
-      <h3>❄️ Snowstorm Rescue</h3>
-      <p><strong>Duration:</strong> Days 1-3 of Alliance vs Alliance.</p>
-      <p><strong>Mechanic:</strong> Cold waves appear at different map locations, forming large and small ice sculptures with animals inside.</p>
-      <p><strong>Daily limit:</strong> You can only claim 10 rewards per day during the event.</p>
+        <h3>📊 How to Earn Points:</h3>
+        <ul>
+          <li><strong>Personal Glory:</strong> First elimination of a Snow Leopard or Tundra Zombie.</li>
+          <li><strong>Cities:</strong> Occupying a city generates points over time. Accumulated points <strong>are NOT lost</strong> when you leave.</li>
+          <li><strong>Glory War:</strong> Winning allows you to steal points from the enemy.</li>
+        </ul>
 
-      <h4>🎯 Strategy:</h4>
-      <ul>
-        <li><strong>Look for LARGE sculptures only:</strong> Small ones are not worth it.</li>
-        <li><strong>Share locations:</strong> When you find a large sculpture, share it in the alliance chat.</li>
-        <li><strong>Explore quickly:</strong> This will break the sculpture faster and release the animal.</li>
-      </ul>
+        <h3>🎁 Reward Categories (Final Ranking):</h3>
+        <div class="reward-grid">
+          <div class="reward-category"><div class="reward-rank">#1</div><h4>👑 Supreme Legion</h4><p>The best rewards of the season.</p></div>
+          <div class="reward-category"><div class="reward-rank">#2 — #3</div><h4>🌅 Dawn Army</h4><p>Premium rewards for runner-up alliances.</p></div>
+          <div class="reward-category"><div class="reward-rank">#4 — #5</div><h4>⭐ Glorious Pioneer</h4><p>Excellent rewards for the top 5.</p></div>
+          <div class="reward-category"><div class="reward-rank">#6 — #10</div><h4>🛡️ Protection Oath</h4><p>Very good rewards for the top 10.</p></div>
+          <div class="reward-category"><div class="reward-rank">#11 — #20</div><h4>🚀 Expeditionary Alliance</h4><p>Solid rewards for competitive alliances.</p></div>
+          <div class="reward-category"><div class="reward-rank">#21 — #50</div><h4>🏔️ Wasteland Legion</h4><p>Decent rewards for developing alliances.</p></div>
+          <div class="reward-category"><div class="reward-rank">#51 — #999</div><h4>🗿 Wasteland Guardian</h4><p>Basic participation rewards.</p></div>
+        </div>
+      </section>
 
-      <h4>🎁 Rewards for Breaking Sculptures:</h4>
-      <div class="ability">
-        <strong>🦣 MAMMOTH:</strong>
-        <p>Grants 2 fragments for an exclusive seasonal <strong>weapon</strong>.</p>
-      </div>
+      <!-- ── Tips Finales ───────────────────────────────── -->
+      <section class="s3-section" id="tips">
+        <h2>💡 Tips to Maximize Progress</h2>
+        <ul>
+          <li>✅ Always prioritize <strong>Biological Laboratory → Control Center → Power Buildings</strong></li>
+          <li>✅ Use your 15 daily rewards on <strong>Boomers</strong> to maximize Ice Cores</li>
+          <li>✅ Coordinate with your alliance to share <strong>large sculpture</strong> locations</li>
+          <li>✅ Save <strong>Friendship Shield</strong> and <strong>Quick Attack</strong> for war days</li>
+          <li>✅ Occupy and defend cities to accumulate <strong>passive season points</strong></li>
+          <li>✅ Actively participate in <strong>Glory War</strong> — it defines your final reward</li>
+          <li>✅ If investing, <strong>passes are the best cost/benefit option</strong></li>
+        </ul>
+      </section>
 
-      <div class="ability">
-        <strong>🦌 DEER:</strong>
-        <p>Grants <strong>300 badges</strong>.</p>
-      </div>
-
-      <p><strong>Decision:</strong> Choose the animal that benefits you most based on your needs (weapon vs badges). Remember to share the location in chat so your alliance can also benefit.</p>
-
-      <h3>⚔️ Glory War</h3>
-      <p>This event is <strong>key</strong> for the season ranking. During the final battle against the enemy alliance, the winner can <strong>steal season points</strong> from the loser.</p>
-      <p><strong>Importance:</strong> Defines your final position in the ranking and the rewards you'll receive at the end of the season.</p>
-    </section>
-
-    <!-- Ranking & Rewards -->
-    <section class="s3-section">
-      <h2>🏆 Season Point Ranking</h2>
-
-      <h3>📊 Points System:</h3>
-      <p><strong>Formula:</strong></p>
-      <p class="tip-box"><strong>Alliance Season Points</strong> = Personal Glory Value (all members) + City Season Points</p>
-
-      <h4>How to Earn Points:</h4>
-      <ul>
-        <li><strong>Personal Glory:</strong> Earned with the <strong>first elimination</strong> of a Snow Leopard or Tundra Zombie.</li>
-        <li><strong>Cities:</strong>
-          <ul>
-            <li>Occupying a city directly increases season points.</li>
-            <li>You generate points over time while you occupy it.</li>
-            <li>Points accumulated over time <strong>are NOT lost</strong> when you leave the city.</li>
-          </ul>
-        </li>
-        <li><strong>Glory War:</strong> Winning the final battle allows you to steal points from the enemy.</li>
-      </ul>
-
-      <h3>🎁 Reward Categories</h3>
-      <p>At the end of the season, rewards are distributed based on your alliance's final ranking. There are 7 categories:</p>
-
-      <div class="reward-category">
-        <h4>1. 👑 Supreme Legion</h4>
-        <p class="reward-rank">Position: #1 in the ranking</p>
-        <p>The best rewards of the season, distributed by internal alliance hierarchy.</p>
-        <p><em>(See rewards image - Photo 1)</em></p>
-      </div>
-
-      <div class="reward-category">
-        <h4>2. 🌅 Dawn Army</h4>
-        <p class="reward-rank">Positions: #2 and #3</p>
-        <p>Premium rewards for runner-up alliances.</p>
-        <p><em>(See rewards image - Photo 2)</em></p>
-      </div>
-
-      <div class="reward-category">
-        <h4>3. ⭐ Glorious Pioneer</h4>
-        <p class="reward-rank">Positions: #4 and #5</p>
-        <p>Excellent rewards for top 5.</p>
-        <p><em>(See rewards image - Photo 3)</em></p>
-      </div>
-
-      <div class="reward-category">
-        <h4>4. 🛡️ Protection Oath</h4>
-        <p class="reward-rank">Positions: #6 to #10</p>
-        <p>Very good rewards for top 10.</p>
-        <p><em>(See rewards image - Photo 4)</em></p>
-      </div>
-
-      <div class="reward-category">
-        <h4>5. 🚀 Expeditionary Alliance</h4>
-        <p class="reward-rank">Positions: #11 to #20</p>
-        <p>Solid rewards for competitive alliances.</p>
-        <p><em>(See rewards image - Photo 5)</em></p>
-      </div>
-
-      <div class="reward-category">
-        <h4>6. 🏔️ Wasteland Legion</h4>
-        <p class="reward-rank">Positions: #21 to #50</p>
-        <p>Decent rewards for developing alliances.</p>
-        <p><em>(See rewards image - Photo 6)</em></p>
-      </div>
-
-      <div class="reward-category">
-        <h4>7. 🗿 Wasteland Guardian</h4>
-        <p class="reward-rank">Positions: #51 to #999</p>
-        <p>Basic participation rewards.</p>
-        <p><em>(See rewards image - Photo 7)</em></p>
-      </div>
-    </section>
-
-    <!-- Final Tips -->
-    <section class="s3-section">
-      <h2>💡 General Tips to Maximize Progress</h2>
-      <ul>
-        <li>✅ Always prioritize Biological Laboratory → Control Center → Power Buildings</li>
-        <li>✅ Use your 15 daily rewards on Boomers to maximize Ice Cores</li>
-        <li>✅ Coordinate with your alliance to share large sculpture locations</li>
-        <li>✅ Save key skills (Friendship Shield, Quick Attack) for war days</li>
-        <li>✅ Constantly occupy and defend cities to accumulate passive points</li>
-        <li>✅ Actively participate in Glory War — it defines your final reward</li>
-        <li>✅ If you're going to invest, passes are the best cost/benefit option</li>
-      </ul>
-      <p class="s3-duration">Crts.Michel-(SHk)</p>
-    </section>
+    </div><!-- /.page-wrap -->
   </main>
 
-<footer class="site-footer">
-  <div class="footer-container">
-
-    <div class="footer-links">
-      <a href="about.html">About Us</a>
-      <span class="separator">•</span>
-      <a href="privacy.html">Privacy Policy</a>
-      <span class="separator">•</span>
-      <a href="terms.html">Terms &amp; Conditions</a>
-      <span class="separator">•</span>
-      <a href="contact.html">Contact</a>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="about.html">Sobre Nosotros</a>
+        <span class="separator">•</span>
+        <a href="privacy.html">Política de Privacidad</a>
+        <span class="separator">•</span>
+        <a href="terms.html">Términos y Condiciones</a>
+        <span class="separator">•</span>
+        <a href="contact.html">Contacto</a>
+      </div>
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Important Notice</strong></p>
+        <p>Last Z Wiki is an <strong>unofficial</strong> website created by fans for the Last Z Survival Shooter community.</p>
+        <p>We are not affiliated, associated, authorized, endorsed by, or officially connected with the game developers.</p>
+        <p>All trademarks, logos and game images are property of their respective owners.</p>
+      </div>
+      <div class="footer-social"></div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Created with ❤️ for the community.</p>
+        <p class="footer-meta">Last updated: March 2026</p>
+      </div>
     </div>
-
-    <div class="footer-disclaimer">
-      <p><strong>⚠️ Important Notice</strong></p>
-      <p>Last Z Wiki is an <strong>unofficial</strong> website created by fans for the Last Z Survival Shooter community.</p>
-      <p>We are not affiliated, associated, authorized, endorsed by, or officially connected with the game developers.</p>
-      <p>All trademarks, logos, and game images are property of their respective owners.</p>
-    </div>
-
-    <div class="footer-social">
-      <!-- <a href="#" aria-label="Discord">Discord</a> -->
-      <!-- <a href="#" aria-label="YouTube">YouTube</a> -->
-    </div>
-
-    <div class="footer-copyright">
-      <p>&copy; 2026 Last Z Wiki. Created with ❤️ for the community.</p>
-      <p class="footer-meta">Last updated: February 2026</p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
   <script src="../menu.js"></script>
 </body>
