@@ -8,7 +8,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/"/>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -17,7 +17,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/"/>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -39,6 +39,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/beginner-guide.html"/>
     <lastmod>2026-03-09</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- ESTRATEGIA / STRATEGY -->
+  <url>
+    <loc>https://lastzwiki.com/estrategia.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/estrategia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/strategy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/strategy.html"/>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/en/strategy.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/estrategia.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/strategy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/strategy.html"/>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
@@ -106,7 +126,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-3.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-3.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-3.html"/>
-    <lastmod>2026-02-23</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -115,7 +135,25 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-3.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-3.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-3.html"/>
-    <lastmod>2026-03-09</lastmod>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/temporada-4.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-4.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-4.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-4.html"/>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lastzwiki.com/en/season-4.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/temporada-4.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/season-4.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/season-4.html"/>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -126,7 +164,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/tienda.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/store.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/store.html"/>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -135,7 +173,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/tienda.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/store.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/store.html"/>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -166,9 +204,9 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/heroes.html"/>
-    <lastmod>2026-02-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-03-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://lastzwiki.com/en/heroes.html</loc>
@@ -176,8 +214,8 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/heroes.html"/>
     <lastmod>2026-03-09</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- EVENTOS / EVENTS -->
@@ -186,7 +224,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/eventos.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/events.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/events.html"/>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -195,7 +233,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/eventos.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/events.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/events.html"/>
-    <lastmod>2026-03-21</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
