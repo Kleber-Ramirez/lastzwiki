@@ -209,6 +209,132 @@ section h2 {
   }
 
 
+/* ===== SECCIÓN TEMPORADAS ===== */
+.seasons-section {
+  max-width: 1000px;
+  margin: 0 auto 2.5rem;
+  padding: 0 1rem;
+}
+
+.seasons-header {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.seasons-header h2 {
+  color: var(--acento);
+  font-size: 1.6rem;
+  border-bottom: 2px solid var(--primario);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+.seasons-subtitle {
+  color: #666;
+  font-size: 0.88rem;
+  margin-top: 0.4rem;
+}
+
+.seasons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.season-card {
+  background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
+  border: 1px solid #222;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  display: flex;
+  flex-direction: column;
+}
+
+.season-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--acento);
+  box-shadow: 0 8px 24px rgba(196, 30, 58, 0.3);
+}
+
+.season-card-img {
+  position: relative;
+  height: 160px;
+  overflow: hidden;
+}
+
+.season-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.season-card:hover .season-card-img img {
+  transform: scale(1.05);
+}
+
+.season-badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  background: #c4891e;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+.season-badge.s3 { background: #0288D1; }
+.season-badge.s4 { background: #4a9e3f; }
+
+.season-card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.season-card-body h3 {
+  color: #fff;
+  font-size: 1rem;
+  margin: 0 0 0.4rem;
+}
+
+.season-card-body p {
+  color: #888;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0 0 0.8rem;
+}
+
+.season-link {
+  color: var(--acento);
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.season-card:hover .season-link { color: #fff; }
+
+@media (max-width: 480px) {
+  .seasons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .season-card-img { height: 120px; }
+  .season-card-body h3 { font-size: 0.9rem; }
+  .season-card-body p { display: none; }
+}
+
+@media (max-width: 340px) {
+  .seasons-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== SECCIÓN DE TIPS ===== */
 .tips-home {
   width: 100%;
