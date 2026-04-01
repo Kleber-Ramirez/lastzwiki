@@ -754,44 +754,53 @@ tip7: `
 `,  
 
 tip8: `
-  <h2>🔍 Localizar Bases Reconocidas</h2>
-  <img src="img-tip-reconocimiento-1.jpg" alt="Informe de reconocimiento">
-  
-  <h3>❌ El Problema</h3>
-  <p>Recibes o ves un <b>informe de reconocimiento compartido</b> en el chat de tu alianza. Puedes ver los recursos y tropas del enemigo, pero... <b>¿dónde está esa base en el mapa?</b></p>
-  
-  <p>Muchos jugadores pierden tiempo buscando manualmente en el mapa o preguntando "¿dónde queda X:324 Y:772?".</p>
+  <h2>♻️ Recicla tus Manuales de Habilidad Azules</h2>
 
-  <h3>✅ La Solución (El Truco)</h3>
-  
-  <p><b>Paso 1:</b> Abre el informe de reconocimiento (desde tu correo o desde el chat compartido).</p>
-  
-  <p><b>Paso 2:</b> Debajo del nombre del jugador reconocido, verás las <b>coordenadas</b> (ejemplo: <b>X:324 Y:772</b>).</p>
-  
-  <p><b>Paso 3:</b> Haz <b>click directamente en esas coordenadas</b>.</p>
-  
-  <p><b>Resultado:</b> El mapa se moverá automáticamente y te llevará <b>directo a la ubicación exacta</b> de esa base. ¡No más búsquedas manuales!</p>
-
-  <h3>💡 ¿Por qué es útil?</h3>
-  
+  <h3>📦 ¿Qué son los Manuales de Habilidad?</h3>
+  <p>Cada héroe tiene <b>4 habilidades</b> que puedes mejorar usando Manuales de Habilidad. Estos manuales tienen <b>3 rangos</b> según el rango del héroe:</p>
   <ul>
-    <li><b>Coordinar ataques en alianza:</b> Todos pueden llegar rápido al objetivo.</li>
-    <li><b>Verificar distancia:</b> Saber si te conviene atacar según qué tan lejos esté.</li>
-    <li><b>Encontrar carnadas fáciles:</b> Localizar bases débiles rápidamente.</li>
-    <li><b>Ahorrar tiempo:</b> No perder minutos buscando coordenadas en el mapa.</li>
+    <li>🔵 <b>Manual Azul</b> → Para héroes Rango B</li>
+    <li>🟣 <b>Manual Morado</b> → Para héroes Rango A</li>
+    <li>🟠 <b>Manual Naranja</b> → Para héroes Rango S</li>
+  </ul>
+  <p>Cada rango tiene sus propios manuales — <b>no interfieren entre sí</b>.</p>
+
+  <h3>❓ ¿Qué pasa cuando ya no los necesitas?</h3>
+  <p>Con el tiempo, todos tus <b>héroes de Rango B</b> tendrán sus 4 habilidades al máximo. Desde ese momento, los Manuales Azules se acumulan en tu inventario <b>sin ningún uso</b>.</p>
+
+  <h3>✅ La Solución: Reciclarlos</h3>
+  <p><b>Paso 1:</b> Ve a tu <b>Almacén → pestaña Héroe</b>.</p>
+  <p><b>Paso 2:</b> Busca los <b>Manuales de Habilidad Azules</b>.</p>
+  <p><b>Paso 3:</b> Si todos tus héroes B tienen habilidades al máximo, verás la opción <b>"Reciclar"</b>.</p>
+  <p><b>Paso 4:</b> Selecciona la cantidad y recicla. Cada manual azul se convierte en una <b>Caja Aleatoria de Recursos Básicos</b>.</p>
+
+  <h3>🎁 ¿Qué dan las Cajas?</h3>
+  <p>Cada caja puede darte aleatoriamente:</p>
+  <ul>
+    <li>1k Madera</li>
+    <li>1k Electricidad</li>
+    <li>1k Comida</li>
+    <li>600 Monedas Z</li>
+    <li>💎 <b>Diamantes</b></li>
+    <li>⭐ <b>Fragmentos de héroe Rango S</b></li>
   </ul>
 
-  <h3>🎯 Consejo Extra</h3>
-  
-  <p>Si tu alianza comparte informes de reconocimiento frecuentemente, este truco te hará la vida <b>mucho más fácil</b>. Simplemente:</p>
-  
+  <h3>💡 Consejo Clave</h3>
+  <div style="background: rgba(196, 30, 58, 0.15); padding: 1rem; border-left: 4px solid var(--acento); margin: 1rem 0; border-radius: 4px;">
+    <p>💎 <strong>Abre las cajas de 1,000 en 1,000.</strong> Cuantas más abres de una vez, más probabilidades tienes de obtener <b>Diamantes o Fragmentos de héroe Rango S</b>. No las abras de una en una.</p>
+  </div>
+
+  <h3>🎯 Resumen</h3>
   <ul>
-    <li>Abre el informe compartido en el chat</li>
-    <li>Click en las coordenadas</li>
-    <li>Evalúa si vale la pena atacar</li>
+    <li>Héroes B con habilidades al máximo → Manuales azules no sirven</li>
+    <li>Ve a <b>Almacén → Héroe → Reciclar</b></li>
+    <li>Convierte los manuales en cajas de recursos</li>
+    <li>Abre las cajas de <b>1,000 en 1,000</b> para mejores recompensas</li>
   </ul>
 
-  <p><b>Recuerda:</b> Las coordenadas son clickeables en cualquier informe de reconocimiento, ya sea del correo o compartido en chats. ¡Úsalo siempre!</p>
+  <p style="color:#555; font-size:0.8rem; margin-top:1.5rem; border-top:1px solid #222; padding-top:0.75rem;">
+    💡 Tip aportado por <strong style="color:#c41e3a;">@Daff21</strong> — ¡Gracias por compartirlo con la comunidad!
+  </p>
 `,
 
 tip9: `
@@ -1040,6 +1049,47 @@ tip12: `
     </ul>
     <p><b>Consejo:</b> Usa esta mecánica para llegar primero a tesoros y obtener mejores recompensas.</p>
   `,
+  
+tip13: `
+  <h2>🔍 Localizar Bases Reconocidas</h2>
+  <img src="img-tip-reconocimiento-1.jpg" alt="Informe de reconocimiento">
+  
+  <h3>❌ El Problema</h3>
+  <p>Recibes o ves un <b>informe de reconocimiento compartido</b> en el chat de tu alianza. Puedes ver los recursos y tropas del enemigo, pero... <b>¿dónde está esa base en el mapa?</b></p>
+  
+  <p>Muchos jugadores pierden tiempo buscando manualmente en el mapa o preguntando "¿dónde queda X:324 Y:772?".</p>
+
+  <h3>✅ La Solución (El Truco)</h3>
+  
+  <p><b>Paso 1:</b> Abre el informe de reconocimiento (desde tu correo o desde el chat compartido).</p>
+  
+  <p><b>Paso 2:</b> Debajo del nombre del jugador reconocido, verás las <b>coordenadas</b> (ejemplo: <b>X:324 Y:772</b>).</p>
+  
+  <p><b>Paso 3:</b> Haz <b>click directamente en esas coordenadas</b>.</p>
+  
+  <p><b>Resultado:</b> El mapa se moverá automáticamente y te llevará <b>directo a la ubicación exacta</b> de esa base. ¡No más búsquedas manuales!</p>
+
+  <h3>💡 ¿Por qué es útil?</h3>
+  
+  <ul>
+    <li><b>Coordinar ataques en alianza:</b> Todos pueden llegar rápido al objetivo.</li>
+    <li><b>Verificar distancia:</b> Saber si te conviene atacar según qué tan lejos esté.</li>
+    <li><b>Encontrar carnadas fáciles:</b> Localizar bases débiles rápidamente.</li>
+    <li><b>Ahorrar tiempo:</b> No perder minutos buscando coordenadas en el mapa.</li>
+  </ul>
+
+  <h3>🎯 Consejo Extra</h3>
+  
+  <p>Si tu alianza comparte informes de reconocimiento frecuentemente, este truco te hará la vida <b>mucho más fácil</b>. Simplemente:</p>
+  
+  <ul>
+    <li>Abre el informe compartido en el chat</li>
+    <li>Click en las coordenadas</li>
+    <li>Evalúa si vale la pena atacar</li>
+  </ul>
+
+  <p><b>Recuerda:</b> Las coordenadas son clickeables en cualquier informe de reconocimiento, ya sea del correo o compartido en chats. ¡Úsalo siempre!</p>
+`,
 
 };
 
