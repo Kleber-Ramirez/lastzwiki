@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicons -->
+ <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+ <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+ <link rel="shortcut icon" href="/favicon.ico" />
+ <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+ <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+ <link rel="manifest" href="/site.webmanifest" /> 
+
+  <!-- ==========================================
+       SEO OPTIMIZADO - PRIVACIDAD
+       ========================================== -->
+  
+  <!-- SEO Básico -->
+  <title>Política de Privacidade - Last Z Wiki</title>
+  <meta name="description" content="Política de privacidade do Last Z Wiki. Informações sobre quais dados coletamos, como os usamos e protegemos, seus direitos de privacidade e política de cookies.">
+  <meta name="keywords" content="privacidade Last Z Wiki, política privacidade, proteção dados, cookies Last Z Wiki, direitos privacidade">
+  <meta name="author" content="Hypnos - Last Z Wiki">
+  <meta name="language" content="Portuguese">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lastzwiki.com/pt/privacidade.html">
+  <link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/privacidade.html">
+  <link rel="alternate" hreflang="es" href="https://lastzwiki.com/privacidad.html">
+  
+  <!-- Robots -->
+  <meta name="robots" content="index, follow">
+  
+  <!-- Tema de color -->
+  <meta name="theme-color" content="#c41e3a">
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PXVTLS5T');</script>
+<!-- End Google Tag Manager -->
+<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-D52HENZW9L"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-D52HENZW9L');
+  </script>
+  
+  <!-- ==========================================
+       FIN SEO - CSS
+       ========================================== -->
+  
+  <link rel="stylesheet" href="../global.css">
+  <link rel="stylesheet" href="../responsive.css">
+  
+  <style>
+    /* Estilos para página legal */
+    .legal-container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+    
+    .legal-hero {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--secundario) 0%, var(--fondo) 100%);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 2px solid var(--acento);
+    }
+    
+    .legal-hero h1 {
+      font-size: 2.2rem;
+      color: var(--acento);
+      margin: 0 0 0.5rem 0;
+    }
+    
+    .legal-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+    
+    .legal-content {
+      background: var(--card-bg);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      line-height: 1.8;
+    }
+    
+    .legal-content h2 {
+      color: var(--acento);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--acento);
+      padding-bottom: 0.5rem;
+    }
+    
+    .legal-content h2:first-of-type {
+      margin-top: 0;
+    }
+    
+    .legal-content h3 {
+      color: var(--acento);
+      margin-top: 1.8rem;
+      margin-bottom: 0.8rem;
+      font-size: 1.2rem;
+    }
+    
+    .legal-content p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+    
+    .legal-content ul, 
+    .legal-content ol {
+      margin: 1rem 0 1rem 2rem;
+      color: var(--muted);
+    }
+    
+    .legal-content li {
+      margin-bottom: 0.7rem;
+    }
+    
+    .legal-content strong {
+      color: var(--texto);
+    }
+    
+    .info-box {
+      background: rgba(196, 30, 58, 0.1);
+      border-left: 4px solid var(--acento);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 6px;
+    }
+    
+    .info-box p {
+      margin: 0.5rem 0;
+    }
+    
+    .info-box strong {
+      color: var(--acento);
+    }
+    
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
+    
+    .privacy-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--secundario);
+    }
+    
+    .privacy-table th,
+    .privacy-table td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .privacy-table th {
+      background: var(--primario);
+      color: var(--texto);
+      font-weight: 600;
+    }
+    
+    .privacy-table tr:hover {
+      background: rgba(196, 30, 58, 0.1);
+    }
+    
+    .btn-back {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: var(--acento);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-back:hover {
+      background: #a01828;
+      transform: translateY(-2px);
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .legal-container {
+        padding: 1.5rem 1rem;
+      }
+      
+      .legal-hero h1 {
+        font-size: 1.8rem;
+      }
+      
+      .legal-content {
+        padding: 1.5rem 1rem;
+      }
+      
+      .legal-content h2 {
+        font-size: 1.4rem;
+      }
+      
+      .privacy-table th,
+      .privacy-table td {
+        padding: 0.7rem 0.5rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXVTLS5T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="brand">
+      <img src="../lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
+      <h1>Last Z Wiki</h1>
+    </div>
+    <button class="hamburger" aria-label="Menu de navegação">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="edificios.html">Edifícios</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="herois.html">Heróis</a></li>
+        <li><a href="aliancas.html">Alianças</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="legal-container">
+    
+    <!-- Hero -->
+    <section class="legal-hero">
+      <h1>🔒 Política de Privacidade</h1>
+      <p class="legal-meta">
+        <strong>Última atualização:</strong> Fevereiro 14, 2026<br>
+        <strong>Vigente desde:</strong> Fevereiro 14, 2026
+      </p>
+    </section>
+
+    <!-- Contenido legal -->
+    <article class="legal-content">
+      
+      <!-- Introducción -->
+      <section>
+        <p>No <strong>Last Z Wiki</strong> (doravante, "nós", "nosso" ou "o wiki"), operado por Hypnos, respeitamos sua privacidade e nos comprometemos a proteger seus dados pessoais.</p>
+        
+        <p>Esta Política de Privacidade explica quais informações coletamos quando você visita <strong>lastzwiki.com</strong>, como as usamos, com quem as compartilhamos e quais são seus direitos.</p>
+        
+        <div class="info-box">
+          <p><strong>📧 Contato de Privacidade:</strong></p>
+          <p>Se tiver dúvidas sobre esta política, entre em contato: <strong><a href="/cdn-cgi/l/email-protection#305c5143444a47595b5970575d51595c1e535f5d"><span class="__cf_email__" data-cfemail="9af6fbe9eee0edf3f1f3dafdf7fbf3f6b4f9f5f7">[email&#160;protected]</span></a></strong></p>
+        </div>
+      </section>
+
+      <!-- 1. Información que Recopilamos -->
+      <h2>1. Informações que Coletamos</h2>
+      
+      <h3>1.1. Informações que Você Fornece Voluntariamente</h3>
+      <p>Quando você usa nosso formulário de contato ou nos envia um e-mail, podemos coletar:</p>
+      <ul>
+        <li><strong>Nome ou nickname</strong> (se decidir fornecê-lo)</li>
+        <li><strong>Endereço de e-mail</strong></li>
+        <li><strong>Mensagem ou consulta</strong></li>
+      </ul>
+      
+      <h3>1.2. Informações Coletadas Automaticamente</h3>
+      <p>Quando você visita o Last Z Wiki, certas informações são coletadas automaticamente por meio de cookies e tecnologias similares:</p>
+      <ul>
+        <li><strong>Endereço IP</strong></li>
+        <li><strong>Tipo de navegador e versão</strong></li>
+        <li><strong>Sistema operacional</strong></li>
+        <li><strong>Páginas visitadas e tempo de permanência</strong></li>
+        <li><strong>Data e hora da visita</strong></li>
+        <li><strong>Site de referência</strong> (de onde você chegou ao nosso site)</li>
+        <li><strong>Idioma do navegador</strong></li>
+      </ul>
+
+      <!-- 2. Cómo Usamos Tu Información -->
+      <h2>2. Como Usamos Suas Informações</h2>
+      
+      <p>Usamos as informações coletadas para os seguintes propósitos:</p>
+      
+      <h3>2.1. Operação do Site</h3>
+      <ul>
+        <li>Fornecer e manter o funcionamento do Last Z Wiki</li>
+        <li>Responder às suas consultas, perguntas ou sugestões</li>
+        <li>Melhorar a experiência do usuário e a navegação</li>
+      </ul>
+      
+      <h3>2.2. Análise e Melhorias</h3>
+      <ul>
+        <li>Analisar o tráfego do site por meio do Google Analytics</li>
+        <li>Entender qual conteúdo é mais popular e útil</li>
+        <li>Identificar e corrigir erros técnicos</li>
+        <li>Otimizar o design e a funcionalidade do site</li>
+      </ul>
+      
+      <h3>2.3. Publicidade (Futuro)</h3>
+      <ul>
+        <li>Exibir anúncios relevantes por meio do Google AdSense</li>
+        <li>Personalizar a publicidade de acordo com seus interesses</li>
+        <li>Gerar receita para manter o wiki gratuito</li>
+      </ul>
+      
+      <div class="info-box">
+        <p><strong>⚠️ Importante:</strong> Atualmente não exibimos publicidade. Quando implementarmos o Google AdSense no futuro, atualizaremos esta política e o notificaremos por meio de um aviso no site.</p>
+      </div>
+
+      <!-- 3. Cookies y Tecnologías de Seguimiento -->
+      <h2>3. Cookies e Tecnologias de Rastreamento</h2>
+      
+      <h3>3.1. O que são Cookies?</h3>
+      <p>Cookies são pequenos arquivos de texto armazenados em seu dispositivo quando você visita um site. Eles nos ajudam a lembrar suas preferências e entender como você usa nosso site.</p>
+      
+      <h3>3.2. Tipos de Cookies que Usamos</h3>
+      
+      <div class="table-wrapper">
+        <table class="privacy-table">
+          <thead>
+            <tr>
+              <th>Tipo de Cookie</th>
+              <th>Finalidade</th>
+              <th>Duração</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cookies Essenciais</strong></td>
+              <td>Necessários para o funcionamento básico do site (navegação, preferências)</td>
+              <td>Sessão</td>
+            </tr>
+            <tr>
+              <td><strong>Cookies de Análise (Google Analytics)</strong></td>
+              <td>Nos ajudam a entender como os visitantes interagem com o site</td>
+              <td>2 años</td>
+            </tr>
+            <tr>
+              <td><strong>Cookies de Publicidade (Futuro)</strong></td>
+              <td>Google AdSense para exibir anúncios personalizados</td>
+              <td>Até 2 anos</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <h3>3.3. Como Controlar os Cookies</h3>
+      <p>Você pode controlar e/ou excluir cookies conforme sua preferência:</p>
+      <ul>
+        <li><strong>Configurações do navegador:</strong> Você pode configurar seu navegador para rejeitar cookies ou alertá-lo quando forem enviados.</li>
+        <li><strong>Ferramentas de terceiros:</strong> Você pode optar por não participar do Google Analytics visitando: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener" style="color: var(--acento);">https://tools.google.com/dlpage/gaoptout</a></li>
+        <li><strong>Publicidade personalizada (futuro):</strong> Quando implementarmos o AdSense, você poderá gerenciar preferências de anúncios em: <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener" style="color: var(--acento);">Google Ads Settings</a></li>
+      </ul>
+      
+      <p><strong>Nota:</strong> Se desativar os cookies, algumas funcionalidades do site podem ser afetadas.</p>
+
+      <!-- 4. Compartir Información con Terceros -->
+      <h2>4. Compartilhamento de Informações com Terceiros</h2>
+      
+      <p>Não vendemos, alugamos nem compartilhamos suas informações pessoais com terceiros, exceto nos seguintes casos:</p>
+      
+      <h3>4.1. Provedores de Serviços</h3>
+      <ul>
+        <li><strong>Google Analytics:</strong> Para análise de tráfego e uso do site</li>
+        <li><strong>Google AdSense (futuro):</strong> Para exibir publicidade relevante</li>
+        <li><strong>Provedor de hospedagem (Hostinger):</strong> Para hospedar o site</li>
+      </ul>
+      
+      <p>Esses terceiros são obrigados contratualmente a proteger suas informações e só podem usá-las para os serviços que prestam.</p>
+      
+      <h3>4.2. Cumprimento Legal</h3>
+      <p>Podemos divulgar suas informações se exigido por lei ou para:</p>
+      <ul>
+        <li>Cumprir com processos legais ou solicitações governamentais</li>
+        <li>Proteger os direitos, propriedade ou segurança do Last Z Wiki</li>
+        <li>Prevenir fraude ou abuso do site</li>
+      </ul>
+
+      <!-- 5. Seguridad de tus Datos -->
+      <h2>5. Segurança dos Seus Dados</h2>
+      
+      <p>Tomamos medidas razoáveis para proteger suas informações pessoais contra acesso não autorizado, alteração, divulgação ou destruição:</p>
+      <ul>
+        <li>✅ <strong>Conexão HTTPS:</strong> Todo o tráfego é criptografado por certificado SSL</li>
+        <li>✅ <strong>Hospedagem segura:</strong> Utilizamos provedores de hospedagem confiáveis (Hostinger)</li>
+        <li>✅ <strong>Acesso limitado:</strong> Apenas o administrador tem acesso a dados de contato</li>
+        <li>✅ <strong>Retenção mínima:</strong> Guardamos dados apenas pelo tempo necessário</li>
+      </ul>
+      
+      <p><strong>No entanto,</strong> nenhum método de transmissão pela Internet é 100% seguro. Não podemos garantir a segurança absoluta de suas informações.</p>
+
+      <!-- 6. Tus Derechos de Privacidad -->
+      <h2>6. Seus Direitos de Privacidade</h2>
+      
+      <p>Como usuário do Last Z Wiki, você tem os seguintes direitos sobre seus dados pessoais:</p>
+      
+      <h3>6.1. Direito de Acesso</h3>
+      <p>Você pode solicitar uma cópia das informações pessoais que temos sobre você.</p>
+      
+      <h3>6.2. Direito de Retificação</h3>
+      <p>Você pode solicitar que corrijamos informações inexatas ou incompletas.</p>
+      
+      <h3>6.3. Direito de Exclusão</h3>
+      <p>Você pode solicitar que excluamos suas informações pessoais de nossos registros.</p>
+      
+      <h3>6.4. Direito de Oposição</h3>
+      <p>Você pode se opor ao processamento de seus dados para fins de marketing ou publicidade.</p>
+      
+      <h3>6.5. Direito de Portabilidade</h3>
+      <p>Você pode solicitar que fornecemos seus dados em um formato estruturado e legível por máquina.</p>
+      
+      <div class="info-box">
+        <p><strong>Para exercer qualquer um desses direitos, entre em contato:</strong></p>
+        <p>📧 Email: <strong><a href="/cdn-cgi/l/email-protection#711d1002050b06181a1831161c10181d5f121e1c"><span class="__cf_email__" data-cfemail="c4a8a5b7b0beb3adafad84a3a9a5ada8eaa7aba9">[email&#160;protected]</span></a></strong></p>
+        <p>📝 Formulário: <a href="contato.html" style="color: var(--acento);">Página de Contato</a></p>
+        <p><em>Responderemos à sua solicitação em um prazo máximo de 30 dias.</em></p>
+      </div>
+
+      <!-- 7. Enlaces a Terceros -->
+      <h2>7. Links para Sites de Terceiros</h2>
+      
+      <p>Last Z Wiki pode conter links para sites de terceiros (por exemplo, redes sociais, canais do YouTube, recursos externos). <strong>Não somos responsáveis pelas práticas de privacidade desses sites.</strong></p>
+      
+      <p>Recomendamos ler as políticas de privacidade de qualquer site de terceiros que visitar.</p>
+
+      <!-- 8. Privacidad de Menores -->
+      <h2>8. Privacidade de Menores de Idade</h2>
+      
+      <p>Last Z Wiki não é direcionado a menores de 13 anos e não coletamos intencionalmente informações pessoais de crianças.</p>
+      
+      <p>Se você é pai ou responsável e acredita que seu filho nos forneceu informações pessoais, entre em contato <strong><a href="/cdn-cgi/l/email-protection#86eae7f5f2fcf1efedefc6e1ebe7efeaa8e5e9eb"><span class="__cf_email__" data-cfemail="f79b9684838d809e9c9eb7909a969e9bd994989a">[email&#160;protected]</span></a></strong> para que possamos excluí-las.</p>
+
+      <!-- 9. Transferencias Internacionales -->
+      <h2>9. Transferências Internacionais de Dados</h2>
+      
+      <p>Suas informações podem ser transferidas e armazenadas em servidores localizados fora do seu país de residência, onde as leis de proteção de dados podem ser diferentes.</p>
+      
+      <p>Ao usar o Last Z Wiki, você consente com essas transferências. Garantimos que qualquer transferência cumpra as leis aplicáveis de proteção de dados.</p>
+
+      <!-- 10. Cambios a esta Política -->
+      <h2>10. Alterações a esta Política de Privacidade</h2>
+      
+      <p>Podemos atualizar esta Política de Privacidade periodicamente para refletir mudanças em nossas práticas ou por requisitos legais.</p>
+      
+      <p><strong>Notificaremos sobre mudanças significativas por meio de:</strong></p>
+      <ul>
+        <li>📢 Um aviso destacado na página principal do site</li>
+        <li>📧 E-mail (se nos forneceu seu endereço)</li>
+        <li>📅 Atualização da data "Última atualização" no início desta página</li>
+      </ul>
+      
+      <p>Recomendamos revisar esta política periodicamente. O uso contínuo do site após alterações constitui sua aceitação da política atualizada.</p>
+
+      <!-- 11. Consentimiento -->
+      <h2>11. Consentimento</h2>
+      
+      <p>Ao usar o Last Z Wiki, você aceita esta Política de Privacidade e consente com a coleta, uso e divulgação de suas informações conforme descrito aqui.</p>
+      
+      <p>Se não concordar com esta política, por favor não use nosso site.</p>
+
+      <!-- 12. Contacto -->
+      <h2>12. Informações de Contato</h2>
+      
+      <p>Se tiver perguntas, dúvidas ou solicitações relacionadas a esta Política de Privacidade ou ao tratamento de seus dados pessoais, pode nos contatar:</p>
+      
+      <div class="info-box">
+        <p><strong>📧 E-mail:</strong> <a href="/cdn-cgi/l/email-protection#a4c8c5d7d0ded3cdcfcde4c3c9c5cdc88ac7cbc9"><span class="__cf_email__" data-cfemail="cea2afbdbab4b9a7a5a78ea9a3afa7a2e0ada1a3">[email&#160;protected]</span></a></p>
+        <p><strong>📝 Formulário de Contato:</strong> <a href="contato.html" style="color: var(--acento);">lastzwiki.com/pt/contato.html</a></p>
+        <p><strong>📸 Instagram:</strong> @kleber23_</p>
+        <p><strong>👤 Responsável:</strong> Hypnos (Fundador do Last Z Wiki)</p>
+      </div>
+
+      <!-- Resumen Final -->
+      <h2>📝 Resumo dos Pontos-Chave</h2>
+      
+      <ul>
+        <li>✅ Coletamos informações mínimas necessárias para operar o site</li>
+        <li>✅ Usamos cookies para análise e para melhorar sua experiência</li>
+        <li>✅ Implementaremos o Google AdSense no futuro (iremos notificá-lo)</li>
+        <li>✅ Não vendemos nem compartilhamos suas informações pessoais</li>
+        <li>✅ Você tem direitos sobre seus dados (acesso, exclusão, etc.)</li>
+        <li>✅ Pode nos contatar a qualquer momento para consultas de privacidade</li>
+      </ul>
+      
+      <div style="text-align: center; margin-top: 2.5rem;">
+        <p style="font-size: 0.9rem; color: var(--muted);"><em>Obrigado por confiar no Last Z Wiki e por ler nossa Política de Privacidade.</em></p>
+        <a href="index.html" class="btn-back">← Voltar ao Início</a>
+      </div>
+
+    </article>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-links">
+        <a href="sobre-nos.html">Sobre Nós</a>
+        <span class="separator">•</span>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <span class="separator">•</span>
+        <a href="termos.html">Termos e Condições</a>
+        <span class="separator">•</span>
+        <a href="contato.html">Contato</a>
+      </div>
+      
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Aviso Importante</strong></p>
+        <p>Last Z Wiki é um site <strong>não oficial</strong> criado por fãs para a comunidade de Last Z Survival Shooter.</p>        <p>Não somos afiliados, associados, autorizados, endossados ou oficialmente conectados com os desenvolvedores do jogo.</p>
+        <p>Todas as marcas, logos e imagens do jogo são propriedade de seus respectivos donos.</p>
+      </div>
+      
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Criado com ❤️ para a comunidade.</p>
+        <p class="footer-meta">Última atualização: Fevereiro 2026</p>
+      </div>
+      
+    </div>
+  </footer>
+
+  <script src="../menu.js"></script>
+</body>
+</html>
