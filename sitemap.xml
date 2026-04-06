@@ -340,7 +340,7 @@
   <url>
     <loc>https://lastzwiki.com/heroes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/heroes.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/herois.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/heroes.html"/>
     <lastmod>2026-03-16</lastmod>
@@ -348,9 +348,9 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://lastzwiki.com/pt/herois.html</loc>
+    <loc>https://lastzwiki.com/pt/heroes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/heroes.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/herois.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/heroes.html"/>
     <lastmod>2026-04-03</lastmod>
@@ -360,7 +360,7 @@
   <url>
     <loc>https://lastzwiki.com/en/heroes.html</loc>
     <xhtml:link rel="alternate" hreflang="es" href="https://lastzwiki.com/heroes.html"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/herois.html"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/heroes.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/heroes.html"/>
     <lastmod>2026-03-09</lastmod>
