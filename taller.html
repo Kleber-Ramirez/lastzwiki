@@ -49,7 +49,7 @@
 <link href="https://lastzwiki.com/taller.html" rel="canonical"/>
 <link href="https://lastzwiki.com/taller.html" hreflang="es" rel="alternate"/>
 <link href="https://lastzwiki.com/en/workshop.html" hreflang="en" rel="alternate"/>
-<link href="https://lastzwiki.com/pt/taller.html" hreflang="pt" rel="alternate"/>
+<link href="https://lastzwiki.com/pt/oficina.html" hreflang="pt" rel="alternate"/>
 <link href="https://lastzwiki.com/en/workshop.html" hreflang="x-default" rel="alternate"/>
 <!-- Schema.org -->
 <script type="application/ld+json">
@@ -77,6 +77,10 @@
      TALLER — ESTILOS PROPIOS
      ============================================= */
 
+  * { box-sizing: border-box; }
+
+  html, body { overflow-x: hidden; max-width: 100%; }
+
   /* Hero section */
   .taller-hero {
     background: linear-gradient(135deg, #0a0a0a 0%, #0d0f1a 50%, #0a0a0a 100%);
@@ -84,7 +88,6 @@
     padding: 3rem 1.5rem 2.5rem;
     text-align: center;
     position: relative;
-    overflow: hidden;
   }
 
   .taller-hero::before {
@@ -515,17 +518,65 @@
     border-color: #c41e3a;
   }
 
-  /* Responsive */
+  /* Celda de armamento con rowspan */
+  .armamento-cell {
+    vertical-align: middle;
+    text-align: center;
+    border-left: 1px solid rgba(196,30,58,0.15);
+    background: rgba(196,30,58,0.04);
+    padding: 0.5rem;
+  }
+  .armamento-cell .armamento-badge {
+    display: block;
+    margin: 0 auto;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  tr.group-start td {
+    border-top: 1px solid rgba(196,30,58,0.25) !important;
+  }
+
+  /* SVG Llave inglesa amarilla */
+  .wrench-icon {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    vertical-align: middle;
+    margin-right: 3px;
+    color: #f0a500;
+    fill: #f0a500;
+    flex-shrink: 0;
+  }
+  .wrench-icon-lg {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+    fill: #f0a500;
+    flex-shrink: 0;
+  }
+
+  /* Responsive mejorado */
   @media (max-width: 600px) {
     .taller-hero { padding: 2rem 1rem 1.5rem; }
     .taller-hero-stats { gap: 1.5rem; }
     .taller-stat strong { font-size: 1.4rem; }
     .armamentos-grid { grid-template-columns: repeat(3, 1fr); }
-    .tabla-modificacion { font-size: 0.78rem; }
-    .tabla-modificacion thead th,
-    .tabla-modificacion tbody td { padding: 0.4rem 0.5rem; }
     .sistema-explicacion { grid-template-columns: 1fr; }
     .col-hide-mobile { display: none; }
+
+    /* Tabla mobile mejorada */
+    .tabla-modificacion { font-size: 0.82rem; min-width: unset; width: 100%; }
+    .tabla-modificacion thead th { padding: 0.5rem 0.6rem; font-size: 0.68rem; letter-spacing: 0; white-space: nowrap; }
+    .tabla-modificacion tbody td { padding: 0.45rem 0.6rem; }
+    .tabla-modificacion thead th:first-child,
+    .tabla-modificacion tbody td:first-child { width: 38px; }
+    .tabla-modificacion thead th:nth-child(2),
+    .tabla-modificacion tbody td:nth-child(2) { width: 60px; }
+    .armamento-cell { padding: 0.3rem 0.4rem; }
+    .armamento-badge { font-size: 0.68rem; padding: 0.15rem 0.35rem; }
+    .tabla-responsive { border-radius: 4px; }
   }
 </style>
 </head>
@@ -554,25 +605,25 @@
       <li><a href="comunidad.html">Comunidad</a></li>
     </ul>
   </nav>
-  <div class="nav-overlay" id="nav-overlay"></div>
 </header>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <main>
   <!-- HERO -->
   <section class="taller-hero">
     <div class="taller-hero-badge">Guía de Modificación</div>
-    <h1>🔧 Taller de <span>Armamento</span></h1>
+    <h1><svg class="wrench-icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Taller de <span>Armamento</span></h1>
     <p class="taller-hero-desc">
-      Consulta cuántas <strong>🔧 llaves inglesas</strong> necesitas para cada nivel de modificación.
-      Tabla completa con todos los armamentos desbloqueables incluyendo el <strong>Conquistador gratuito</strong>.
+      Consulta cuántas <strong><svg class="wrench-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> llaves inglesas</strong> necesitas para cada nivel de modificación.
+      Tabla completa del Lv0 al Lv240 con todos los armamentos desbloqueables incluyendo el <strong>Conquistador gratuito</strong>.
     </p>
     <div class="taller-hero-stats">
       <div class="taller-stat">
-        <strong>6</strong>
+        <strong>5</strong>
         <span>Armamentos</span>
       </div>
       <div class="taller-stat">
-        <strong>10,270</strong>
+        <strong>70,700</strong>
         <span>Llaves máx.</span>
       </div>
     </div>
@@ -593,9 +644,9 @@
 
     <!-- INTRODUCCIÓN -->
     <div class="taller-section" style="margin-top:1.5rem;">
-      <h4>🔧 Sistema de Llave Inglesa</h4>
+      <h4><svg class="wrench-icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Sistema de Llave Inglesa</h4>
       <p>Para modificar y mejorar tu armamento, necesitas <strong>llaves inglesas</strong>. Cada nivel requiere una cantidad específica de llaves divididas en subniveles.</p>
-      <p>Al alcanzar ciertos niveles, desbloquearás <strong>vehículos especiales</strong> como el Guepardo, Hércules, Cañones Dobles, Quitanieves y Destructor. El <strong>Conquistador</strong> se obtiene gratis al completar las misiones de tutorial del Taller.</p>
+      <p>Al alcanzar ciertos niveles, desbloquearás <strong>vehículos especiales</strong> como el Guepardo, Hércules, Destructor y Destructor-EX. El <strong>Conquistador</strong> se obtiene gratis al completar las misiones de tutorial del Taller.</p>
     </div>
 
     <!-- ARMAMENTOS DESBLOQUEABLES -->
@@ -611,32 +662,26 @@
         <div class="armamento-card">
           <span class="armamento-icon">🐆</span>
           <h5>Guepardo</h5>
-          <div class="nivel-tag">Nivel 20</div>
-          <span class="llaves-tag">🔧 30 llaves</span>
+          <div class="nivel-tag">Lv45</div>
+          <span class="llaves-tag"><svg class="wrench-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> 150 llaves</span>
         </div>
         <div class="armamento-card">
           <span class="armamento-icon">💪</span>
           <h5>Hércules</h5>
-          <div class="nivel-tag">Nivel 70</div>
-          <span class="llaves-tag">🔧 360 llaves</span>
-        </div>
-        <div class="armamento-card">
-          <span class="armamento-icon">🔫</span>
-          <h5>Cañones Dobles</h5>
-          <div class="nivel-tag">Nivel 105</div>
-          <span class="llaves-tag">🔧 2,320 llaves</span>
-        </div>
-        <div class="armamento-card">
-          <span class="armamento-icon">🚜</span>
-          <h5>Quitanieves</h5>
-          <div class="nivel-tag">Nivel 130</div>
-          <span class="llaves-tag">🔧 6,300 llaves</span>
+          <div class="nivel-tag">Lv95</div>
+          <span class="llaves-tag"><svg class="wrench-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> 1,730 llaves</span>
         </div>
         <div class="armamento-card">
           <span class="armamento-icon">💥</span>
           <h5>Destructor</h5>
-          <div class="nivel-tag">Nivel 145</div>
-          <span class="llaves-tag">🔧 10,270 llaves</span>
+          <div class="nivel-tag">Lv145</div>
+          <span class="llaves-tag"><svg class="wrench-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> 10,440 llaves</span>
+        </div>
+        <div class="armamento-card">
+          <span class="armamento-icon">🚀</span>
+          <h5>Destructor-EX</h5>
+          <div class="nivel-tag">Lv195</div>
+          <span class="llaves-tag"><svg class="wrench-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> 35,300 llaves</span>
         </div>
       </div>
     </div>
@@ -644,14 +689,14 @@
     <!-- TABLA COMPLETA -->
     <div class="taller-section">
       <h4>📊 Tabla Completa de Modificación</h4>
-      <p style="margin-bottom:1rem;">Consulta cuántas llaves inglesas necesitas para cada nivel y subnivel</p>
+      <p style="margin-bottom:1rem;">Tabla completa del Lv0 al Lv240 — consulta cuántas llaves inglesas necesitas para cada nivel</p>
 
       <div class="tabla-responsive">
         <table class="tabla-modificacion" id="tabla-mod">
           <thead>
             <tr>
               <th>Nivel</th>
-              <th>🔧 Llaves/Subnivel</th>
+              <th><svg class="wrench-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Llaves/Sub</th>
               <th class="col-hide-mobile">Subniveles</th>
               <th class="col-hide-mobile">Total del nivel</th>
               <th>Acumulado</th>
@@ -659,114 +704,169 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Bloque 1: Niveles 1–50 -->
-            <tr data-search="1 elite weapon modification intern">
-              <td>1</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>5</td><td>—</td>
+
+            <!-- ═══ CONQUISTADOR (FREE) — Lv0 a Lv40 ═══ -->
+            <tr data-search="0 elite weapon modification modificacion arma elite intern">
+              <td>0</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>5</td>
+              <td rowspan="9" class="armamento-cell"><span class="armamento-badge" style="background:rgba(100,180,100,0.15);border-color:rgba(100,180,100,0.3);color:#6db86d;">🏆 Conquistador<br><small style="font-size:0.65rem;opacity:0.8;">GRATIS</small></span></td>
             </tr>
-            <tr data-search="5 extra grenades intern">
-              <td>5</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>10</td><td>—</td>
+            <tr data-search="5 extra grenades granadas extra intern">
+              <td>5</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>10</td>
             </tr>
-            <tr data-search="10 elite tire modification intern">
-              <td>10</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>15</td><td>—</td>
+            <tr data-search="10 elite tire modification neumatico elite intern">
+              <td>10</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>15</td>
             </tr>
-            <tr data-search="15 grenade launcher upgrade intern">
-              <td>15</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>20</td><td>—</td>
+            <tr data-search="15 grenade launcher upgrade lanzagranadas intern">
+              <td>15</td><td>1</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">5</td><td>20</td>
             </tr>
-            <tr class="nivel-armamento" data-search="20 guepardo cheetah elite weapon modification novice">
-              <td><strong>20</strong></td><td>2</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">10</td><td><strong>30</strong></td>
-              <td><span class="armamento-badge">🐆 Guepardo</span></td>
+            <tr data-search="20 elite weapon modification arma elite novice">
+              <td>20</td><td>2</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">10</td><td>30</td>
             </tr>
-            <tr data-search="25 heavy grenades novice">
-              <td>25</td><td>2</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">10</td><td>40</td><td>—</td>
+            <tr data-search="25 heavy grenades granadas pesadas novice">
+              <td>25</td><td>2</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">10</td><td>40</td>
             </tr>
-            <tr data-search="30 elite tire modification novice">
-              <td>30</td><td>4</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">20</td><td>60</td><td>—</td>
+            <tr data-search="30 elite tire modification neumatico novice">
+              <td>30</td><td>4</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">20</td><td>60</td>
             </tr>
-            <tr data-search="35 grenade launcher transformation novice">
-              <td>35</td><td>4</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">20</td><td>80</td><td>—</td>
+            <tr data-search="35 grenade launcher transformation lanzagranadas transformacion novice">
+              <td>35</td><td>4</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">20</td><td>80</td>
             </tr>
-            <tr data-search="40 elite trunk modification novice">
-              <td>40</td><td>6</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">30</td><td>110</td><td>—</td>
-            </tr>
-            <tr data-search="45 veteran elite weapon modification">
-              <td>45</td><td>8</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">40</td><td>150</td><td>—</td>
-            </tr>
-            <tr data-search="50 elite weapon modification veteran">
-              <td>50</td><td>8</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">40</td><td>190</td><td>—</td>
+            <tr data-search="40 elite trunk modification baul elite novice">
+              <td>40</td><td>6</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">30</td><td>110</td>
             </tr>
 
-            <tr class="separador-tabla"><td colspan="6"></td></tr>
-
-            <!-- Bloque 2: Niveles 55–90 -->
-            <tr data-search="55 disturbance magnetic storm veteran">
-              <td>55</td><td>12</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">60</td><td>250</td><td>—</td>
+            <!-- ═══ GUEPARDO — Lv45 a Lv90 ═══ -->
+            <tr class="group-start nivel-armamento" data-search="45 cheetah guepardo armored vehicle veteran">
+              <td><strong>45</strong></td><td>8</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">40</td><td><strong>150</strong></td>
+              <td rowspan="10" class="armamento-cell"><span class="armamento-badge">🐆 Guepardo</span></td>
             </tr>
-            <tr data-search="60 elite tire modification veteran">
-              <td>60</td><td>18</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">90</td><td>340</td><td>—</td>
+            <tr data-search="50 elite weapon modification arma veteran">
+              <td>50</td><td>8</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">40</td><td>190</td>
             </tr>
-            <tr data-search="65 magnetic storm shield veteran">
-              <td>65</td><td>18</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">90</td><td>430</td><td>—</td>
+            <tr data-search="55 disturbance magnetic storm tormenta magnetica veteran">
+              <td>55</td><td>12</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">60</td><td>250</td>
             </tr>
-            <tr class="nivel-armamento" data-search="70 hercules hércules elite weapon modification elite">
-              <td><strong>70</strong></td><td>24</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">120</td><td><strong>550</strong></td>
-              <td><span class="armamento-badge">💪 Hércules</span></td>
+            <tr data-search="60 elite tire modification neumatico veteran">
+              <td>60</td><td>18</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">90</td><td>340</td>
             </tr>
-            <tr data-search="75 plasma chain elite">
-              <td>75</td><td>20</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">160</td><td>710</td><td>—</td>
+            <tr data-search="65 magnetic storm shield escudo tormenta veteran">
+              <td>65</td><td>18</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">90</td><td>430</td>
             </tr>
-            <tr data-search="80 elite tire modification elite">
-              <td>80</td><td>25</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">200</td><td>910</td><td>—</td>
+            <tr data-search="70 elite weapon modification arma elite">
+              <td>70</td><td>20</td><td class="col-hide-mobile">5</td><td class="col-hide-mobile">100</td><td>530</td>
             </tr>
-            <tr data-search="85 ultimate magnetic storm elite">
-              <td>85</td><td>30</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">240</td><td>1,150</td><td>—</td>
+            <tr data-search="75 plasma chain cadena plasma elite">
+              <td>75</td><td>20</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">160</td><td>690</td>
             </tr>
-            <tr data-search="90 elite trunk modification elite">
-              <td>90</td><td>35</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">280</td><td>1,430</td><td>—</td>
+            <tr data-search="80 elite tire modification neumatico elite">
+              <td>80</td><td>25</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">200</td><td>890</td>
             </tr>
-
-            <tr class="separador-tabla"><td colspan="6"></td></tr>
-
-            <!-- Bloque 3: Niveles 95–140 -->
-            <tr data-search="95 expert elite weapon modification war frenzy">
-              <td>95</td><td>40</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">320</td><td>1,750</td><td>—</td>
+            <tr data-search="85 ultimate magnetic storm tormenta magnetica suprema elite">
+              <td>85</td><td>30</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">240</td><td>1,130</td>
             </tr>
-            <tr data-search="100 elite tire modification expert">
-              <td>100</td><td>45</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">360</td><td>2,110</td><td>—</td>
-            </tr>
-            <tr class="nivel-armamento" data-search="105 cañones dobles cannons thermo bomb expert">
-              <td><strong>105</strong></td><td>50</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">400</td><td><strong>2,510</strong></td>
-              <td><span class="armamento-badge">🔫 Cañones Dobles</span></td>
-            </tr>
-            <tr data-search="110 rapid reload expert">
-              <td>110</td><td>50</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">500</td><td>3,010</td><td>—</td>
-            </tr>
-            <tr data-search="115 elite tire modification expert inferno furnace">
-              <td>115</td><td>74</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">740</td><td>3,750</td><td>—</td>
-            </tr>
-            <tr data-search="120 elite trunk modification master">
-              <td>120</td><td>74</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">740</td><td>4,490</td><td>—</td>
-            </tr>
-            <tr data-search="125 elite weapon modification master apocalypse vision">
-              <td>125</td><td>100</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,000</td><td>5,490</td><td>—</td>
-            </tr>
-            <tr class="nivel-armamento" data-search="130 quitanieves snowplow elite tire modification master bio-virus">
-              <td><strong>130</strong></td><td>100</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,000</td><td><strong>6,490</strong></td>
-              <td><span class="armamento-badge">🚜 Quitanieves</span></td>
-            </tr>
-            <tr data-search="135 elite weapon modification grandmaster preemptive strike">
-              <td>135</td><td>124</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,240</td><td>7,730</td><td>—</td>
-            </tr>
-            <tr data-search="140 elite tire modification grandmaster shield boost">
-              <td>140</td><td>124</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,240</td><td>8,970</td><td>—</td>
+            <tr data-search="90 elite trunk modification baul elite">
+              <td>90</td><td>35</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">280</td><td>1,410</td>
             </tr>
 
-            <tr class="separador-tabla"><td colspan="6"></td></tr>
-
-            <!-- Nivel Máximo -->
-            <tr class="nivel-armamento nivel-max" data-search="145 destructor destroyer elite trunk modification grandmaster phase amp">
-              <td><strong>145</strong></td><td>149</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,490</td><td><strong>10,270</strong></td>
-              <td><span class="armamento-badge destructor">💥 Destructor</span></td>
+            <!-- ═══ HÉRCULES — Lv95 a Lv140 ═══ -->
+            <tr class="group-start nivel-armamento" data-search="95 hercules hercules elite">
+              <td><strong>95</strong></td><td>40</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">320</td><td><strong>1,730</strong></td>
+              <td rowspan="10" class="armamento-cell"><span class="armamento-badge">💪 Hércules</span></td>
             </tr>
+            <tr data-search="100 elite weapon modification arma expert">
+              <td>100</td><td>45</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">360</td><td>2,090</td>
+            </tr>
+            <tr data-search="105 war frenzy frenesi guerra expert">
+              <td>105</td><td>50</td><td class="col-hide-mobile">8</td><td class="col-hide-mobile">400</td><td>2,490</td>
+            </tr>
+            <tr data-search="110 elite tire modification neumatico expert">
+              <td>110</td><td>50</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">500</td><td>2,990</td>
+            </tr>
+            <tr data-search="115 thermo bomb bomba termica expert">
+              <td>115</td><td>74</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">740</td><td>3,730</td>
+            </tr>
+            <tr data-search="120 elite weapon modification arma expert">
+              <td>120</td><td>74</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">740</td><td>4,470</td>
+            </tr>
+            <tr data-search="125 rapid reload recarga rapida expert">
+              <td>125</td><td>100</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,000</td><td>5,470</td>
+            </tr>
+            <tr data-search="130 elite tire modification neumatico expert">
+              <td>130</td><td>100</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,000</td><td>6,470</td>
+            </tr>
+            <tr data-search="135 inferno furnace horno infierno expert">
+              <td>135</td><td>124</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,240</td><td>7,710</td>
+            </tr>
+            <tr data-search="140 elite trunk modification baul master">
+              <td>140</td><td>124</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,240</td><td>8,950</td>
+            </tr>
+
+            <!-- ═══ DESTRUCTOR — Lv145 a Lv190 ═══ -->
+            <tr class="group-start nivel-armamento" data-search="145 destroyer destructor master">
+              <td><strong>145</strong></td><td>149</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,490</td><td><strong>10,440</strong></td>
+              <td rowspan="10" class="armamento-cell"><span class="armamento-badge destructor">💥 Destructor</span></td>
+            </tr>
+            <tr data-search="150 elite weapon modification arma master">
+              <td>150</td><td>149</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">1,490</td><td>11,930</td>
+            </tr>
+            <tr data-search="155 apocalypse vision vision apocalipsis master">
+              <td>155</td><td>209</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">2,090</td><td>14,020</td>
+            </tr>
+            <tr data-search="160 elite tire modification neumatico master">
+              <td>160</td><td>209</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">2,090</td><td>16,110</td>
+            </tr>
+            <tr data-search="165 bio-virus biovirus master">
+              <td>165</td><td>239</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">2,390</td><td>18,500</td>
+            </tr>
+            <tr data-search="170 elite weapon modification arma grandmaster">
+              <td>170</td><td>240</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">2,400</td><td>20,900</td>
+            </tr>
+            <tr data-search="175 preemptive strike golpe preventivo grandmaster">
+              <td>175</td><td>270</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">2,700</td><td>23,600</td>
+            </tr>
+            <tr data-search="180 elite tire modification neumatico grandmaster">
+              <td>180</td><td>270</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">2,700</td><td>26,300</td>
+            </tr>
+            <tr data-search="185 shield boost impulso escudo grandmaster">
+              <td>185</td><td>300</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,000</td><td>29,300</td>
+            </tr>
+            <tr data-search="190 elite trunk modification baul grandmaster">
+              <td>190</td><td>300</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,000</td><td>32,300</td>
+            </tr>
+
+            <!-- ═══ DESTRUCTOR-EX — Lv195 a Lv240 ═══ -->
+            <tr class="group-start nivel-armamento nivel-max" data-search="195 destroyer-ex destructor-ex grandmaster">
+              <td><strong>195</strong></td><td>300</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,000</td><td><strong>35,300</strong></td>
+              <td rowspan="10" class="armamento-cell"><span class="armamento-badge destructor">🚀 Destructor-EX</span></td>
+            </tr>
+            <tr data-search="200 elite weapon modification arma grandmaster">
+              <td>200</td><td>300</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,000</td><td>38,300</td>
+            </tr>
+            <tr data-search="205 phase amp amplificador fase grandmaster">
+              <td>205</td><td>360</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,600</td><td>41,900</td>
+            </tr>
+            <tr data-search="210 elite tire modification neumatico modding overlord">
+              <td>210</td><td>360</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,600</td><td>45,500</td>
+            </tr>
+            <tr data-search="215 light rift split grieta luz overlord">
+              <td>215</td><td>360</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">3,600</td><td>49,100</td>
+            </tr>
+            <tr data-search="220 elite weapon modification arma overlord">
+              <td>220</td><td>420</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">4,200</td><td>53,300</td>
+            </tr>
+            <tr data-search="225 rapid rushfire rafaga rapida overlord">
+              <td>225</td><td>420</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">4,200</td><td>57,500</td>
+            </tr>
+            <tr data-search="230 elite tire modification neumatico overlord">
+              <td>230</td><td>420</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">4,200</td><td>61,700</td>
+            </tr>
+            <tr data-search="235 phase ascend ascension fase overlord">
+              <td>235</td><td>420</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">4,200</td><td>65,900</td>
+            </tr>
+            <tr data-search="240 elite trunk modification baul overlord">
+              <td>240</td><td>480</td><td class="col-hide-mobile">10</td><td class="col-hide-mobile">4,800</td><td>70,700</td>
+            </tr>
+
           </tbody>
         </table>
       </div>
@@ -781,12 +881,12 @@
           <p>Cada nivel se divide en subniveles (generalmente 5, 8 o 10 según el nivel). Debes completar todos para avanzar al siguiente nivel.</p>
         </div>
         <div class="explicacion-item">
-          <h5>🔧 Llaves por Subnivel</h5>
+          <h5><svg class="wrench-icon-lg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg> Llaves por Subnivel</h5>
           <p>Cada subnivel requiere cierta cantidad de llaves inglesas. Ej: nivel 20 = 2 llaves × 5 subniveles = 10 llaves totales en ese nivel.</p>
         </div>
         <div class="explicacion-item">
           <h5>📊 Total Acumulado</h5>
-          <p>La columna "Acumulado" muestra el total de llaves gastadas desde el inicio. Para nivel 145 necesitas <strong>10,270 llaves</strong> en total.</p>
+          <p>La columna "Acumulado" muestra el total de llaves gastadas desde el inicio. Para Lv240 necesitas <strong>70,700 llaves</strong> en total.</p>
         </div>
       </div>
     </div>
@@ -795,12 +895,12 @@
     <div class="taller-tip">
       <h4>💡 Consejos de Modificación</h4>
       <ul>
-        <li>El <strong>Conquistador</strong> es gratuito — completa las misiones de tutorial del Taller para obtenerlo</li>
-        <li>Prioriza llegar a nivel 20 para desbloquear el <strong>Guepardo</strong> — solo necesitas 30 llaves</li>
-        <li>El salto más grande está entre nivel 105 y 145 (casi 8,000 llaves extra)</li>
-        <li>Planifica tu progresión según el armamento que más necesites para tu estrategia</li>
-        <li>Guarda llaves inglesas para los niveles clave: 20, 70, 105, 130 y 145</li>
-        <li>Los eventos suelen dar llaves inglesas — aprovéchalos al máximo</li>
+        <li>El <strong>Conquistador</strong> es gratuito — completa las misiones de tutorial del Taller para obtenerlo desde Lv0</li>
+        <li>Prioriza llegar a <strong>Lv45</strong> para desbloquear el <strong>Guepardo</strong> — solo necesitas 150 llaves acumuladas</li>
+        <li>El salto más grande está entre <strong>Lv145 y Lv240</strong> — casi 60,000 llaves extra para el Destructor-EX</li>
+        <li>Planifica tu progresión según el armamento que más necesites para tu estrategia de alianza</li>
+        <li>Guarda llaves para los niveles clave: Lv45, Lv95, Lv145 y Lv195</li>
+        <li>Los eventos suelen dar llaves inglesas — aprovéchalos al máximo para avanzar sin gastar recursos</li>
       </ul>
     </div>
 
@@ -842,7 +942,7 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="menu.js"></script>
 <script>
   // =============================================
   // BUSCADOR DE TABLA

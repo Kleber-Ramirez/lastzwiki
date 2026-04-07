@@ -40,8 +40,10 @@
 
   <!-- Canonical + hreflang -->
   <link rel="canonical" href="https://lastzwiki.com/en/store.html">
-  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/store.html">
   <link rel="alternate" hreflang="es" href="https://lastzwiki.com/tienda.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://lastzwiki.com/pt/tienda.html">
+  <link rel="alternate" hreflang="pt-PT" href="https://lastzwiki.com/pt/tienda.html">
+  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/store.html">
   <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/store.html">
 
   <!-- Google Tag Manager -->
@@ -74,6 +76,9 @@
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../global.css">
   <style>
+    * { box-sizing: border-box; }
+    html, body { overflow-x: hidden; max-width: 100%; }
+
     /* =============================================
        STORE — OWN STYLES
        ============================================= */
@@ -83,9 +88,11 @@
       border: 2px solid #c4891e;
       border-radius: 12px;
       padding: 2rem;
-      margin: 2rem 0;
+      margin: 2rem auto;
+      max-width: 960px;
+      width: calc(100% - 3rem);
       text-align: center;
-      box-shadow: 0 0 30px rgba(196, 137, 30, 0.4);
+      box-shadow: 0 0 20px rgba(196, 137, 30, 0.25);
       position: relative;
       overflow: hidden;
     }
@@ -124,6 +131,12 @@
     .tienda-link:hover { background: #f5a832; }
 
     /* Sections */
+    .tienda-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
     .tienda-section {
       background: linear-gradient(135deg, #1a1a1a 0%, #0e0e0e 100%);
       border: 1px solid #333;
@@ -435,6 +448,8 @@
     li { margin: 0.4rem 0; }
 
     @media (max-width: 600px) {
+      .tienda-header { width: calc(100% - 2rem); padding: 1.5rem 1rem; }
+      .tienda-wrap { padding: 0 1rem; }
       .codigos-grid { grid-template-columns: 1fr; }
       .dias-grid { grid-template-columns: repeat(3, 1fr); }
       .puntos-grid { grid-template-columns: 1fr; }
@@ -850,6 +865,7 @@
       </div>
     </section>
 
+</div><!-- /.tienda-wrap -->
   </main>
 
   <footer class="site-footer">
