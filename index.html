@@ -47,11 +47,11 @@
   <link rel="canonical" href="https://lastzwiki.com/">
   
   <!-- Alternate para idiomas (futuro) -->
-  <link rel="alternate" hreflang="es" href="https://lastzwiki.com/">
-  <link rel="alternate" hreflang="es-MX" href="https://lastzwiki.com/">
-  <link rel="alternate" hreflang="es-AR" href="https://lastzwiki.com/">
-  <link rel="alternate" hreflang="es-ES" href="https://lastzwiki.com/">
-  <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/">
+<link rel="alternate" hreflang="es" href="https://lastzwiki.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://lastzwiki.com/pt/">
+<link rel="alternate" hreflang="pt-PT" href="https://lastzwiki.com/pt/">
+<link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/">
   
   <!-- Robots (indexación) -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -94,6 +94,8 @@
     }
   }
   </script>
+  <!-- Preload imagen LCP -->
+  <link rel="preload" as="image" href="img-manual-principiante.webp" fetchpriority="high">
   <!-- ==========================================
        FIN SEO - CONTINÚA CON TUS ESTILOS
        ========================================== -->
@@ -255,49 +257,36 @@
   </div>
 
   <main>
-   <section class="carrusel" aria-label="Secciones destacadas">
-      <div class="carrusel-track-wrap">
-        <div class="carrusel-viewport">
-          <div class="carrusel-container">
-        <article class="carrusel-item">
-          <a href="guia-principiantes.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="img-manual-principiante.webp" alt="Manual del Principiante">
-            <p>Guía para principiantes</p>
-          </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="ranking.html" data-track="carrusel">
-            <img src="img-ranking.webp" alt="Ranking de Jugadores y Servidores">
-            <p>Ranking global</p>
-          </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="tierlist-edificios.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-          <img src="img-tierlist-edificios.webp" alt="Tier List de Edificios - Last Z Survival Shooter">
-          <p>Tier List de Edificios</p>
-         </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="tienda.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="img-store.webp" alt="Tienda Last Z - Gift Codes">
-            <p>Guía de Tienda - codigos</p>
-          </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="estrategia.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="img-estrategia.webp" alt="Planificador de Guerra de Servidores">
-            <p>Planificador de Guerra</p>
-          </a>
-        </article>
-        </div><!-- /.carrusel-container -->
-        </div><!-- /.carrusel-viewport -->
-        <button class="carrusel-btn carrusel-prev" aria-label="Slide anterior">&#10094;</button>
-        <button class="carrusel-btn carrusel-next" aria-label="Slide siguiente">&#10095;</button>
-      </div><!-- /.carrusel-track-wrap -->
-
-      <div class="carrusel-dots" id="carruselDots" aria-label="Indicadores de slide"></div>
-
-    </section>
+<article class="carrusel-item">
+  <a href="guia-principiantes.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+    <img src="img-manual-principiante.webp" alt="Manual del Principiante" loading="eager" fetchpriority="high">
+    <p>Guía para principiantes</p>
+  </a>
+</article>
+<article class="carrusel-item">
+  <a href="ranking.html" data-track="carrusel">
+    <img src="img-ranking.webp" alt="Ranking de Jugadores y Servidores" loading="lazy">
+    <p>Ranking global</p>
+  </a>
+</article>
+<article class="carrusel-item">
+  <a href="tierlist-edificios.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+    <img src="img-tierlist-edificios.webp" alt="Tier List de Edificios - Last Z Survival Shooter" loading="lazy">
+    <p>Tier List de Edificios</p>
+  </a>
+</article>
+<article class="carrusel-item">
+  <a href="tienda.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+    <img src="img-store.webp" alt="Tienda Last Z - Gift Codes" loading="lazy">
+    <p>Guía de Tienda - codigos</p>
+  </a>
+</article>
+<article class="carrusel-item">
+  <a href="estrategia.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+    <img src="img-estrategia.webp" alt="Planificador de Guerra de Servidores" loading="lazy">
+    <p>Planificador de Guerra</p>
+  </a>
+</article>
 
     <!-- ── Sección Temporadas ── -->
     <section class="seasons-section" aria-label="Guías de Temporada">

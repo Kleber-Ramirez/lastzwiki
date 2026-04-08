@@ -100,6 +100,8 @@
        FIN SEO - CONTINÚA CON TUS ESTILOS
        ========================================== -->
 
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image" href="../img-manual-principiante.webp" fetchpriority="high">
   <link rel="stylesheet" href="../responsive.css">
   <link rel="stylesheet" href="../index.css">
   <link rel="stylesheet" href="../global.css">
@@ -263,31 +265,31 @@
           <div class="carrusel-container">
         <article class="carrusel-item">
           <a href="beginner-guide.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="../img-manual-principiante.webp" alt="Beginner's Guide">
+            <img src="../img-manual-principiante.webp" alt="Beginner's Guide" loading="eager" fetchpriority="high">
             <p>Beginner's Guide</p>
           </a>
         </article>
         <article class="carrusel-item">
           <a href="ranking.html" data-track="carrusel" >
-            <img src="../img-ranking.webp" alt="Player and Server Ranking">
+            <img src="../img-ranking.webp" alt="Player and Server Ranking" loading="lazy">
             <p>Global Ranking</p>
           </a>
         </article>
         <article class="carrusel-item">
           <a href="building-tierlist.html" data-track="carrusel"  style="text-decoration: none; color: inherit;">
-          <img src="../img-tierlist-edificios.webp" alt="Building Tier List - Last Z">
+          <img src="../img-tierlist-edificios.webp" alt="Building Tier List - Last Z" loading="lazy">
           <p>Building Tier List</p>
          </a>
         </article>
         <article class="carrusel-item">
           <a href="store.html" data-track="carrusel"  style="text-decoration: none; color: inherit;">
-            <img src="../img-store.webp" alt="Last Z Store - Gift Codes">
+            <img src="../img-store.webp" alt="Last Z Store - Gift Codes" loading="lazy">
             <p>Store Guide - Gift Codes</p>
           </a>
         </article>
         <article class="carrusel-item">
           <a href="strategy.html" data-track="carrusel"  style="text-decoration: none; color: inherit;">
-            <img src="../img-estrategia.webp" alt="Server War Planner">
+            <img src="../img-estrategia.webp" alt="Server War Planner" loading="lazy">
             <p>War Planner</p>
           </a>
         </article>
