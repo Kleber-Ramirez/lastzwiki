@@ -288,7 +288,7 @@ tip1: `
   
 tip2: `
   <h2>⚔️ Melhore o ataque das suas formações</h2>
-  <img src="../img-tip-ataque1.jpg" alt="Formaciones">
+  <img src="../img-tip-ataque1.webp" alt="Formaciones">
   
   <p>No Last Z existem <b>3 facções de heróis</b>: <span style="color:#ff4757">🔴 Rosa Sangrenta</span>, <span style="color:#5889e8">🔵 Asas do Amanhecer</span> y <span style="color:#f1c40f">🟡 Guardião</span>.</p>
   
@@ -958,7 +958,7 @@ tip10: `
 
 tip11: `
   <h2>⚔️ Retorno Automático de Tropas</h2>
-  <img src="../img-tip-regreso-1.png" alt="Opciones de ataque">
+  <img src="../img-tip-regreso-1.webp" alt="Opciones de ataque">
   
   <h3>❌ Problema Comum</h3>
   <p>Muitos jogadores atacam objetivos <b>(sedes, etc.)</b> e após vencer, suas tropas <b>ficam no objetivo</b>. Isso significa que você precisa:</p>
@@ -990,7 +990,7 @@ tip11: `
   
   <p><b>Passo 5:</b> <b>Certifique-se de que esteja marcado</b> (com um ✓ check verde).</p>
 
-  <img src="../img-tip-regreso-2.png" alt="Regreso automático activado">
+  <img src="../img-tip-regreso-2.webp" alt="Regreso automático activado">
   
   <p><b>Passo 6:</b> Clique em <b>"Marchar"</b> para enviar seu ataque.</p>
 

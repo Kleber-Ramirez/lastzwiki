@@ -288,7 +288,7 @@ tip1: `
   
 tip2: `
   <h2>⚔️ Improve your formation attack</h2>
-  <img src="../img-tip-ataque1.jpg" alt="Formaciones">
+  <img src="../img-tip-ataque1.webp" alt="Formaciones">
   
   <p>In Last Z there are <b>3 hero factions</b>: <span style="color:#ff4757">🔴 Blood Rose</span>, <span style="color:#5889e8">🔵 Wings of Dawn</span> y <span style="color:#f1c40f">🟡 Guardian</span>.</p>
   
@@ -958,7 +958,7 @@ tip10: `
 
 tip11: `
   <h2>⚔️ Automatic Troop Return</h2>
-  <img src="../img-tip-regreso-1.png" alt="Opciones de ataque">
+  <img src="../img-tip-regreso-1.webp" alt="Opciones de ataque">
   
   <h3>❌ Common Problem</h3>
   <p>Many players attack targets <b>(HQs, etc.)</b> and after winning, their troops <b>stay at the target</b>. This means you have to:</p>
@@ -990,7 +990,7 @@ tip11: `
   
   <p><b>Step 5:</b> <b>Make sure it's checked</b> (with a green ✓ check).</p>
 
-  <img src="../img-tip-regreso-2.png" alt="Regreso automático activado">
+  <img src="../img-tip-regreso-2.webp" alt="Regreso automático activado">
   
   <p><b>Step 6:</b> Click <b>"March"</b> to send your attack.</p>
 
