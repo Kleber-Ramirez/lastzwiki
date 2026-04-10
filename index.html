@@ -188,13 +188,14 @@
     }
 
     .carrusel-dot {
-      width: 6px;
-      height: 6px;
+      width: 8px;
+      height: 8px;
       border-radius: 50%;
       border: none;
       background: #2a2a2a;
       cursor: pointer;
-      padding: 0;
+      padding: 8px;
+      box-sizing: content-box;
       transition: background 0.25s, width 0.25s, border-radius 0.25s;
     }
 
@@ -205,6 +206,16 @@
     }
 
     .carrusel-dot:hover:not(.active) { background: #444; }
+  </style>
+  <!-- Accesibilidad: fixes de contraste -->
+  <style>
+    .apoc-value { color: #ffffff !important; }
+    .rosa-buff-text { color: #ffffff !important; }
+    #rosa-duration { color: #ffffff !important; }
+    .seasons-subtitle { color: #dddddd !important; }
+    .season-badge { color: #ffffff !important; background: #8a0303 !important; }
+    .season-badge.s3 { background: #1a5fa8 !important; }
+    .season-badge.s4 { background: #5a8a03 !important; }
   </style>
 <meta name="google-adsense-account" content="ca-pub-5000420044416855"></head>
 <body>
