@@ -155,7 +155,9 @@ window.addEventListener('resize', () => {
 
 // ── Arrancar ─────────────────────────────────────────
 setupCarrusel();
-startAutoPlay();
+window.addEventListener('load', () => {
+  startAutoPlay();
+});
 
 
 // ===========================
