@@ -18,8 +18,8 @@
        ========================================== -->
   
   <!-- SEO Básico -->
-  <title>Héroes - Last Z Wiki | Tier List, Stats y Guía Completa de Personajes 2026</title>
-  <meta name="description" content="Guía completa de héroes en Last Z Survival Shooter: tier list actualizado, stats, habilidades y mejores formaciones. Alexander, Alicia, Bruce, Jack, Nikola y todos los personajes de Rosa Sangrienta, Alas del Alba y Guardia del Orden.">
+  <title>Héroes Last Z | Tier List Completo, Habilidades y Guía por Facción 2026</title>
+  <meta name="description" content="Guía completa de los 31 héroes de Last Z Survival Shooter: tier list S/A/B actualizado, habilidades con coeficientes por estrella, análisis de cada héroe, cómo invertir fragmentos correctamente y estrategias para F2P y P2W.">
   <meta name="keywords" content="héroes Last Z, personajes Last Z, tier list héroes Last Z, mejores héroes Last Z, Alexander Last Z, Alicia Last Z, Bruce Last Z, Jack Last Z, Nikola Last Z, build héroes Last Z, habilidades héroes, stats héroes, Rosa Sangrienta, Alas del Alba, Guardia del Orden, formaciones héroes, qué héroes mejorar primero, mejores héroes principiantes, guía héroes español, heroes tier list, character guide Last Z, facción héroes, héroes S tier, mejores personajes Last Z">
   <meta name="author" content="Hypnos - Last Z Wiki">
   <meta name="language" content="Spanish">
@@ -70,6 +70,7 @@
     "headline": "Guía Completa de Héroes en Last Z Survival Shooter",
     "description": "Tier list actualizado, stats, habilidades y estrategias de todos los héroes: Alexander, Alicia, Bruce, Jack, Nikola y más",
     "url": "https://lastzwiki.com/heroes.html",
+    "dateModified": "2026-04-21",
     "inLanguage": "es",
     "author": {
       "@type": "Person",
@@ -119,6 +120,114 @@
     </nav>
   </header>
 
+
+  <style>
+    /* ── Intro compacta ── */
+    .heroes-intro-wrap { max-width:1100px; margin:1.5rem auto 0; padding:0 1.5rem; }
+    .heroes-hero-sm {
+      background: linear-gradient(135deg,#1a0a0a 0%,var(--secundario) 100%);
+      border-radius:12px; padding:1.8rem 2rem 1.5rem;
+      border-bottom:3px solid var(--acento); margin-bottom:1.2rem;
+    }
+    .heroes-hero-sm h1 { font-size:1.6rem; color:var(--texto); margin:0 0 0.5rem; }
+    .heroes-hero-sm h1 span { color:var(--acento); }
+    .heroes-hero-sm p { color:var(--muted); font-size:0.92rem; margin:0; line-height:1.7; }
+    .heroes-stats-sm {
+      display:grid; grid-template-columns:repeat(4,1fr);
+      gap:0.8rem; margin-bottom:1.5rem;
+    }
+    .hss { background:var(--secundario); border:1px solid rgba(196,30,58,0.2);
+           border-radius:8px; padding:0.9rem; text-align:center; transition:border-color 0.2s,transform 0.2s; }
+    .hss:hover { border-color:var(--acento); transform:translateY(-2px); }
+    .hss .si { font-size:1.4rem; margin-bottom:0.3rem; }
+    .hss .sv { font-size:1.4rem; font-weight:700; color:var(--acento); display:block; }
+    .hss .sl { font-size:0.75rem; color:var(--muted); display:block; }
+    /* ── Botones carrusel ── */
+    .carousel-wrapper { position:relative; }
+    .carousel-btn-prev, .carousel-btn-next {
+      position:absolute; top:50%; transform:translateY(-50%); z-index:10;
+      background:rgba(20,20,20,0.85); border:1px solid rgba(196,30,58,0.5);
+      color:var(--acento); width:36px; height:36px; border-radius:50%;
+      cursor:pointer; font-size:1.1rem; display:flex; align-items:center;
+      justify-content:center; transition:background 0.2s,opacity 0.2s;
+      backdrop-filter:blur(4px); user-select:none;
+    }
+    .carousel-btn-prev:hover, .carousel-btn-next:hover { background:var(--acento); color:#fff; }
+    .carousel-btn-prev { left:4px; }
+    .carousel-btn-next { right:4px; }
+    .carousel-track { cursor:grab; }
+    .carousel-track:active { cursor:grabbing; }
+    /* ── Guía después del grid ── */
+    .heroes-guia-full { max-width:1100px; margin:2.5rem auto 0; padding:0 1.5rem 2rem; }
+    .hgf-intro { background:#111; border-radius:10px; padding:1.5rem;
+                 border:1px solid rgba(255,255,255,0.05); margin-bottom:2rem; }
+    .hgf-intro p { color:var(--muted); line-height:1.8; margin:0 0 0.8rem; font-size:0.93rem; }
+    .hgf-intro p:last-child { margin:0; }
+    .hgf-sec { margin-bottom:2.5rem; }
+    .hgf-titulo { font-size:1.2rem; color:var(--acento); margin-bottom:1rem;
+                  padding-bottom:0.5rem; border-bottom:1px solid rgba(196,30,58,0.3); }
+    .hgf-facciones { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .hgf-faccion { background:#111; border-radius:10px; padding:1.2rem;
+                   border-top:3px solid var(--acento); border:1px solid rgba(255,255,255,0.05);
+                   border-top:3px solid var(--acento); }
+    .hgf-faccion h4 { color:var(--texto); margin:0 0 0.5rem; font-size:0.92rem; }
+    .hgf-faccion p { color:var(--muted); font-size:0.83rem; line-height:1.6; margin:0 0 0.4rem; }
+    .hgf-faccion p:last-child { margin:0; }
+    .hgf-tiers { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .hgf-tier { background:#111; border-radius:10px; padding:1.2rem; border:1px solid rgba(255,255,255,0.05); }
+    .tbadge { display:inline-block; padding:0.2rem 0.7rem; border-radius:20px; font-size:0.78rem; font-weight:700; margin-bottom:0.6rem; }
+    .ts { background:#c4891e; color:#000; }
+    .ta { background:#7b52c9; color:#fff; }
+    .tb { background:#3a7bd5; color:#fff; }
+    .hgf-tier p { color:var(--muted); font-size:0.83rem; line-height:1.6; margin:0; }
+    .hgf-warn { background:rgba(255,180,0,0.07); border:1px solid rgba(255,180,0,0.35);
+                border-radius:10px; padding:1.2rem 1.5rem; margin-bottom:2rem; }
+    .hgf-warn p { color:#ccaa33; font-size:0.88rem; line-height:1.7; margin:0; }
+    .hgf-tips { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; }
+    .hgf-tip { background:#111; border-radius:10px; padding:1.1rem;
+               border-left:3px solid var(--acento); display:flex; gap:0.7rem; align-items:flex-start; }
+    .hgf-tip .ti { font-size:1.2rem; flex-shrink:0; }
+    .hgf-tip p { margin:0; color:var(--muted); font-size:0.86rem; line-height:1.6; }
+    .hgf-tip strong { color:var(--texto); }
+    .hgf-frags { background:rgba(196,30,58,0.06); border:1px solid rgba(196,30,58,0.2);
+                 border-radius:10px; padding:1.5rem; margin-bottom:2rem; }
+    .hgf-frags h3 { color:var(--acento); font-size:1.05rem; margin:0 0 0.7rem; }
+    .hgf-frags p { color:var(--muted); font-size:0.88rem; line-height:1.75; margin:0 0 0.5rem; }
+    .hgf-frags p:last-child { margin:0; }
+    .hgf-manuales { background:rgba(50,100,200,0.07); border:1px solid rgba(50,100,200,0.3);
+                    border-radius:10px; padding:1.5rem; }
+    .hgf-manuales h3 { color:#6baeff; font-size:1.05rem; margin:0 0 0.7rem; }
+    .hgf-manuales p { color:var(--muted); font-size:0.88rem; line-height:1.75; margin:0 0 0.5rem; }
+    .hgf-manuales p:last-child { margin:0; }
+    @media(max-width:768px){
+      .heroes-intro-wrap { padding:0 1rem; }
+      .heroes-hero-sm { padding:1.2rem 1rem; }
+      .heroes-hero-sm h1 { font-size:1.3rem; }
+      .heroes-stats-sm { grid-template-columns:repeat(2,1fr); }
+      .hgf-facciones { grid-template-columns:1fr; }
+      .hgf-tiers { grid-template-columns:1fr; }
+      .hgf-tips { grid-template-columns:1fr; }
+      .heroes-guia-full { padding:0 1rem 2rem; }
+      .carousel-btn-prev, .carousel-btn-next { width:30px; height:30px; font-size:0.9rem; }
+    }
+    @media(max-width:520px){
+      .heroes-stats-sm { grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
+
+  <div class="heroes-intro-wrap">
+    <div class="heroes-hero-sm">
+      <h1>⚔️ Guía de <span>Héroes</span> en Last Z — Los 31 Personajes 2026</h1>
+      <p>Tier list completo, habilidades y estrategias de los 31 héroes de Last Z Survival Shooter. Haz click en cualquier héroe para ver su guía individual con coeficientes por estrella, análisis y mis consejos como jugador.</p>
+    </div>
+    <div class="heroes-stats-sm">
+      <div class="hss"><div class="si">🦸</div><span class="sv">31</span><span class="sl">Héroes totales</span></div>
+      <div class="hss"><div class="si">🏆</div><span class="sv">3</span><span class="sl">Facciones</span></div>
+      <div class="hss"><div class="si">⭐</div><span class="sv">5</span><span class="sl">Estrellas máx.</span></div>
+      <div class="hss"><div class="si">⚔️</div><span class="sv">4</span><span class="sl">Habilidades</span></div>
+    </div>
+  </div>
+
   <!-- CATEGORÍAS -->
   <section class="categorias-heroes">
     <button class="btn-cat active" data-category="all">ALL</button>
@@ -131,18 +240,30 @@
   <section class="all-carousels hidden">
 
     <div class="carousel-block" data-category="rosa">
-      <h3 class="carousel-title">Rosa</h3>
-      <div class="carousel-track"></div>
+      <h3 class="carousel-title">🌹 Rosa Sangrienta</h3>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn-prev" aria-label="Anterior">&#8592;</button>
+        <div class="carousel-track"></div>
+        <button class="carousel-btn-next" aria-label="Siguiente">&#8594;</button>
+      </div>
     </div>
 
     <div class="carousel-block" data-category="alba">
-      <h3 class="carousel-title">Alba</h3>
-      <div class="carousel-track"></div>
+      <h3 class="carousel-title">🕊️ Alas del Alba</h3>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn-prev" aria-label="Anterior">&#8592;</button>
+        <div class="carousel-track"></div>
+        <button class="carousel-btn-next" aria-label="Siguiente">&#8594;</button>
+      </div>
     </div>
 
     <div class="carousel-block" data-category="guardian">
-      <h3 class="carousel-title">Guardian</h3>
-      <div class="carousel-track"></div>
+      <h3 class="carousel-title">🛡️ Guardia del Orden</h3>
+      <div class="carousel-wrapper">
+        <button class="carousel-btn-prev" aria-label="Anterior">&#8592;</button>
+        <div class="carousel-track"></div>
+        <button class="carousel-btn-next" aria-label="Siguiente">&#8594;</button>
+      </div>
     </div>
 
   </section>
@@ -437,252 +558,80 @@
 
   </main>
 
-<!-- ========================================================= -->
-<!-- SECCIÓN DE EQUIPAMIENTO / ARMADURAS DE HÉROES -->
-<!-- ========================================================= -->
-<section class="equipamiento">
-  <h2 class="titulo-equipamiento">Equipamiento de Héroes</h2>
-  
-  <!-- FILTROS DE ARMADURAS -->
-  <div class="filtros-equip">
-    <button class="btn-equip active" data-tier="all">Todos</button>
-    <button class="btn-equip" data-tier="exclusivo">Exclusivo</button>
-    <button class="btn-equip" data-tier="s">S</button>
-    <button class="btn-equip" data-tier="a">A</button>
-    <button class="btn-equip" data-tier="b">B</button>
-    <button class="btn-equip" data-tier="c">C</button>
+<article class="heroes-guia-full">
+
+  <div class="hgf-intro">
+    <p>Cuando empecé a jugar Last Z, cometí el error clásico: invertí fragmentos por igual en todos los héroes disponibles. Al mes me di cuenta de que los héroes B que había subido ya no tenían uso en mi formación principal — había desperdiciado recursos que podría haber usado en mis héroes S. Desde entonces cambié completamente mi estrategia.</p>
+    <p>La regla más importante que aprendí: <strong>enfócate en los 3 héroes S más fuertes de tu facción y deja los 2 más débiles en nivel base</strong>. Cuando avances de temporada los vas a reemplazar de todos modos. El orden de facciones es: S1 Rosa Sangrienta → S2 Alas del Alba → S3 Guardia del Orden.</p>
   </div>
 
-  <!-- ========================= -->
-  <!-- CARRUSEL EXCLUSIVO -->
-  <!-- ========================= -->
-  <div class="equip-exclusive-carousel hidden" data-tier="exclusivo">
-    <h3 class="equip-carousel-title">Armaduras Exclusivas</h3>
-    <div class="equip-carousel-track"></div>
+  <section class="hgf-sec">
+    <h2 class="hgf-titulo">🏰 Las 3 Facciones y su Orden de Temporada</h2>
+    <div class="hgf-facciones">
+      <div class="hgf-faccion">
+        <h4>🌹 Rosa Sangrienta — S1</h4>
+        <p>La primera facción. Lysia y Bella juntas activan uno de los combos más poderosos del juego — resistencia al daño de Asaltantes aumentada. Sofia es imprescindible para nuevos jugadores: su habilidad 3 reduce tiempos de construcción de forma pasiva aunque no la lleves a combate.</p>
+        <p>Si recién empiezas, concentrate en esta facción antes de pensar en las demás.</p>
+      </div>
+      <div class="hgf-faccion">
+        <h4>🕊️ Alas del Alba — S2</h4>
+        <p>Tiradores de largo alcance. Alma y Scarlett son los pilares — ambas tienen equipamiento exclusivo disponible que las mantiene competitivas en S3. Laura es la única frontline confiable y encima es gratuita.</p>
+        <p>Emilia es valiosa aunque no la uses en combate: su pasiva global de investigación ahorra recursos del Laboratorio constantemente.</p>
+      </div>
+      <div class="hgf-faccion">
+        <h4>🛡️ Guardia del Orden — S3</h4>
+        <p>La facción de Motoristas. Chinatsu es especialmente valiosa en eventos de Versus de Alianza por sus puntos de duelo — más puntos significa mejores recompensas para toda la alianza al final del evento.</p>
+        <p>Halina es la mejor frontline S2 de esta facción — muy resistente con buen daño de Motoristas en fila delantera.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="hgf-sec">
+    <h2 class="hgf-titulo">📊 Sistema de Tiers: qué significa cada uno</h2>
+    <div class="hgf-tiers">
+      <div class="hgf-tier">
+        <span class="tbadge ts">Tier S</span>
+        <p>Los héroes más poderosos. Estadísticas base muy altas y pasivas que afectan a toda la formación. Los únicos en los que vale la pena invertir fragmentos pesados — especialmente la habilidad 3. La mayoría se obtiene con el pase de temporada o eventos especiales.</p>
+      </div>
+      <div class="hgf-tier">
+        <span class="tbadge ta">Tier A</span>
+        <p>Héroes de transición — útiles en las primeras semanas pero se reemplazan cuando completas tu equipo S. Los fragmentos universales de héroe A que recibes en el juego son perfectos para usarlos en formaciones secundarias sin gastar recursos pesados.</p>
+      </div>
+      <div class="hgf-tier">
+        <span class="tbadge tb">Tier B</span>
+        <p>Útiles al inicio para recolección de recursos. Con el tiempo tendrán sus 4 habilidades al máximo — cuando eso pase, los Manuales Azules acumulados se pueden reciclar en el Almacén para obtener recursos e incluso fragmentos de héroe S.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="hgf-warn">
+    <p>⚠️ <strong>Dato importante — Habilidad 3 "Activo en Expediciones":</strong> Algunos héroes tienen su habilidad 3 como <strong>"Activo en Expediciones"</strong> — el buff solo aplica cuando llevas a ese héroe desplegado en tu formación activa. Otros tienen <strong>"Efectiva en todas las tropas"</strong>, que aplica aunque el héroe no esté en el equipo. Los afectados son: <strong>Lysia, Bella, Selena, Nyx, Alma, Sakura, Halina y Chinatsu</strong>. Tenerlo en cuenta cambia completamente cómo construyes tu formación.</p>
   </div>
 
-  <!-- ========================= -->
-  <!-- COLUMNA DE 4 CARDS CON CARRUSELES INTERNOS -->
-  <!-- ========================= -->
-  <div class="equip-class-column hidden" id="equipClassColumn">
-    
-    <article class="equip-class-card" data-tier="s">
-      <h4>Rango S</h4>
-      <div class="equip-class-carousel">
-        <div class="equip-class-track"></div>
-      </div>
-    </article>
+  <section class="hgf-sec">
+    <h2 class="hgf-titulo">💡 Lo que aprendí sobre cómo invertir en héroes</h2>
+    <div class="hgf-tips">
+      <div class="hgf-tip"><span class="ti">🎯</span><p><strong>Regla de los 3 S:</strong> Enfoca todos tus fragmentos en los 3 héroes S más fuertes de tu facción. Los 2 más débiles los reemplazarás cuando avances de temporada — no tiene sentido invertir en ellos ahora.</p></div>
+      <div class="hgf-tip"><span class="ti">📈</span><p><strong>Prioriza la habilidad 3:</strong> En héroes de soporte como Sofia, Oliveira, Emilia, Laura y Mia, la habilidad 3 es la más importante — son pasivas globales que funcionan aunque no los lleves a combate.</p></div>
+      <div class="hgf-tip"><span class="ti">⏸️</span><p><strong>No gastes EXP en A o B:</strong> Guarda toda tu experiencia para subir a tus héroes S de forma inmediata cuando desbloquees el siguiente nivel de Sede. Es el uso más eficiente de un recurso que escasea.</p></div>
+      <div class="hgf-tip"><span class="ti">🔮</span><p><strong>Planifica con visión de temporada:</strong> Cuando llegue un héroe S nuevo, evalúa si encaja con tu facción principal. Si sí, invierte en él. Si no, espera a que cambie la temporada de tu facción antes de gastar fragmentos.</p></div>
+    </div>
+  </section>
 
-    <article class="equip-class-card" data-tier="a">
-      <h4>Rango A</h4>
-      <div class="equip-class-carousel">
-        <div class="equip-class-track"></div>
-      </div>
-    </article>
-
-    <article class="equip-class-card" data-tier="b">
-      <h4>Rango B</h4>
-      <div class="equip-class-carousel">
-        <div class="equip-class-track"></div>
-      </div>
-    </article>
-
-    <article class="equip-class-card" data-tier="c">
-      <h4>Rango C</h4>
-      <div class="equip-class-carousel">
-        <div class="equip-class-track"></div>
-      </div>
-    </article>
-
+  <div class="hgf-frags">
+    <h3>💎 Cómo conseguir fragmentos de héroe S como F2P</h3>
+    <p>Los fragmentos S no son solo para quienes pagan. Mejorar tu nivel de VIP desbloquea misiones adicionales que dan fragmentos directamente. Las misiones diarias — saquear camiones y enviar camiones — son otra fuente constante. Y los eventos populares de cada temporada reparten fragmentos S en sus recompensas finales.</p>
+    <p>Pero la fuente más importante es el <strong>ranking de alianza al final de temporada</strong>. El líder reparte recompensas según el puesto — entre ellas <strong>diamantes y tickets exclusivos para reclutar héroes S que no llegaste a comprar</strong>. Si tu alianza terminó en buena posición, puedes conseguir héroes S completamente gratis. Esa es la razón más importante para estar en una alianza fuerte y activa desde el principio.</p>
   </div>
 
-  <!-- ========================= -->
-  <!-- GRID DE ARMADURAS (DATA SOURCE) -->
-  <!-- ========================= -->
-  <div class="grid-equip" id="gridEquip">
-    
-    <!-- Equipamiento Exclusivo -->
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma1-ex3.jpg" alt="Martillito de Amor">
-      <h4>Martillito de Amor</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">Aumenta daño +50%</p>
-    </article>
-
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma2-ex3.jpg" alt="Casco Sagrado">
-      <h4>Casco Sagrado</h4>
-      <p class="tipo">Casco</p>
-      <p class="desc">Aumenta defensa +25%</p>
-    </article>
-
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma3-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-
-        <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma4-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-    
-        <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma5-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma6-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma7-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma8-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-
-    <article class="card-equip" data-tier="exclusivo">
-      <img src="img-arma9-ex3.jpg" alt="Espada Divina">
-      <h4>Espada Divina</h4>
-      <p class="tipo">Arma</p>
-      <p class="desc">ATQ +3000</p>
-    </article>
-
-    <!-- Equipamiento Rango S -->
-    <article class="card-equip" data-tier="s">
-      <img src="img-arma2-s.jpg" alt="D5-Subfusil">
-      <h4>D5-Subfusil</h4>
-      <p class="tipo">Poder 59,070</p>
-      <p class="desc">ATQ +1,698 - ATQ +2.0%</p>
-    </article>
-
-    <article class="card-equip" data-tier="s">
-      <img src="img-casco2-s.jpg" alt="D5-Casco">
-      <h4>D5-Casco</h4>
-      <p class="tipo">Casco</p>
-      <p class="desc">Aumenta HP +18%</p>
-    </article>
-
-    <article class="card-equip" data-tier="s">
-      <img src="img-chaleco2-s.jpg" alt="Chaleco Táctico">
-      <h4>Chaleco Táctico</h4>
-      <p class="tipo">Chaleco</p>
-      <p class="desc">Aumenta HP +18%</p>
-    </article>
-
-    <article class="card-equip" data-tier="s">
-      <img src="img-botas2-s.jpg" alt="Botas S">
-      <h4>Botas Reforzadas S</h4>
-      <p class="tipo">Botas</p>
-      <p class="desc">Velocidad +12%</p>
-    </article>
-
-    <!-- Equipamiento Rango A -->
-    <article class="card-equip" data-tier="a">
-      <img src="img-arma2-a.jpg" alt="Rifle A">
-      <h4>Rifle A</h4>
-      <p class="tipo">Poder 45,320</p>
-      <p class="desc">ATQ +1,200</p>
-    </article>
-
-    <article class="card-equip" data-tier="a">
-      <img src="img-casco2-a.jpg" alt="Casco A">
-      <h4>Casco A</h4>
-      <p class="tipo">Casco</p>
-      <p class="desc">Aumenta HP +14%</p>
-    </article>
-
-    <article class="card-equip" data-tier="a">
-      <img src="img-chaleco2-a.jpg" alt="Chaleco A">
-      <h4>Chaleco A</h4>
-      <p class="tipo">Chaleco</p>
-      <p class="desc">Aumenta HP +14%</p>
-    </article>
-
-    <article class="card-equip" data-tier="a">
-      <img src="img-botas2-A.jpg" alt="Botas A">
-      <h4>Botas A</h4>
-      <p class="tipo">Botas</p>
-      <p class="desc">Velocidad +8%</p>
-    </article>
-
-    <!-- Equipamiento Rango B -->
-    <article class="card-equip" data-tier="b">
-      <img src="img-arma2-b.jpg" alt="Pistola B">
-      <h4>Pistola B</h4>
-      <p class="tipo">Poder 32,100</p>
-      <p class="desc">ATQ +900</p>
-    </article>
-
-    <article class="card-equip" data-tier="b">
-      <img src="img-casco2-b.jpg" alt="Casco B">
-      <h4>Casco B</h4>
-      <p class="tipo">Casco</p>
-      <p class="desc">Aumenta HP +10%</p>
-    </article>
-
-    <article class="card-equip" data-tier="b">
-      <img src="img-chaleco2-b.jpg" alt="Chaleco B">
-      <h4>Chaleco B</h4>
-      <p class="tipo">Chaleco</p>
-      <p class="desc">Aumenta HP +10%</p>
-    </article>
-
-    <article class="card-equip" data-tier="b">
-      <img src="img-botas2-b.jpg" alt="Botas B">
-      <h4>Botas B</h4>
-      <p class="tipo">Botas</p>
-      <p class="desc">Velocidad +5%</p>
-    </article>
-
-    <!-- Equipamiento Rango C -->
-    <article class="card-equip" data-tier="c">
-      <img src="img-arma2-c.jpg" alt="Arma C">
-      <h4>Arma C</h4>
-      <p class="tipo">Poder 18,500</p>
-      <p class="desc">ATQ +500</p>
-    </article>
-
-    <article class="card-equip" data-tier="c">
-      <img src="img-casco2-c.jpg" alt="Casco C">
-      <h4>Casco C</h4>
-      <p class="tipo">Casco</p>
-      <p class="desc">Aumenta HP +6%</p>
-    </article>
-
-    <article class="card-equip" data-tier="c">
-      <img src="img-chaleco2-c.jpg" alt="Chaleco C">
-      <h4>Chaleco C</h4>
-      <p class="tipo">Chaleco</p>
-      <p class="desc">Aumenta HP +6%</p>
-    </article>
-
-    <article class="card-equip" data-tier="c">
-      <img src="img-botas2-c.jpg" alt="Botas C">
-      <h4>Botas C</h4>
-      <p class="tipo">Botas</p>
-      <p class="desc">Velocidad +3%</p>
-    </article>
-
+  <div class="hgf-manuales">
+    <h3>♻️ Tip avanzado: Recicla tus Manuales Azules de héroe B</h3>
+    <p>Con el tiempo, todos tus héroes B tendrán sus 4 habilidades al máximo. A partir de ese momento, los <strong>Manuales de Habilidad Azules</strong> se acumulan en tu inventario sin ningún uso aparente. La mayoría de jugadores los ignora por completo — es un error.</p>
+    <p><strong>Cómo hacerlo:</strong> Ve a tu Almacén → pestaña Héroe → busca los Manuales de Habilidad Azules → selecciona "Reciclar". Cada manual azul se convierte en una Caja Aleatoria de Recursos Básicos que puede darte: madera, electricidad, comida, Monedas Z, 💎 diamantes o incluso ⭐ fragmentos de héroe Rango S. No los desperdicies.</p>
   </div>
-</section>
+
+</article>
+
 
 <!-- ========================================= 
      FOOTER - Añadir en TODAS las páginas
