@@ -16,7 +16,10 @@ document.querySelectorAll('.ver').forEach(btn => {
 
     if (btn.dataset.template) {
       const template = document.querySelector(btn.dataset.template);
-      modalDesc.innerHTML = template.innerHTML;
+      // Funciona con <template> y con <div class="edificio-detalle">
+      modalDesc.innerHTML = template instanceof HTMLTemplateElement
+        ? template.innerHTML
+        : template.innerHTML;
       
       if (btn.dataset.template === '#tabla-laboratorio') {
         initLabTabs(modalDesc);
@@ -292,7 +295,7 @@ function openSedeModalDirectTab(tabName) {
 // FILTROS DE EDIFICIOS (Separados: Generales vs Temporadas)
 // ===========================
 
-let currentCategory = 'all';
+let currentCategory = 'priority';
 let currentSeason = 'all';
 
 // Aplicar filtros de forma INDEPENDIENTE
@@ -302,17 +305,23 @@ function applyFilters() {
   cards.forEach(card => {
     const cardCategory = card.getAttribute('data-category');
     const cardSeason = card.getAttribute('data-season');
+    const cardPriority = card.getAttribute('data-priority');
     
     let shouldShow = false;
     
+    // FILTRO DE PRIORIDAD — mostrar solo edificios importantes
+    if (currentCategory === 'priority') {
+      shouldShow = cardPriority === 'true' && cardSeason === 'general';
+      card.style.display = shouldShow ? 'block' : 'none';
+      return;
+    }
+    
     // LÓGICA PARA EDIFICIOS DE TEMPORADA (s2, s3, s4, s5)
     if (cardSeason && cardSeason !== 'general') {
-      // Solo mostrar si se seleccionó temporada específica (NO en "all")
       shouldShow = (currentSeason !== 'all' && cardSeason === currentSeason);
     } 
     // LÓGICA PARA EDIFICIOS GENERALES
     else if (cardSeason === 'general') {
-      // Solo mostrar si NO hay temporada activa (o está en "all")
       if (currentSeason === 'all') {
         if (currentCategory === 'all') {
           shouldShow = true;
@@ -444,6 +453,19 @@ window.addEventListener('load', function() {
   }
 });
   
+  // BUSCADOR POR NOMBRE
+  var inputBuscador = document.getElementById('edif-buscador');
+  if (inputBuscador) {
+    inputBuscador.addEventListener('input', function() {
+      var q = this.value.toLowerCase().trim();
+      document.querySelectorAll('.grid-wrap .card').forEach(function(card) {
+        var nameEl = card.querySelector('h3') || card.querySelector('.card-body h3') || null;
+        var name = nameEl ? nameEl.innerText.toLowerCase() : '';
+        card.style.display = (!q || name.includes(q)) ? '' : 'none';
+      });
+    });
+  }
+
   // Aplicar filtros iniciales
   applyFilters();
   
