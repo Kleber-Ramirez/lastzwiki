@@ -42,6 +42,7 @@
   <link rel="canonical" href="https://lastzwiki.com/en/buildings.html">
   <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/buildings.html" />
   <link rel="alternate" hreflang="es" href="https://lastzwiki.com/edificios.html" />
+  <link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/edificios.html" />
   <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/buildings.html" />
   
   <!-- Robots -->
@@ -121,6 +122,23 @@
       <p class="lead">
         Explore each building's functions, its role in your base, and how to prioritize them. Use the filters to browse by category.
       </p>
+      <div class="intro-guia">
+        <p>
+          Last Z has over <strong>25 buildings</strong> divided into categories: Resources, Attack &amp; Defense, Troops, Missions, and Others.
+          Not all of them are equally important — some are critical from day one, while others can be ignored for weeks without affecting your progress.
+        </p>
+        <p>
+          <strong>Resource</strong> buildings like the Sawmill, Farm, and Production Center are your economic engine —
+          without materials you can't build anything. <strong>Attack &amp; Defense</strong> buildings like the Wall and Toxic Fog Garden
+          determine how much you can resist and how hard you hit. <strong>Troops</strong> buildings like the Military and recruitment fields
+          define the size and variety of your army.
+        </p>
+        <p>
+          My general recommendation: <strong>Laboratory and Wall always first</strong> — they're requirements for almost everything else.
+          Then the faction building that matches your main heroes, and keep your recruitment fields leveled evenly.
+          Use the <strong>⭐ Important</strong> filter to see priority buildings with my personal tips.
+        </p>
+      </div>
     </section>
  
 <!-- ========================================= -->
@@ -501,7 +519,7 @@
             </div>
           </div>
  
-          <!-- FIX 3: Niveles 20-35 — edificios traducidos -->
+          <!-- FIX 3: Levels 20-35 — edificios traducidos -->
  
           <!-- Level 20 -->
           <div class="sede-req-item" data-range="20-25">
@@ -763,12 +781,35 @@
   </div>
 </div>
 
+<!-- BANNER TIER LIST -->
+<div class="edif-tierlist-banner">
+  <span class="edif-tierlist-icono">🏆</span>
+  <div class="edif-tierlist-texto">
+    <strong>Don't know which buildings to upgrade first?</strong>
+    <span>Check our Tier List with the recommended priority order.</span>
+  </div>
+  <a href="building-tierlist.html" class="edif-tierlist-btn">View Tier List →</a>
+</div>
+
+<!-- SEARCH -->
+<div class="edif-buscador-wrap">
+  <input
+    type="search"
+    id="edif-buscador"
+    class="edif-buscador"
+    placeholder="🔍 Search building by name..."
+    aria-label="Search building by name"
+    autocomplete="off"
+  >
+</div>
+
 <!-- FILTROS -->
 <section class="filtros-wrap">
 
   <!-- Categorías -->
   <div class="filtros categorias">
-    <button class="filtro-btn active" data-filter="all">All</button>
+    <button class="filtro-btn" data-filter="all">All</button>
+    <button class="filtro-btn active" data-filter="priority">⭐ Important</button>
     <button class="filtro-btn" data-filter="recursos">Resources</button>
     <button class="filtro-btn" data-filter="ataque y defensa">Attack &amp; Defense</button>
     <button class="filtro-btn" data-filter="tropas">Troops</button>
@@ -797,7 +838,7 @@
   </div>
   <div class="card-body">
     <h3>Lumber Mill</h3>
-    <p class="excerpt">Produces wood over time.</p>
+    <p class="excerpt">The Sawmill produces wood automatically over time. It's one of the most used resources for building and upgrading — level it up regularly so production doesn't bottleneck your progress.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Lumber Mill"
@@ -865,7 +906,7 @@
   </div>
   <div class="card-body">
     <h3>Farm</h3>
-    <p class="excerpt">Produces food for your troops.</p>
+    <p class="excerpt">Without food you can't train or maintain your army. The Farm is your main food source — the higher its level, the faster you produce and the less you depend on gathering from the map.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Farm"
@@ -933,7 +974,7 @@
   </div>
   <div class="card-body">
     <h3>Foundry</h3>
-    <p class="excerpt">Produces alloys for hero equipment.</p>
+    <p class="excerpt">The Foundry produces alloys, an essential resource for crafting and upgrading hero equipment. If you want well-equipped heroes, you need this building running at a good level.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Foundry"
@@ -1001,7 +1042,7 @@
   </div>
   <div class="card-body">
     <h3>Training Camp</h3>
-    <p class="excerpt">Train more troops simultaneously.</p>
+    <p class="excerpt">The Training Field increases the number of troops you can train at the same time. The higher the level, the more efficient your soldier production — ideal for replenishing troops quickly after a battle.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Training Camp"
@@ -1069,7 +1110,7 @@
   </div>
   <div class="card-body">
     <h3>Residencia</h3>
-    <p class="excerpt">Aumenta el límite de población.</p>
+    <p class="excerpt">The Residence expands your base's population limit. Without enough population you can't have more troops — if you notice you can't recruit more soldiers, this building probably needs an upgrade.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Residencia"
@@ -1137,7 +1178,7 @@
   </div>
   <div class="card-body">
     <h3>Production Center</h3>
-    <p class="excerpt">Mejora la producción general de recursos.</p>
+    <p class="excerpt">The Production Center boosts all your resources at once. It's a support building that enhances your base's overall output — don't underestimate it when you need to scale up fast.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Production Center"
@@ -1201,13 +1242,13 @@
 
 
 <!-- 🏰 MURALLA -->
-<article class="card" data-category="ataque y defensa" data-season="general">
+<article class="card" data-category="ataque y defensa" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-muralla2.webp" alt="Wall" />
   </div>
   <div class="card-body">
     <h3>Wall</h3>
-    <p class="excerpt">The defense of your headquarters.</p>
+    <p class="excerpt">The Wall is one of the buildings that takes the longest to upgrade in the entire game — and it's a mandatory requirement for leveling your HQ at several key milestones. My advice: always keep it in your construction queue. The higher your Wall, the more attacks you can withstand before your base gets broken into.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Wall"
@@ -1270,13 +1311,13 @@
 
 
 <!-- ⚔️ FORMACIÓN I -->
-<article class="card" data-category="ataque y defensa" data-season="general">
+<article class="card" data-category="ataque y defensa" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-formacionI2.webp" alt="Formation I" />
   </div>
   <div class="card-body">
     <h3>Formation I</h3>
-    <p class="excerpt">Your main combat force.</p>
+    <p class="excerpt">Not as urgent as the Wall or the Garden, but don't ignore it. Formation I is your main attack — the higher its level, the more power your first formation has in combat. Prioritize it over Formation II and III, which are secondary. Keep it at a solid level and you'll feel the difference in every battle.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Formation I"
@@ -1345,7 +1386,7 @@
   </div>
   <div class="card-body">
     <h3>Formation II</h3>
-    <p class="excerpt">Your secondary combat force.</p>
+    <p class="excerpt">Formation II is your second line of attack. While not as urgent as Formation I, don't neglect it — in long battles and Alliance VS, having a strong second formation makes a real difference.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Formation II"
@@ -1413,7 +1454,7 @@
   </div>
   <div class="card-body">
     <h3>Formation III</h3>
-    <p class="excerpt">Es tu tercera fuerza.</p>
+    <p class="excerpt">Formation III completes your offensive arsenal. Give it less priority than the first two, but once your Formation I and II are at a good level, leveling Formation III gives you an extra edge in alliance events.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Formation III"
@@ -1475,13 +1516,13 @@
 </template>
 
 <!-- 🌸 JARDÍN DE NIEBLA TÓXICA -->
-<article class="card" data-category="ataque y defensa" data-season="general">
+<article class="card" data-category="ataque y defensa" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-jardin2.webp" alt="Toxic Fog Garden" />
   </div>
   <div class="card-body">
     <h3>Toxic Fog Garden</h3>
-    <p class="excerpt">Aumento ATQ/DEF facción Rosa Sangrienta.</p>
+    <p class="excerpt">If you're F2P and your first formation is Crimson Rose, this building is your number one priority. Leveling it up increases your troop capacity for that faction — and Crimson Rose heroes are the easiest to acquire early in the game. If your attack power feels low, the Toxic Fog Garden is probably the culprit. Upgrade it before anything else.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Toxic Fog Garden"
@@ -1549,7 +1590,7 @@
   </div>
   <div class="card-body">
     <h3>Steel Factory</h3>
-    <p class="excerpt">Aumento ATQ/DEF facción Guardián del Orden.</p>
+    <p class="excerpt">The Steel Factory boosts ATK and DEF for Guardian of Order faction troops. If you use heroes from that faction in your formation, this building is a priority for you.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Steel Factory"
@@ -1617,7 +1658,7 @@
   </div>
   <div class="card-body">
     <h3>Dawn Tower</h3>
-    <p class="excerpt">Aumento ATQ/DEF facción Cazadores de Sombras.</p>
+    <p class="excerpt">The Dawn Tower powers up the Shadow Hunters faction. If your main or secondary formation uses Shadow Hunter heroes, keep this building leveled alongside your troops.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Dawn Tower"
@@ -1682,13 +1723,13 @@
 
 <!-- Tropas -->
 <!-- 🎖️ MILITAR -->
-<article class="card" data-category="tropas" data-season="general">
+<article class="card" data-category="tropas" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-militar2.webp" alt="Militar" />
   </div>
   <div class="card-body">
     <h3>Militar</h3>
-    <p class="excerpt">Entrena tropas militares básicas.</p>
+    <p class="excerpt">Give this building a lot of priority. The Military Center determines how many soldiers you can have in your base — and more soldiers means more defense power on your Wall and more overall power in combat. It's a direct chain: higher Military level → more soldiers → more power. If your defense feels weak, this is a big part of the problem.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Militar"
@@ -1756,7 +1797,7 @@
   </div>
   <div class="card-body">
     <h3>Restaurant</h3>
-    <p class="excerpt">Aumenta moral y velocidad de tropas.</p>
+    <p class="excerpt">The Restaurant increases troop morale and movement speed. While not the most urgent building, at higher levels it makes a difference in reaction speed during war events.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Restaurant"
@@ -1818,13 +1859,13 @@
 </template>
 
 <!-- 🎯 CAMPO DE TIRO -->
-<article class="card" data-category="tropas" data-season="general">
+<article class="card" data-category="tropas" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-tiro2.webp" alt="Shooting Range" />
   </div>
   <div class="card-body">
     <h3>Shooting Range</h3>
-    <p class="excerpt">Trains shooters and snipers.</p>
+    <p class="excerpt">The Shooting Range — along with the other 2 recruitment fields — is where you train your soldiers. Each field recruits a different type of troop. Level them evenly — there's no point in having one field very high and the others low, since you need a variety of troops for a balanced formation.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Shooting Range"
@@ -1892,7 +1933,7 @@
   </div>
   <div class="card-body">
     <h3>Bikers Camp</h3>
-    <p class="excerpt">Trains fast motorcycle units.</p>
+    <p class="excerpt">The Biker Field trains fast mobility troops. They're ideal for raiding and tactical movements on the map. Level it evenly with the other recruitment fields for a balanced formation.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Bikers Camp"
@@ -1960,7 +2001,7 @@
   </div>
   <div class="card-body">
     <h3>Raiders Camp</h3>
-    <p class="excerpt">Entrena tropas de asalto pesadas.</p>
+    <p class="excerpt">The Assault Field trains your heaviest and most resistant troops. They're the backbone of any Rally attack and capital defense. Keep it at the same level as your other recruitment fields.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Raiders Camp"
@@ -2028,7 +2069,7 @@
   </div>
   <div class="card-body">
     <h3>Hospital</h3>
-    <p class="excerpt">Cura a tus tropas heridas en combate.</p>
+    <p class="excerpt">The Hospital recovers wounded troops after every battle. Without a high-level Hospital you'll permanently lose soldiers — it's one of the buildings you'll appreciate most once you start participating in alliance wars.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Hospital"
@@ -2103,7 +2144,7 @@
 
   <div class="card-body">
     <h3>Inter-City Trade</h3>
-    <p class="excerpt">Trading system with other cities. Send trucks with resources and earn rewards.</p>
+    <p class="excerpt">The Intercity Trade building lets you send trucks loaded with resources to other cities and earn rewards in return. A steady source of passive income — keep it active and collect regularly to maximize your resource flow.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Inter-City Trade"
@@ -2318,7 +2359,7 @@
 
   <div class="card-body">
     <h3>Caravan</h3>
-    <p class="excerpt">Hero Battlefield and special missions.</p>
+    <p class="excerpt">The Radar unlocks the Hero Battlefield and special missions. It also expands your vision range on the map, helping you scout enemy bases and plan attacks more effectively.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Caravan"
@@ -2478,7 +2519,7 @@
 
     <!-- ============================================
          TAB 2: 🎯 ACCIÓN ESPECIAL
-         40 Niveles con recompensas únicas
+         40 Levels with unique rewards
          ============================================ -->
     <div class="caravana-panel" data-category="accion">
       
@@ -2490,25 +2531,25 @@
       <!-- RANGOS DE NIVELES -->
       <div class="niveles-rangos">
         <div class="rango-card">
-          <h4>Niveles 1-10</h4>
+          <h4>Levels 1-10</h4>
           <p class="rango-dificultad">Difficulty: Basic</p>
           <p>Starting rewards</p>
         </div>
         
         <div class="rango-card">
-          <h4>Niveles 11-20</h4>
+          <h4>Levels 11-20</h4>
           <p class="rango-dificultad">Difficulty: Intermediate</p>
           <p>Improved rewards</p>
         </div>
         
         <div class="rango-card">
-          <h4>Niveles 21-30</h4>
+          <h4>Levels 21-30</h4>
           <p class="rango-dificultad">Difficulty: Advanced</p>
           <p>Superior rewards</p>
         </div>
         
         <div class="rango-card">
-          <h4>Niveles 31-40</h4>
+          <h4>Levels 31-40</h4>
           <p class="rango-dificultad">Difficulty: Elite</p>
           <p>Exclusive rewards</p>
         </div>
@@ -2558,7 +2599,7 @@
   </div>
   <div class="card-body">
     <h3>Radar</h3>
-    <p class="excerpt">Increases reconnaissance speed and unlocks enemy information.</p>
+    <p class="excerpt">The Radar expands your vision range on the map and speeds up enemy reconnaissance. Useful for scouting rival bases and planning attacks — not urgent early on but becomes more important in war seasons.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Radar"
@@ -2640,7 +2681,7 @@
   </div>
   <div class="card-body">
     <h3>Task Center</h3>
-    <p class="excerpt">Helps collect resources more efficiently.</p>
+    <p class="excerpt">This building boosts your resource gathering efficiency across the board. Level it up to reduce the time and effort needed to collect materials from the map and keep your construction queues running.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Task Center"
@@ -2719,7 +2760,7 @@
   </div>
   <div class="card-body">
     <h3>Meeting Plaza</h3>
-    <p class="excerpt">Se requiere para hacer reuniones de alianza.</p>
+    <p class="excerpt">The Meeting Plaza is essential for joining Rally attacks with your alliance. Without this building you can't participate in rallies — and rallies are the most effective way to take down strong targets.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Meeting Plaza"
@@ -2799,7 +2840,7 @@
   </div>
   <div class="card-body">
     <h3>Alliance Center</h3>
-    <p class="excerpt">Allows you to receive reinforcements.</p>
+    <p class="excerpt">The Alliance Center lets you receive troop reinforcements from alliance members when your base is under attack. The higher its level, the more allied troops you can shelter — crucial in active servers.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Alliance Center"
@@ -2879,7 +2920,7 @@
   </div>
   <div class="card-body">
     <h3>Warehouse</h3>
-    <p class="excerpt">Stores and protects your resources.</p>
+    <p class="excerpt">The Warehouse protects a portion of your resources when you're attacked. The higher its level, the more resources stay safe from looting. If you store a lot of resources without shields, this building can save your base.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Warehouse"
@@ -2957,7 +2998,7 @@
   </div>
   <div class="card-body">
     <h3>Village</h3>
-    <p class="excerpt">Aumenta tu población y capacidad de tropas.</p>
+    <p class="excerpt">The Villa expands both your population and total troop capacity. It directly complements the Residence — level them together so you never hit the soldier cap at the worst possible moment.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Village"
@@ -3037,7 +3078,7 @@
   </div>
   <div class="card-body">
     <h3>Library</h3>
-    <p class="excerpt">Unlocks and improves knowledge skills.</p>
+    <p class="excerpt">The Library unlocks and enhances your base's knowledge skills. These give passive bonuses to production, defense, and attack — over time they have a silent but very real impact on your total power.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Library"
@@ -3119,7 +3160,7 @@
 
   <div class="card-body">
     <h3>Club</h3>
-    <p class="excerpt">Recruit elite heroes and refugees with special skills.</p>
+    <p class="excerpt">The Club is where you recruit elite heroes and refugees with unique abilities. Keep it leveled to unlock better heroes and expand your refugee roster — some of the most powerful units come from here.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Recruitment Club"
@@ -3318,7 +3359,7 @@
           </div>
         </div>
 
-        <!-- Raridades de Refugiados -->
+        <!-- Rarities de Refugiados -->
         <div class="club-section">
           <h4>🌟 Refugee Rarities</h4>
           <div class="raridades-grid">
@@ -3438,7 +3479,7 @@
 
   <div class="card-body">
     <h3>Taller</h3>
-    <p class="excerpt">Mejora y modifica vehículos para aumentar su poder en batalla.</p>
+    <p class="excerpt">The Workshop lets you upgrade and modify vehicles to boost their combat power. As you progress into higher seasons, a well-upgraded vehicle can significantly increase your attack power in battle.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Vehicle Workshop"
@@ -3705,7 +3746,7 @@
       </div>
     </div>
 
-    <!-- Tabla de Niveles Completa -->
+    <!-- Tabla de Levels Completa -->
     <div class="taller-section">
       <h4>📊 Full Modification Table</h4>
       <p class="tabla-desc">Check how many golden keys you need for each level and sub-level</p>
@@ -3723,7 +3764,7 @@
             </tr>
           </thead>
           <tbody>
-            <!-- Niveles 1-50 -->
+            <!-- Levels 1-50 -->
             <tr>
               <td>1</td>
               <td>1</td>
@@ -3818,7 +3859,7 @@
               <td colspan="6"></td>
             </tr>
 
-            <!-- Niveles 55-90 -->
+            <!-- Levels 55-90 -->
             <tr>
               <td>55</td>
               <td>12</td>
@@ -3889,7 +3930,7 @@
               <td colspan="6"></td>
             </tr>
 
-            <!-- Niveles 95-140 -->
+            <!-- Levels 95-140 -->
             <tr>
               <td>95</td>
               <td>40</td>
@@ -4052,15 +4093,15 @@
             </div>
             <div class="modulo-tipo">
               <span class="modulo-icon">⚙️</span>
-              <h5>Otros Módulos</h5>
+              <h5>Other Modules</h5>
               <p>Diversos atributos según el tipo</p>
             </div>
           </div>
         </div>
 
-        <!-- Raridades y Niveles -->
+        <!-- Rarities and Levels -->
         <div class="taller-section">
-          <h4>🌟 Raridades y Niveles</h4>
+          <h4>🌟 Rarities and Levels</h4>
           <p>Los módulos tienen diferentes raridades que determinan su poder base:</p>
           
           <table class="tabla-raridades">
@@ -4303,9 +4344,9 @@
           </div>
         </div>
 
-        <!-- Raridades -->
+        <!-- Rarities -->
         <div class="taller-section">
-          <h4>🌟 Raridades de Plugins</h4>
+          <h4>🌟 Plugin Rarities</h4>
           <table class="tabla-raridades">
             <thead>
               <tr>
@@ -4460,7 +4501,7 @@
   <div class="card-body">
     <h3>Centro de Control de Temperatura</h3>
     <span class="season-badge s3">S3</span>
-    <p class="excerpt">Produce Flores de Loto para mejorar edificios de temporada.</p>
+    <p class="excerpt">Produces Lotus Flowers used to upgrade season-exclusive buildings. Essential during Season 3 — keep it leveled to unlock more powerful seasonal upgrades.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Centro de Control de Temperatura"
@@ -4480,7 +4521,7 @@
   
   <div class="building-priority">
     <h4>📊 Upgrade Priority</h4>
-    <p><strong>PRIORIDAD #2</strong></p>
+    <p><strong>PRIORITY #2</strong></p>
     <p>Si tienes Núcleos de Hielo suficientes, mejóralo para aumentar la producción de lotos y acelerar tu progreso en la temporada.</p>
   </div>
 
@@ -4494,9 +4535,89 @@
   </div>
 
   <div class="building-resources">
-    <h4>❄️ Recursos Relacionados</h4>
+    <h4>❄️ Related Resources</h4>
     <p><strong>Produce:</strong> Flores de Loto (🌸)</p>
     <p><strong>Requiere:</strong> Núcleos de Hielo (❄️) para mejorar</p>
+  </div>
+</template>
+
+<!-- 🔹 LABORATORY CARD -->
+<article class="card"
+  data-category="otros"
+  data-season="general"
+  data-priority="true">
+
+  <div class="media">
+    <img src="../img-laboratorio2.webp" alt="Laboratory" />
+  </div>
+
+  <div class="card-body">
+    <h3>Laboratory</h3>
+    <p class="excerpt">The Laboratory is one of the most important buildings in your entire base — and probably the one you'll need to level up the most. Every time you want to upgrade your HQ, you'll need a specific Laboratory level, so you have no choice but to keep it current. The research you unlock here is essential for everything: attack power, resource production, Alliance VS bonuses and much more. If you neglect the Laboratory, everything else stalls.</p>
+    <div class="card-actions">
+      <button class="btn ver"
+        data-title="Research Laboratory"
+        data-img="img-laboratorio2.webp"
+        data-template="#tabla-laboratorio">
+        View more
+      </button>
+    </div>
+  </div>
+</article>
+
+<template id="tabla-laboratorio">
+  <p>Research improvements for troops, defense and economy. Contains <strong>9 categories</strong> with over <strong>160 researches</strong> available.</p>
+  <div class="tabla-niveles">
+    <table>
+      <thead>
+        <tr><th>Lv.</th><th>🪵🥫 Wood &amp; Food</th><th>💰 Z Coins</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>---</td><td>---</td></tr>
+        <tr><td>2</td><td>---</td><td>---</td></tr>
+        <tr><td>3</td><td>---</td><td>---</td></tr>
+        <tr><td>4</td><td>---</td><td>---</td></tr>
+        <tr><td>5</td><td>---</td><td>---</td></tr>
+        <tr><td>6</td><td>122.8k</td><td>24.6k</td></tr>
+        <tr><td>7</td><td>---</td><td>---</td></tr>
+        <tr><td>8</td><td>---</td><td>---</td></tr>
+        <tr><td>9</td><td>628.9k</td><td>126k</td></tr>
+        <tr><td>10</td><td>---</td><td>---</td></tr>
+        <tr><td>11</td><td>---</td><td>---</td></tr>
+        <tr><td>12</td><td>3.20M</td><td>641k</td></tr>
+        <tr><td>13</td><td>---</td><td>---</td></tr>
+        <tr><td>14</td><td>---</td><td>---</td></tr>
+        <tr><td>15</td><td>---</td><td>---</td></tr>
+      </tbody>
+    </table>
+    <table>
+      <thead>
+        <tr><th>Lv.</th><th>🪵🥫 Wood &amp; Food</th><th>💰 Z Coins</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>16</td><td>---</td><td>---</td></tr>
+        <tr><td>17</td><td>---</td><td>---</td></tr>
+        <tr><td>18</td><td>---</td><td>---</td></tr>
+        <tr><td>19</td><td>33.60M</td><td>6.72M</td></tr>
+        <tr><td>20</td><td>---</td><td>---</td></tr>
+        <tr><td>21</td><td>---</td><td>---</td></tr>
+        <tr><td>22</td><td>110.08M</td><td>22M</td></tr>
+        <tr><td>23</td><td>---</td><td>---</td></tr>
+        <tr><td>24</td><td>---</td><td>---</td></tr>
+        <tr><td>25</td><td>---</td><td>---</td></tr>
+        <tr><td>26</td><td>---</td><td>---</td></tr>
+        <tr><td>27</td><td>---</td><td>---</td></tr>
+        <tr><td>28</td><td>---</td><td>---</td></tr>
+        <tr><td>29</td><td>---</td><td>---</td></tr>
+        <tr><td>30</td><td>1.387G</td><td>277.40M</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:11px;color:#999;margin-top:8px;text-align:center;">--- Data pending confirmation · If you have it, share it in <a href="community.html" style="color:var(--acento);">Community</a></p>
+  <div style="margin-top:1rem;text-align:center;">
+    <a href="laboratory.html" class="btn" style="display:inline-block;background:var(--acento);color:#fff;padding:10px 20px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;">
+      🔬 View all researches →
+    </a>
   </div>
 </template>
 
@@ -4507,8 +4628,8 @@
   </div>
   <div class="card-body">
     <h3>Laboratorio Biológico</h3>
-    <span class="season-badge s3 priority">S3 - PRIORIDAD #1</span>
-    <p class="excerpt">Aumenta resistencia a virus. Permite atacar Boomers superiores que otorgan Núcleos de Hielo.</p>
+    <span class="season-badge s3 priority">S3 - PRIORITY #1</span>
+    <p class="excerpt">Increases virus resistance and allows you to attack higher-tier Boomers that drop Ice Cores. A Season 3 priority — without this building you can't access the best resources of the season.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Laboratorio Biológico"
@@ -4521,14 +4642,14 @@
 </article>
 <template id="tabla-laboratorio-biologico">
   <div class="season-info s3">
-    <span class="season-badge-large priority">TEMPORADA 3 - PRIORIDAD MÁXIMA</span>
+    <span class="season-badge-large priority">SEASON 3 - TOP PRIORITY</span>
     <p><strong>🧬 Función Principal:</strong> Aumenta resistencia a virus</p>
     <p><strong>❄️ Critical Reward:</strong> Allows attacking higher-level Boomers that grant <strong>Ice Cores</strong></p>
   </div>
   
   <div class="building-priority critical">
     <h4>⚠️ EDIFICIO MÁS IMPORTANTE DE S3</h4>
-    <p><strong>PRIORIDAD ABSOLUTA #1</strong></p>
+    <p><strong>ABSOLUTE PRIORITY #1</strong></p>
     <p>Ice Cores are needed to upgrade <strong>ALL</strong> seasonal buildings. Without upgrading this building, you won't be able to progress in the season.</p>
   </div>
 
@@ -4549,7 +4670,7 @@
   </div>
 
   <div class="building-resources">
-    <h4>🌸 Recursos Necesarios</h4>
+    <h4>🌸 Required Resources</h4>
     <p><strong>Requiere para mejorar:</strong> Flores de Loto + Núcleos de Hielo</p>
     <p><strong>Produce indirectamente:</strong> Acceso a más Núcleos de Hielo (mediante Boomers)</p>
   </div>
@@ -4785,7 +4906,7 @@
     <!-- Copyright -->
     <div class="footer-copyright">
       <p>&copy; 2026 Last Z Wiki. Created with ❤️ for the community.</p>
-      <p class="footer-meta">Last updated: February 2026</p>
+      <p class="footer-meta">Last updated: May 2026</p>
     </div>
     
   </div>

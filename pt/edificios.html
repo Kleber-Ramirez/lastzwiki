@@ -37,6 +37,10 @@
   
   <!-- Canonical URL -->
   <link rel="canonical" href="https://lastzwiki.com/pt/edificios.html">
+  <link rel="alternate" hreflang="pt" href="https://lastzwiki.com/pt/edificios.html" />
+  <link rel="alternate" hreflang="es" href="https://lastzwiki.com/edificios.html" />
+  <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/buildings.html" />
+  <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/buildings.html" />
   
   <!-- Robots -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -98,6 +102,23 @@
     <section class="intro">
       <h2>Edifícios no Last Z</h2>
       <p class="lead">Explore as funções de cada edifício, seu papel na sua base e como priorizá-los. Use os filtros para ver por categoria.</p>
+      <div class="intro-guia">
+        <p>
+          No Last Z existem mais de <strong>25 edifícios</strong> divididos em categorias: Recursos, Ataque e Defesa, Tropas, Missões e Outros.
+          Nem todos têm a mesma importância — alguns são críticos desde o primeiro dia, enquanto outros podem ser ignorados por semanas sem afetar seu progresso.
+        </p>
+        <p>
+          Os edifícios de <strong>Recursos</strong> como a Serraria, a Fazenda e o Centro de Produção são seu motor econômico —
+          sem materiais você não constrói nada. Os de <strong>Ataque e Defesa</strong> como a Muralha e o Jardim de Névoa Tóxica
+          determinam o quanto você resiste e o quanto você ataca. Os de <strong>Tropas</strong> como o Militar e os campos de recrutamento
+          definem o tamanho e a variedade do seu exército.
+        </p>
+        <p>
+          Minha recomendação geral: <strong>Laboratório e Muralha sempre primeiro</strong> — são requisitos para praticamente tudo.
+          Depois o edifício de facção que corresponde aos seus heróis principais, e os campos de recrutamento nivelados juntos.
+          Use o filtro <strong>⭐ Importantes</strong> para ver os edifícios prioritários com meus conselhos pessoais.
+        </p>
+      </div>
     </section>
 
 <section id="requisitos-sede" class="sede-card-seo">
@@ -672,12 +693,35 @@
   </div>
 </div>
 
+<!-- BANNER TIER LIST -->
+<div class="edif-tierlist-banner">
+  <span class="edif-tierlist-icono">🏆</span>
+  <div class="edif-tierlist-texto">
+    <strong>Não sabe quais edifícios melhorar primeiro?</strong>
+    <span>Confira nossa Tier List com a ordem de prioridade recomendada.</span>
+  </div>
+  <a href="tierlist-edificios.html" class="edif-tierlist-btn">Ver Tier List →</a>
+</div>
+
+<!-- BUSCA -->
+<div class="edif-buscador-wrap">
+  <input
+    type="search"
+    id="edif-buscador"
+    class="edif-buscador"
+    placeholder="🔍 Buscar edifício por nome..."
+    aria-label="Buscar edifício por nome"
+    autocomplete="off"
+  >
+</div>
+
 <!-- FILTROS -->
 <section class="filtros-wrap">
 
   <!-- Categorias -->
   <div class="filtros categorias">
-    <button class="filtro-btn active" data-filter="all">Todos</button>
+    <button class="filtro-btn" data-filter="all">Todos</button>
+    <button class="filtro-btn active" data-filter="priority">⭐ Importantes</button>
     <button class="filtro-btn" data-filter="recursos">Recursos</button>
     <button class="filtro-btn" data-filter="ataque y defensa">Ataque e Defesa</button>
     <button class="filtro-btn" data-filter="tropas">Tropas</button>
@@ -706,7 +750,7 @@
   </div>
   <div class="card-body">
     <h3>Serraria de Madeira</h3>
-    <p class="excerpt">Produz madeira com o tempo.</p>
+    <p class="excerpt">A Serraria produz madeira automaticamente com o tempo. É um dos recursos mais usados para construir e melhorar edifícios — suba de nível regularmente para que a produção não freie seu progresso.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Serraria de Madeira"
@@ -775,7 +819,7 @@
   </div>
   <div class="card-body">
     <h3>Fazenda</h3>
-    <p class="excerpt">Produz comida para suas tropas.</p>
+    <p class="excerpt">Sem comida você não consegue treinar nem manter seu exército ativo. A Fazenda é sua principal fonte de alimento — quanto maior o nível, mais rápido você produz e menos depende de coletar no mapa.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Fazenda"
@@ -843,7 +887,7 @@
   </div>
   <div class="card-body">
     <h3>Fundição</h3>
-    <p class="excerpt">Produz ligas para equipamento de heróis.</p>
+    <p class="excerpt">A Fundição produz ligas, um recurso essencial para fabricar e melhorar o equipamento dos seus heróis. Se você quer heróis bem equipados, precisa desta fábrica funcionando em bom nível.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Fundição"
@@ -911,7 +955,7 @@
   </div>
   <div class="card-body">
     <h3>Campo de Treinamento</h3>
-    <p class="excerpt">Treina mais tropas simultaneamente.</p>
+    <p class="excerpt">O Campo de Treinamento aumenta a quantidade de tropas que você pode treinar ao mesmo tempo. Quanto maior o nível, mais eficiente é sua produção de soldados — ideal para repor tropas rapidamente após uma batalha.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Campo de Treinamento"
@@ -979,7 +1023,7 @@
   </div>
   <div class="card-body">
     <h3>Residência</h3>
-    <p class="excerpt">Aumenta o limite de população.</p>
+    <p class="excerpt">A Residência amplia o limite de população da sua base. Sem população suficiente você não pode ter mais tropas — se perceber que não consegue recrutar mais soldados, este edifício provavelmente precisa de uma melhoria.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Residência"
@@ -1047,7 +1091,7 @@
   </div>
   <div class="card-body">
     <h3>Centro de Produção</h3>
-    <p class="excerpt">Melhora a produção geral de recursos.</p>
+    <p class="excerpt">O Centro de Produção aumenta todos os seus recursos de uma vez. É um edifício de suporte que potencializa o rendimento geral da sua base — não o subestime quando precisar crescer rápido.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Centro de Produção"
@@ -1109,13 +1153,13 @@
 </template>
 
 <!-- 🏰 MURALHA -->
-<article class="card" data-category="ataque y defensa" data-season="general">
+<article class="card" data-category="ataque y defensa" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-muralla2.webp" alt="Muralha" />
   </div>
   <div class="card-body">
     <h3>Muralha</h3>
-    <p class="excerpt">É a defesa da sua sede.</p>
+    <p class="excerpt">A Muralha é um dos edifícios que mais demora para melhorar em todo o jogo — e ainda é requisito obrigatório para subir seu QG em vários níveis importantes. Meu conselho: mantenha-a sempre na fila de construção. Quanto mais alta a Muralha, mais ataques você aguenta antes de ter a sede invadida.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Muralha"
@@ -1177,13 +1221,13 @@
 </template>
 
 <!-- ⚔️ FORMAÇÃO I -->
-<article class="card" data-category="ataque y defensa" data-season="general">
+<article class="card" data-category="ataque y defensa" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-formacionI2.webp" alt="Formação I" />
   </div>
   <div class="card-body">
     <h3>Formação I</h3>
-    <p class="excerpt">É sua força principal.</p>
+    <p class="excerpt">Não é tão urgente quanto a Muralha ou o Jardim, mas não a ignore. A Formação I é seu ataque principal — quanto maior o nível, mais poder tem sua primeira formação em combate. Priorize-a sobre a Formação II e III, que são secundárias. Mantenha-a em bom nível e sentirá a diferença em cada batalha.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Formação I"
@@ -1251,7 +1295,7 @@
   </div>
   <div class="card-body">
     <h3>Formação II</h3>
-    <p class="excerpt">É sua força secundária.</p>
+    <p class="excerpt">A Formação II é sua segunda linha de ataque. Embora não seja tão urgente quanto a Formação I, não a negligencie — em batalhas longas e no Versus de Aliança, ter uma segunda formação forte faz diferença real.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Formação II"
@@ -1319,7 +1363,7 @@
   </div>
   <div class="card-body">
     <h3>Formação III</h3>
-    <p class="excerpt">É sua terceira força.</p>
+    <p class="excerpt">A Formação III completa seu arsenal ofensivo. Dê menos prioridade do que às duas primeiras, mas quando sua Formação I e II estiverem em bom nível, subir a III te dá uma vantagem extra nos eventos de aliança.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Formação III"
@@ -1381,13 +1425,13 @@
 </template>
 
 <!-- 🌸 JARDIM DA NÉVOA TÓXICA -->
-<article class="card" data-category="ataque y defensa" data-season="general">
+<article class="card" data-category="ataque y defensa" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-jardin2.webp" alt="Jardim da Névoa Tóxica" />
   </div>
   <div class="card-body">
     <h3>Jardim da Névoa Tóxica</h3>
-    <p class="excerpt">Aumento ATQ/DEF facção Rosa Sangrenta.</p>
+    <p class="excerpt">Se você é F2P e sua primeira formação é Rosa Sangrenta, este edifício é sua prioridade número um. Ao subir de nível você aumenta a capacidade de tropas dessa facção — e os heróis Rosa Sangrenta são os mais fáceis de conseguir no início do jogo. Se seu poder de ataque parece baixo, o Jardim de Névoa Tóxica provavelmente é o culpado. Suba-o antes de qualquer outra coisa.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Jardim da Névoa Tóxica"
@@ -1455,7 +1499,7 @@
   </div>
   <div class="card-body">
     <h3>Fábrica de Aço</h3>
-    <p class="excerpt">Aumento ATQ/DEF facção Guardião da Ordem.</p>
+    <p class="excerpt">A Fábrica de Aço aumenta ATQ e DEF das tropas da facção Guardião da Ordem. Se você usa heróis dessa facção na sua formação, este edifício é prioridade para você.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Fábrica de Aço"
@@ -1523,7 +1567,7 @@
   </div>
   <div class="card-body">
     <h3>Torre do Amanhecer</h3>
-    <p class="excerpt">Aumento ATQ/DEF facção Asas do Amanhecer.</p>
+    <p class="excerpt">A Torre do Amanhecer potencializa a facção Asas do Amanhecer. Se sua formação principal ou secundária usa heróis dessa facção, mantenha este edifício no nível das suas tropas.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Torre do Amanhecer"
@@ -1586,13 +1630,13 @@
 
 <!-- Tropas -->
 <!-- 🎖️ MILITAR -->
-<article class="card" data-category="tropas" data-season="general">
+<article class="card" data-category="tropas" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-militar2.webp" alt="Militar" />
   </div>
   <div class="card-body">
     <h3>Militar</h3>
-    <p class="excerpt">Treina tropas militares básicas.</p>
+    <p class="excerpt">Dê muita prioridade a este edifício. O Centro Militar define quantos soldados você pode ter na sua sede — e mais soldados significa mais força de defesa na sua Muralha e mais poder geral em combate. É uma cadeia direta: maior nível do Militar → mais soldados → mais poder. Se sua defesa parece fraca, aqui está grande parte do problema.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Militar"
@@ -1660,7 +1704,7 @@
   </div>
   <div class="card-body">
     <h3>Restaurante</h3>
-    <p class="excerpt">Aumenta moral e velocidade das tropas.</p>
+    <p class="excerpt">O Restaurante aumenta a moral e a velocidade de movimento das tropas. Embora não seja o edifício mais urgente, em níveis altos faz diferença na velocidade de reação durante eventos de guerra.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Restaurante"
@@ -1722,13 +1766,13 @@
 </template>
 
 <!-- 🎯 QUARTEL DE ATIRADORES -->
-<article class="card" data-category="tropas" data-season="general">
+<article class="card" data-category="tropas" data-season="general" data-priority="true">
   <div class="media">
     <img src="../img-tiro2.webp" alt="Quartel de Atiradores" />
   </div>
   <div class="card-body">
     <h3>Quartel de Atiradores</h3>
-    <p class="excerpt">Treina atiradores e franco-atiradores.</p>
+    <p class="excerpt">O Campo de Tiro — junto com os outros 2 campos de recrutamento — é onde você treina seus soldados. Cada campo recruta um tipo diferente de tropa. Os mantenho agrupados aqui como referência pois seus requisitos de construção são praticamente iguais. Suba-os juntos — não faz sentido ter um campo muito alto e os outros baixos, pois você precisa de variedade de tropas para uma formação equilibrada.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Quartel de Atiradores"
@@ -1796,7 +1840,7 @@
   </div>
   <div class="card-body">
     <h3>Quartel de Motociclistas</h3>
-    <p class="excerpt">Treina unidades rápidas em motos.</p>
+    <p class="excerpt">O Campo de Motoqueiros treina tropas de alta mobilidade. São ideais para saques e movimentos táticos no mapa. Suba-o junto com os outros campos para manter uma formação equilibrada.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Quartel de Motociclistas"
@@ -1864,7 +1908,7 @@
   </div>
   <div class="card-body">
     <h3>Quartel de Assaltantes</h3>
-    <p class="excerpt">Treina tropas de assalto pesadas.</p>
+    <p class="excerpt">O Campo de Assaltantes treina suas tropas mais pesadas e resistentes. São a espinha dorsal de qualquer ataque em Rally e defesa de capital. Mantenha-o no mesmo nível que os outros campos de recrutamento.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Quartel de Assaltantes"
@@ -1932,7 +1976,7 @@
   </div>
   <div class="card-body">
     <h3>Hospital</h3>
-    <p class="excerpt">Cura suas tropas feridas em combate.</p>
+    <p class="excerpt">O Hospital recupera as tropas feridas após cada batalha. Sem um Hospital de bom nível você perderá soldados permanentemente — é um dos edifícios que você mais vai agradecer quando começar a participar nas guerras de aliança.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Hospital"
@@ -2000,7 +2044,8 @@
 <!-- 🔹 CARD DO CLUBE -->
 <article class="card"
   data-category="otros"
-  data-season="general">
+  data-season="general"
+  data-priority="true">
 
   <div class="media">
     <img src="../img-club2.webp" alt="Clube" />
@@ -2008,7 +2053,7 @@
 
   <div class="card-body">
     <h3>Clube</h3>
-    <p class="excerpt">Recruta heróis de elite e refugiados com habilidades especiais.</p>
+    <p class="excerpt">O Clube é onde você recruta heróis de elite e refugiados com habilidades únicas. Mantenha-o nivelado para desbloquear heróis melhores e expandir seu roster de refugiados — algumas das unidades mais poderosas vêm daqui.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Clube de Recrutamento"
@@ -2303,7 +2348,7 @@
   </div>
   <div class="card-body">
     <h3>Comércio Interurbano</h3>
-    <p class="excerpt">Sistema de comércio com outras cidades. Envie caminhões com recursos e obtenha recompensas.</p>
+    <p class="excerpt">O Comércio Interurbano permite enviar caminhões carregados de recursos para outras cidades e receber recompensas em troca. Uma fonte estável de renda passiva — mantenha ativo e colete regularmente para maximizar o fluxo de recursos.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Comércio Interurbano"
@@ -2445,7 +2490,7 @@
   </div>
   <div class="card-body">
     <h3>Caravana</h3>
-    <p class="excerpt">Campo de Heróis e missões especiais.</p>
+    <p class="excerpt">O Radar desbloqueia o Campo de Batalha de Heróis e missões especiais. Também amplia seu campo de visão no mapa, ajudando a explorar bases inimigas e planejar ataques com mais eficiência.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Caravana"
@@ -2640,7 +2685,7 @@
   </div>
   <div class="card-body">
     <h3>Radar</h3>
-    <p class="excerpt">Aumenta velocidade de reconhecimento e desbloqueia informações do inimigo.</p>
+    <p class="excerpt">O Radar amplia seu campo de visão no mapa e acelera o reconhecimento do inimigo. Útil para explorar bases rivais e planejar ataques — não é urgente no início, mas se torna mais importante nas temporadas de guerra.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Radar"
@@ -2720,7 +2765,7 @@
   </div>
   <div class="card-body">
     <h3>Centro de Tarefas</h3>
-    <p class="excerpt">Ajuda a coletar de forma mais eficiente.</p>
+    <p class="excerpt">Este edifício aumenta sua eficiência de coleta de recursos. Suba de nível para reduzir o tempo e esforço necessários para coletar materiais no mapa e manter suas filas de construção sempre em andamento.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Centro de Tarefas"
@@ -2802,7 +2847,7 @@
   </div>
   <div class="card-body">
     <h3>Praça de Reuniões</h3>
-    <p class="excerpt">Necessária para fazer reuniões de aliança.</p>
+    <p class="excerpt">A Praça de Reunião é essencial para participar dos ataques de Rally com sua aliança. Sem este edifício você não pode participar nos rallies — e os rallies são a forma mais eficaz de eliminar alvos fortes.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Praça de Reuniões"
@@ -2882,7 +2927,7 @@
   </div>
   <div class="card-body">
     <h3>Centro de Aliança</h3>
-    <p class="excerpt">Permite receber reforços.</p>
+    <p class="excerpt">O Centro de Aliança permite receber tropas de reforço dos membros da aliança quando sua base está sob ataque. Quanto maior o nível, mais tropas aliadas você pode abrigar — fundamental em servidores ativos.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Centro de Aliança"
@@ -2962,7 +3007,7 @@
   </div>
   <div class="card-body">
     <h3>Armazém</h3>
-    <p class="excerpt">Guarda e protege seus recursos.</p>
+    <p class="excerpt">O Armazém protege uma parte dos seus recursos quando você é atacado. Quanto maior o nível, mais recursos ficam seguros do saque. Se você guarda muitos recursos sem escudos, este edifício pode salvar sua base.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Armazém"
@@ -3040,7 +3085,7 @@
   </div>
   <div class="card-body">
     <h3>Vila</h3>
-    <p class="excerpt">Aumenta sua população e capacidade de tropas.</p>
+    <p class="excerpt">A Vila amplia tanto sua população quanto a capacidade total de tropas. É um complemento direto da Residência — suba-os juntos para nunca atingir o limite de soldados no pior momento.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Vila"
@@ -3120,7 +3165,7 @@
   </div>
   <div class="card-body">
     <h3>Biblioteca</h3>
-    <p class="excerpt">Desbloqueia e melhora habilidades de conhecimento.</p>
+    <p class="excerpt">A Biblioteca desbloqueia e potencializa as habilidades de conhecimento da sua base. Elas dão bônus passivos à produção, defesa e ataque — a longo prazo têm um impacto silencioso mas muito real no seu poder total.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Biblioteca"
@@ -3198,7 +3243,7 @@
   </div>
   <div class="card-body">
     <h3>Clube</h3>
-    <p class="excerpt">Recruta heróis de elite e refugiados com habilidades especiais.</p>
+    <p class="excerpt">O Clube é onde você recruta heróis de elite e refugiados com habilidades únicas. Mantenha-o nivelado para desbloquear heróis melhores e expandir seu roster de refugiados — algumas das unidades mais poderosas vêm daqui.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Clube de Recrutamento"
@@ -3217,7 +3262,7 @@
   </div>
   <div class="card-body">
     <h3>Oficina</h3>
-    <p class="excerpt">Melhora e modifica veículos para aumentar seu poder em batalha.</p>
+    <p class="excerpt">A Oficina permite melhorar e modificar veículos para aumentar seu poder de combate. À medida que avança nas temporadas, um veículo bem melhorado pode aumentar significativamente seu poder de ataque em batalha.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Oficina de Veículos"
@@ -3874,7 +3919,7 @@
   </div>
   <div class="card-body">
     <h3>Laboratório</h3>
-    <p class="excerpt">Pesquisa melhorias para tropas, defesa e economia.</p>
+    <p class="excerpt">O Laboratório é um dos edifícios mais importantes de toda a sua base — e provavelmente o que mais vai precisar subir de nível. Cada vez que quiser subir seu QG vão pedir um nível específico de Laboratório, então não tem outra opção a não ser mantê-lo atualizado. Além disso, as pesquisas que você desbloqueia aqui são fundamentais para tudo: poder de ataque, produção de recursos, bônus no Versus de Aliança e muito mais. Se negligenciar o Laboratório, tudo o mais para.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Laboratório de Pesquisa"
@@ -8606,7 +8651,7 @@
   <div class="card-body">
     <h3>Centro de Controle de Temperatura</h3>
     <span class="season-badge s3">S3</span>
-    <p class="excerpt">Produz Flores de Lótus para melhorar edifícios de temporada.</p>
+    <p class="excerpt">Produz Flores de Lótus usadas para melhorar edifícios exclusivos da temporada. Essencial durante a Temporada 3 — mantenha nivelado para desbloquear melhorias sazonais mais poderosas.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Centro de Controle de Temperatura"
@@ -8626,7 +8671,7 @@
   
   <div class="building-priority">
     <h4>📊 Prioridade de Melhoria</h4>
-    <p><strong>PRIORIDADE #2</strong></p>
+    <p><strong>PRIORIDADEE #2</strong></p>
     <p>Se você tiver Núcleos de Gelo suficientes, melhore-o para aumentar a produção de lótus e acelerar seu progresso na temporada.</p>
   </div>
 
@@ -8653,8 +8698,8 @@
   </div>
   <div class="card-body">
     <h3>Laboratório Biológico</h3>
-    <span class="season-badge s3 priority">S3 - PRIORIDADE #1</span>
-    <p class="excerpt">Aumenta resistência a vírus. Permite atacar Boomers superiores que concedem Núcleos de Gelo.</p>
+    <span class="season-badge s3 priority">S3 - PRIORIDADEE #1</span>
+    <p class="excerpt">Aumenta resistência a vírus e permite atacar Boomers de nível superior que concedem Núcleos de Gelo. Prioridade na Temporada 3 — sem este edifício você não consegue acessar os melhores recursos da temporada.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Laboratório Biológico"
@@ -8667,14 +8712,14 @@
 </article>
 <template id="tabla-laboratorio-biologico">
   <div class="season-info s3">
-    <span class="season-badge-large priority">TEMPORADA 3 - PRIORIDADE MÁXIMA</span>
+    <span class="season-badge-large priority">TEMPORADA 3 - PRIORIDADEE MÁXIMA</span>
     <p><strong>🧬 Função Principal:</strong> Aumenta resistência a vírus</p>
     <p><strong>❄️ Recompensa Crítica:</strong> Permite atacar Boomers de nível superior que concedem <strong>Núcleos de Gelo</strong></p>
   </div>
   
   <div class="building-priority critical">
     <h4>⚠️ EDIFÍCIO MAIS IMPORTANTE DA S3</h4>
-    <p><strong>PRIORIDADE ABSOLUTA #1</strong></p>
+    <p><strong>PRIORIDADEE ABSOLUTA #1</strong></p>
     <p>Os Núcleos de Gelo são necessários para melhorar <strong>TODOS</strong> os edifícios de temporada. Sem melhorar este edifício, você não poderá progredir na temporada.</p>
   </div>
 
@@ -8709,7 +8754,7 @@
   <div class="card-body">
     <h3>Depósito Militar Glacial</h3>
     <span class="season-badge s3">S3</span>
-    <p class="excerpt">Aumenta o ATAQUE das suas tropas durante a temporada.</p>
+    <p class="excerpt">Aumenta o poder de ATAQUE das suas tropas exclusivas de temporada. Essencial para jogadores que participam ativamente dos eventos de guerra durante esta season.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Depósito Militar Glacial"
@@ -8764,7 +8809,7 @@
   <div class="card-body">
     <h3>Fortaleza Glacial</h3>
     <span class="season-badge s3">S3</span>
-    <p class="excerpt">Aumenta a DEFESA das suas tropas durante a temporada.</p>
+    <p class="excerpt">Aumenta o poder de DEFESA das suas tropas exclusivas de temporada. Importante para resistir aos ataques inimigos e proteger sua sede durante os eventos sazonais.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Fortaleza Glacial"
@@ -8824,7 +8869,7 @@
   <div class="card-body">
     <h3>Comando Militar</h3>
     <span class="season-badge s3">S3</span>
-    <p class="excerpt">Aumenta o DANO das suas tropas durante a temporada.</p>
+    <p class="excerpt">Aumenta o DANO causado pelas suas tropas durante a temporada. Combinado com os outros edifícios de temporada, potencializa significativamente seu poder de ataque nos eventos.</p>
     <div class="card-actions">
       <button class="btn ver"
         data-title="Comando Militar"
@@ -8916,7 +8961,7 @@
     <div class="footer-social"></div>
     <div class="footer-copyright">
       <p>&copy; 2026 Last Z Wiki. Criado com ❤️ para a comunidade.</p>
-      <p class="footer-meta">Última atualização: Fevereiro 2026</p>
+      <p class="footer-meta">Última atualização: Maio 2026</p>
     </div>
   </div>
 </footer>
