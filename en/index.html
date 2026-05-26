@@ -67,7 +67,10 @@
   <!-- Tema de color para navegadores móviles -->
   <meta name="theme-color" content="#c41e3a">
 
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-PXVTLS5T");</script>
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-D52HENZW9L"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -75,6 +78,9 @@
     gtag('js', new Date());
     gtag('config', 'G-D52HENZW9L');
   </script>
+
+  <!-- Google AdSense -->
+  <meta name="google-adsense-account" content="ca-pub-5000420044416855">
   <meta name="msapplication-TileColor" content="#c41e3a">
   
   <!-- Schema.org para Google -->
@@ -218,9 +224,20 @@
   .season-badge { color: #ffffff !important; background: #8a0303 !important; }
   .season-badge.s3 { background: #1a5fa8 !important; }
   .season-badge.s4 { background: #5a8a03 !important; }
+
+  /* ── Static intro for AdSense ── */
+  .wiki-intro { background: linear-gradient(180deg, #141414 0%, #0e0e0e 100%); border-bottom: 1px solid #1e1e1e; padding: 0.75rem 1.5rem 0.65rem; }
+  .wiki-intro-inner { max-width: 900px; margin: 0 auto; }
+  .wiki-intro h2 { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; color: #e0e0e0; margin-bottom: 0.5rem; }
+  .wiki-intro h2 span { color: #c41e3a; }
+  .wiki-intro p { font-size: 0.875rem; color: #888; line-height: 1.65; max-width: 780px; }
+  .wiki-intro-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+  .wiki-intro-tags span { font-size: 0.72rem; background: rgba(255,255,255,0.05); border: 1px solid #2a2a2a; border-radius: 4px; padding: 0.2rem 0.55rem; color: #888; }
 </style>
 <meta name="google-adsense-account" content="ca-pub-5000420044416855"></head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXVTLS5T" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <header class="site-header">
     <div class="brand">
@@ -270,6 +287,27 @@
   </div>
 
 <main>
+
+  <!-- Static intro — visible without JS, required for AdSense -->
+  <section class="wiki-intro" aria-label="About Last Z Wiki">
+    <div class="wiki-intro-inner">
+      <h2>Unofficial Wiki for <span>Last Z: Survival Shooter</span></h2>
+      <p>
+        Welcome to <strong>Last Z Wiki</strong> — the most complete English guide for the game, created by F2P players for F2P players.
+        Here you'll find <strong>building tier lists</strong>, <strong>season guides</strong>, <strong>combat strategies</strong>,
+        research tables and the best tips to progress without spending money.
+      </p>
+      <div class="wiki-intro-tags">
+        <span>🏗️ Buildings</span>
+        <span>📅 Events</span>
+        <span>⚔️ Formations</span>
+        <span>🦸 Heroes</span>
+        <span>🔬 Laboratory</span>
+        <span>💡 F2P Tips</span>
+      </div>
+    </div>
+  </section>
+
    <section class="carrusel" aria-label="Featured Sections">
       <div class="carrusel-track-wrap">
         <div class="carrusel-viewport">
@@ -428,202 +466,196 @@
 
       <section class="tips-grid">
 
-<!-- TIP 1: Mejores Refugiados -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-refugiados-1.webp" class="active" alt="Mayordomo">
-    <img src="../img-tip-refugiados-2.webp" alt="Diplomático">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">🏕️ Refugees</span>
-    <h3>Best Refugees to Recruit</h3>
-    <p>The <b>Butler</b> and <b>Diplomat</b> refugees are the most valuable in the game. Prioritize getting them to greatly accelerate your progression.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip1'); return false;">Read more →</a>
-  </div>
-</article>
-
-
+        <!-- TIP 01: Best Refugees -->
         <article class="tip-card">
           <div class="tip-carousel">
-            <img src="../img-tip-ataque1.webp" class="active" alt="Formaciones por facción">
-            <img src="../img-tip-ataque2.webp" alt="Edificios de facción">
+            <img src="../img-tip-refugiados-1.webp" class="active" alt="Butler refugee Last Z">
+            <img src="../img-tip-refugiados-2.webp" alt="Diplomat refugee Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">🦸 Refugees</span>
+            <h3>Best Refugees to Recruit</h3>
+            <p>The <b>Butler</b> and <b>Diplomat</b> refugees are the most valuable in the game. Prioritize getting them to massively accelerate your progression.</p>
+            <a href="tips.html#tip-refugees" class="tip-link">Read more →</a>
+          </div>
+        </article>
+
+        <!-- TIP 02: Recycle Manuals -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-manuales-1.jpg" class="active" alt="Blue skill manuals Last Z">
+            <img src="../img-tip-manuales-2.jpg" alt="Recycling manuals Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">🦸 Heroes</span>
+            <h3>Recycle your Blue Skill Manuals</h3>
+            <p>If all your rank B heroes have maxed skills, go to <b>Warehouse → Hero</b> and recycle leftover blue manuals into <b>Random Boxes</b> that can give Diamonds or S-rank Fragments.</p>
+            <a href="tips.html#tip-manuals" class="tip-link">Read more →</a>
+          </div>
+        </article>
+
+        <!-- TIP 03: Formations -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-ataque1.webp" class="active" alt="Faction formations Last Z">
+            <img src="../img-tip-ataque2.webp" alt="Faction buildings Last Z">
           </div>
           <div class="tip-content">
             <span class="tip-category">⚔️ Combat</span>
-            <h3>Improve your formation attack</h3>
+            <h3>Boost Your Formation Attack</h3>
             <p>Align <b>5 heroes of the same faction</b> in each troop to get <b>ATK +115%</b>. Prioritize <b>Blood Rose</b> in your first formation.</p>
-            <a href="#" class="tip-link" onclick="openTipModal('tip2'); return false;">Read more →</a>
+            <a href="tips.html#tip-formations" class="tip-link">Read more →</a>
           </div>
         </article>
 
+        <!-- TIP 04: Caravan -->
         <article class="tip-card">
           <div class="tip-carousel">
-            <img src="../img-tip-caravana-1.jpg" class="active" alt="Caravana">
-            <img src="../img-tip-caravana-2.jpg" alt="Rotación de armaduras">
+            <img src="../img-tip-caravana-1.jpg" class="active" alt="Caravan Last Z">
+            <img src="../img-tip-caravana-2.jpg" alt="Armor rotation Last Z">
           </div>
           <div class="tip-content">
-            <span class="tip-category">🎯 Strategy</span>
+            <span class="tip-category">⚔️ Strategy</span>
             <h3>Armor Rotation in Caravan</h3>
-            <p>Transfer your <b>best armors</b> between formations to maximize Caravan rounds. Pass equipment from <b>Rose → Dawn → Guardian</b> as you advance.</p>
-            <a href="#" class="tip-link" onclick="openTipModal('tip3'); return false;">Read more →</a>
+            <p>Transfer your <b>best armor</b> between formations to maximize Caravan rounds. Pass equipment from <b>Rose → Dawn → Guardian</b> as you advance.</p>
+            <a href="tips.html#tip-caravan" class="tip-link">Read more →</a>
           </div>
         </article>
 
-<!-- TIP 4: Cuentas Secundarias -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-farm-1.jpg" class="active" alt="Cuenta Secundaria">
-    <img src="../img-tip-farm-2.jpg" alt="Dual Space">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">🎮 Advanced Strategy</span>
-    <h3>Create Secondary Accounts (Farms)</h3>
-    <p>Farm accounts let you generate <b>extra resources</b> and send them to your main account. Learn two methods to create them on your own server.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip4'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 05: Auto Return -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-regreso-1.webp" class="active" alt="Attack panel Last Z">
+            <img src="../img-tip-regreso-2.webp" alt="Auto return enabled Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">⚔️ Combat</span>
+            <h3>Enable Auto Return for Troops</h3>
+            <p>Before attacking, <b>enable the "Auto Return" checkbox</b>. Your troops will come back automatically after combat without having to do it manually.</p>
+            <a href="tips.html#tip-return" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 5: Guardar Cajas de Recursos -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-cajas-1.webp" class="active" alt="Cajas de recursos">
-    <img src="../img-tip-cajas-2.webp" alt="Recursos por nivel">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">💰 Economy</span>
-    <h3>Save Resource Boxes</h3>
-    <p>Resource boxes <b>increase in value based on your HQ level</b>. Save golden boxes and use them after <b>level 27+</b> to get more resources.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip5'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 06: Reinforcement -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-refuerzo-1.jpg" class="active" alt="Fast reinforcement Last Z">
+            <img src="../img-tip-refuerzo-2.jpg" alt="Alliance territory Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">⚔️ Mobility</span>
+            <h3>Fast Reinforcement in your Territory</h3>
+            <p>Inside alliance territory, <b>reinforcement is 3× faster</b>. Use it to reach alliance treasures and strategic points before anyone else.</p>
+            <a href="tips.html#tip-reinforce" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 6: Cargos Oficiales del Servidor -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-gobierno-1.jpg" class="active" alt="Gobierno del servidor en Last Z">
-    <img src="../img-tip-gobierno-2.jpg" alt="Cargos oficiales y buffs">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">🏛️ Server</span>
-    <h3>Get an Official Position and earn Free Buffs</h3>
-    <p>Did you know you can request a <b>government position</b> on your server and receive attack, construction or resource buffs? You just need to <b>meet the requirements</b> and know where to ask.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip6'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 07: Server Government -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-gobierno-1.jpg" class="active" alt="Server government Last Z">
+            <img src="../img-tip-gobierno-2.jpg" alt="Official positions and buffs Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">🤝 Server</span>
+            <h3>Server Offices: Free Buffs</h3>
+            <p>Did you know you can request a <b>government position</b> on your server and receive attack, construction or resource buffs? They are <b>completely free</b>.</p>
+            <a href="tips.html#tip-government" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 7: Compras para Principiantes -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-compras-1.webp" class="active" alt="Sophia héroe">
-    <img src="../img-tip-compras-2.webp" alt="Constructor">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">💵 Purchases</span>
-    <h3>Best Purchases for Beginners</h3>
-    <p>If you're going to spend money, prioritize <b>Sophia ($1)</b> for her construction skill and the <b>2nd Builder ($2)</b> to accelerate your early progress.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip7'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 08: Healing -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-curacion-1.jpg" class="active" alt="Hospital injured troops Last Z">
+            <img src="../img-tip-curacion-2.jpg" alt="Alliance help healing Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">🤝 Alliance</span>
+            <h3>Efficient Healing with Alliance Help</h3>
+            <p>Instead of healing all troops at once, <b>heal in small batches</b> based on active alliance members. You'll save time and speedups.</p>
+            <a href="tips.html#tip-healing" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
- <!-- TIP 8: Reciclar Manuales de Habilidad -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-manuales-1.jpg" class="active" alt="Manuales de habilidad azules">
-    <img src="../img-tip-manuales-2.jpg" alt="Reciclar en almacén">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">♻️ Resources</span>
-    <h3>Recycle your Blue Skill Manuals</h3>
-    <p>If all your rank B heroes have maxed skills, go to <b>Warehouse → Hero</b> and recycle leftover blue manuals. Convert them into <b>Resource Boxes</b> that can give you Diamonds or S-rank Fragments.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip8'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 09: Donation -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-donacion-1.webp" class="active" alt="Alliance technologies Last Z">
+            <img src="../img-tip-donacion-2.webp" alt="Donation multiplier Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">🤝 Alliance</span>
+            <h3>Fast Donation in Technologies</h3>
+            <p>Instead of clicking repeatedly, <b>hold down the donate button</b>. Activates multipliers ×2, ×5, ×10 to donate faster and earn more contribution points.</p>
+            <a href="tips.html#tip-donation" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 9: Curación Eficiente con Ayuda de Alianza -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-curacion-1.jpg" class="active" alt="Hospital con tropas heridas">
-    <img src="../img-tip-curacion-2.jpg" alt="Miembros de alianza activos">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">⚕️ Hospital</span>
-    <h3>Efficient Healing with Alliance Help</h3>
-    <p>Instead of healing all your wounded troops at once, <b>heal in small batches</b> based on how many active alliance members there are. You'll save time and speedups.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip9'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 10: Scout -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-reconocimiento-1.jpg" class="active" alt="Scout report Last Z">
+            <img src="../img-tip-reconocimiento-2.jpg" alt="Locate base on map Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">🤝 Server</span>
+            <h3>Locate Bases with Scout Reports</h3>
+            <p>When you receive a <b>scout report</b>, click on the <b>coordinates below the player's name</b> to go directly to their location on the map.</p>
+            <a href="tips.html#tip-scout" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 10: Donación Rápida en Tecnologías -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-donacion-1.webp" class="active" alt="Tecnologías de alianza">
-    <img src="../img-tip-donacion-2.webp" alt="Donación con multiplicador">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">🤝 Alliance</span>
-    <h3>Fast Donation in Technologies</h3>
-    <p>Instead of clicking repeatedly to donate, <b>hold down the button</b>. This activates multipliers (x2, x5, x10) to donate faster and earn more points.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip10'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 11: Resource Boxes -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-cajas-1.webp" class="active" alt="Resource boxes Last Z">
+            <img src="../img-tip-cajas-2.webp" alt="Resources by HQ level Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">💰 Economy</span>
+            <h3>Save Resource Boxes for High Level</h3>
+            <p>Resource boxes <b>scale with your HQ level</b>. Save golden boxes and use them after <b>level 27+</b> to get up to 10× more resources.</p>
+            <a href="tips.html#tip-boxes" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 11: Regreso Automático de Tropas -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-regreso-1.webp" class="active" alt="Opciones de ataque">
-    <img src="../img-tip-regreso-2.webp" alt="Regreso automático activado">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">⚔️ Combat</span>
-    <h3>Automatic Troop Return</h3>
-    <p>Before attacking, <b>enable the "Auto Return" checkbox</b>. Your troops will return on their own after combat without having to do it manually.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip11'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 12: Farms -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-farm-1.jpg" class="active" alt="Farm account Last Z">
+            <img src="../img-tip-farm-2.jpg" alt="Dual Space Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">💰 Economy</span>
+            <h3>Create Secondary Farm Accounts</h3>
+            <p>Farm accounts let you generate <b>extra resources</b> and send them to your main account. Learn two methods to create them on your own server.</p>
+            <a href="tips.html#tip-farms" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
-<!-- TIP 12: Refuerzo -->
-<article class="tip-card">
-  <div class="tip-carousel">
-     <img src="../img-tip-refuerzo-1.jpg" class="active" alt="Refuerzo rápido">
-     <img src="../img-tip-refuerzo-2.jpg" alt="Territorio alianza">
-     </div>
-   <div class="tip-content">
-   <span class="tip-category">⚡ Mobility</span>
-   <h3>Quick Reinforcement</h3>
-   <p>If there's an alliance treasure far away, you can get there faster by <b>reinforcing allied cities or bases</b>. This reinforcement speed only works <b>within your alliance territory</b>.</p>
-   <a href="#" class="tip-link" onclick="openTipModal('tip12'); return false;">Read more →</a>
-   </div>
- </article>
-
-<!-- TIP 13: Localizar Bases Reconocidas -->
-<article class="tip-card">
-  <div class="tip-carousel">
-    <img src="../img-tip-reconocimiento-1.jpg" class="active" alt="Informe de reconocimiento">
-    <img src="../img-tip-reconocimiento-2.jpg" alt="Localizar en mapa">
-  </div>
-  <div class="tip-content">
-    <span class="tip-category">🔍 Reconnaissance</span>
-    <h3>Locate Scouted Bases</h3>
-    <p>When you receive or see a <b>shared scout report</b>, click on the <b>coordinates below the player's name</b> to go directly to their location on the map.</p>
-    <a href="#" class="tip-link" onclick="openTipModal('tip13'); return false;">Read more →</a>
-  </div>
-</article>
+        <!-- TIP 13: Purchases -->
+        <article class="tip-card">
+          <div class="tip-carousel">
+            <img src="../img-tip-compras-1.webp" class="active" alt="Sophia builder hero Last Z">
+            <img src="../img-tip-compras-2.webp" alt="2nd builder Last Z">
+          </div>
+          <div class="tip-content">
+            <span class="tip-category">💰 Purchases</span>
+            <h3>Best Purchases for Beginners</h3>
+            <p>If you're going to spend money, prioritize <b>Sophia ($1)</b> for her construction skill and the <b>2nd Builder ($2)</b> to accelerate your early progress.</p>
+            <a href="tips.html#tip-purchases" class="tip-link">Read more →</a>
+          </div>
+        </article>
 
       </section>
     </section>
 
+
+
   </main>
 
-  <div id="tipModal" class="tip-modal" role="dialog" aria-modal="true">
-    <div class="tip-modal-content">
-      <span class="tip-modal-close" onclick="closeTipModal()">&times;</span>
-      <div id="tipModalBody"></div>
-    </div>
-  </div>
-
-<!-- ========================================= 
-     FOOTER - Añadir en TODAS las páginas
-     ========================================= -->
+<!-- Footer -->
 
 <footer class="site-footer">
   <div class="footer-container">
@@ -656,12 +688,12 @@
     <!-- Copyright -->
     <div class="footer-copyright">
       <p>&copy; 2026 Last Z Wiki. Created with ❤️ for the community.</p>
-      <p class="footer-meta">Last updated: March 2026</p>
+      <p class="footer-meta">Last updated: May 2026</p>
     </div>
     
   </div>
 </footer>
-  <script src="../en/index.js"></script>
+  <script src="../index.js"></script>
   <script src="../menu.js"></script>
   <script>
     // =============================================
