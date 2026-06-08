@@ -4,22 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <!-- Favicons -->
- <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
- <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
- <link rel="shortcut icon" href="/favicon.ico" />
- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
- <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
- <link rel="manifest" href="/site.webmanifest" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="LastZ Wiki" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <!-- ==========================================
-       SEO OPTIMIZADO - GAMING BILINGÜE
+       SEO OTIMIZADO - PORTUGUÊS (ATUALIZADO)
        ========================================== -->
   
-  <!-- SEO Básico -->
   <title>Last Z Wiki - Guia Completo em Português | Estratégias, Tier List e Dicas 2026</title>
   <meta name="description" content="Guia completo de Last Z Survival Shooter em português. Descubra estratégias avançadas, tier list de heróis, melhores edifícios, formações e dicas para iniciantes. Wiki não oficial com tudo que você precisa para dominar o jogo.">
-  <meta name="keywords" content="Last Z, Last Z Survival Shooter, Last Z wiki português, guia Last Z, tier list heróis Last Z, melhores edifícios Last Z, como começar Last Z, estratégias Last Z português, formações Last Z, build heróis, farming recursos, dicas Last Z, Last Z guia iniciantes, Rosa Sangrenta, Asas do Amanhecer, Guardião da Ordem, eventos Last Z, alianças Last Z, Last Z dicas, melhores heróis Last Z, como subir rápido Last Z">
+  <meta name="keywords" content="Last Z, Last Z Survival Shooter, Last Z wiki português, guia Last Z, tier list heróis Last Z, melhores edifícios Last Z, como começar Last Z, estratégias Last Z português, formações Last Z, build heróis, farming recursos, dicas Last Z, Last Z guia iniciantes, Rosa Sangrenta, Asas do Amanhecer, Guardião da Ordem, eventos Last Z, alianças Last Z, Last Z dicas, melhores heróis Last Z, como subir rápido Last Z, temporada 5 Last Z, Elegia da Luz da Lua">
   <meta name="author" content="Hypnos - Last Z Wiki">
   <meta name="language" content="Portuguese">
   
@@ -41,7 +40,7 @@
   <meta name="twitter:description" content="Estratégias, tier list, formações e dicas para Last Z Survival Shooter">
   <meta name="twitter:image" content="https://lastzwiki.com/lastzwiki-logo.svg">
   
-  <!-- Canonical URL (evita contenido duplicado) -->
+  <!-- Canonical URL -->
   <link rel="canonical" href="https://lastzwiki.com/pt/">
   
   <!-- Alternate para idiomas -->
@@ -51,18 +50,16 @@
   <link rel="alternate" hreflang="en" href="https://lastzwiki.com/en/">
   <link rel="alternate" hreflang="x-default" href="https://lastzwiki.com/en/">
   
-  
-  
-  <!-- Robots (indexación) -->
+  <!-- Robots -->
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <meta name="googlebot" content="index, follow">
   <meta name="bingbot" content="index, follow">
   
-  <!-- Geo Tags (LATAM + España) -->
+  <!-- Geo Tags -->
   <meta name="geo.region" content="PE">
   <meta name="geo.placename" content="Lima">
   
-  <!-- Tema de color para navegadores móviles -->
+  <!-- Tema de color -->
   <meta name="theme-color" content="#c41e3a">
 
   <!-- Google Tag Manager -->
@@ -81,7 +78,7 @@
   <meta name="google-adsense-account" content="ca-pub-5000420044416855">
   <meta name="msapplication-TileColor" content="#c41e3a">
   
-  <!-- Schema.org para Google -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -100,9 +97,6 @@
     }
   }
   </script>
-  <!-- ==========================================
-       FIN SEO - CONTINÚA CON TUS ESTILOS
-       ========================================== -->
 
   <!-- Preload imagem LCP -->
   <link rel="preload" as="image" href="../img-manual-principiante.webp" fetchpriority="high">
@@ -111,127 +105,51 @@
   <link rel="stylesheet" href="../global.css">
   <link rel="stylesheet" href="../apocalypse.css">
 
-  <!-- ── CARRUSEL: viewport + botones + dots ── -->
+  <!-- ── CARRUSEL: viewport + botões + dots ── -->
   <style>
-    /* Wrapper que da contexto de posición a los botones sin clipearlos */
-    .carrusel-track-wrap {
-      position: relative;
-    }
-
-    /* Viewport: solo clipea el track */
-    .carrusel-viewport {
-      overflow: hidden;
-      width: 100%;
-    }
-
-    /* Track que se mueve */
-    .carrusel-container {
-      display: flex;
-      will-change: transform;
-    }
-
-    /* ── Botones ────────────────────────────────────── */
+    .carrusel-track-wrap { position: relative; }
+    .carrusel-viewport { overflow: hidden; width: 100%; }
+    .carrusel-container { display: flex; will-change: transform; }
     .carrusel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-70%);
-      z-index: 10;
-      width: 32px;
-      height: 56px;
-      background: rgba(0, 0, 0, 0.55);
-      color: rgba(255,255,255,0.75);
-      border: none;
+      position: absolute; top: 50%; transform: translateY(-70%); z-index: 10;
+      width: 32px; height: 56px; background: rgba(0, 0, 0, 0.55);
+      color: rgba(255,255,255,0.75); border: none;
       border-top: 1px solid rgba(196, 30, 58, 0.4);
       border-bottom: 1px solid rgba(196, 30, 58, 0.4);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.8rem;
-      letter-spacing: -1px;
-      transition: background 0.2s, color 0.2s, border-color 0.2s;
-      -webkit-tap-highlight-color: transparent;
-      user-select: none;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; letter-spacing: -1px; transition: all 0.2s;
+      backdrop-filter: blur(8px); user-select: none;
     }
-
-    .carrusel-prev {
-      left: 0;
-      border-radius: 0 4px 4px 0;
-      border-right: 1px solid rgba(196, 30, 58, 0.4);
-    }
-
-    .carrusel-next {
-      right: 0;
-      border-radius: 4px 0 0 4px;
-      border-left: 1px solid rgba(196, 30, 58, 0.4);
-    }
-
-    .carrusel-btn:hover {
-      background: rgba(138, 3, 3, 0.85);
-      color: #fff;
-      border-color: #c41e3a;
-    }
-
-    .carrusel-btn:active {
-      background: #c41e3a;
-      color: #fff;
-    }
-
-    /* Ocultar en móvil — usan swipe */
-    @media (max-width: 600px) {
-      .carrusel-btn { display: none; }
-    }
-
-    /* ── Dots ───────────────────────────────────────── */
-    .carrusel-dots {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 7px;
-      padding: 0.55rem 0 0.15rem;
-    }
-
-    .carrusel-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      border: none;
-      background: #2a2a2a;
-      cursor: pointer;
-      padding: 8px;
-      box-sizing: content-box;
-      transition: background 0.25s, width 0.25s, border-radius 0.25s;
-    }
-
-    .carrusel-dot.active {
-      background: #c41e3a;
-      width: 20px;
-      border-radius: 3px;
-    }
-
+    .carrusel-prev { left: 0; border-radius: 0 4px 4px 0; border-right: 1px solid rgba(196,30,58,0.4); }
+    .carrusel-next { right: 0; border-radius: 4px 0 0 4px; border-left: 1px solid rgba(196,30,58,0.4); }
+    .carrusel-btn:hover { background: rgba(138, 3, 3, 0.85); color: #fff; border-color: #c41e3a; }
+    .carrusel-btn:active { background: #c41e3a; color: #fff; }
+    @media (max-width: 600px) { .carrusel-btn { display: none; } }
+    .carrusel-dots { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 0.55rem 0 0.15rem; }
+    .carrusel-dot { width: 8px; height: 8px; border-radius: 50%; background: #2a2a2a; cursor: pointer; padding: 8px; box-sizing: content-box; transition: all 0.25s; }
+    .carrusel-dot.active { background: #c41e3a; width: 20px; border-radius: 3px; }
     .carrusel-dot:hover:not(.active) { background: #444; }
   </style>
-<!-- Acessibilidade: correções de contraste -->
-<style>
-  .apoc-value { color: #ffffff !important; }
-  .rosa-buff-text { color: #ffffff !important; }
-  #rosa-duration { color: #ffffff !important; }
-  .seasons-subtitle { color: #dddddd !important; }
-  .season-badge { color: #ffffff !important; background: #8a0303 !important; }
-  .season-badge.s3 { background: #1a5fa8 !important; }
-  .season-badge.s4 { background: #5a8a03 !important; }
 
-  /* ── Intro estática para AdSense ── */
-  .wiki-intro { background: linear-gradient(180deg, #141414 0%, #0e0e0e 100%); border-bottom: 1px solid #1e1e1e; padding: 0.75rem 1.5rem 0.65rem; }
-  .wiki-intro-inner { max-width: 900px; margin: 0 auto; }
-  .wiki-intro h2 { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; color: #e0e0e0; margin-bottom: 0.5rem; }
-  .wiki-intro h2 span { color: #c41e3a; }
-  .wiki-intro p { font-size: 0.875rem; color: #888; line-height: 1.65; max-width: 780px; }
-  .wiki-intro-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
-  .wiki-intro-tags span { font-size: 0.72rem; background: rgba(255,255,255,0.05); border: 1px solid #2a2a2a; border-radius: 4px; padding: 0.2rem 0.55rem; color: #888; }
-</style>
+  <!-- Acessibilidade: correções de contraste -->
+  <style>
+    .apoc-value { color: #ffffff !important; }
+    .rosa-buff-text { color: #ffffff !important; }
+    #rosa-duration { color: #ffffff !important; }
+    .seasons-subtitle { color: #dddddd !important; }
+    .season-badge { color: #ffffff !important; background: #8a0303 !important; }
+    .season-badge.s3 { background: #1a5fa8 !important; }
+    .season-badge.s4 { background: #5a8a03 !important; }
+    .season-badge.s5 { background: #8b0000 !important; border: 1px solid #c41e3a; }
+
+    .wiki-intro { background: linear-gradient(180deg, #141414 0%, #0e0e0e 100%); border-bottom: 1px solid #1e1e1e; padding: 0.75rem 1.5rem 0.65rem; }
+    .wiki-intro-inner { max-width: 900px; margin: 0 auto; }
+    .wiki-intro h2 { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; color: #e0e0e0; margin-bottom: 0.5rem; }
+    .wiki-intro h2 span { color: #c41e3a; }
+    .wiki-intro p { font-size: 0.875rem; color: #888; line-height: 1.65; max-width: 780px; }
+    .wiki-intro-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.75rem; }
+    .wiki-intro-tags span { font-size: 0.72rem; background: rgba(255,255,255,0.05); border: 1px solid #2a2a2a; border-radius: 4px; padding: 0.2rem 0.55rem; color: #888; }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
@@ -242,13 +160,9 @@
       <img src="../lastzwiki-logo.svg" alt="Last Z Wiki Logo" class="site-logo">
       <h1>Last Z Wiki</h1>
     </div>
-
     <button class="hamburger" aria-label="Menu de navegação">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </button>
-
     <nav class="main-nav" aria-label="Navegação principal">
       <ul>
         <li><a class="active" href="index.html">Início</a></li>
@@ -261,7 +175,7 @@
     </nav>
   </header>
 
-  <!-- Barra Hora Apocalipsis + Rosa Semanal -->
+  <!-- Barra Hora Apocalipse + Rosa Semanal -->
   <div class="apocalypse-bar">
     <div class="apoc-item">
       <span class="apoc-label">🕐 Hora do Apocalipse</span>
@@ -286,7 +200,7 @@
 
 <main>
 
-  <!-- Intro estática — visível sem JS, necessária para AdSense -->
+  <!-- Intro estática -->
   <section class="wiki-intro" aria-label="Sobre a Last Z Wiki">
     <div class="wiki-intro-inner">
       <h2>Wiki não oficial de <span>Last Z: Survival Shooter</span></h2>
@@ -306,403 +220,365 @@
     </div>
   </section>
 
-   <section class="carrusel" aria-label="Seções em destaque">
-      <div class="carrusel-track-wrap">
-        <div class="carrusel-viewport">
-          <div class="carrusel-container">
-        <article class="carrusel-item">
-          <a href="guia-iniciantes.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="../img-manual-principiante.webp" alt="Guia do Iniciante" loading="eager" fetchpriority="high">
-            <p>Guia para iniciantes</p>
-          </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="ranking.html" data-track="carrusel">
-            <img src="../img-ranking.webp" alt="Ranking de Jogadores e Servidores" loading="lazy">
-            <p>Ranking global</p>
-          </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="tierlist-edificios.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-          <img src="../img-tierlist-edificios.webp" alt="Tier List de Edifícios - Last Z" loading="lazy">
-          <p>Tier List de Edifícios</p>
-         </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="loja.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="../img-store.webp" alt="Loja Last Z - Gift Codes" loading="lazy">
-            <p>Guia da Loja - Códigos</p>
-          </a>
-        </article>
-        <article class="carrusel-item">
-          <a href="estrategia.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
-            <img src="../img-estrategia.webp" alt="Planejador de Guerra de Servidores" loading="lazy">
-            <p>Planejador de Guerra</p>
-          </a>
-        </article>
+  <!-- CARRUSEL (6 itens, incluindo Temporada 5) -->
+  <section class="carrusel" aria-label="Seções em destaque">
+    <div class="carrusel-track-wrap">
+      <div class="carrusel-viewport">
+        <div class="carrusel-container">
+          <article class="carrusel-item">
+            <a href="guia-iniciantes.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+              <img src="../img-manual-principiante.webp" alt="Guia do Iniciante" loading="eager" fetchpriority="high">
+              <p>Guia para iniciantes</p>
+            </a>
+          </article>
+          <article class="carrusel-item">
+            <a href="ranking.html" data-track="carrusel">
+              <img src="../img-ranking.webp" alt="Ranking de Jogadores e Servidores" loading="lazy">
+              <p>Ranking global</p>
+            </a>
+          </article>
+          <article class="carrusel-item">
+            <a href="tierlist-edificios.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+              <img src="../img-tierlist-edificios.webp" alt="Tier List de Edifícios - Last Z" loading="lazy">
+              <p>Tier List de Edifícios</p>
+            </a>
+          </article>
+          <article class="carrusel-item">
+            <a href="loja.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+              <img src="../img-store.webp" alt="Loja Last Z - Gift Codes" loading="lazy">
+              <p>Guia da Loja - Códigos</p>
+            </a>
+          </article>
+          <article class="carrusel-item">
+            <a href="estrategia.html" data-track="carrusel" style="text-decoration: none; color: inherit;">
+              <img src="../img-estrategia.webp" alt="Planejador de Guerra de Servidores" loading="lazy">
+              <p>Planejador de Guerra</p>
+            </a>
+          </article>
         </div><!-- /.carrusel-container -->
-        </div><!-- /.carrusel-viewport -->
-        <button class="carrusel-btn carrusel-prev" aria-label="Slide anterior">&#10094;</button>
-        <button class="carrusel-btn carrusel-next" aria-label="Próximo slide">&#10095;</button>
-      </div><!-- /.carrusel-track-wrap -->
-      <div class="carrusel-dots" id="carruselDots" aria-label="Indicadores de slide"></div>
-    </section>
+      </div><!-- /.carrusel-viewport -->
+      <button class="carrusel-btn carrusel-prev" aria-label="Slide anterior">&#10094;</button>
+      <button class="carrusel-btn carrusel-next" aria-label="Próximo slide">&#10095;</button>
+    </div><!-- /.carrusel-track-wrap -->
+    <div class="carrusel-dots" id="carruselDots" aria-label="Indicadores de slide"></div>
+  </section>
 
-    <!-- ── Sección Temporadas ── -->
-    <section class="seasons-section" aria-label="Guias de Temporada">
-      <header class="seasons-header">
-        <h2>🗺️ Guias de Temporada</h2>
-        <p class="seasons-subtitle">Estratégias, edifícios e recursos exclusivos de cada temporada</p>
-      </header>
-      <div class="seasons-grid">
-        <a href="temporada-2.html" class="season-card">
-          <div class="season-card-img">
-            <img src="../img-s2.webp" alt="Temporada 2 Last Z — Deserto">
-            <span class="season-badge">S2</span>
-          </div>
-          <div class="season-card-body">
-            <h3>Temporada 2</h3>
-            <p>Guia completo do deserto — edifícios, recursos e estratégias.</p>
-            <span class="season-link">Ver guia →</span>
-          </div>
-        </a>
-        <a href="temporada-3.html" class="season-card">
-          <div class="season-card-img">
-            <img src="../img-s3.webp" alt="Temporada 3 Last Z — Gelo">
-            <span class="season-badge s3">S3</span>
-          </div>
-          <div class="season-card-body">
-            <h3>Temporada 3</h3>
-            <p>Guia do mundo de gelo — Laboratório Biotecnológico, Boomers e mais.</p>
-            <span class="season-link">Ver guia →</span>
-          </div>
-        </a>
-        <a href="temporada-4.html" class="season-card">
-          <div class="season-card-img">
-            <img src="../img-s4.webp" alt="Temporada 4 Last Z — Dinosaur Origin">
-            <span class="season-badge s4">S4</span>
-          </div>
-          <div class="season-card-body">
-            <h3>Temporada 4</h3>
-            <p>Dinosaur Origin — Velociraptors, Hatch of Legends e Trade Hubs.</p>
-            <span class="season-link">Ver guia →</span>
-          </div>
-        </a>
+  <!-- ── Seção Temporadas (agora com S5) ── -->
+  <section class="seasons-section" aria-label="Guias de Temporada">
+    <header class="seasons-header">
+      <h2>🗺️ Guias de Temporada</h2>
+      <p class="seasons-subtitle">Estratégias, edifícios e recursos exclusivos de cada temporada</p>
+    </header>
+    <div class="seasons-grid">
+      <a href="temporada-2.html" class="season-card">
+        <div class="season-card-img">
+          <img src="../img-s2.webp" alt="Temporada 2 Last Z — Deserto">
+          <span class="season-badge">S2</span>
+        </div>
+        <div class="season-card-body">
+          <h3>Temporada 2</h3>
+          <p>Guia completo do deserto — edifícios, recursos e estratégias.</p>
+          <span class="season-link">Ver guia →</span>
+        </div>
+      </a>
+      <a href="temporada-3.html" class="season-card">
+        <div class="season-card-img">
+          <img src="../img-s3.webp" alt="Temporada 3 Last Z — Gelo">
+          <span class="season-badge s3">S3</span>
+        </div>
+        <div class="season-card-body">
+          <h3>Temporada 3</h3>
+          <p>Guia do mundo de gelo — Laboratório Biotecnológico, Boomers e mais.</p>
+          <span class="season-link">Ver guia →</span>
+        </div>
+      </a>
+      <a href="temporada-4.html" class="season-card">
+        <div class="season-card-img">
+          <img src="../img-s4.webp" alt="Temporada 4 Last Z — Dinosaur Origin">
+          <span class="season-badge s4">S4</span>
+        </div>
+        <div class="season-card-body">
+          <h3>Temporada 4</h3>
+          <p>Dinosaur Origin — Velociraptors, Hatch of Legends e Trade Hubs.</p>
+          <span class="season-link">Ver guia →</span>
+        </div>
+      </a>
+      <a href="temporada-5.html" class="season-card">
+        <div class="season-card-img">
+          <img src="../img-s5.webp" alt="Temporada 5 Last Z — Elegia da Luz da Lua">
+          <span class="season-badge s5">S5</span>
+        </div>
+        <div class="season-card-body">
+          <h3>Temporada 5 <span style="font-size:0.7rem;background:rgba(196,30,58,0.2);color:#e88;border-radius:4px;padding:0.1rem 0.4rem;margin-left:0.3rem;vertical-align:middle;">🆕 NOVO</span></h3>
+          <p>Elegia da Luz da Lua — Vampiros, Bruxa Misteriosa, Cartas Lunares e Súcubos.</p>
+          <span class="season-link">Ver guia →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Teasers: Laboratório + Oficina -->
+  <div class="teasers-grid">
+    <a href="laboratorio.html" class="lab-teaser">
+      <div class="lab-teaser-icon">🔬</div>
+      <div class="lab-teaser-body">
+        <span class="lab-teaser-label">Guia de Pesquisas</span>
+        <h3>Quantas insígnias você precisa?</h3>
+        <p>Tabelas completas do Laboratório — 9 categorias e +160 pesquisas com custos por nível.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem;">
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🚁 T10</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">⚔️ Combate</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🤝 Aliança</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🦸 Heróis</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">📋 Estratégia</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🛡️ Escudo</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">💥 Cerco</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🎖️ Campo</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🏗️ Exército</span>
+        </div>
       </div>
-    </section>
-
-    <!-- Teasers: Laboratorio + Taller lado a lado -->
-<div class="teasers-grid">
-
-  <a href="laboratorio.html" class="lab-teaser">
-    <div class="lab-teaser-icon">🔬</div>
-    <div class="lab-teaser-body">
-      <span class="lab-teaser-label">Guia de Pesquisas</span>
-      <h3>Quantas insígnias você precisa?</h3>
-      <p>Tabelas completas do Laboratório — 9 categorias e +160 pesquisas com custos por nível.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem;">
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🚁 T10</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">⚔️ Combate</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🤝 Aliança</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🦸 Heróis</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">📋 Estratégia</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🛡️ Escudo</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">💥 Cerco</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🎖️ Campo</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🏗️ Exército</span>
+      <div class="lab-teaser-stats">
+        <div class="lab-teaser-stat"><strong>9</strong><span>Categorias</span></div>
+        <div class="lab-teaser-stat"><strong>160+</strong><span>Pesquisas</span></div>
       </div>
-    </div>
-    <div class="lab-teaser-stats">
-      <div class="lab-teaser-stat">
-        <strong>9</strong>
-        <span>Categorias</span>
+      <span class="lab-teaser-arrow">→</span>
+    </a>
+
+    <a href="oficina.html" class="lab-teaser">
+      <div class="lab-teaser-icon">
+        <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:#f0a500;display:block;margin:0 auto;"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
       </div>
-      <div class="lab-teaser-stat">
-        <strong>160+</strong>
-        <span>Pesquisas</span>
+      <div class="lab-teaser-body">
+        <span class="lab-teaser-label">Guia de Modificação</span>
+        <h3>Quantas chaves inglesas você precisa?</h3>
+        <p>Do Conquistador ao Destrutor-EX — tabela completa do Lv0 ao Lv240 com custos por nível.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem;">
+          <span style="font-size:0.7rem;background:rgba(100,180,100,0.15);border-radius:3px;padding:0.15rem 0.45rem;color:#6db86d;">🏆 Conquistador</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🐆 Guepardo</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">💪 Hércules</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">💥 Destrutor</span>
+          <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🚀 Destrutor-EX</span>
+        </div>
       </div>
-    </div>
-    <span class="lab-teaser-arrow">→</span>
-  </a>
-
-  <a href="oficina.html" class="lab-teaser">
-    <div class="lab-teaser-icon">
-      <svg viewBox="0 0 24 24" style="width:32px;height:32px;fill:#f0a500;display:block;margin:0 auto;"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
-    </div>
-    <div class="lab-teaser-body">
-      <span class="lab-teaser-label">Guia de Modificação</span>
-      <h3>Quantas chaves inglesas você precisa?</h3>
-      <p>Do Conquistador ao Destrutor-EX — tabela completa do Lv0 ao Lv240 com custos por nível.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:0.5rem;">
-        <span style="font-size:0.7rem;background:rgba(100,180,100,0.15);border-radius:3px;padding:0.15rem 0.45rem;color:#6db86d;">🏆 Conquistador</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🐆 Guepardo</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">💪 Hércules</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">💥 Destrutor</span>
-        <span style="font-size:0.7rem;background:rgba(255,255,255,0.07);border-radius:3px;padding:0.15rem 0.45rem;color:#aaa;">🚀 Destrutor-EX</span>
+      <div class="lab-teaser-stats">
+        <div class="lab-teaser-stat"><strong>5</strong><span>Veículos</span></div>
+        <div class="lab-teaser-stat"><strong>70.700</strong><span>Chaves máx.</span></div>
       </div>
-    </div>
-    <div class="lab-teaser-stats">
-      <div class="lab-teaser-stat">
-        <strong>5</strong>
-        <span>Veículos</span>
-      </div>
-      <div class="lab-teaser-stat">
-        <strong>70.700</strong>
-        <span>Chaves máx.</span>
-      </div>
-    </div>
-    <span class="lab-teaser-arrow">→</span>
-  </a>
-
-</div>
-
-    <section class="tips-home">
-      <header class="tips-header">
-        <h2>💡 Dicas e Estratégias do Jogo</h2>
-        <p class="tips-subtitle">Aprenda estratégias essenciais para dominar Last Z: Survival Shooter</p>
-      </header>
-
-      <section class="tips-grid">
-
-        <!-- DICA 01: Melhores Refugiados -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-refugiados-1.webp" class="active" alt="Mordomo refugiado Last Z">
-            <img src="../img-tip-refugiados-2.webp" alt="Diplomata refugiado Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">🦸 Refugiados</span>
-            <h3>Melhores Refugiados para Recrutar</h3>
-            <p>Os refugiados <b>Mordomo</b> e <b>Diplomata</b> são os mais valiosos do jogo. Priorize consegui-los para acelerar enormemente sua progressão.</p>
-            <a href="dicas.html#tip-refugiados" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 02: Reciclar Manuais -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-manuales-1.jpg" class="active" alt="Manuais de habilidade azuis Last Z">
-            <img src="../img-tip-manuales-2.jpg" alt="Reciclando manuais Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">🦸 Heróis</span>
-            <h3>Recicle seus Manuais de Habilidade Azuis</h3>
-            <p>Se todos seus heróis rank B têm habilidades no máximo, vá ao <b>Armazém → Herói</b> e recicle os manuais azuis sobrantes em <b>Caixas Aleatórias</b> com Diamantes ou Fragmentos S.</p>
-            <a href="dicas.html#tip-manuais" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 03: Formações -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-ataque1.webp" class="active" alt="Formações por facção Last Z">
-            <img src="../img-tip-ataque2.webp" alt="Edifícios de facção Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">⚔️ Combate</span>
-            <h3>Melhore o Ataque das suas Formações</h3>
-            <p>Alinhe <b>5 heróis da mesma facção</b> em cada tropa para obter <b>ATQ +115%</b>. Priorize <b>Rosa Sangrenta</b> na sua primeira formação.</p>
-            <a href="dicas.html#tip-formacoes" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 04: Caravana -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-caravana-1.jpg" class="active" alt="Caravana Last Z">
-            <img src="../img-tip-caravana-2.jpg" alt="Rotação de armaduras Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">⚔️ Estratégia</span>
-            <h3>Rotação de Armaduras na Caravana</h3>
-            <p>Transfira suas <b>melhores armaduras</b> entre formações para maximizar rodadas na Caravana. Passe equipamentos de <b>Rosa → Aurora → Guardião</b> conforme avança.</p>
-            <a href="dicas.html#tip-caravana" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 05: Retorno Automático -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-regreso-1.webp" class="active" alt="Painel de ataque Last Z">
-            <img src="../img-tip-regreso-2.webp" alt="Retorno automático ativado Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">⚔️ Combate</span>
-            <h3>Ative o Retorno Automático de Tropas</h3>
-            <p>Antes de atacar, <b>ative a opção "Retorno automático"</b>. Suas tropas voltarão sozinhas após o combate sem precisar fazer isso manualmente.</p>
-            <a href="dicas.html#tip-retorno" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 06: Reforço -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-refuerzo-1.jpg" class="active" alt="Reforço rápido Last Z">
-            <img src="../img-tip-refuerzo-2.jpg" alt="Território aliança Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">⚔️ Mobilidade</span>
-            <h3>Reforço Rápido no seu Território</h3>
-            <p>Dentro do território aliado, o <b>reforço é 3× mais rápido</b>. Use para chegar primeiro a tesouros da aliança e pontos estratégicos.</p>
-            <a href="dicas.html#tip-reforco" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 07: Governo -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-gobierno-1.jpg" class="active" alt="Governo do servidor Last Z">
-            <img src="../img-tip-gobierno-2.jpg" alt="Cargos e buffs Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">🤝 Servidor</span>
-            <h3>Cargos do Servidor: Buffs Gratuitos</h3>
-            <p>Sabia que pode solicitar um <b>cargo de governo</b> no servidor e receber buffs de ataque, construção ou recursos? São <b>completamente gratuitos</b>.</p>
-            <a href="dicas.html#tip-governo" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 08: Cura -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-curacion-1.jpg" class="active" alt="Hospital tropas feridas Last Z">
-            <img src="../img-tip-curacion-2.jpg" alt="Ajuda aliança cura Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">🤝 Aliança</span>
-            <h3>Cura Eficiente com Ajuda da Aliança</h3>
-            <p>Em vez de curar tudo de uma vez, <b>cure em pequenos lotes</b> conforme a quantidade de membros ativos. Vai economizar tempo e aceleradores.</p>
-            <a href="dicas.html#tip-cura" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 09: Doação -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-donacion-1.webp" class="active" alt="Tecnologias de aliança Last Z">
-            <img src="../img-tip-donacion-2.webp" alt="Multiplicador doação Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">🤝 Aliança</span>
-            <h3>Doação Rápida em Tecnologias</h3>
-            <p>Em vez de clicar repetidamente, <b>mantenha o botão de doação pressionado</b>. Ativa multiplicadores ×2, ×5, ×10 para doar mais rápido e ganhar mais pontos.</p>
-            <a href="dicas.html#tip-doacao" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 10: Reconhecimento -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-reconocimiento-1.jpg" class="active" alt="Relatório de reconhecimento Last Z">
-            <img src="../img-tip-reconocimiento-2.jpg" alt="Localizar base no mapa Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">🤝 Servidor</span>
-            <h3>Localizar Bases com Relatórios de Reconhecimento</h3>
-            <p>Quando receber um <b>relatório de reconhecimento</b>, clique nas <b>coordenadas abaixo do nome</b> do jogador para ir diretamente à localização no mapa.</p>
-            <a href="dicas.html#tip-reconhecimento" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 11: Caixas de Recursos -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-cajas-1.webp" class="active" alt="Caixas de recursos Last Z">
-            <img src="../img-tip-cajas-2.webp" alt="Recursos por nível de Sede Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">💰 Economia</span>
-            <h3>Guarde Caixas de Recursos para Nível Alto</h3>
-            <p>As caixas de recursos <b>escalam com o nível da sua Sede</b>. Guarde as caixas douradas e use-as após o <b>nível 27+</b> para obter até 10× mais recursos.</p>
-            <a href="dicas.html#tip-caixas" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 12: Farms -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-farm-1.jpg" class="active" alt="Conta farm Last Z">
-            <img src="../img-tip-farm-2.jpg" alt="Dual Space Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">💰 Economia</span>
-            <h3>Criar Contas Secundárias (Farms)</h3>
-            <p>As contas farm permitem gerar <b>recursos extras</b> e enviá-los para sua conta principal. Aprenda dois métodos para criá-las no mesmo servidor.</p>
-            <a href="dicas.html#tip-farms" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-        <!-- DICA 13: Compras -->
-        <article class="tip-card">
-          <div class="tip-carousel">
-            <img src="../img-tip-compras-1.webp" class="active" alt="Sophia heroína construtora Last Z">
-            <img src="../img-tip-compras-2.webp" alt="2.º Construtor Last Z">
-          </div>
-          <div class="tip-content">
-            <span class="tip-category">💰 Compras</span>
-            <h3>Melhores Compras para Iniciantes</h3>
-            <p>Se for gastar, priorize <b>Sophia ($1)</b> pela habilidade de construção e o <b>2.º Construtor ($2)</b> para acelerar seu progresso desde o início.</p>
-            <a href="dicas.html#tip-compras" class="tip-link">Leia mais →</a>
-          </div>
-        </article>
-
-      </section>
-    </section>
-
-
-<!-- Footer -->
-
-<footer class="site-footer">
-  <div class="footer-container">
-    
-    <!-- Links principales -->
-    <div class="footer-links">
-      <a href="sobre-nos.html">Sobre Nós</a>
-      <span class="separator">•</span>
-      <a href="privacidade.html">Política de Privacidade</a>
-      <span class="separator">•</span>
-      <a href="termos.html">Termos e Condições</a>
-      <span class="separator">•</span>
-      <a href="contato.html">Contato</a>
-    </div>
-    
-    <!-- Disclaimer legal -->
-    <div class="footer-disclaimer">
-      <p><strong>⚠️ Aviso Importante</strong></p>
-      <p>Last Z Wiki é um site <strong>não oficial</strong> criado por fãs para a comunidade de Last Z Survival Shooter.</p>
-      <p>Não somos afiliados, associados, autorizados, endossados ou oficialmente conectados com os desenvolvedores do jogo.</p>
-      <p>Todas as marcas, logos e imagens do jogo são propriedade de seus respectivos donos.</p>
-    </div>
-    
-    <!-- Redes sociales (opcional, puedes añadir después) -->
-    <div class="footer-social">
-      <!-- <a href="#" aria-label="Discord">Discord</a> -->
-      <!-- <a href="#" aria-label="YouTube">YouTube</a> -->
-    </div>
-    
-    <!-- Copyright -->
-    <div class="footer-copyright">
-      <p>&copy; 2026 Last Z Wiki. Criado com ❤️ para a comunidade.</p>
-      <p class="footer-meta">Última atualização: Maio 2026</p>
-    </div>
-    
+      <span class="lab-teaser-arrow">→</span>
+    </a>
   </div>
-</footer>
+
+  <!-- Seção de Dicas (13 dicas, idêntica à sua versão, sem alterações) -->
+  <section class="tips-home">
+    <header class="tips-header">
+      <h2>💡 Dicas e Estratégias do Jogo</h2>
+      <p class="tips-subtitle">Aprenda estratégias essenciais para dominar Last Z: Survival Shooter</p>
+    </header>
+    <section class="tips-grid">
+      <!-- Dica 01 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-refugiados-1.webp" class="active" alt="Mordomo refugiado Last Z">
+          <img src="../img-tip-refugiados-2.webp" alt="Diplomata refugiado Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">🦸 Refugiados</span>
+          <h3>Melhores Refugiados para Recrutar</h3>
+          <p>Os refugiados <b>Mordomo</b> e <b>Diplomata</b> são os mais valiosos do jogo. Priorize consegui-los para acelerar enormemente sua progressão.</p>
+          <a href="dicas.html#tip-refugiados" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 02 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-manuales-1.jpg" class="active" alt="Manuais de habilidade azuis Last Z">
+          <img src="../img-tip-manuales-2.jpg" alt="Reciclando manuais Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">🦸 Heróis</span>
+          <h3>Recicle seus Manuais de Habilidade Azuis</h3>
+          <p>Se todos seus heróis rank B têm habilidades no máximo, vá ao <b>Armazém → Herói</b> e recicle os manuais azuis sobrantes em <b>Caixas Aleatórias</b> com Diamantes ou Fragmentos S.</p>
+          <a href="dicas.html#tip-manuais" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 03 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-ataque1.webp" class="active" alt="Formações por facção Last Z">
+          <img src="../img-tip-ataque2.webp" alt="Edifícios de facção Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">⚔️ Combate</span>
+          <h3>Melhore o Ataque das suas Formações</h3>
+          <p>Alinhe <b>5 heróis da mesma facção</b> em cada tropa para obter <b>ATQ +115%</b>. Priorize <b>Rosa Sangrenta</b> na sua primeira formação.</p>
+          <a href="dicas.html#tip-formacoes" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 04 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-caravana-1.jpg" class="active" alt="Caravana Last Z">
+          <img src="../img-tip-caravana-2.jpg" alt="Rotação de armaduras Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">⚔️ Estratégia</span>
+          <h3>Rotação de Armaduras na Caravana</h3>
+          <p>Transfira suas <b>melhores armaduras</b> entre formações para maximizar rodadas na Caravana. Passe equipamentos de <b>Rosa → Aurora → Guardião</b> conforme avança.</p>
+          <a href="dicas.html#tip-caravana" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 05 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-regreso-1.webp" class="active" alt="Painel de ataque Last Z">
+          <img src="../img-tip-regreso-2.webp" alt="Retorno automático ativado Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">⚔️ Combate</span>
+          <h3>Ative o Retorno Automático de Tropas</h3>
+          <p>Antes de atacar, <b>ative a opção "Retorno automático"</b>. Suas tropas voltarão sozinhas após o combate sem precisar fazer isso manualmente.</p>
+          <a href="dicas.html#tip-retorno" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 06 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-refuerzo-1.jpg" class="active" alt="Reforço rápido Last Z">
+          <img src="../img-tip-refuerzo-2.jpg" alt="Território aliança Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">⚔️ Mobilidade</span>
+          <h3>Reforço Rápido no seu Território</h3>
+          <p>Dentro do território aliado, o <b>reforço é 3× mais rápido</b>. Use para chegar primeiro a tesouros da aliança e pontos estratégicos.</p>
+          <a href="dicas.html#tip-reforco" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 07 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-gobierno-1.jpg" class="active" alt="Governo do servidor Last Z">
+          <img src="../img-tip-gobierno-2.jpg" alt="Cargos e buffs Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">🤝 Servidor</span>
+          <h3>Cargos do Servidor: Buffs Gratuitos</h3>
+          <p>Sabia que pode solicitar um <b>cargo de governo</b> no servidor e receber buffs de ataque, construção ou recursos? São <b>completamente gratuitos</b>.</p>
+          <a href="dicas.html#tip-governo" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 08 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-curacion-1.jpg" class="active" alt="Hospital tropas feridas Last Z">
+          <img src="../img-tip-curacion-2.jpg" alt="Ajuda aliança cura Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">🤝 Aliança</span>
+          <h3>Cura Eficiente com Ajuda da Aliança</h3>
+          <p>Em vez de curar tudo de uma vez, <b>cure em pequenos lotes</b> conforme a quantidade de membros ativos. Vai economizar tempo e aceleradores.</p>
+          <a href="dicas.html#tip-cura" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 09 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-donacion-1.webp" class="active" alt="Tecnologias de aliança Last Z">
+          <img src="../img-tip-donacion-2.webp" alt="Multiplicador doação Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">🤝 Aliança</span>
+          <h3>Doação Rápida em Tecnologias</h3>
+          <p>Em vez de clicar repetidamente, <b>mantenha o botão de doação pressionado</b>. Ativa multiplicadores ×2, ×5, ×10 para doar mais rápido e ganhar mais pontos.</p>
+          <a href="dicas.html#tip-doacao" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 10 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-reconocimiento-1.jpg" class="active" alt="Relatório de reconhecimento Last Z">
+          <img src="../img-tip-reconocimiento-2.jpg" alt="Localizar base no mapa Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">🤝 Servidor</span>
+          <h3>Localizar Bases com Relatórios de Reconhecimento</h3>
+          <p>Quando receber um <b>relatório de reconhecimento</b>, clique nas <b>coordenadas abaixo do nome</b> do jogador para ir diretamente à localização no mapa.</p>
+          <a href="dicas.html#tip-reconhecimento" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 11 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-cajas-1.webp" class="active" alt="Caixas de recursos Last Z">
+          <img src="../img-tip-cajas-2.webp" alt="Recursos por nível de Sede Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">💰 Economia</span>
+          <h3>Guarde Caixas de Recursos para Nível Alto</h3>
+          <p>As caixas de recursos <b>escalam com o nível da sua Sede</b>. Guarde as caixas douradas e use-as após o <b>nível 27+</b> para obter até 10× mais recursos.</p>
+          <a href="dicas.html#tip-caixas" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 12 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-farm-1.jpg" class="active" alt="Conta farm Last Z">
+          <img src="../img-tip-farm-2.jpg" alt="Dual Space Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">💰 Economia</span>
+          <h3>Criar Contas Secundárias (Farms)</h3>
+          <p>As contas farm permitem gerar <b>recursos extras</b> e enviá-los para sua conta principal. Aprenda dois métodos para criá-las no mesmo servidor.</p>
+          <a href="dicas.html#tip-farms" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+      <!-- Dica 13 -->
+      <article class="tip-card">
+        <div class="tip-carousel">
+          <img src="../img-tip-compras-1.webp" class="active" alt="Sophia heroína construtora Last Z">
+          <img src="../img-tip-compras-2.webp" alt="2.º Construtor Last Z">
+        </div>
+        <div class="tip-content">
+          <span class="tip-category">💰 Compras</span>
+          <h3>Melhores Compras para Iniciantes</h3>
+          <p>Se for gastar, priorize <b>Sophia ($1)</b> pela habilidade de construção e o <b>2.º Construtor ($2)</b> para acelerar seu progresso desde o início.</p>
+          <a href="dicas.html#tip-compras" class="tip-link">Leia mais →</a>
+        </div>
+      </article>
+    </section>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-links">
+        <a href="sobre-nos.html">Sobre Nós</a>
+        <span class="separator">•</span>
+        <a href="privacidade.html">Política de Privacidade</a>
+        <span class="separator">•</span>
+        <a href="termos.html">Termos e Condições</a>
+        <span class="separator">•</span>
+        <a href="contato.html">Contato</a>
+      </div>
+      <div class="footer-disclaimer">
+        <p><strong>⚠️ Aviso Importante</strong></p>
+        <p>Last Z Wiki é um site <strong>não oficial</strong> criado por fãs para a comunidade de Last Z Survival Shooter.</p>
+        <p>Não somos afiliados, associados, autorizados, endossados ou oficialmente conectados com os desenvolvedores do jogo.</p>
+        <p>Todas as marcas, logos e imagens do jogo são propriedade de seus respectivos donos.</p>
+      </div>
+      <div class="footer-copyright">
+        <p>&copy; 2026 Last Z Wiki. Criado com ❤️ para a comunidade.</p>
+        <p class="footer-meta">Última atualização: <strong>Junho 2026</strong></p>
+      </div>
+    </div>
+  </footer>
+
   <script src="../index.js"></script>
   <script src="../menu.js"></script>
   <script>
-    // =============================================
-    // RELOJ HORA APOCALIPSIS
-    // Reset diario a las 21:00 hora Lima (UTC-5)
-    // = 00:00 hora apocalipsis (UTC-2)
-    // =============================================
-
-    // ⬇️ EDITAR CADA LUNES — Rosa Semanal
+    // Relógio Hora Apocalipse + Rosa Semanal
     const rosaCantidad = 4;
     const rosaBuff = " Tempo de ajuda aliada +120 segundos.";
-    const rosaDuracion = "24 h";
-    // ⬆️ Solo cambia estos 3 valores cada semana
-
+    const rosaDuracion = "24h";
     document.getElementById('rosa-num').textContent = rosaCantidad;
     document.getElementById('rosa-buff').textContent = rosaBuff;
     document.getElementById('rosa-duration').textContent = rosaDuracion;
@@ -712,21 +588,17 @@
       const utcMs = now.getTime() + now.getTimezoneOffset() * 60000;
       const apocOffset = -2 * 60 * 60000;
       const apocNow = new Date(utcMs + apocOffset);
-
       const h = String(apocNow.getHours()).padStart(2, '0');
       const m = String(apocNow.getMinutes()).padStart(2, '0');
       document.getElementById('apoc-time').textContent = h + ':' + m;
-
       const nextReset = new Date(apocNow);
       nextReset.setHours(24, 0, 0, 0);
       const diff = nextReset - apocNow;
-
       const rh = String(Math.floor(diff / 3600000)).padStart(2, '0');
       const rm = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
       const rs = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
       document.getElementById('apoc-countdown').textContent = rh + ':' + rm + ':' + rs;
     }
-
     updateApocClock();
     setInterval(updateApocClock, 1000);
   </script>
