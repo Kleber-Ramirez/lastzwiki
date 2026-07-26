@@ -76,7 +76,113 @@ tipeo?") — nunca sobrescribir la tabla en silencio.
 | rosas                  | roses           | *(pendiente)* |
 | hs (horas)             | hrs             | *(pendiente)* |
 
-## Archivos que NUNCA se deben modificar
+## Códigos de Regalo de la Tienda (actualización cuando sale código nuevo)
+
+⚠️ EXCEPCIÓN al mapeo de nombres de archivo — esta página NO sigue la
+regla general de "mismo nombre en los 3 idiomas":
+- Español = `tienda.html`
+- Inglés = `store.html` (dentro de `/en/`)
+- Portugués = `loja.html` (dentro de `/pt/`)
+
+### El código en sí NUNCA se traduce
+El código de regalo (ej. `LZCORESTRENGTH`) es el mismo texto literal en
+los 3 idiomas — es un dato global del juego, no de la wiki. Solo se
+traducen: fechas, fuente, requisito, límite, texto del badge, y los
+nombres de las recompensas.
+
+### Estructura de una tarjeta
+Vive dentro de `<div class="codigos-grid">`, en el bloque marcado por
+`⬇️ EDITAR cuando cambien los códigos`. Cada tarjeta es un
+`<div class="codigo-card [urgente|expirado]">` con: badge, código,
+fecha, fuente, límite, requisito, verificado, y lista de recompensas.
+
+### 🚨 REGLA CRÍTICA — Clases CSS SIEMPRE en español
+Las clases `urgente` y `expirado` (y `codigo-badge urgente` /
+`codigo-badge expirado`) son las ÚNICAS que existen en el CSS
+(`tienda.css`/estilos embebidos) — el CSS está escrito una sola vez y se
+comparte entre los 3 idiomas. **NUNCA usar `urgent`/`expired` en inglés**,
+ni siquiera en `store.html`, aunque el resto del texto de esa tarjeta esté
+en inglés — solo el texto es bilingüe, la clase CSS no.
+
+**Bug conocido a corregir en la próxima edición:** en `en/store.html`, las
+tarjetas `LZCORESTRENGTH` y `LEVELUPHIGHER` tienen las clases en inglés
+(`urgent`/`expired`) por error — sin estilo visual aplicado. Corregirlas a
+`urgente`/`expirado` la próxima vez que se edite ese archivo, aunque no
+sean las tarjetas que se estén actualizando ese día.
+
+### Formato de recompensas — regla estricta
+Siempre `[emoji] [Nombre del ítem] x[cantidad]`, en el mismo orden que el
+inglés. NUNCA mover el número dentro del nombre (ej. "100 Diamantes x1"
+es INCORRECTO si el original dice "Diamonds x100" — debe ser
+"Diamantes x100"). Si hay duda sobre la cantidad real, preguntar al
+usuario antes de adivinar.
+
+### Proceso semanal
+1. Localizar la tarjeta actualmente activa (clase `urgente`) en los 3
+   archivos.
+2. Cambiarla a expirada: clase `urgente` → `expirado` en el div y en el
+   badge; badge texto → "❌ Expired" / "❌ Expirado" / "❌ Expirado";
+   reemplazar la línea de fecha "Valid/Válido: ... → ..." por
+   "Expired/Expiró/Expirou: [fecha de hoy]".
+3. Crear una tarjeta NUEVA con clase `urgente`, insertada al PRINCIPIO
+   del `codigos-grid`, con los datos que dé el usuario.
+4. Nunca tocar las tarjetas expiradas del historial (las de abajo).
+5. Aplicar en los 3 archivos: `tienda.html`, `en/store.html`,
+   `pt/loja.html`.
+
+### Glosario de recompensas (ir ampliando con cada código nuevo)
+
+| Inglés | Español | Portugués |
+|---|---|---|
+| Energy Core | Núcleo de Energía | Núcleo de Energia |
+| Reinforced Alloy | Aleación Reforzada | Liga Reforçada |
+| Diamonds | Diamantes | Diamantes |
+| Universal S Fragment | Fragmento Universal S | Fragmento Universal S |
+| S / A / B Fragment | Fragmento S / A / B | Fragmento S / A / B |
+| Orange Skill Manual | Manual de Habilidad Naranja | Manual de Habilidade Laranja |
+| Skill Manual | Manual de Habilidad(es) | Manual de Habilidades |
+| Blue EXP Chest | Cofre de EXP Azul | Baú de EXP Azul |
+| Wood Box | Caja de Madera | Caixa de Madeira |
+| Food Box | Caja de Comida | Caixa de Comida |
+| Speedup (1h / 5min) | Acelerador (1h / 5min) | Acelerador (1h / 5min) |
+| Wrench | Llave Inglesa | Chave Inglesa |
+| Blueprints | Planos | Plantas |
+| Common Z Coin Box | Caja Común de Moneda Z | Caixa Comum de Moeda Z |
+| Advanced Recruit Card | Carta de Recluta Avanzada | Carta de Recrutamento Avançado |
+
+### Glosario de etiquetas de campo
+
+| Inglés | Español | Portugués |
+|---|---|---|
+| ⚡ Expiring Soon | ⚡ Expira Pronto | ⚡ Expira em Breve |
+| ❌ Expired | ❌ Expirado | ❌ Expirado |
+| Valid | Válido | Válido |
+| Expired (fecha) | Expiró / Venció | Expirou |
+| Source | Fuente | Fonte |
+| Limit | Límite | Limite |
+| Requirement | Requisito | Requisito |
+| Rewards verified in-game | Recompensas verificadas en juego | Recompensas verificadas no jogo |
+| Apocalypse Time | Hora Apocalipsis | Hora do Apocalipse |
+
+### Formato del mensaje semanal del usuario
+```
+Nuevo código: [CÓDIGO]
+Válido: [fecha inicio] → [fecha fin]
+Fuente: [ej. Sitio web oficial last-z.com / Discord oficial / Facebook oficial]
+Límite: [número] canjes (o "sin límite")
+Requisito: [ej. Sede Nivel 10+] (o "ninguno")
+Verificado en juego: sí/no
+Recompensas:
+- [emoji] [Ítem] x[cantidad]
+- [emoji] [Ítem] x[cantidad]
+
+Actualiza según CLAUDE.md: expira la tarjeta activa actual y crea la
+nueva en tienda.html, en/store.html y pt/loja.html. Aprovecha y corrige
+las clases CSS de las tarjetas LZCORESTRENGTH/LEVELUPHIGHER en
+en/store.html si siguen sin corregir. Haz commit, no hagas push todavía.
+```
+
+
 - `menu.js`
 - `responsive.css`
 
