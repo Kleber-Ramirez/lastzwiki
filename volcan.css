@@ -1,0 +1,120 @@
+/* =============================================
+   VOLCÁN — Last Z Wiki (v2: responsive corregido)
+   Usa las variables de global.css (--fondo, --primario, --secundario,
+   --texto, --acento, --muted). No modifica responsive.css.
+   Mobile-first; se amplía a partir de 640px y 768px.
+   ============================================= */
+
+/* min-width:0 + overflow-x:clip evitan el scroll horizontal aunque un hijo sea más ancho */
+.volcan{width:100%;max-width:900px;min-width:0;margin:0 auto;padding:1.25rem 1rem 3rem;
+  box-sizing:border-box;overflow-x:clip;overflow-wrap:anywhere}
+.volcan *,.volcan *::before,.volcan *::after{box-sizing:border-box}
+.volcan h1{font-size:1.6rem;line-height:1.2;margin:0 0 .75rem}
+.volcan h2{font-size:1.3rem;margin:2.2rem 0 .8rem;padding-bottom:.4rem;
+  border-bottom:2px solid var(--primario);scroll-margin-top:80px}
+.volcan h3{font-size:1.05rem;margin:1.3rem 0 .4rem;color:var(--acento)}
+.volcan p,.volcan li{line-height:1.65}
+.volcan p{margin:0 0 .9rem}
+.volcan a{color:var(--acento)}
+.volcan ul{padding-left:1.2rem;margin:0 0 1rem}
+
+/* ---------- Anuncios ---------- */
+.v-ad{text-align:center;margin:2rem 0;overflow:hidden;max-width:100%}
+
+/* ---------- Hero: texto + imagen compacta ---------- */
+.v-hero{display:grid;grid-template-columns:minmax(0,1fr);gap:1rem;
+  background:linear-gradient(135deg,var(--secundario),var(--fondo));
+  border:1px solid #333;border-radius:14px;padding:1.1rem;margin-bottom:1.25rem}
+.v-hero__texto p:last-child{margin-bottom:0}
+.v-hero__img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;
+  border-radius:10px;background:var(--fondo)}
+.v-meta{color:var(--muted);font-size:.85rem;margin:0 0 .6rem}
+
+/* Datos rápidos */
+.v-datos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem}
+.v-dato{background:var(--fondo);border:1px solid #333;border-radius:10px;padding:.7rem;text-align:center}
+.v-dato strong{display:block;color:var(--acento);font-size:1.15rem}
+.v-dato span{font-size:.78rem;color:var(--muted)}
+
+/* Índice */
+.v-indice{display:flex;flex-wrap:wrap;gap:.5rem;margin:0 0 1rem;padding:0;list-style:none}
+.v-indice a{display:block;padding:.35rem .75rem;border:1px solid #333;border-radius:20px;
+  background:var(--secundario);color:var(--texto);text-decoration:none;font-size:.82rem}
+.v-indice a:hover{border-color:var(--acento)}
+
+/* ---------- Fases (línea de tiempo) ---------- */
+.v-fases{list-style:none;margin:0 0 0 7px;padding:0;border-left:2px solid var(--primario)}
+.v-fases li{position:relative;margin:0 0 1rem;padding:0 0 0 1.1rem}
+.v-fases li::before{content:"";position:absolute;left:-7px;top:.45rem;width:12px;height:12px;
+  border-radius:50%;background:var(--acento)}
+.v-dia{display:inline-block;background:var(--primario);color:#fff;font-size:.72rem;
+  font-weight:700;padding:.1rem .55rem;border-radius:6px;margin-bottom:.25rem}
+.v-fases b{display:block}
+
+/* ---------- Tabla (escritorio) ---------- */
+.v-tabla-wrap{margin:0 0 1rem;border:1px solid #333;border-radius:10px;overflow:hidden}
+.v-tabla{width:100%;border-collapse:collapse;font-size:.9rem}
+.v-tabla th,.v-tabla td{padding:.6rem .7rem;text-align:left;border-bottom:1px solid #2e2e2e;vertical-align:top}
+.v-tabla th{background:var(--secundario);color:var(--acento);font-size:.8rem;text-transform:uppercase;letter-spacing:.04em}
+.v-tabla tr:last-child td{border-bottom:0}
+
+/* ---------- Tarjetas y notas ---------- */
+.v-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:.8rem;margin-bottom:1rem}
+.v-card{background:var(--secundario);border:1px solid #333;border-radius:12px;padding:1rem}
+.v-card h3{margin-top:0}
+.v-card p:last-child{margin-bottom:0}
+.v-nota{background:var(--secundario);border-left:4px solid var(--acento);
+  border-radius:0 10px 10px 0;padding:.8rem 1rem;margin:1rem 0}
+.v-nota p{margin:0}
+
+/* ---------- Relacionados ---------- */
+.v-relacionados{display:grid;grid-template-columns:minmax(0,1fr);gap:.7rem;margin-top:1rem}
+.v-relacionados a{display:block;padding:.8rem;border:1px solid #333;border-radius:10px;
+  background:var(--secundario);color:var(--texto);text-decoration:none;font-weight:700;font-size:.9rem}
+.v-relacionados a:hover{border-color:var(--acento);color:var(--acento)}
+
+/* ---------- Móvil: la tabla pasa a tarjetas (sin scroll lateral) ---------- */
+@media (max-width:639px){
+  .v-tabla-wrap{border:0;overflow:visible}
+  .v-tabla,.v-tabla tbody{display:block}
+  .v-tabla thead{display:none}
+  .v-tabla tr{display:block;background:var(--secundario);border:1px solid #333;
+    border-radius:10px;margin-bottom:.7rem;padding:.4rem .7rem}
+  .v-tabla td{display:flex;justify-content:space-between;gap:.6rem;border:0;padding:.3rem 0;text-align:right}
+  .v-tabla td::before{content:attr(data-label);flex:0 0 auto;color:var(--acento);font-weight:700;
+    font-size:.75rem;text-transform:uppercase;text-align:left}
+  .v-tabla td:first-child{display:block;text-align:left;font-size:1rem;
+    border-bottom:1px solid #333;padding-bottom:.4rem;margin-bottom:.2rem}
+  .v-tabla td:first-child::before{content:none}
+}
+
+/* ---------- Pantallas más grandes ---------- */
+@media (min-width:640px){
+  .volcan h1{font-size:2rem}
+  .volcan h2{font-size:1.5rem}
+  .v-hero{padding:1.5rem}
+  .v-datos{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .v-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .v-relacionados{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (min-width:768px){
+  /* Escritorio: texto a la izquierda e imagen compacta (4:3) a la derecha */
+  .v-hero{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center;
+    grid-template-areas:"texto img" "datos datos"}
+  .v-hero__texto{grid-area:texto}
+  .v-hero__img{grid-area:img;aspect-ratio:4/3}
+  .v-datos{grid-area:datos}
+}
+
+/* ---------- FAQ en acordeón (<details> nativo: el texto siempre está en el HTML) ---------- */
+.v-faq{background:var(--secundario);border:1px solid #333;border-radius:10px;margin:0 0 .6rem}
+.v-faq summary{display:flex;justify-content:space-between;align-items:center;gap:.75rem;
+  padding:.8rem 1rem;cursor:pointer;list-style:none}
+.v-faq summary::-webkit-details-marker{display:none}
+.v-faq summary::after{content:"+";flex:0 0 auto;color:var(--acento);font-size:1.3rem;font-weight:700;line-height:1}
+.v-faq[open] summary::after{content:"–"}
+.v-faq summary:hover{background:rgba(255,255,255,.04)}
+.v-faq summary:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.volcan .v-faq summary h3{margin:0;font-size:.98rem;line-height:1.35;color:var(--texto)}
+.volcan .v-faq[open] summary h3{color:var(--acento)}
+.volcan .v-faq p{margin:0;padding:0 1rem 1rem}

@@ -45,7 +45,7 @@ con el usuario" hasta que él las valide contra el resto del sitio
 | 1 | Ataque de la Tropa                 | +10% | 2 hs  | Troop Attack             | Ataque da Tropa            |
 | 2 | Tiempo de Ayuda de Aliado          | +120s | 24 hs | Ally Help Time           | Tempo de Ajuda de Aliado   |
 | 3 | Capacidad de Carga de la Tropa     | +15% | 24 hs | Troop Load Capacity      | Capacidade de Carga da Tropa |
-| 4 | Aceleración de Recolección         | +30% | 24 hs | Gathering Speed          | Aceleração de Coleta       |
+| 4 | Aceleración de Recolección         | +30% | 24 hs | Gathering Speedup          | Aceleração de Coleta       |
 | 5 | Aceleración de Investigación        | +20% | 2 hs  | Research Speed           | Aceleração de Pesquisa     |
 | 6 | Aceleración de Construcción         | +20% | 2 hs  | Construction Speed       | Aceleração de Construção   |
 
