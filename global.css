@@ -268,3 +268,36 @@ body.menu-open {
     font-size: 0.8rem;
   }
 }
+/* =========================================
+   BANNERS PUBLICITARIOS
+   ========================================= */
+
+.ad-banner {
+  text-align: center;
+  margin: 24px auto;
+  max-width: 970px;
+}
+
+.ad-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #bdbdbd;
+  margin-bottom: 6px;
+}
+
+.ad-banner picture,
+.ad-banner img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  .ad-banner {
+    margin: 16px auto;
+    max-width: 640px;
+    padding: 0 0.8rem;
+  }
+}
+
