@@ -9,7 +9,9 @@ Uso (desde la carpeta raíz del sitio, la que contiene ads.js):
   python add_ads.py --apply    -> aplica los cambios
 
 Es seguro ejecutarlo varias veces: si una página ya tiene el marcador o el script, la salta.
-Las páginas que no tengan la sección .wiki-intro se reportan para hacerlas a mano.
+Reconoce la introducción de las páginas de inicio (.wiki-intro), las fichas de héroes (.heroe-header)
+y las páginas de guía (section.intro).
+Las páginas con otra estructura se reportan para hacerlas a mano.
 """
 import re
 import sys
@@ -40,20 +42,43 @@ PAGES = [
 SLOT = '<div id="ad-slot"></div>'
 SCRIPT = '<script src="/ads.js"></script>'
 
-SECTION_TAG = re.compile(r"<section\b|</section\s*>", re.IGNORECASE)
-INTRO_OPEN = re.compile(r'<section\b[^>]*class="[^"]*\bwiki-intro\b[^"]*"[^>]*>', re.IGNORECASE)
+# Patrones de "fin de la introducción". Cada uno: (regex de apertura, etiqueta que se cierra).
+#  - Páginas de inicio: <section class="wiki-intro"> ... </section>
+#  - Fichas de héroes:  <div class="heroe-header"> ... </div>  (tarjeta con imagen, nombre y datos)
+#  - Páginas de guía:   <section class="intro"> ... </section>
+#  - Temporadas:        <section id="introduccion"> ... </section>
+#  - Listado de héroes: <div class="heroes-intro-wrap"> ... </div>
+PATTERNS = [
+    (re.compile(r'<section\b[^>]*class="[^"]*\bwiki-intro\b[^"]*"[^>]*>', re.IGNORECASE), "section"),
+    (re.compile(r'<div\b[^>]*class="[^"]*\bheroe-header\b[^"]*"[^>]*>', re.IGNORECASE), "div"),
+    # Páginas de guía (edificios, eventos, etc.): <section class="intro"> ... </section>
+    (re.compile(r'<section\b[^>]*class="[^"]*(?<![\w-])intro(?![\w-])[^"]*"[^>]*>', re.IGNORECASE), "section"),
+    # Páginas de temporada: <section class="s5-section" id="introduccion"> ... </section>
+    (re.compile(r'<section\b[^>]*\bid="(?:introduccion|introduction|intro)"[^>]*>', re.IGNORECASE), "section"),
+    # Listado de héroes: <div class="heroes-intro-wrap"> (título + cajas de estadísticas) ... </div>
+    (re.compile(r'<div\b[^>]*class="[^"]*\bheroes-intro-wrap\b[^"]*"[^>]*>', re.IGNORECASE), "div"),
+]
+
+
+def _close_pos(text, start, tag):
+    """Posición justo después de la etiqueta de cierre que equilibra la apertura (maneja anidación)."""
+    tags = re.compile(r"<%s\b|</%s\s*>" % (tag, tag), re.IGNORECASE)
+    depth = 1
+    for t in tags.finditer(text, start):
+        depth += -1 if t.group(0).startswith("</") else 1
+        if depth == 0:
+            return t.end()
+    return None
 
 
 def end_of_intro(text):
-    """Posición justo después del </section> que cierra la sección .wiki-intro."""
-    m = INTRO_OPEN.search(text)
-    if not m:
-        return None
-    depth = 1
-    for t in SECTION_TAG.finditer(text, m.end()):
-        depth += 1 if not t.group(0).startswith("</") else -1
-        if depth == 0:
-            return t.end()
+    """Posición justo después del bloque de introducción, o None si la página no tiene ninguno conocido."""
+    for opener, tag in PATTERNS:
+        m = opener.search(text)
+        if m:
+            pos = _close_pos(text, m.end(), tag)
+            if pos is not None:
+                return pos
     return None
 
 
